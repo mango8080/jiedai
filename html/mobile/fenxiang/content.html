@@ -1,0 +1,105 @@
+<html lang="zh-cmn-Hans" data-dpr="1" max-width="640" style="font-size: 40px;">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="hotcss" content="initial-dpr=1;max-width=640">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <!-- 图标 -->
+  <link rel="shortcut icon" type="image/x-icon" href="">
+  <!-- 初始化 -->
+  <link rel="stylesheet" href="css/general.css">
+  <script>
+  (function(window, document) {
+      'use strict';
+      var hotcss = {};
+      (function() {
+          var viewportEl = document.querySelector('meta[name="viewport"]'),
+              hotcssEl = document.querySelector('meta[name="hotcss"]'),
+              dpr = window.devicePixelRatio || 1,
+              maxWidth = 540,
+              designWidth = 0;
+          dpr = dpr >= 3 ? 3 : (dpr >= 2 ? 2 : 1);
+          if (hotcssEl) {
+              var hotcssCon = hotcssEl.getAttribute('content');
+              if (hotcssCon) {
+                  var initialDprMatch = hotcssCon.match(/initial\-dpr=([\d\.]+)/);
+                  if (initialDprMatch) {
+                      dpr = parseFloat(initialDprMatch[1]);
+                  }
+                  var maxWidthMatch = hotcssCon.match(/max\-width=([\d\.]+)/);
+                  if (maxWidthMatch) {
+                      maxWidth = parseFloat(maxWidthMatch[1]);
+                  }
+                  var designWidthMatch = hotcssCon.match(/design\-width=([\d\.]+)/);
+                  if (designWidthMatch) {
+                      designWidth = parseFloat(designWidthMatch[1]);
+                  }
+              }
+          }
+          document.documentElement.setAttribute('data-dpr', dpr);
+          hotcss.dpr = dpr;
+          document.documentElement.setAttribute('max-width', maxWidth);
+          hotcss.maxWidth = maxWidth;
+          if (designWidth) {
+              document.documentElement.setAttribute('design-width', designWidth);
+          }
+          hotcss.designWidth = designWidth;
+          var scale = 1 / dpr,
+              content = 'width=device-width, initial-scale=' + scale + ', minimum-scale=' + scale + ', maximum-scale=' + scale + ', user-scalable=no';
+          if (viewportEl) {
+              viewportEl.setAttribute('content', content);
+          } else {
+              viewportEl = document.createElement('meta');
+              viewportEl.setAttribute('name', 'viewport');
+              viewportEl.setAttribute('content', content);
+              document.head.appendChild(viewportEl);
+          }
+      })();
+      hotcss.px2rem = function(px, designWidth) {
+          if (!designWidth) {
+              designWidth = parseInt(hotcss.designWidth, 10);
+          }
+          return parseInt(px, 10) * 320 / designWidth / 20;
+      }
+      hotcss.rem2px = function(rem, designWidth) {
+          if (!designWidth) {
+              designWidth = parseInt(hotcss.designWidth, 10);
+          }
+          return rem * 20 * designWidth / 320;
+      }
+      hotcss.mresize = function() {
+          var innerWidth = document.documentElement.getBoundingClientRect().width || window.innerWidth;
+          if (hotcss.maxWidth && (innerWidth / hotcss.dpr > hotcss.maxWidth)) {
+              innerWidth = hotcss.maxWidth * hotcss.dpr;
+          }
+          if (!innerWidth) {
+              return false;
+          }
+          document.documentElement.style.fontSize = (innerWidth * 20 / 320) + 'px';
+          hotcss.callback && hotcss.callback();
+      };
+      hotcss.mresize();
+      window.addEventListener('resize', function() {
+          clearTimeout(hotcss.tid);
+          hotcss.tid = setTimeout(hotcss.mresize, 33);
+      }, false);
+      window.addEventListener('load', hotcss.mresize, false);
+      setTimeout(function() {
+          hotcss.mresize();
+      }, 333)
+      window.hotcss = hotcss;
+  })(window, document);
+  </script>
+  <link rel="stylesheet" href="css/content.css">
+  <title>奖励发放说明</title>
+</head>
+<body>
+  <div class="container">
+    <p>1. 您要求的好友必须通过你分享的邀请页面注册<span>用户</span>完成借款，即可获得奖励。</p>
+    <p>2. 实时返利将在好友借款后（借款到达好友银行卡账启日）次日，自动发放到你的资金账户中，最低提现金为100元。</p>
+    <p>3. 如果有任何疑惑问请联系关注<span>"延彤财务"</span>公众号联系客服咨询。</p>
+  </div>
+</body>
+</html>
+  <title></title>

@@ -1,0 +1,292 @@
+
+{template 'hotel_header', $module}
+
+        <link href="{DT_SKIN}new/hotel_info.css" rel="stylesheet" type="text/css">
+         
+        <form name="form1" method="post" action="./HotelBaseInfo.aspx" id="form1">
+            <div class="ebk3-page-navs">
+            </div>
+            <div class="box-1180" style="margin-top: -20px">
+            <div class="pageHotelInfo clearfix">
+                            <!-- 侧面导航 --> 
+        <style>
+            .form-file {
+                opacity: 0;
+                filter: alpha(opacity=0);
+                width: 96px;
+                height: 35px;
+                left: 0;
+                top: 0;
+                display: block;
+                cursor: pointer;
+                position: absolute;
+                z-index: 1;
+            }
+
+            .uploadify-queue-item .cancel {
+                float: right;
+            }
+
+            .swfupload {
+                left: -1px;
+            }
+
+            .onVerify {
+                position: absolute;
+                right: 30px;
+                top: 0;
+            }
+            .pageHotelInfo-content{
+                padding: 40px 40px;
+                margin:0 auto;
+            }
+            #dingdan{background-color:#fff;-webkit-transition:color 0.2s ease 0s;-o-transition:color 0.2s ease 0s;transition:color 0.2s ease 0s;text-decoration:none;color:#288fe7;}
+        </style>
+       
+        <!-- 内容区 -->
+        <div class="pageHotelInfo-content ">
+            <!-- 基本信息 -->
+            <div class="htlInfo-ctHd">
+                <b>住客信息</b>
+               
+            </div>
+            <div class="htlInfo-ctBd">
+                <table class="infoTable">
+                    <tbody><tr>
+                        <th>
+                            <div class="t-lb">
+                                
+                                <span>订单号</span>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="t-ct">
+                                <span id="HotelName">{$td[ordercode]}(编号:{$td[itemid]}) </span>
+                                
+                                
+                            </div>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="t-lb">
+                                <span>借款类型</span>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="t-ct">
+                                <span id="HotelENName">{$td[title]}</span>
+                                
+                            </div>
+                            
+                        </td>
+                    </tr>
+                    
+                    <!-- <tr>
+                        <th>
+                            <div class="t-lb">
+                                <span>房型图片</span>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="t-ct">
+                                <span id="HotelShortName"><img src="{if $td[thumb]}{DT_PATH}{$td[thumb]}{else}{DT_SKIN}image/nopic60.gif{/if}" width="60" height="60"/></span>
+                                
+                            </div>
+                            
+                        </td>
+                    </tr> -->
+                    
+                   
+                    
+                    <tr>
+                        <th>
+                            <div class="t-lb">
+                                
+                                <span>姓名</span>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="t-ct">
+                                <span id="HotelAddress">{$td[buyer_name]}</span>
+                                                               
+                            </div>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="t-lb">
+                                <span>手机</span>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="t-ct">
+                                <span id="RoadNearby">{$td[buyer_mobile]}</span>
+                                  
+                            </div>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="t-lb">
+                                <span>留言</span>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="t-ct">
+                                <span id="RoadNearby">{$td[note]}</span>
+                                 
+                            </div>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="t-lb">
+                                <span>入住日期</span>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="t-ct">
+                                <span id="RoadNearby">{timetodate($td[intime],0)}</span>
+                                 
+                            </div>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="t-lb">
+                                <span>离店日期</span>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="t-ct">
+                                <span id="RoadNearby">{timetodate($td[outtime],0)}</span>
+                                 
+                            </div>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="t-lb">
+                                <span>最晚到店时间</span>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="t-ct">
+                                <span id="RoadNearby">{$td[arrivetime]}</span>
+                                 
+                            </div>
+                            
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <!-- 海外酒店 交通路线 -->
+            
+            <!-- 详细信息 -->
+            <div class="htlInfo-ctHd">
+                <b>价格信息</b>
+            </div>
+            <div class="htlInfo-ctBd">
+                <table class="infoTable dtlTable">
+                    <tbody><tr>
+                        <th>
+                            <div class="t-lb">
+                                <span>房型单价</span>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="t-ct">
+                                <span id="HotelBrand">{$DT[money_sign]}{$td[price]}</span>
+                                
+                            </div>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="t-lb">
+                                
+                                <span>房间数</span>
+                                
+                            </div>
+                        </th>
+                        <td>
+                            <div class="t-ct">
+                                
+                                <span id="StarType">{$td[number]}</span>
+                                  
+                            </div>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="t-lb">
+                                <span>订单总额</span>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="t-ct">
+                                <span id="OpenDate">{$DT[money_sign]}{$td[amount]}</span>
+                                
+                            </div>  
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="htlInfo-ctHd">
+            <b>订单状态</b>
+        </div>
+            <div class="htlInfo-ctBd">
+                <table class="infoTable dtlTable">
+                    <tbody><tr>
+                        <th>
+                            <div class="t-lb">
+                                <span>下单时间</span>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="t-ct">
+                                <span id="HotelBrand">{timetodate($td[addtime],5)}</span>
+                                
+                            </div>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <th>
+                            <div class="t-lb">
+                                <span>订单状态</span>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="t-ct">
+                                <span id="OpenDate">{$_status[$td[status]]}</span>
+                                
+                            </div>  
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        
+
+    </div>
+</div>
+</div>
+</form>    
+<bgsound id="Player" loop="-1" autostart="true">
+
+{template 'hotel_footer', $module}

@@ -1,0 +1,356 @@
+
+
+{template 'hotel_header', $module}
+
+    <link href="{DT_SKIN}new/hotel_info.css" rel="stylesheet" type="text/css">
+     
+    <form name="form1" method="post" action="./HotelBaseInfo.aspx" id="form1">
+
+
+        <div class="ebk3-page-navs">
+        </div>
+        <div class="box-1180" style="margin-top: -20px">
+            
+
+       
+<div class="htl_info_int clearfix">
+    <div class="boxName"><span class="name">酒店信息完整度</span></div>
+    <div class="boxAc">        
+        
+        <a href="javascript:showTipDiv();" class="ebk3-btn">提升完整度</a>
+        </div>
+    <span class="percentage">84%</span>
+    <div class="boxMid">
+        <div class="intPrc">
+            <div class="intPrc-i" style="width:84%;"></div>
+        </div>
+        <p class="ebk3-c-light">注：提升信息完整度，即可提高排名并增加酒店收入；完整度每天计算一次，修改后不会实时更新。</p>
+    </div>
+</div>
+
+        <div class="pageHotelInfo clearfix">
+            			<!-- 侧面导航 -->
+			<div class="pageHotelInfo-sideNav">
+				<ul>
+				    	
+					<li class="sideNav-item"><a class="sideNav-a cur" id="sideNav1" href="http://ebooking.ctrip.com/ebkproduct/BaseInfo/HotelBaseInfo.aspx">酒店基本信息</a></li>
+                     
+                    <li class="sideNav-item"><a class="sideNav-a" id="sideNav3" href="http://ebooking.ctrip.com/ebooking/entry/index.aspx?name=hotelpolicy">酒店政策</a></li>
+                    <li class="sideNav-item"><a class="sideNav-a" id="sideNav6" href="http://ebooking.ctrip.com/ebooking/entry/index.aspx?name=hotelcontact">联系方式</a></li>
+                   
+                     								
+				</ul>
+			</div>
+        		
+          
+    <style>
+        .form-file {
+            opacity: 0;
+            filter: alpha(opacity=0);
+            width: 96px;
+            height: 35px;
+            left: 0;
+            top: 0;
+            display: block;
+            cursor: pointer;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .uploadify-queue-item .cancel {
+            float: right;
+        }
+
+        .swfupload {
+            left: -1px;
+        }
+
+        .onVerify {
+            position: absolute;
+            right: 30px;
+            top: 0;
+        }
+    </style>
+   
+    <!-- 内容区 -->
+    <div class="pageHotelInfo-content ">
+        <!-- 基本信息 -->
+        <div class="htlInfo-ctHd">
+            <b>基本信息</b>
+            <span>(<span class="ebk3-c-nec">*</span>为必填项)</span>
+        </div>
+        <div class="htlInfo-ctBd">
+            <table class="infoTable">
+                <tbody><tr>
+                    <th>
+                        <div class="t-lb">
+                            <span class="ebk3-c-nec">*</span>
+                            <span>酒店名称</span>
+                        </div>
+                    </th>
+                    <td>
+                        <div class="t-ct">
+                            <span id="HotelName">锦江都城酒店（江阴澄江万达广场店）</span>
+                            <a href="javascript:;" id="HotelName_edit" class="ebk3-simple-btn btn-mdf edit" style="cursor:pointer">修改</a>
+                            
+                        </div>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="t-lb">
+                            <span>酒店英文名称</span>
+                        </div>
+                    </th>
+                    <td>
+                        <div class="t-ct">
+                            <span id="HotelENName">Jinjiang Metropolo Hotel, Jiangying, Chengjiang</span>
+                            <a href="javascript:;" id="HotelENName_edit" class="ebk3-simple-btn btn-mdf edit" style="cursor:pointer">修改</a>
+                        </div>
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <th>
+                        <div class="t-lb">
+                            <span>酒店简称</span>
+                        </div>
+                    </th>
+                    <td>
+                        <div class="t-ct">
+                            <span id="HotelShortName">锦江都城</span>
+                            
+                        </div>
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <th style="height: 20px">
+                        <div class="t-lb">
+                            <span class="ebk3-c-nec">*</span>
+                            
+                            <span>国家/省份/城市/行政区</span>
+                            
+                        </div>
+                    </th>
+                    <td style="height: 20px">
+                        <div class="t-ct">
+                            <span id="HotelLocation">中国/江苏/江阴/澄江镇</span>
+                            
+                        </div>
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <th>
+                        <div class="t-lb">
+                            <span class="ebk3-c-nec">*</span>
+                            <span>酒店地址</span>
+                        </div>
+                    </th>
+                    <td>
+                        <div class="t-ct">
+                            <span id="HotelAddress">文富南路6号（万达1号门）</span>
+                            <a href="javascript:;" id="HotelAddress_edit" class="ebk3-simple-btn btn-mdf edit" style="cursor:pointer">修改</a>
+                            
+                        </div>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="t-lb">
+                            <span>相近路口</span>
+                        </div>
+                    </th>
+                    <td>
+                        <div class="t-ct">
+                            <span id="RoadNearby">近人民西路</span>
+                            <a href="javascript:;" id="RoadNearby_edit" class="ebk3-simple-btn btn-mdf edit" style="cursor:pointer">修改</a>
+                            
+                        </div>
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <th>
+                        <div class="t-lb">
+                            <span class="ebk3-c-nec">*</span>
+                            <span>地图经纬度</span>
+                        </div>
+                    </th>
+                    <td>
+                        <div class="t-ct">
+                            <span id="HotelLatLon">X：120.25169904741        Y：31.905972402916</span>
+                            <a href="javascript:;" id="HotelLatLon_edit" class="ebk3-simple-btn btn-mdf edit" style="cursor:pointer">修改</a>
+                            
+                            <div class="info-location" id="mapShow" style="overflow: hidden; position: relative; z-index: 0; background-color: rgb(243, 241, 236); color: rgb(0, 0, 0); text-align: left;"><div style="overflow: visible; position: absolute; z-index: 0; left: 0px; top: 0px; cursor: grab;"><div class="BMap_mask" style="position: absolute; left: 0px; top: 0px; z-index: 9; overflow: hidden; -moz-user-select: none; width: 533px; height: 265px;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;"><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 800;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 700;"><span class="BMap_Marker BMap_noprint" unselectable="on" "="" style="position: absolute; padding: 0px; margin: 0px; border: 0px none; -moz-user-select: none; cursor: pointer; background: transparent url(&quot;http://api0.map.bdimg.com/images/blank.gif&quot;) repeat scroll 0% 0%; width: 19px; height: 25px; left: 257px; top: 108px; z-index: -6381194;" title=""></span></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 600;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 500;"><label class="BMapLabel" unselectable="on" style="position: absolute; -moz-user-select: none; display: none; cursor: inherit; background-color: rgb(190, 190, 190); border: 1px solid rgb(190, 190, 190); padding: 1px; white-space: nowrap; font: 12px arial,simsun,sans-serif; z-index: -20000; color: rgb(190, 190, 190);">shadow</label></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 400;"><span class="BMap_Marker" unselectable="on" style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 0px; height: 0px; -moz-user-select: none; left: 257px; top: 108px; z-index: -6381194;"><div style="position: absolute; margin: 0px; padding: 0px; width: 19px; height: 25px; overflow: hidden;"><img src="xinxi_files/marker_red_sprite.png" style="display: block; border:none;margin-left:0px; margin-top:0px; "></div><label class="BMapLabel" unselectable="on" style="position: absolute; -moz-user-select: none; display: inline; cursor: inherit; background-color: rgb(255, 255, 255); border: 1px solid rgb(255, 0, 0); padding: 1px; white-space: nowrap; font: 12px arial,simsun,sans-serif; z-index: 80; left: 20px; top: -10px;">锦江都城酒店（江阴澄江万达广场店）</label></span></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 300;"><span unselectable="on" style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 20px; height: 11px; -moz-user-select: none; left: 261px; top: 122px;"><div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;"><img src="xinxi_files/marker_red_sprite.png" style="display: block; border:none;margin-left:-19px; margin-top:-13px; "></div></span></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 201;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;"></div></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 1;"><div style="position: absolute; overflow: visible; z-index: -100; left: 267px; top: 132px; display: block; transform: translate3d(0px, 0px, 0px);"><img style="-moz-user-select: none; position: absolute; border: medium none; width: 256px; height: 256px; left: 122px; top: -313px; max-width: none; opacity: 1;" src="xinxi_files/a_004.png"><img style="-moz-user-select: none; position: absolute; border: medium none; width: 256px; height: 256px; left: -390px; top: -313px; max-width: none; opacity: 1;" src="xinxi_files/a_005.png"><img style="-moz-user-select: none; position: absolute; border: medium none; width: 256px; height: 256px; left: -390px; top: -57px; max-width: none; opacity: 1;" src="xinxi_files/a.png"><img style="-moz-user-select: none; position: absolute; border: medium none; width: 256px; height: 256px; left: -134px; top: -57px; max-width: none; opacity: 1;" src="xinxi_files/a_003.png"><img style="-moz-user-select: none; position: absolute; border: medium none; width: 256px; height: 256px; left: 122px; top: -57px; max-width: none; opacity: 1;" src="xinxi_files/a_006.png"><img style="-moz-user-select: none; position: absolute; border: medium none; width: 256px; height: 256px; left: -134px; top: -313px; max-width: none; opacity: 1;" src="xinxi_files/a_002.png"></div></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 2; display: none;"><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 0; display: none;"></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 10; display: none;"></div></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 3;"></div></div><div class="pano_close" style="z-index: 1201; display: none;" title="退出全景"></div><a class="pano_pc_indoor_exit" style="z-index: 1201; display: none;" title="退出室内景"><span style="float:right;margin-right:12px;">出口</span></a><div style="height: 32px; position: absolute; z-index: 30; -moz-user-select: none; -moz-text-size-adjust: none; bottom: 0px; right: auto; top: auto; left: 1px;" class=" anchorBL"><a title="到百度地图查看此区域" target="_blank" href="http://map.baidu.com/?sr=1" style="outline: medium none;"><img style="border:none;width:77px;height:32px" src="xinxi_files/copyright_logo.png"></a></div><div id="zoomer" style="position:absolute;z-index:0;top:0px;left:0px;overflow:hidden;visibility:hidden;cursor:-moz-grab"><div class="BMap_zoomer" style="top:0;left:0;"></div><div class="BMap_zoomer" style="top:0;right:0;"></div><div class="BMap_zoomer" style="bottom:0;left:0;"></div><div class="BMap_zoomer" style="bottom:0;right:0;"></div></div><div unselectable="on" class=" BMap_cpyCtrl BMap_noprint anchorBL" style="cursor: default; white-space: nowrap; -moz-user-select: none; color: black; background: transparent none repeat scroll 0% 0%; font: 11px/15px arial,simsun,sans-serif; bottom: 2px; right: auto; top: auto; left: 81px; position: absolute; z-index: 10; -moz-text-size-adjust: none;"><span _cid="1" style="display: inline;"><span style="font-size:11px">© 2016 Baidu&nbsp;- Data © <a target="_blank" href="http://www.navinfo.com/" style="display:inline;">NavInfo</a> &amp; <a target="_blank" href="http://www.palmcity.cn/" style="display:inline;">PalmCity</a> &amp; <a target="_blank" href="http://www.365ditu.com/" style="display:inline;">道道通</a></span></span></div></div>
+                        </div>
+                        
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        <!-- 海外酒店 交通路线 -->
+        
+        <!-- 详细信息 -->
+        <div class="htlInfo-ctHd">
+            <b>详细信息</b>
+        </div>
+        <div class="htlInfo-ctBd">
+            <table class="infoTable dtlTable">
+                <tbody><tr>
+                    <th>
+                        <div class="t-lb">
+                            <span>所属管理集团品牌</span>
+                        </div>
+                    </th>
+                    <td>
+                        <div class="t-ct">
+                            <span id="HotelBrand">锦江都城-锦江都城</span>
+                            
+                        </div>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="t-lb">
+                            
+                            <span>星级（是否挂牌星级）</span>
+                            
+                        </div>
+                    </th>
+                    <td>
+                        <div class="t-ct">
+                            <span class="ebk3-ico hotel_diamond03"></span>
+                            &nbsp;	
+                            <span id="StarType">舒适型</span>
+                            
+                             
+                           
+                            <span id="StarType_Licence">未挂牌</span>
+                            <a href="javascript:;" id="StarType_edit" class="ebk3-simple-btn btn-mdf edit" style="cursor:pointer">修改</a>
+                            
+                        </div>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="t-lb">
+                            <span>开业年月</span>
+                        </div>
+                    </th>
+                    <td>
+                        <div class="t-ct">
+                            <span id="OpenDate">2014-01</span>
+                            <a href="javascript:;" id="OpenDate_edit" class="ebk3-simple-btn btn-mdf edit" style="cursor:pointer">修改</a>
+                        </div>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="t-lb">
+                            <span>最新装修年月</span>
+                        </div>
+                    </th>
+                    <td>
+                        <div class="t-ct">
+                            <span id="FitmentDate">无</span>
+                            <a href="javascript:;" id="FitmentDate_edit" class="ebk3-simple-btn btn-mdf edit" style="cursor:pointer">添加</a>
+                        </div>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="t-lb">
+                            <span class="ebk3-c-nec">*</span>
+                            <span>客房总数</span>
+                        </div>
+                    </th>
+                    <td>
+                        <div class="t-ct">
+                            <span id="TotallyRooms">161 间</span>
+                            <a href="javascript:;" id="TotallyRooms_edit" class="ebk3-simple-btn btn-mdf edit" style="cursor:pointer">修改</a>
+                        </div>
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <th>
+                        <div class="t-lb">
+                            <span class="ebk3-c-nec">*</span>
+                            <span>酒店总机</span>
+                        </div>
+                    </th>
+                    <td>
+                        <div class="t-ct">
+                            <span id="Telephone">0510-86001998</span>
+                            <a href="javascript:;" id="Telephone_edit" class="ebk3-simple-btn btn-mdf edit" style="cursor:pointer">修改</a>
+                            
+                        </div>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="t-lb">
+                            <span>销售部传真</span>
+                        </div>
+                    </th>
+                    <td>
+                        <div class="t-ct">
+                            <span id="SellFax">无</span>
+                            <a href="javascript:;" id="SellFax_edit" class="ebk3-simple-btn btn-mdf edit" style="cursor:pointer">添加</a>
+                        </div>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="t-lb">
+                            <span>商务中心传真</span>
+                        </div>
+                    </th>
+                    <td>
+                        <div class="t-ct">
+                            <span id="BusinessFax">无</span>
+                            <a href="javascript:;" id="BusinessFax_edit" class="ebk3-simple-btn btn-mdf edit" style="cursor:pointer">添加</a>
+                        </div>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="t-lb">
+                            <span>酒店简介</span>
+                        </div>
+                    </th>
+                    <td>
+                        <div class="t-ct">
+                            <span id="HotelDescription">锦江都城酒店（江阴澄江万达广场店）位于江阴万达广场内，距江阴市中心步行街仅3公里，距著名的长江村2公里，周边购物（万达百货、万达金街）、餐饮（万达3楼餐饮街、万达金街）、娱乐（万达大歌星、大玩家、影城）等配套设施完善。<br>锦江都城酒店（江阴澄江万达广场店）拥有各类舒适宽敞的客房，同时配备1间会议室，会议室拥有投影及音响设备，可容纳50人。<br>锦江都城酒店（江阴澄江万达广场店）有完善的生活设施、现代化的装修风格、真诚的服务理念，让您轻松入住，全无后顾之忧。</span>  
+                            
+                        </div>
+                        
+
+                    </td>
+                </tr>
+                
+            </tbody></table>
+        </div>
+    </div>
+        </div>
+        </div>
+</form>    
+<bgsound id="Player" loop="-1" autostart="true">
+
+{template 'hotel_footer', $module}

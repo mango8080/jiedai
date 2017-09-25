@@ -1,0 +1,108 @@
+﻿@charset "utf-8";
+/* CSS Reset - Description :Base KISSY CSS Reset, add HTML5 elements ----------- */
+/*header footer*/
+.head{ background:#fff; height:60px; padding:20px 0; font-family:microsoft yahei;}
+.head a{font-family:microsoft yahei;}
+.head .logo{ float:left; background:url(lis/themes/NewInns/img/header/logo.png) no-repeat; width:175px; height:60px; text-indent:-9999px;}
+.head .logo a{ display:block; width:100%; height:100%;}
+.head .tel{ float:right; height:44px; line-height:44px; color:#013d85; font-family:Arial, Helvetica, sans-serif; font-size:15px; background:url(lis/themes/NewInns/img/header/tel.png) no-repeat left center; text-indent:24px;}
+.head .menu{ float:right; margin-top:25px;}
+.head .menu li{ padding-right:25px; display:inline; height:44px; line-height:44px; padding-left:25px; background:url(lis/themes/NewInns/images/head/line.png) no-repeat right center;}
+.head .menu li a{ color:#9ea1a3; font-size:16px;}
+.head .menu li a:hover{ color:#333;}
+.head .menu li.on a{ color:#013d85;}
+.head .w1200{ position:relative;}
+.head .w1200 .tel{ position:absolute; right:57px; top:0; height:20px; line-height:20px;}
+.head .menu li.last{ background:none; padding-right:0;}
+.head .enterprise_login { position:absolute; top:0; right:0;}
+.head .desperate_notetion { position:absolute; top:0; right:50px;}
+
+/*百时头部重构*/
+.baishi_head .logo{ background:url(lis/themes/NewInns/images/head/baishi_logo.png) no-repeat;}
+.baishi_head .tel{ background:url(lis/themes/NewInns/images/head/baishi_tel.png) no-repeat; color:#013d85;}
+.baishi_head .menu li.on a{ color:#013d85;}
+.baishi_head .enterprise_login {color:#013d85;}
+.baishi_head .desperate_notetion {color:#013d85;}
+
+/*锦江头部重构*/
+.jinjiang_head .logo{ background:url(lis/themes/NewInns/images/head/jinjiang_logo.png) no-repeat;}
+.jinjiang_head .tel{ background:url(lis/themes/NewInns/images/head/jinjiang_tel.png) no-repeat; color:#009c9c;}
+.jinjiang_head .menu li.on a{ color:#009c9c;}
+.jinjiang_head .enterprise_login {color:#009c9c;}
+.jinjiang_head .desperate_notetion {color:#009c9c;}
+
+/*金广头部重构*/
+.jinguang_head .logo{ background:url(lis/themes/NewInns/images/head/jinguang_logo.png) no-repeat;}
+.jinguang_head .tel{ background:url(lis/themes/NewInns/images/head/jinguang_tel.png) no-repeat; color:#d6a200;}
+.jinguang_head .menu li.on a{ color:#d6a200;}
+.jinguang_head .enterprise_login {color:#d6a200;}
+.jinguang_head .desperate_notetion {color:#d6a200;}
+
+/*都城头部重构*/
+.ducheng_head{height:68px; padding:0 0 16px 0; background: url(lis/themes/NewInns/images/head/ducheng_bg.png) repeat-x; width:100%;}
+.ducheng_head .logo a{ display:block; text-indent:-9999px; }
+.ducheng_head .logo{ background:url(lis/themes/NewInns/images/head/ducheng_logo.png) no-repeat;width:182px; height:44px; margin-top:10px;}
+.ducheng_head .tel{ display:none;}
+.ducheng_head .menu{ margin-top:0;}
+.ducheng_head .menu li{float:left; background:none; height:68px; padding:0;}
+.ducheng_head .menu li a{ color:#dbdbdb;padding:0 35px;font-size:14px;height:68px; line-height:68px; display:block;}
+.ducheng_head .menu li a:hover{ background:#444;color:#dbdbdb;}
+.ducheng_head .menu li.on a{ background:url(lis/themes/NewInns/images/head/ducheng_bg_on.png) repeat-x; color:#fff;}
+
+/*品牌公用底部*/
+.hotcity{ margin-top:20px;}
+.hotcity h2{ font-size:18px; height:28px; line-height:28px; display:block; font-weight:normal; margin-bottom:10px; font-family:microsoft yahei;}
+.hotcity a{ font-size:12px; color:#666; margin:0 26px 7px 0; float:left; display:block;}
+.hotcity a:hover{color:#64c6c0;}
+
+.hometip{ background:#f7f7f7; padding:10px 0; height:28px;  margin:25px 0;}
+.hometip li{ height:28px; line-height:28px; color:#999; font-size:17px; float:left; width:145px; background:url(lis/themes/NewInns/images/foot/icon_10.png) no-repeat right center; padding-left:50px;}
+.hometip li img{ float:left; margin-right:10px;}
+.hometip li.n6{ background:none;}
+.hometip li span{ display: inline-block; font-family:microsoft yahei;}
+/*.hometip li.n1 span{ background:url(lis/themes/NewInns/img/icon_04.png) no-repeat 42px center;}
+.hometip li.n2 span{ background:url(lis/themes/NewInns/img/icon_05.png) no-repeat 45px center;}
+.hometip li.n3 span{ background:url(lis/themes/NewInns/img/icon_06.png) no-repeat 48px center;}
+.hometip li.n4 span{ background:url(lis/themes/NewInns/img/icon_07.png) no-repeat 50px center;}
+.hometip li.n5 span{ background:url(lis/themes/NewInns/img/icon_08.png) no-repeat 32px center;}
+.hometip li.n6 span{ background:url(lis/themes/NewInns/img/icon_09.png) no-repeat 43px center;}*/
+
+.footLink{ text-align:center; height:24px; line-height:24px;}
+.footLink u{ color:#eeefef; font-size:12px;height:24px; line-height:24px; padding:0 8px;}
+.footLink a{height:24px; line-height:24px; color:#999;}
+.footLink a:hover{color:#64c6c0;}
+.copyRight{ text-align:center; color:#999; display:block; margin:10px 0 20px 0;}
+
+/*百时底部重构*/
+.baishi_foot .hotcity a:hover{color:#0d449c;}
+.baishi_foot .footLink a:hover{color:#0d449c;}
+
+/*锦江底部重构*/
+.jinjiang_foot .hotcity a:hover{color:#64c6c0;}
+.jinjiang_foot .footLink a:hover{color:#64c6c0;}
+
+/*金广底部重构*/
+.jinguang_foot .hotcity a:hover{color:#d6a200;}
+.jinguang_foot .footLink a:hover{color:#d6a200;}
+
+/*都城底部重构*/
+.ducheng_foot .hotcity a:hover{color:#d6a200;}
+.ducheng_foot .footLink a:hover{color:#d6a200;}
+
+.head .enterprise_login { float:right;}
+.jinjiang_head .enterprise_login { color:#009c9c;}
+.jinguang_head .enterprise_login { color:#d6a200;}
+
+
+
+.en .ducheng_head .menu li a {padding:0px 27px;}
+
+.en .vMain .txt {height:37px;left:28px;}
+.en .searchBox .lable .name {margin-left:-100px;width:100px;}
+
+/*.en .head .w1200 .tel{right:160px;}
+.en .head .desperate_notetion{right:151px;}*/
+
+
+.en .head .w1200 .tel{ position:absolute; right:113px; top:0; height:20px; line-height:20px;}
+.en .head .desperate_notetion { position:absolute; top:0; right:102px;}

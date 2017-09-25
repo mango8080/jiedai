@@ -1,0 +1,349 @@
+{template 'header'}
+
+<link href="{DT_SKIN}order.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">var module_id= {$moduleid},item_id={$itemid},content_id='content',img_max_width={$MOD[max_width]};</script>
+
+<div class="w1200">
+
+	<div class="orderPage">
+
+  <form method="post" action="{$MOD[linkurl]}buy.php" onsubmit="return check();">
+
+  <input type="hidden" name="post[itemid]" value="{$itemid}">
+  <input type="hidden" name="post[hotelid]" value="{$hotelid}">
+  <input type="hidden" name="post[price]" value="{$price}">
+
+		<div class="rightmain">
+
+			<div class="orderinfo fixedside" style="" id="slide">
+
+    <h2 class="yahei">{$title}</h2>
+
+  <!--房型begin-->
+
+    <div class="box2">
+
+    <p>
+
+     <img src="{DT_PATH}{$thumb}" width="100"  height="75" / >
+
+   </p>
+
+   <p><span class="box2_title">入住房型</span>{$title}<span class="box2_fr"><b class="nums"></b>间</span></p>
+
+    </div>
+
+	<!--房型end-->
+
+    <!--价格列表begin-->
+
+    <div class="box2">
+
+        <p><span class="room_price_title">房费：</span>
+        <span id="roomAmountArea" class="en">¥<b class="col" id="price">{$price}</b></span><span id="roomAmountScoreArea" style="display:none"><span class="en col2">
+        <span id="roomAmountScore"></span>分<span id="roomPlus">+</span></span></span></p>
+
+        <p id="couponbox" ><span class="room_price_title">电子券：</span><span class="en"><span id="couponUnit">¥</span><b class="col" id="coupon" data-coupon="0">0</b></span></p>
+
+	
+
+        <p class="totalPrice clearfix">总金额：
+        <span id="totalArea" class="en">¥
+        <b class="col f18" id="total" ></b></span>
+        <span id="totalScoreArea" style="display:none">
+        <span class="en col2"><span id="totalAmountScore"></span>分
+        <span id="totalPlus">+</span></span></span></p>
+
+        <p id="taxfre"></p>
+
+    </div>
+
+    <!--价格列表end-->
+
+
+
+    <div class="btnBox">
+
+        <input type="submit" value="提交订单" name="submit" class="unsure" >
+
+       
+
+    </div>
+
+
+
+    </div>
+
+		</div>
+
+		<!-- 右侧完 -->
+
+		<div class="leftmain">
+
+			<div class="leftBox">
+
+				<div class="p30">
+
+					<div class="titbox">
+
+						<b class="col">01</b>
+
+						填写订单
+
+					</div>
+
+					<div class="yudingbox"> 
+
+				        <div class="datebox">
+
+				        <div class="label"><span class="name">入住日期</span>
+
+				          <input name="post[intime]" class="w210 dateCheckIn hasDatepicker" id="post[intime]" value="{$intime}" data-value="{date('Y-m-d')}" readonly="readonly" type="text"  ondblclick="this.value='';"/>
+
+                  </div>
+
+				         <div class="label"><span class="name">退房日期</span>
+
+				          <input name="post[outtime]" class="w210 dateCheckOut hasDatepicker" id="post[outtime]" value="{$outtime}" data-value="{date('Y-m-d',strtotime('+1 day'))}"  type="text"   ondblclick="this.value='';"/>
+
+                  </div> 
+
+				         <div class="label roomNum"><span class="name">房间数</span>
+
+                 <div class="select s2" style="border:none;">
+
+				               <select name="number" class="select s2">
+
+                       {loop $numbers $n $nv}
+
+                       {$nv}
+
+                       {/loop}
+
+                       </select>
+
+				              </div></div>
+
+				         </div>
+
+				        <div class="clear_float"></div>
+
+
+
+            <!--订单优化begin-->
+
+             
+
+        <div class="label label_120px">
+
+		  <span class="name">抵达时间</span>
+
+		  <div class="select"  style="border:none">
+
+      <select name="post[arrivetime]" class="select">
+
+        <option value="16:00">16:00</option>
+        <option value="17:00">17:00</option>
+        <option value="18:00">18:00</option>
+        <option value="19:00">19:00</option>
+        <option value="20:00">20:00</option>
+        <option value="21:00">21:00</option>
+        <option value="22:00">22:00</option>
+        <option value="23:00">23:00</option>
+
+      </select>
+
+		    <span class="valTxt"></span>
+
+		    
+
+		  </div>
+
+		</div>
+
+            <!--订单优化end-->
+
+         </div>
+
+         <div class="clear_float"></div>
+
+         <div class="titbox">
+
+			<b class="col">02</b>
+
+			入住人/联系人信息
+
+		</div>
+
+		<div class="lianluobox">
+
+  <div id="contact_form">
+
+    <div class="label nameBox">
+
+      <span class="name">
+
+        <u>*</u>姓名</span>
+
+      <input class="w168 cyInput" name="post[truename]" id="truename" value="{$user[truename]}" type="text">
+      <span id="dtruename"></span>
+      </div>
+
+    <div class="tipText_green clearfix">
+
+      <i>
+
+      </i>手机号码必填，以帮助我们更好的为您提供服务</div>
+
+    <div class="label phoneBox mr0">
+
+      <span class="name">手机</span>
+
+      <div  style="border:none">
+
+      <select name="mobiletype" class="select">
+
+        <option value="国内手机">国内手机（china）</option>
+
+        <option value="国外手机">国外手机（other）</option>
+
+      </select>
+
+        
+
+      </div>
+
+      <input class="w168 gn" name="post[mobile]" id="mobile" value="{$user[mobile]}" type="text">
+
+      <span id="dmobile"></span>
+      </div>
+
+    <div class="label tabLabel ">
+
+      <span class="name">邮箱</span>
+
+      <input class="w168" name="post[email]" data-rule="email;" id="email_address" value="{$user[email]}" type="text"></div>
+
+  </div>
+
+</div>
+
+<div class="clear_float"></div>
+
+<div class="ruzhuBox">
+
+<input name="post[isone]" type="checkbox" value="1" style="vertical-align:middle;" /><label style="vertical-align:middle;" >入住人信息与联系人相同</label> 
+
+</div>
+
+<div class="clear_float"></div><br>
+
+<!-- <div class="titbox"><b class="col">03</b>发票</div>
+  <p>发票抬头<input type="text" name="" style="margin-left: 100px"></p><br>
+  <p>纳税人识别号<input type="text" name="" style="margin-left: 70px;"></p><br>
+  <p>发票项目
+    <select name="" style="margin-left: 98px;">
+      <option value="">代订房费</option>
+      <option value="">代订住宿费</option>
+      <option value="">旅游服务费</option>
+      <option value="">会议服务费</option>
+    </select>
+  </p><br> -->
+
+
+<div class="titbox"><b class="col">03</b>支付与优惠信息</div>
+
+<div class="clear_float"></div>
+
+<div class="label payway"><span class="name">支付方式</span>
+  <ul>
+      <li style="background:none" ><input type="radio" name="post[paytype]" value="1" checked="" style="background:none;vertical-align:middle;"> <label style="background:none;vertical-align:middle;">门店现付</label></li>
+      <!-- <li id="PREPAYMENT" class="" cpolicy="入住日当天18:00前变更或取消不收费，逾期将收取首晚房费作为罚金。" gpolicy="需预付全额房费。房间保留至次日12：00。" tipmsg="酒店最早入住时间为中午12：00，如需提早入住须与酒店沟通并视酒店房量而定" data-cancel="入住日当天18:00前变更或取消不收费，逾期将收取首晚房费作为罚金。" data-guarantee="需预付全额房费。房间保留至次日12：00。">支付全部房费<span class="tis">(锦江之星房间保留时间至次日12:00。)</span></li> -->
+  </ul>
+</div>
+        <div class="clear_float"></div>
+        <div class="clear_float"></div>
+        <div class="label remark"><span class="name">备注</span>
+        <textarea id="post[note]" name="post[note]" cols="" rows="" class="h90" title=""></textarea>
+        </div>
+        <div class="clear_float"></div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+  </form>
+
+
+
+</div>
+
+<script type="text/javascript">
+
+  function check() {
+
+  
+
+  var l;
+
+  var f;
+
+  f = 'truename';
+
+  l = Dd(f).value.length;
+
+  if(l < 2) {
+
+    Dmsg('请填写真实姓名', f);
+
+    return false;
+
+  }
+
+  f = 'mobile';
+
+  l = Dd(f).value.length;
+
+  if(l < 11) {
+
+    Dmsg('请填写手机号码', f);
+
+    return false;
+
+  }
+
+  return true;
+
+}
+
+
+
+</script>
+
+<script type="text/javascript" src="/lang/zh-cn/lang.js"></script>
+
+<script type="text/javascript" src="{DT_STATIC}file/script/common.js"></script>
+
+<script type="text/javascript" src="{DT_STATIC}file/script/calendarnew.js"></script>
+
+<script type="text/javascript" src="{DT_STATIC}file/script/jisuan.js"></script>
+
+<script type="text/javascript">
+  $(function(){
+    $(window).scroll(function(){
+      if($(window).scrollTop()>162){
+        $("#slide").css({"position":"fixed","top":"0",});
+      }else{
+      $("#slide").css({"position":"static",});
+      };
+    })
+
+    $("#total").text($("#price").text());
+});
+</script>
+
+{template 'footer'}

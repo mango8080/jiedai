@@ -1,0 +1,105 @@
+<?php defined('IN_DESTOON') or exit('Access Denied');?><!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>用户中心</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+<meta name="format-detection" content="telephone=yes"/>
+<link rel="stylesheet" href="static/style/weui.min.css">
+<link rel="stylesheet" href="static/style/index.min.css">
+<script type="text/javascript" src="static/script/jquery-1.11.2.min.js"></script>
+    <!-- <script type="text/javascript" src="static/script/zepto.plug-in.js"></script> -->
+<script type="text/javascript" src="static/script/TouchSlide.1.1.js"></script>
+<style>
+.qhzh {
+    float: right;
+    margin: 40px 20px 0 0;
+    color: #FF634C;
+}
+</style>
+<script>
+$(function() {
+
+$('#logOut').click(function(){
+
+if(confirm('是否确认退出?')){
+window.location.href = 'logout.php?forward=index.php';
+}
+
+});
+});
+</script>
+</head>
+<body>
+<div class="head">
+<a onclick="history.go(-1)"><img src="static/style/back.png" width="22" height="14"  alt=""/></a>
+  <div>用户中心</div>
+    <a href="../mobile"><img src="static/style/home.png" width="22" height="21"  alt=""/></a>
+</div>
+<div class="weui-cells" style="margin-top: 0;">
+    <!-- <div class="weui-cell">
+        <span style="display: inline-block;width:50%;">
+            <span>余额</span>
+            <span style="margin-left: 10px;color: #FF816E"><?php echo $_money;?> <?php echo $DT['money_unit'];?></span>
+        </span>
+        <span style="display: inline-block;width:50%;">
+            <span>新消息</span>
+            <a href="message.php"><span style="margin-left: 10px;color: #FF816E"><?php echo $_newmes;?></span></a>
+        </span>
+        
+        <span style="display: inline-block;width:50%;">
+            <span>积分</span>
+            <span style="margin-left: 10px;color: #FF816E"><?php echo $_credit;?> <?php echo $DT['credit_unit'];?></span>
+        </span>
+    </div> -->
+    <a class="weui-cell weui-cell_access" href="my.php?action=info">
+        <div class="weui-cell__hd"><img src="static/style/iconfont-ren.png" width="22" height="22"  alt=""/></div>
+        <div class="weui-cell__bd">
+            <p>修改用户信息</p>
+        </div>
+        <div class="weui-cell__ft"></div>
+    </a>
+    <a class="weui-cell weui-cell_access" href="myorder.php">
+        <div class="weui-cell__hd"><img src="static/style/dd.png" width="22" height="22"  alt=""/></div>
+        <div class="weui-cell__bd">
+            <p>我的申请</p>
+        </div>
+        <div class="weui-cell__ft"></div>
+    </a>
+  
+    <a class="weui-cell weui-cell_access" href="my.php?action=cpass">
+        
+            <div class="weui-cell__hd"><img src="static/style/password.png" width="22" height="22"  alt=""/></div>
+            <div class="weui-cell__bd">
+                <p>修改密码</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        
+    </a>
+<a class="weui-cell weui-cell_access" href="my.php?action=trade">
+        <div class="weui-cell__hd"><img src="static/style/dzqicon.png" width="22" height="22"  alt=""/></div>
+        <div class="weui-cell__bd">
+            <p>我的提成</p>
+        </div>
+        <div class="weui-cell__ft"></div>
+    </a>
+<a class="weui-cell weui-cell_access" href="/mobile/index.php?moduleid=4&username=jjdccd&beginDate=&endDate=&roomNum=1">
+        
+            <div class="weui-cell__hd"><img src="static/style/dd.png" width="22" height="22"  alt=""/></div>
+            <div class="weui-cell__bd">
+                <p>我要借款</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        
+    </a>
+    <div class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd"><img src="static/style/u64.png" width="22" height="22"  alt=""/></div>
+        <div class="weui-cell__bd">
+            <p><a href="tel://0516-66651975" style="display: block;color: #000"> 客服电话</a></p>
+        </div>
+        <div class="weui-cell__ft"></div>
+    </div>
+    <a class="qhzh" id="logOut" flag="1" href="javascript:;">退出登录</a>
+</div>
+<?php include template('footer', 'mobile');?>
+</body>
+</html>

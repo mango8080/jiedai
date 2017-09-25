@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	<link rel="stylesheet" href="static/style/weui.min.css">
+	<link rel="stylesheet" href="static/style/index.min.css">
+    <script type="text/javascript" src="static/script/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="{DT_STATIC}file/script/config.js"></script>
+    <script type="text/javascript" src="{DT_STATIC}file/script/common.js"></script>
+    <!-- <script type="text/javascript" src="static/script/jquery.mobile.custom.min.js"></script> -->
+	<!-- <script type="text/javascript" src="static/script/TouchSlide.1.1.js"></script> -->
+    <!-- <script type="text/javascript" src="static/script/common.js"></script> -->
+    <!-- <script type="text/javascript" src="static/script/zepto.plug-in.js"></script> -->
+    <!-- <script type="text/javascript" src="static/script/fix.js"></script> -->
+    <style>
+        .rigister_address select{height:30px;text-align: center;}
+    </style>
+    <script type='text/javascript' src='static/dialog/dialog-min.js'></script>
+    <script type="text/javascript">
+    //jquery和tap冲突的解决方式
+   /* $.noConflict();*/
+    //自定义弹出框，dialog
+    function jAlert(content){
+        var d = dialog({
+            title: '提示',
+            content: content,
+            okValue: '确定',
+            ok: function () {
+            }
+        });
+        d.showModal();
+    }
+
+    //提示后，点击确定跳转
+    function jAlert2(content,redictUrl){
+        var d = dialog({
+            title: '提示',
+            content: content,
+            okValue: '确定',
+            ok: function () {
+                window.location.href = redictUrl;
+            }
+        });
+        d.showModal();
+    }
+    //转菊花的加载效果
+    jQuery(function() {
+        var d = dialog( {
+            zIndex : 87
+        });
+        jQuery(document).ajaxStart(function() {
+            d.showModal();
+        });
+        jQuery(document).ajaxComplete(function() {
+            d.close();
+        });
+    });
+    </script>
+</head>
+<body>
+<div class="head">
+	<a onclick="history.go(-1)"><img src="static/style/back.png" width="22" height="14"  alt=""/></a>
+  	<div>注册</div>
+    <a href="../mobile/"><img src="static/style/home.png" width="22" height="21"  alt=""/></a>
+</div>
+
+<div class="weui-cells weui-cells_form">
+
+    <div class="weui-cell rigister_name">
+        <input type="text" name="truename" class="weui-input" id="truename" value="{$u['truename']}" placeholder="请输入姓名">
+    </div>
+    <div class="weui-cell rigister_gender" >
+        <input type="radio" name="gender" value="1" checked="checked"/> 先生&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="gender" value="2" /> 女士
+    </div>
+    <div class="weui-cell rigister_police" class="check">
+        <input type="text" name="jinghao" class="weui-input" id="jinghao" value="{$u['jinghao']}"  placeholder="请输入警号">
+    </div>
+    <div class="weui-cell rigister_num" class="check">
+        <input type="text" name="cardcode" class="weui-input" id="cardcode" value="{$u['cardcode']}"  placeholder="请输入身份证号">
+    </div>
+    <div class="weui-cell rigister_num" class="check">
+        <select name="jingzhong" id="jingzhong" class="weui-select">
+                <option value="">选择警种</option>
+                <option value="治安警察">治安警察</option>
+                <option value="综合警察">综合警察</option>
+                <option value="刑事犯罪侦查警察">刑事犯罪侦查警察</option>
+                <option value="交通警察">交通警察</option>
+                <option value="巡逻警察">巡逻警察</option>
+                <option value="外事警察">外事警察</option>
+                <option value="经济犯罪侦查警察">经济犯罪侦查警察</option>
+                <option value="公共信息网络安全监察专业警察">公共信息网络安全监察专业警察</option>
+                <option value="禁毒警察">禁毒警察</option>
+                <option value="监所警察">监所警察</option>
+                <option value="警务督察">警务督察</option>
+                <option value="科技警察">科技警察</option>
+                <option value="公安法医">公安法医</option>
+            </select>
+    </div>
+    <div class="weui-cell rigister_num" class="check">
+        <input type="text" name="danwei" class="weui-input" id="danwei" placeholder="您的工作单位">
+    </div>
+    <div class="weui-cell weui-cell_vcode rigister_tel">
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="tel" placeholder="请输入手机号" id="phone">
+        </div>
+        <div class="weui-cell__ft">
+            <a href="javascript:;" class="weui-vcode-btn" id="btn" >获取验证码</a>
+        </div>
+    </div>
+    <div class="weui-cell rigister_v">
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="text" placeholder="请输入验证码" id="verify_code">
+        </div>
+    </div>
+    <div class="weui-cell rigister_p">
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="password" placeholder="请输入密码" id="passwd">
+        </div>
+    </div>
+    <div class="weui-cell rigister_p">
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="password" placeholder="确认密码" id="passwdqr">
+        </div>
+    </div>
+    <div class="weui-btn-area">
+        <a class="weui-btn weui-btn_primary" href="javascript:" id="showTooltips">注册</a>
+    </div>
+</div>
+<script>
+var url="";
+var count = 120;
+var timer=0;
+$(function(){
+	$('#btn').bind('touchstart click', function(){
+		if (count<120) return false;
+		
+		if ($('#phone').val()==""){
+    		jAlert("请先输入手机号！");
+    		return false;
+    	}
+		url="register.php?action=send&mobile="+$('#phone').val();
+    	
+    	$.getJSON(url,function(result){
+			if(result.stat == "发送成功"){
+				clearInterval(timer);
+		        this.disabled ="disabled";
+		        timer = setInterval(sendMessage,1000);
+			} else {
+	            jAlert(result.stat);
+	        }
+		});
+	});
+	$('#showTooltips').bind('touchstart click', function(){
+
+        if($("#name").val()==""){
+            jAlert("请输入姓名");
+            return false;
+        }
+        if($("#jinghao").val()==""){
+            jAlert("请输入警号");
+            return false;
+        }
+        if($("#cardcode").val()==""){
+            jAlert("请输入身份证号");
+            return false;
+        }
+
+		if ($('#phone').val()==""){
+    		jAlert("请先输入手机号");
+    		return false;
+    	}
+		if ($('#verify_code').val()==""){
+    		jAlert("请输入验证码");
+    		return false;
+    	}
+		if ($('#passwd').val()==""){
+    		jAlert("请输入登录密码");
+    		return false;
+    	}
+         if ($('#passwdqr').val()==""){
+            jAlert("请输入确认密码");
+            return false;
+        }
+        if($('#passwd').val()!=$('#passwdqr').val()){
+            jAlert("两次输入密码不一致");
+            return false;
+        }
+
+		url="register.php?action=post&mobile="+$('#phone').val()+"&verify_code="+$('#verify_code').val()+"&password="+$('#passwd').val()+"&truename="+$('#truename').val()+"&gender="+$("[name='gender']").val()+"&jingzhong="+$('#jingzhong').val()+"&jinghao="+$('#jinghao').val()+"&danwei="+$('#danwei').val()+"&cardcode="+$('#cardcode').val();
+		console.log(url);
+		$.getJSON(url,function(result){
+			if(result.stat == 1){
+				resultStr = "注册成功，请登录您的帐号";
+				jAlert2(resultStr,'login.php');
+				/*window.location.href='login.php';*/
+			} else {
+	            jAlert(result.msg);
+	        }
+		});
+		
+	})
+
+});
+function sendMessage(){
+    count--;
+    if($('#phone').val()!="" && count >= 0 ){
+    	$('#btn').html(count+"秒后重发");
+    	$('#btn').attr('disabled',false);
+    }else{
+    	$('#btn').html("获取验证码");
+    	$('#btn').attr('disabled',true);
+        clearInterval(timer);
+        count = 120;
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>我的订单</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	<link rel="stylesheet" href="static/style/weui.min.css">
+	<link rel="stylesheet" href="static/style/index.min.css">
+	<script src="static/script/jquery-1.11.2.min.js"></script>
+	<style>
+.box_tel, .box_captcha, .box_name, .box_password {
+    display: block;
+    width: 90%;
+    margin: 0 auto 20px;
+    position: relative;
+    vertical-align: middle;
+}
+.tel, .captcha, .name, .password {
+    height: 84px;
+    padding-left: 48px;
+    font-size: 16px;
+}
+.form-control {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.btn_default {
+    display: block;
+    width: 100%;
+    
+    margin: 0 auto;
+    font-size: 21px;
+    line-height: 33px;
+    color: #fff;
+    border-radius: 23px;
+    background-color: rgba(255, 99, 76, 1);
+margin: 50px auto 0;
+text-align: center;
+padding: 6px 12px;
+touch-action: manipulation;
+    cursor: pointer;
+}
+	</style>
+</head>
+<body >
+<script type='text/javascript' src='static/dialog/dialog-min.js'></script>
+<script type="text/javascript">
+//jquery和tap冲突的解决方式
+/*$.noConflict();*/
+//自定义弹出框，dialog
+function jAlert(content){
+	var d = dialog({
+	    title: '提示',
+	    content: content,
+	    okValue: '确定',
+	    ok: function () {
+	    }
+	});
+	d.showModal();
+}
+
+//提示后，点击确定跳转
+function jAlert2(content,redictUrl){
+	var d = dialog({
+	    title: '提示',
+	    content: content,
+	    okValue: '确定',
+	    ok: function () {
+	    	window.location.href = redictUrl;
+	    }
+	});
+	d.showModal();
+}
+//转菊花的加载效果
+jQuery(function() {
+	var d = dialog( {
+		zIndex : 87
+	});
+	jQuery(document).ajaxStart(function() {
+		d.showModal();
+	});
+	jQuery(document).ajaxComplete(function() {
+		d.close();
+	});
+});
+</script>
+<script type="text/javascript">
+function goBack(){
+	var referrer = document.referrer;
+	var url = window.location.href;
+	//alert(url);
+	if(referrer == null || referrer ==''){
+		//从微信访问进来，没有上一个页面时，默认返回到首页
+		window.location.href="/index.htm";
+	}else{
+		/* window.history.back(); */
+		
+			window.history.back();
+		
+	}
+}
+
+$(function(){
+	$('#submit').bind('touchstart click', function(){
+		if (confirm('您确认提交此评论吗？提交后评论分数和内容将不可更改')){
+			var param = $('#submitFrom').serialize();
+			var url = "comment.php?" + param + "&action=post";
+			console.log(url);
+
+			$.getJSON(url,function(result){
+				if(result.stat == 1){
+					resultStr = "评价成功，即将刷新订单页面";
+					jAlert2(resultStr,'myorder.php');
+					/*window.location.href='myorder.php';*/
+				}else {
+					jAlert(result.msg);
+				}
+			});
+		}
+	})
+});
+</script>
+<div class="head">
+	<a href="javascript:goBack();" class="back"><img src="static/style/back.png" width="22" height="14"  alt=""/></a>
+  	<div>住客评论</div>
+    <a href="../mobile"><img src="static/style/home.png" width="22" height="21"  alt=""/></a>
+</div>
+<div class="change_password p_t_50" style="padding-top: 20px;">
+	<form action="comment.php" id="submitFrom" method="post"> 
+		<input type="hidden" name="itemid" value="{$itemid}"/>
+		<input type="hidden" name="mallid" value="{$td['mallid']}"/>
+	    <div class="box_captcha" style="margin:0 auto;">评分</div>
+	    <div class="box_captcha">
+	        <input type="radio" name="star" value="3" id="star_3" checked/><label for="star_3"> 好评 <img src="{DT_STATIC}file/image/star3.gif" width="36" height="12" alt="" align="absmiddle"/></label>
+			<input type="radio" name="star" value="2" id="star_2"/><label for="star_2"> 中评 <img src="{DT_STATIC}file/image/star2.gif" width="36" height="12" alt="" align="absmiddle"/></label>
+			<input type="radio" name="star" value="1" id="star_1"/><label for="star_1"> 差评 <img src="{DT_STATIC}file/image/star1.gif" width="36" height="12" alt="" align="absmiddle"/></label>	
+	    </div>
+	    <div class="box_captcha" style="margin:0 auto;">详细评论</div>
+	    <div class="box_captcha">
+	        <input type="text" name="content" class="form-control captcha" id="content" value="" style="padding-left: 10px;">
+	    </div>
+		
+    </form>
+    <a class="btn btn_default" id="submit" style="width: 90%;">提交</a>  
+</div>
+
+</body>
+</html>

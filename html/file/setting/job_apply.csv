@@ -1,0 +1,8 @@
+applyid,ID,
+jobid,招聘ID,
+resumeid,简历ID,
+job_username,招聘用户,
+apply_username,应聘用户,
+applytime,应聘时间,
+updatetime,更新时间,
+status,状态,

@@ -1,0 +1,1 @@
+<option value="12">商务房</option><option value="13">标准房</option><option value="14">大床房</option><option value="15">单人房</option><option value="16">豪华房</option><option value="17">套间</option><option value="18">三人间</option><option value="19">其他房型</option></select>

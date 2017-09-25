@@ -1,0 +1,530 @@
+ {template 'hotel_header', $module}
+
+    <link href="{DT_SKIN}new/page_pub.css" rel="stylesheet" type="text/css">
+    <link href="{DT_SKIN}new/hotel_info.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="{DT_SKIN}new/lang.js"></script>
+    <script type="text/javascript" src="{DT_SKIN}new/common.js"></script>
+    <script type="text/javascript" src="{DT_SKIN}new/calendar.js"></script>
+    <script type="text/javascript" src="{DT_SKIN}new/jquery-1.8.2.min.js"></script>
+    <style type="text/css">
+      #dingdan{background-color:#fff;-webkit-transition:color 0.2s ease 0s;-o-transition:color 0.2s ease 0s;transition:color 0.2s ease 0s;text-decoration:none;color:#288fe7;}
+      input,select{
+          font-size: 14px;
+          height: 23px;
+      }
+      .infoTable th, .infoTable td{padding-top:8px;padding-bottom: 8px;}
+    </style>
+
+   
+      <div class="box-1180">
+
+        <!--hover 浮层-->
+        <div id="ebk3-main-content">
+          <div id="ctl00_ctl00_SubMenuContainer_ContentMain_si_div" class="suminfo clearfix" style="padding-top:30px;padding-left:30px;">
+            <form action="?" method="get">
+            <input type="hidden" name="action" value="index"/>
+            <select name="fields">
+            <!-- <option value="0" selected="selected">按条件</option>
+            <option value="1">借款类型</option>
+            <option value="2">金额</option> -->
+            
+            <option value="5">买家</option>
+            
+            <option value="9">买家手机</option>
+            
+            </select>&nbsp;
+            <input type="text" size="10" name="kw" value="{$kw}" title="关键词"/>&nbsp;
+            <select name="status">
+            <option value="">状态</option>
+            <option value="0">待确认</option>
+            <option value="1">待付款</option>
+            <option value="2">已付款</option>
+            
+            <option value="4">已入住</option>
+            
+            <!-- <option value="7">到店付款</option> -->
+            <option value="8">买家取消</option>
+            <option value="9">卖家关闭</option>
+            <option value="10">已离店</option>
+            </select>&nbsp;&nbsp;&nbsp;
+
+
+            入住日期 {dcalendar('fromtime', $fromtime)} 至 {dcalendar('totime', $totime)}&nbsp;
+
+            <!-- <input type="text" name="fromdate" id="fromdate" value="" size="10" onfocus="ca_show('fromdate', this, '');" readonly ondblclick="this.value='';"/>  -->
+
+            单号：<input type="text"  name="itemid" value="{$itemid}"/>&nbsp;
+            住客：<input name="buyer" value="" type="text" size="10">&nbsp;
+
+            <input type="submit" value=" 搜 索 " class="btn"/>&nbsp;
+           <!--  <input type="button" value=" 重 置 " class="btn" onclick="Go('?action={$action}');"/><br/> -->
+            <div class="b10"></div>
+            <div>
+            </div>
+
+            </form>
+          </div>
+          <div class="container">
+            <div class="content_box">
+              <div class="order_tab_content">
+                
+                <div>
+                  <table class="tb_ebooking_list" id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList" style="border-width:0px;width:100%;border-collapse:collapse;table-layout:fixed" cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                      <tr>
+                        <th scope="col" style="width:165px;">订单号</th>
+                        <th scope="col" style="width:100px;white-space:nowrap;">状态/付款方式</th>
+                        <th scope="col" style="width:130px;">借款类型/房间数</th>
+                        <th scope="col">入离日期</th>
+                        <th scope="col">付款方式</th>
+                        <th scope="col" style="width:130px;">客人/特殊要求</th>
+                        <th scope="col" style="width:115px;">酒店确认号</th>
+                        <th scope="col" style="width:80px;">操作</th>
+                        </tr>
+                      {loop $lists $k $v}
+                    
+                      <tr>
+
+                        <td>
+                          <div class="tableLayoutFix">
+                            <span class="table-orderCode">
+                              <a id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblOrderid" href="?itemid={$v[itemid]}&action=update&step=detail">{$v[ordercode]}</a></span>
+                            
+                            
+                          </div>
+                        </td>
+                        <td style="white-space:nowrap;">
+                          <div class="tableLayoutFix">
+                            <span>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblFormStatus">
+                                <font color="red">{$v[dstatus]}</font></span>
+								<span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblFormStatus">
+								
+                                </span>
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="tableLayoutFix">
+                            <div class="fixTwoLine">{$v[title]}</div>
+                            <strong>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblRoomQuantity">{$v[number]}间</span></strong>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="tableLayoutFix">
+                            <div>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblArrival">{timetodate($v[intime],0)}</span></div>
+                            <div>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblDeparture">{timetodate($v[outtime],0)}</span></div>
+                            <strong>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblQuantity">共{$v[days]}晚</span></strong>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="tableLayoutFix">
+                            <div class="clearfix">
+                              <div class="geuest-wrap">
+                                <div class="guest">
+                                  <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblClientName" >{if $v[paytype]==1}到店付{else}预付{/if}</span></div>
+                              </div>&nbsp;
+                              
+
+                              </div>
+                           
+                          </div>
+                        </td>
+                        <td>
+                          <div class="tableLayoutFix">
+                            <div class="clearfix">
+                              <div class="geuest-wrap">
+                                <div class="guest">
+                                  <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblClientName" >{$v[buyer_name]}</span></div>
+                              </div>&nbsp;
+                              <div><span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblFormName" class="supplier">{$v[note]}</span></div>
+
+                              </div>
+                           
+                          </div>
+                        </td>
+                   
+                        <td>
+                          <div class="tableLayoutFix">
+                          {if $v[qrm]==null}
+                            <input type="text" style="width: 100px;" id="pageNo" class="text" onKeyPress="onlyNumber();" >
+                            {/if}
+                          <span>{$v[qrm]}</span>
+                          </div>
+                        </td>
+                  
+                        <td>
+                        
+                          <div class="tableLayoutFix">
+                            <!-- <a id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_hlProcess" href="?itemid={$v[itemid]}&action=update&step=detail">查看</a>&nbsp;&nbsp; -->
+                            {if $v[access]==0}
+                            <a id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_hlProcess" href="javascript:
+
+                            if(document.getElementById('pageNo').value!=''){
+                              if(confirm('是否确认接受该订单？')){
+                              window.location.href='trade.php?itemid={$v[itemid]}&action=queren&ac=1&qrm='+document.getElementById('pageNo').value;}}else{
+                              alert('请输入酒店确认号');
+                            }
+
+                            ">接受</a>  
+                            <a id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_hlProcess" href="javascript:
+
+                            if(document.getElementById('pageNo').value!=''){
+                              if(confirm('是否确认拒绝该订单？')){
+                              window.location.href='?itemid={$v[itemid]}&action=queren&ac=4';}}else{
+                                alert('请输入酒店确认号');
+                              }
+                              ">拒绝</a>{/if}
+                        
+                            <!-- {if $v[status]==4}已入住{elseif $v[status]<8}<a id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_hlProcess" href="javascript:if(confirm('是否确认顾客已入住？')){window.location.href='?itemid={$v[itemid]}&action=ruzhu';}">入住</a>{/if} -->
+                            
+                          </div>
+                        </td>
+                      </tr>
+                        
+                      {/loop}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="evaluate-box clearfix"></div>
+        <bgsound id="Player" loop="-1" autostart="true">
+          <div id="Music"></div>
+      </div>
+      <div></div>
+      <script>
+      
+
+      </script>
+      <script>
+      $(function(){
+        $(".table-orderCode a").on("click",function(e){
+          e.preventDefault();
+          var address=this.href+"&json=1";
+          var index=address.indexOf("itemid");
+          var item_id=address.substring(index+7,index+10);
+
+          $.ajax({
+               type: 'post',
+               url:address,
+               dataType:"json",
+              success: function(data){
+
+                    var result = '';
+                      result += 
+                      
+                      '<div class="pageHotelInfo-content"'
+                      +'id='
+                      +'"'
+                      +item_id
+                      +'"'
+                      +'style="padding-top:20px;padding-bottom:0;padding-left:50px;padding-right:50px;width:430px;">'
+                                  
+                                  +'<div class="htlInfo-ctHd">'
+                                      +'<b>住客信息</b>'
+                                     
+                                  +'</div>'
+                                  +'<div class="htlInfo-ctBd">'
+                                      +'<table class="infoTable">'
+                                          +'<tbody><tr>'
+                                              +'<th>'
+                                                  +'<div class="t-lb">'
+                                                      
+                                                      +'<span>订单号</span>'
+                                                  +'</div>'
+                                              +'</th>'
+                                              +'<td>'
+                                                  +'<div class="t-ct">'
+                                                      +'<span id="HotelName">'
+                                                      +data.ordercode
+                                                      +'</span>'
+                                                      
+                                                      
+                                                  +'</div>'
+                                                  
+                                              +'</td>'
+                                          +'</tr>'
+                                          +'<tr>'
+                                             +'<th>'
+                                                  +'<div class="t-lb">'
+                                                      +'<span>借款类型</span>'
+                                                  +'</div>'
+                                              +'</th>'
+                                              +'<td>'
+                                                  +'<div class="t-ct">'
+                                                      +'<span id="HotelENName">'
+                                                      +data.title
+                                                      +'</span>'
+                                                      
+                                                  +'</div>'
+                                                  
+                                              +'</td>'
+                                          +'</tr>'
+                                          
+                                        
+                                         
+                                          
+                                          +'<tr>'
+                                              +'<th>'
+                                                  +'<div class="t-lb">'
+                                                      
+                                                      +'<span>姓名</span>'
+                                                  +'</div>'
+                                              +'</th>'
+                                              +'<td>'
+                                                 +'<div class="t-ct">'
+                                                      +'<span id="HotelAddress">'
+                                                      +data.buyer_name
+                                                      +'</span>'
+                                                                                     
+                                                  +'</div>'
+                                                  
+                                              +'</td>'
+                                          +'</tr>'
+                                          +'<tr>'
+                                              +'<th>'
+                                                  +'<div class="t-lb">'
+                                                      +'<span>手机</span>'
+                                                  +'</div>'
+                                              +'</th>'
+                                              +'<td>'
+                                                  +'<div class="t-ct">'
+                                                      +'<span id="RoadNearby">'
+                                                      +data.buyer_mobile
+                                                      +'</span>'
+                                                        
+                                                  +'</div>'
+                                                  
+                                              +'</td>'
+                                          +'</tr>'
+                                          +'<tr>'
+                                              +'<th>'
+                                                  +'<div class="t-lb">'
+                                                      +'<span>留言</span>'
+                                                  +'</div>'
+                                              +'</th>'
+                                              +'<td>'
+                                                  +'<div class="t-ct">'
+                                                      +'<span id="RoadNearby">'
+                                                      +data.note
+                                                      +'</span>'
+                                                       
+                                                  +'</div>'
+                                                  
+                                              +'</td>'
+                                          +'</tr>'
+
+                                          +'<tr><th>'
+                                          +'<div class="t-lb">'
+                                          +'<span>发票抬头</span></div></th><td>'
+                                          +'<div class="t-ct"><span id="RoadNearby">'
+                                          +data.fapiao
+                                          +'</span></div></td></tr>'
+
+                                          +'<tr>'
+                                              +'<th>'
+                                                  +'<div class="t-lb">'
+                                                      +'<span>入住日期</span>'
+                                                  +'</div>'
+                                              +'</th>'
+                                              +'<td>'
+                                                  +'<div class="t-ct">'
+                                                      +'<span id="RoadNearby">'
+                                                      +data.intime
+                                                      +'</span>'
+                                                       
+                                                  +'</div>'
+                                                  
+                                              +'</td>'
+                                          +'</tr>'
+                                          +'<tr>'
+                                              +'<th>'
+                                                  +'<div class="t-lb">'
+                                                      +'<span>离店日期</span>'
+                                                  +'</div>'
+                                              +'</th>'
+                                              +'<td>'
+                                                  +'<div class="t-ct">'
+                                                      +'<span id="RoadNearby">'
+                                                      +data.outtime
+                                                      +'</span>'
+                                                       
+                                                  +'</div>'
+                                                  
+                                              +'</td>'
+                                          +'</tr>'
+                                          /*+'<tr>'
+                                              +'<th>'
+                                                 +'<div class="t-lb">'
+                                                      +'<span>最晚到店时间</span>'
+                                                  +'</div>'
+                                              +'</th>'
+                                              +'<td>'
+                                                  +'<div class="t-ct">'
+                                                      +'<span id="RoadNearby">'
+                                                      +data.arrivetime
+                                                      +'</span>'
+                                                       
+                                                  +'</div>'
+                                                  
+                                              +'</td>'
+                                          +'</tr>'*/
+                                      +'</tbody>'
+                                      +'</table>'
+                                  +'</div>'
+                                  
+                                  
+                                  
+                                  +'<div class="htlInfo-ctHd">'
+                                      +'<b>价格信息</b>'
+                                  +'</div>'
+                                  +'<div class="htlInfo-ctBd">'
+                                      +'<table class="infoTable dtlTable" style="width:100%">'
+                                          +'<tbody><tr>'
+                                              +'<th>'
+                                                  +'<div class="t-lb">'
+                                                      +'<span>房型单价</span>'
+                                                  +'</div>'
+                                              +'</th>'
+                                              +'<td>'
+                                                  +'<div class="t-ct">'
+                                                      +'<span id="HotelBrand">'
+                                                      +data.amount
+                                                      +'</span>'
+                                                      
+                                                  +'</div>'
+                                                  
+                                              +'</td>'
+                                          +'</tr>'
+                                          +'<tr>'
+                                              +'<th>'
+                                                  +'<div class="t-lb">'
+                                                      
+                                                      +'<span>房间数</span>'
+                                                      
+                                                  +'</div>'
+                                              +'</th>'
+                                              +'<td>'
+                                                  +'<div class="t-ct">'
+                                                      
+                                                      +'<span id="StarType">'
+                                                      +data.number
+                                                      +'</span>'
+                                                        
+                                                  +'</div>'
+                                                  
+                                              +'</td>'
+                                          +'</tr>'
+                                          +'<tr>'
+                                              +'<th>'
+                                                 +' <div class="t-lb">'
+                                                      +'<span>订单金额</span>'
+                                                  +'</div>'
+                                              +'</th>'
+                                              +'<td>'
+                                                  +'<div class="t-ct">'
+                                                      +'<span id="OpenDate">'
+                                                      +data.number*data.amount*data.days
+                                                      +'</span>'
+                                                      
+                                                  +'</div>'  
+                                              +'</td>'
+                                          +'</tr>'
+                                      +'</tbody>'
+                                  +'</table>'
+                              +'</div>'
+                              +'<div class="htlInfo-ctHd">'
+                                  +'<b>订单状态</b>'
+                             +' </div>'
+                                  +'<div class="htlInfo-ctBd">'
+                                      +'<table class="infoTable dtlTable" style="width:100%">'
+                                          +'<tbody><tr>'
+                                              +'<th>'
+                                                  +'<div class="t-lb">'
+                                                      +'<span>下单时间</span>'
+                                                  +'</div>'
+                                              +'</th>'
+                                              +'<td>'
+                                                  +'<div class="t-ct">'
+                                                      +'<span id="HotelBrand">'
+                                                     +data.adddate
+                                                      +'</span>'
+                                                      
+                                                  +'</div>'
+                                                  
+                                              +'</td>'
+                                          +'</tr>'
+                                          
+                                          +'<tr>'
+                                              +'<th>'
+                                                  +'<div class="t-lb">'
+                                                      +'<span>订单状态</span>'
+                                                  +'</div>'
+                                              +'</th>'
+                                              +'<td>'
+                                                  +'<div class="t-ct">'
+                                                      +'<span id="OpenDate">'
+                                                      +'<span style="color:#888888;">'
+                                                      +data.status
+                                                      +'</span></span>'
+                                                      
+                                                  +'</div>'
+                                              +'</td>'
+                                          +'</tr>'
+                                      +'</tbody>'
+                                  +'</table>'
+                              +'</div>'
+                              +'<div><input value="打 印" class="btn" type="button" style="margin:0 auto;width:78px;display:block;margin-bottom:10px;" onclick="print();"></div>'
+                          +'</div>'
+                      
+                      var $wid=$(window).width();
+                      var $hei=$(window).height();
+                      var lef=($wid-430)/2-210+"px";
+                      var to=($hei-636)/2+"px";
+
+                      var $div=$("<div style='position:fixed;z-index:999;'></div>");
+                      var $mask=$("<div style='background-color:#ccc;opacity:0.5;filter: alpha(opacity=50); position:absolute; left:0;top:0;z-index:99;'></div>");
+                      $mask.css({
+                        "width":$wid,
+                        "height":$(document).height()
+                      });
+                      $div.css({
+                        "left":lef,
+                        "top":to
+                      });
+                      $("body").append($mask);
+                      $($div).append(result);
+                      $("body").append($div);
+                     /* $("body").append(result);*/
+                    $mask.on("click",function(){
+                      $(this).remove();
+                      $div.remove();
+                    })
+                  
+              }
+          });
+        })
+      })
+      </script>
+      <script type="text/javascript" src="{DT_SKIN}new/jquery.jqprint-0.3.js"></script>
+      <script type="text/javascript" src="{DT_SKIN}new/jquery-migrate-1.2.1.min.js"></script>
+      <script>
+      function  print(){
+      	        
+      	        $(".pageHotelInfo-content").each(function(){
+      	        		var print_id=$(this).attr("id");
+  	        			$("#"+print_id).jqprint();
+  	        		}
+  	        	)
+      	    }
+      </script>
+<div id="main"></div>
+{template 'hotel_footer', $module}

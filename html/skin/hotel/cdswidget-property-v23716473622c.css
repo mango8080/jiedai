@@ -1,0 +1,477 @@
+/* BASICS
+   ----------------------------------------------------------------------------------------- */
+#WIDGET { margin:0; padding:0;}
+
+.cdsBx a, .cdsBx a:hover, .cdsBx a:visited { font-weight:normal; color:#006699;}
+
+.cdsBx a { text-decoration:none; outline:none;}
+.cdsBx a:hover { text-decoration:underline;}
+.cdsBx dl,.cdsBx dt,.cdsBx dd,.cdsBx ol,
+.cdsBx ul,.cdsBx li,.cdsBx p { margin:0;padding:0;list-style:none;}
+
+.cdsBx, .cdsBx .cdsCnrs span { position:relative;}
+
+.cdsBx { height:100%; overflow:hidden; background-color:#d9e4c4; font:normal 12px Verdana,"Bitstream Vera Sans",Arial,Helvetica,sans-serif; color:#2c2c2c; text-align:left;}
+
+.cdsBx .bannerAdBackground { background-color:#f3f3f3; padding: 10px 0; border-bottom:1px solid #cecece;}
+.cdsBx .bannerAdBackground .bannerAd { width:728px; padding-top:-10px; margin: 0 auto;}
+
+/* CORNERS
+   ----------------------------------------------------------------------------------------- */
+.cdsBx .cdsCnrs span { z-index:1; display:block; width:6px; height:6px; background:url("/img2/sprites/cdsWdgtV2.gif") 0 0 no-repeat;}
+.cdsBx .cdsCnrs span.cnrLft { background-position:-152px 0; float:left;}
+.cdsBx .cdsCnrs span.cnrRgt { background-position:-158px 0; float:right;}
+
+
+/* STRUCTURE
+   ----------------------------------------------------------------------------------------- */
+.cdsBx .cdsData .cdsWrap { height:100%; overflow:hidden;}
+.cdsBx .cdsData .cdsClear { clear:both;}
+
+.cdsBx .cdsData dl { padding:0 2px;}
+.cdsBx .cdsData dl dd dl { padding:0;}
+
+
+/* HEADERS
+   ----------------------------------------------------------------------------------------- */
+.cdsBx .cdsData .cdsH18 { font:normal 18px Arial,Tahoma,"Bitstream Vera Sans",sans-serif; color:#09532d;}
+
+
+/* SECTION > Awards
+   ----------------------------------------------------------------------------------------- */
+.cdsBx .cdsData .cdsAwards img { margin:-1px 1px 0;}
+.cdsBx .cdsData .cdsAwards ul { margin:4px 11px 12px;}
+.cdsBx .cdsData .cdsAwards ul li { padding-left:14px; background:url("/img2/sprites/cdsWdgtV2.gif") -152px -13px no-repeat; font-size:11px; line-height:14px;}
+
+
+/* SECTION > Photos
+   ----------------------------------------------------------------------------------------- */
+.cdsBx .cdsData .cdsPhotos div.cdsGUI { margin:3px 0; text-align:center;}
+.cdsBx .cdsData .cdsPhotos div.cdsGUI a { color:#3b5998; font-size:11px; cursor:pointer;}
+
+
+/* SECTION > Forms
+   ----------------------------------------------------------------------------------------- */
+.cdsBx .cdsData label { font-weight:bold; font-family:Arial,Tahoma,"Bitstream Vera Sans",sans-serif;}
+.cdsBx .cdsData select { margin:0 1px; padding:1px; border:1px solid #91b8a3; font-size:11px; font-family:Verdana,"Bitstream Vera Sans",Arial,Helvetica,sans-serif;}
+
+
+/* SECTION > Reviews
+   ----------------------------------------------------------------------------------------- */
+.cdsBx .cdsData .hReview { margin-top:8px; padding:20px 0 0; border-top:2px solid #f4f5ed;} 
+.cdsBx .cdsData .hReview img { vertical-align:top;}
+
+.cdsBx .cdsData .hReview b.title { margin-bottom:8px;}
+
+.cdsBx .cdsData .hReview dl dt, .cdsBx .cdsData .hReview dl dd { margin-bottom:9px;}
+
+.cdsBx .cdsData .hReview dl dt.quote { margin-bottom:9px;}
+.cdsBx .cdsData .hReview dl dd.attribution { margin-bottom:2px; font-size:11px; color:#565656;}
+
+.cdsBx .cdsData .hReview p { font-size:12px; line-height:16px;}
+
+
+/* SECTION > Traveler Ratings
+   ----------------------------------------------------------------------------------------- */
+.cdsBx .cdsData .cdsTrvlRtng { height:100%; overflow:hidden; font-size:11px;}
+
+
+/* SECTION > Overall Rating and Percent Recommended
+   ----------------------------------------------------------------------------------------- */
+.cdsBx .cdsData .cdsTrvlRtng .overall { width:100%; margin-bottom:9px; }
+.cdsBx .cdsData .cdsTrvlRtng .overall img { margin-right:6px; margin-bottom:2px;}
+.cdsBx .cdsData .cdsTrvlRtng .overall em { position:relative; top:-4px; font-style:normal; font-size:11px; color:#2c2c2c;}
+.cdsBx .cdsData .cdsTrvlRtng .overall em b { font-size:13px;}
+.cdsBx .cdsData .cdsTrvlRtng .overall .narrow { width:49%; float:left;}
+.cdsBx .cdsData .cdsTrvlRtng .overall .narrow-rating { width:45%; margin-right:5%; float:left;}
+
+
+/* SECTION > What to Expect
+   ----------------------------------------------------------------------------------------- */
+.cdsBx .cdsData .cdsTrvlRtng .expect { width:47%; margin-right:3%; float:left; position:relative; top:0px; font-style:normal; font-size:11px; color:#2c2c2c;}
+.cdsBx .cdsData .cdsTrvlRtng .expect .expectLine { width:100%; margin:2px 0;}
+.cdsBx .cdsData .cdsTrvlRtng .expect .expectLine img { vertical-align:text-top;}
+
+
+/* SECTION > Rating Score Breakdown
+   ----------------------------------------------------------------------------------------- */
+.cdsBx .cdsData .cdsTrvlRtng .barRatings { width:48%; float:left; position:relative; top:0px; font-style:normal; font-size:11px; color:#2c2c2c;}
+
+.cdsBx .cdsData .cdsTrvlRtng .barRatings .barRatingLine { width:100%; padding-top:2px; clear:both;}
+.cdsBx .cdsData .cdsTrvlRtng .barRatings .barRatingLine img { margin-right:5px; vertical-align:text-top; float:left;}
+.cdsBx .cdsData .cdsTrvlRtng .barRatings .barRatingLine .barRatingText { width:90px; font-style:normal; text-align:left; float:left;}
+.cdsBx .cdsData .cdsTrvlRtng .barRatings .barRatingLine .barRatingTextGreen { width:20px; margin-left:5px; font-style:normal; color:#68a253; text-align:right; float:left;}
+
+.cdsBx .cdsData .cdsTrvlRtng .barRatings .barRatingBkg,
+.cdsBx .cdsData .cdsTrvlRtng .barRatings .barRatingImg { height:12px;}
+.cdsBx .cdsData .cdsTrvlRtng .barRatings .barRatingBkg { background-color:#e3e3e3; float:left;}
+.cdsBx .cdsData .cdsTrvlRtng .barRatings .barRatingImg { background-color:#fabc18;}
+
+.cdsBx .cdsData .barRatingsSmall {padding-top:10px; padding-bottom:6px;}
+
+.cdsBx .cdsData .barRatingsSmall dt { padding-bottom:3px; color:#2c2c2c; text-align:center; text-transform:capitalize;}
+.cdsBx .cdsData .barRatingsSmall dt a,
+.cdsBx .cdsData .barRatingsSmall dt a:visited { text-decoration:underline;} /* visited for ie6 */
+
+.cdsBx .cdsData .barRatingsSmall .barRatingLine { width:134px; overflow:hidden; margin-bottom:1px;}
+.cdsBx .cdsData .barRatingsSmall .barRatingLine img { display:block; margin:1px 3px 0 0; float:left;}
+.cdsBx .cdsData .barRatingsSmall .barRatingText { width:20px; margin-left:5px; font:normal 92.5%/85% Arial,Tahoma,"Bitstream Vera Sans",Helvetica,sans-serif; color:#68a253; text-align:right; float:left;}
+
+.cdsBx .cdsData .barRatingsSmall .barRatingBkg,
+.cdsBx .cdsData .barRatingsSmall .barRatingImg { height:10px; margin:0;}
+.cdsBx .cdsData .barRatingsSmall .barRatingBkg { background-color:#e3e3e3; float:left;}
+.cdsBx .cdsData .barRatingsSmall .barRatingImg { background-color:#fabc18;}
+
+
+/* SECTION > Clear Both
+   ----------------------------------------------------------------------------------------- */
+.cdsBx .cdsData .cdsTrvlRtng .cb { clear:both; padding-left:2px;}
+
+
+/* SECTION > Information
+   ----------------------------------------------------------------------------------------- */
+.cdsBx .cdsData .cdsInformation { height:100%; overflow:hidden; margin-top:2px;}
+.cdsBx .cdsData .cdsInformation .popIdx { float: left; width: 45%; margin-right: 5%; }
+.cdsBx .cdsData .cdsInformation .cdsBadges { float:left; width: 45%; }
+
+
+/* SECTION > Booking Link (Partner Redirect)
+   ----------------------------------------------------------------------------------------- */
+.cdsBx .cdsData .cdsBookLink { margin:10px 0; }
+.cdsBx .cdsData .cdsBookLink a { color:#990000; font-weight:bold; }
+.cdsBx .cdsData .cdsBookLink a:hover { text-decoration:underline; }
+.cdsBx .cdsData .cdsBookLink img { cursor:pointer; }
+.cdsBx .cdsData .cdsInformation .cdsBookLink { margin:10px 2px; }
+.cdsBx .cdsData .cdsInformation .cdsBookLink.blTop { margin-top:0; }
+.cdsBx .cdsData .cdsInformation .cdsBookLink.blBottom { margin-bottom:6px; }
+
+
+/* SECTION > Information > Pop. Index, Awards, and Description
+   ----------------------------------------------------------------------------------------- */
+.cdsBx .cdsData .cdsInformation .popIdx { margin:0 5% 0 3px;}
+.cdsBx .cdsData .cdsInformation .popIdx * { vertical-align:top;}
+.cdsBx .cdsData .cdsInformation .popIdx b { display:block; margin-bottom:3px;}
+.cdsBx .cdsData .cdsInformation .popIdx var,
+.cdsBx .cdsData .cdsInformation .popIdx span { color:#589442;}
+.cdsBx .cdsData .cdsInformation .popIdx var,
+.cdsBx .cdsData .cdsInformation .popIdx span i { font-style:normal;}
+.cdsBx .cdsData .cdsInformation .popIdx span { font-size:11px;}
+.cdsBx .cdsData .cdsInformation .popIdx span i { color:#000;}
+.cdsBx .cdsData .cdsInformation .popIdx var { margin-right:4px; padding-left:38px; background:url("/img2/branding/ollie33x20_wht.png") 0 3px no-repeat; background-position:left; font-weight:bold; float:left;}
+.rtl .cdsBx .cdsData .cdsInformation .popIdx var { background-position: right; }
+.cdsBx .cdsData .cdsInformation .popIdx var b { display:inline; line-height:29px;}
+.cdsBx .cdsData .cdsInformation .popIdx var b * { position:relative;}
+.cdsBx .cdsData .cdsInformation .popIdx var.dig1 b * { top:-3px; font-size:29px;}
+.cdsBx .cdsData .cdsInformation .popIdx var.dig2 b * { top:-4px; font-size:24px;}
+.cdsBx .cdsData .cdsInformation .popIdx var.dig3 b * { top:-5px; font-size:20px;}
+.cdsBx .cdsData .cdsInformation .popIdx var.dig4 b * { top:-6px; font-size:16px;}
+.cdsBx .cdsData .cdsInformation .popIdx var b span { padding-left:2px; font-family:"Times New Roman", Times, Bodoni, Palatino, serif;}
+
+
+.cdsBx .cdsData .cdsInformation .popIdx.single { width:95%; margin-right:0;}
+
+
+.cdsBx .cdsData .cdsInformation .tcAward img,
+.cdsBx .cdsData .cdsInformation .tcAward a { display:inline;}
+.cdsBx .cdsData .cdsInformation .tcAward { font-size:10px; }
+.cdsBx .cdsData .cdsInformation .tcAward img { margin:0 0 3px -3px;}
+
+.cdsBx .cdsData .cdsInformation .cdsBadgeTitle { font-size: 11px; }
+.cdsBx .cdsData .cdsInformation .cdsBadge { display: block; }
+.cdsBx .cdsData .cdsInformation .oneLine .cdsBadge { display: inline-block; width: 45%; margin-right: 5%; vertical-align: top; top: 0; float: left; }
+.cdsBx .cdsData .cdsInformation .cdsBadges.oneLine { margin-top: 10px; margin-bottom: 10px; width: 100%; }
+.cdsBx .cdsData .cdsInformation .cdsBadgeImage { float: left; }
+.cdsBx .cdsData .cdsInformation .cdsBadgeContents { float: left; width: 80%; }
+.cdsBx .cdsData .cdsInformation .cdsBadgeContentsSingleLine { line-height: 23px; }
+
+.cdsBx .cdsData .cdsInformation .description { margin-top:10px; padding:8px 0; border-top:1px solid #d5e4d1;}
+
+
+/* X-Browser Button
+   ----------------------------------------------------------------------------------------- */
+.cdsBx .wrapButton { margin:10px 0 12px; height:100%; overflow:hidden;}
+.cdsBx .button { padding:0; float:left;}
+.cdsBx .button span, .cdsBx .button b, .cdsBx .button a { display:block;}
+
+.cdsBx .button, .cdsBx .button div, .cdsBx .button span, .cdsBx .button b, .cdsBx .button a { background:url("/img2/buttons/corners/default_grn-v1.gif") 0 0 no-repeat;}
+
+.cdsBx .button { background-position:0 100%; background-color:#589442;}
+.cdsBx .button div { background-position:100% 0;}
+.cdsBx .button span { background-position:100% 100%;}
+.cdsBx .button b { background-position:0 0;}
+.cdsBx .button a { padding:3px 8px 3px 18px; background-position:-241px -41px; font:bold 11px Arial,Helvetica,Verdana,sans-serif; color:#fff; line-height:12px;}
+
+.cdsBx .button a,.cdsBx .button a:visited,.cdsBx .button a:active,.cdsBx .button b a:hover { color:#fff; font-weight:bold; text-decoration:none;}
+
+
+/* Disclaimer and Copyright Line
+   ----------------------------------------------------------------------------------------- */
+.cdsBx .cdsData .cdsDisclaimer { margin:18px 0 -3px; padding:12px 0 0; border-top:1px solid #d5e4d1; font-style:italic; font-size:11px; color:#9f9f9f;}
+.cdsBx .cdsData .cdsLegal { margin:0 0 2px; font-size:10px; color:#a4a4a4;}
+
+
+/* ----------------------------------------------------------------------------------------- */
+/* RR&P WIDGET
+   ----------------------------------------------------------------------------------------- */
+#CDSSKY.cdsBx .cdsData { margin:2px; padding:0 0 2px; background-color:#fff;}
+#CDSSKY.cdsBx .cdsData, #CDSSKY.cdsBx .cdsData .cdsBranding { position:relative;}
+
+
+#CDSSKY.cdsBx .cdsData .cdsComponent { padding:0 10px;}
+#CDSSKY.cdsBx .cdsData .cdsComponent.sep { margin:0 4px; padding:0 9px; border-bottom:2px solid #d9e4c4;}
+
+
+#CDSSKY.cdsBx .cdsData .cdsH18 { padding:11px 0 2px;}
+#CDSSKY.cdsBx .cdsData .cdsH11 { padding:11px 0 4px; font-weight:bold; font-size:11px; color:#000;}
+#CDSSKY.cdsBx .cdsData .cdsH11NB { padding:11px 0 4px; font-size:11px; color:#000;}
+
+
+#CDSSKY.cdsBx .cdsData .barRatings { padding-left:2px;}
+
+
+#CDSSKY.cdsBx .cdsData .cdsTrvlRtng { margin-bottom:-5px;}
+#CDSSKY.cdsBx .cdsData .cdsTrvlRtng .overall img { margin:0 0 2px;}
+#CDSSKY.cdsBx .cdsData .cdsTrvlRtng .overall div { font-size:10px; color:#7f7f7f;}
+
+#CDSSKY.cdsBx .cdsData .cdsTrvlRtng .cdsWrap { margin-top:11px;}
+#CDSSKY.cdsBx .cdsData .cdsTrvlRtng .expect { margin-bottom:21px;}
+#CDSSKY.cdsBx .cdsData .cdsTrvlRtng ul li b { padding-bottom:0;}
+#CDSSKY.cdsBx .cdsData .cdsTrvlRtng ul li ul li { margin:5px 0;}
+#CDSSKY.cdsBx .cdsData .cdsTrvlRtng ul li ul li img { margin-top:2px; display:block;}
+
+
+#CDSSKY.cdsBx .cdsData .cdsPhotos table { margin:0 auto; border-collapse:collapse; text-align:center;}
+#CDSSKY.cdsBx .cdsData .cdsPhotos table td { width:150px; height:150px; padding:0; vertical-align:middle;}
+
+
+#CDSSKY.cdsBx .cdsData .hReview { margin:0; padding:0; border-top:none;}
+#CDSSKY.cdsBx .cdsData .hReview .bullet { margin:8px 0;}
+#CDSSKY.cdsBx .cdsData .hReview .bullet li { margin:0 0 5px; padding-left:14px; background:url("/img2/sprites/cdsWdgtV2.gif") -154px -13px no-repeat; font-size:11px; color:#000;}
+#CDSSKY.cdsBx .cdsData .hReview p { margin-bottom:2px; font-size:11px; color:#000;}
+
+
+#CDSSKY.cdsBx .cdsData .cdsAll { margin:0 0 9px; padding-top:8px;}
+
+
+/* Branding (Identity)
+   ----------------------------------------------------------------------------------------- */
+#CDSSKY.cdsBx .cdsData .cdsBranding { z-index:0; border-bottom:2px solid #d9e4c4; background-color:#ecf1e1;}
+#CDSSKY.cdsBx .cdsData .cdsBranding dl { padding:6px 11px;}
+#CDSSKY.cdsBx .cdsData .cdsBranding dt { height:22px; overflow:hidden; margin-left:1px;}
+.rtl #CDSSKY.cdsBx .cdsData .cdsBranding dt img { position:relative; left:37px; }
+#CDSSKY.cdsBx .cdsData .cdsBranding dd { margin:3px 1px -1px; font-style:italic; font-size:10px; color:#000;}
+#CDSSKY.cdsBx .cdsData .cdsBranding a,
+#CDSSKY.cdsBx .cdsData .cdsBranding a:visited { color:#000;}
+
+
+/* ----------------------------------------------------------------------------------------- */
+/* RR&P WIDGET > Single Review Pop-up
+   ----------------------------------------------------------------------------------------- */
+#CDSPOP.cdsBx { width:100%; background-color:#fff;}
+#CDSPOP.cdsBx .cdsData .cdsComponent { padding:0 11px;}
+#CDSPOP.cdsBx .cdsData .cdsComponent dl dt { height:100%; overflow:hidden;}
+#CDSPOP.cdsBx .cdsData .cdsH18 { margin:11px 0 12px; padding:0 0 1px; border-bottom:2px solid #f4f5ed;}
+
+
+#CDSPOP.cdsBx .cdsData dl#CDSREVIEWS .cdsH18 { margin:11px 0 8px; border-bottom:none;}
+
+
+#CDSPOP.cdsBx .cdsData .cdsBranding { padding:7px; border-bottom:2px solid #cecece; background-color:#f3f3f3;}
+#CDSPOP.cdsBx .cdsData .cdsBranding,
+#CDSPOP.cdsBx .cdsData .cdsBranding dl { height:100%; overflow:hidden;}
+#CDSPOP.cdsBx .cdsData .cdsBranding dl { float:right;}
+#CDSPOP.cdsBx .cdsData .cdsBranding dt,
+#CDSPOP.cdsBx .cdsData .cdsBranding dd { float:left;}
+#CDSPOP.cdsBx .cdsData .cdsBranding dt { margin:8px 6px 0; font-size:9px; color:#797979;}
+#CDSPOP.cdsBx .cdsData .cdsBranding dd { width:132px; height:26px; overflow:hidden; margin:-2px 0 0 4px;}
+
+
+#CDSPOP.cdsBx .cdsData .cdsPhotos { width:186px; margin:0 10px 5px 0; background-color:#fff; float:left; text-align:center;}
+#CDSPOP.cdsBx .cdsData .cdsPhotos dl { width:180px; margin:0 auto; padding:1px 3px; }
+#CDSPOP.cdsBx .cdsData .cdsPhotos dt { font-size:11px;}
+#CDSPOP.cdsBx .cdsData .cdsPhotos dd { margin:3px 0;}
+#CDSPOP.cdsBx .cdsData .cdsPhotos div.cdsGUI { margin:1px 0 3px;}
+
+
+#CDSPOP.cdsBx .cdsData .cdsSummary .cdsH18 { margin:7px 0 3px; padding:0; border:none;}
+#CDSPOP.cdsBx .cdsData .cdsSummary address { margin-bottom:11px; font-style:normal;}
+
+
+#CDSPOP.cdsBx .cdsData .hReview dl dt.quote { font-weight:bold;}
+#CDSPOP.cdsBx .cdsData .hReview dl dd.attribution { margin:12px 0 8px;}
+#CDSPOP.cdsBx .cdsData .hReview p { margin-bottom:12px; line-height:18px;}
+
+/* Machine Translations */
+#CDSPOP.cdsBx .cdsData .hReview .mtLogo { float:right; }
+#CDSPOP.cdsBx .cdsData .hReview .mtOrig { margin-top: 8px; font-style:italic; }
+#CDSPOP.cdsBx .cdsData .hReview .mtSubmitted { color:#565656; }
+#CDSPOP.cdsBx .cdsData .hReview .mtLink { color:#202d95; cursor:pointer; }
+#CDSPOP.cdsBx .cdsData .hReview .mtShowOrig { margin-top:10px; margin-left:20px; font-style:normal; font-size:90% }
+#CDSPOP.cdsBx .cdsData .hReview .mtOrigText { font-style:normal; font-size:11px; }
+
+#CDSPOP.cdsBx .cdsData .cdsAll { margin-top:18px; padding-top:10px; border-top:1px solid #d5e4d1;}
+#CDSPOP.cdsBx .cdsData .cdsAll ul li { margin:8px 1px 10px;}
+#CDSPOP.cdsBx .cdsData .cdsAll a { font-weight:bold;}
+
+/* Managment Responses */
+#CDSPOP.cdsBx .cdsData .hReview .mgmtBox { margin:14px 14px 0; 
+    border-color:#91B155; border-style:solid; border-width:1px; padding:6px 12px 0px 12px; }
+#CDSPOP.cdsBx .cdsData .hReview .mgmtLink { margin-top:10px; color:#202d95; cursor:pointer; }
+#CDSPOP.cdsBx .cdsData .hReview .mgmtHeader { color:#217148; margin-bottom:5px; font-weight:bold; font-size:92%; }
+#CDSPOP.cdsBx .cdsData .hReview .mgmtInlineLink { color:#202d95; cursor:pointer; }
+
+
+#CDSPOP.cdsBx .cdsData .cdsLegal { margin:16px 0 0; padding:0 0 8px;}
+
+
+/* ADVERTISING
+   ----------------------------------------------------------------------------------------- */
+#CDSPOP.cdsBx.wAd { position:relative;}
+#CDSPOP.cdsBx.wAd .cdsData { margin-top:78px;}
+#CDSPOP.cdsBx.wAd .iab_BA { position:absolute; top:0; width:100%; height:60px; padding:9px; text-align:center; border-bottom:1px solid #e0e0e0; background-color:#f3f3f3;}
+
+/* Error Box
+   ----------------------------------------------------------------------------------------- */
+#CDSWIDERR.widErrBx .widErrData .widErrComponent p { font-family: ArialMT,Arial; color:#333333; line-height: 1.125em; margin-top: 16px; text-align:left; width: 100%; }
+#CDSWIDERR.widErrBx .widErrData .widErrBranding img {padding-left: 2px; width:134px; height:auto;}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+ 
+.clearfix {
+  display: inline-block;
+}
+
+
+/* Property Detail Widget 2014 Refresh Styles */
+#CDSPOP.cdsPropDetail2014 { font-family:arial; }
+#CDSPOP.cdsPropDetail2014 .mt10 { margin-top:10px; }
+#CDSPOP.cdsPropDetail2014 .hide { display:none; }
+
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsH18 { font-size:1.5em; color:#2c2c2c; margin-bottom:0; border-bottom:2px solid #e3e3e3;}
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData #CDSREVIEWS .cdsH18 { margin-top:16px; }
+
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .propertyName { font-size:2.0em; margin-top:8px; }
+
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsPhotos { width:168px; background-color:transparent; }
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsPhotos dl { width:162px; }
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsPhotos dd { margin:1px 0;}
+
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsPhotos .photos { position:relative; }
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsPhotos .photos .photoImage { padding:5px; border:1px solid #ccc; }
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsPhotos .photos .leftArrow { position:absolute; top:70px; left:7px; cursor:pointer; }
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsPhotos .photos .rightArrow { position:absolute; top:70px; left:138px; cursor:pointer; }
+
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .percentRec { font:bold 1.125em Arial; color:#589442; }
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .percentRec .percentVal { font-size:1.75em; }
+
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .taRating { float:left; margin-top:6px; font-size:1.125em; }
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .numReviews { float:left; margin:10px 0 0 4px; font-size:1.125em; }
+
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .popIndex { margin-top:6px; }
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .popIndex .ranking { font:bold 1.125em Arial; color:#589442; margin-top:6px; }
+
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .description { border:none; }
+
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsTrvlRtng { border-bottom:2px solid #e3e3e3; font-size:1.0em; }
+
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsTrvlRtng .expect { width:47%; margin-right:0; padding:12px 0;}
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsTrvlRtng .expect .expectLine .expectText { float:left; width:125px; }
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsTrvlRtng .expect .expectLine .expectScore { float:left; }
+
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsTrvlRtng .barRatings { padding:12px 0;}
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsTrvlRtng .barRatings.rightSide { padding-left:10px; border-left:1px solid #e3e3e3; }
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsTrvlRtng .barRatings .barRatingLine .barRatingTextGreen { width:30px; margin-left:8px; text-align:left; }
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsTrvlRtng .barRatings .barRatingImg { background-color:#68a253;}
+
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsInformation .cdsBadges { float:none; width:auto; margin-top:6px; padding-top:6px;}
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsInformation .cdsBadges .cdsBadge { float:left; width: 45%; }
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsInformation .cdsBadges .cdsBadgeImage { margin-right:6px; }
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsInformation .cdsBadges .cdsBadgeContentsSingleLine { line-height:normal; margin-top:4px; }
+
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData  select { font-family:Arial;}
+
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .hReview { margin-bottom:10px; border-top:2px solid #e3e3e3; } 
+
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .hReview .reviewBoxLeft {float:left; width: 120px; } 
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .hReview .reviewBoxLeft .username { font-weight:bold; } 
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .hReview .reviewBoxLeft .tripTypeHeader { font-weight:bold; margin-top:10px; } 
+
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .hReview .reviewBoxRight { float:left; margin-left:40px; width:65%; } 
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .hReview .reviewBoxRight .reviewTitle { font: italic 1.5em Georgia; color:#2c2c2c; } 
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .hReview .reviewBoxRight .reviewInfo { margin-top:8px; font: 1.0625em Arial; color:#505050; } 
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .hReview .reviewBoxRight .reviewBody { margin-top:8px;} 
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .hReview .reviewBoxRight .partnerAttribution { font-size:0.925em; } 
+
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .hReview .mgmtHeader { margin-top:20px; color:#000; }
+
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .pagingInfo { padding-top:10px; border-top:2px solid #e3e3e3; }
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .pagingInfo .pagingLoc { float:left; }
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .pagingInfo .pagingBoxes { float:right; color:#069; }
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .pagingInfo .pagingBoxes .pagingBox { border:1px solid #e3e3e3; cursor:pointer; margin-left:2px; padding:2px 5px; }
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .pagingInfo .pagingBoxes .pagingBox.active { color:#555; background-color: #f1f1f1;  }
+
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsAll { margin-top:10px; border:none;}
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsAll .readReviews { float:left; } 
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsAll .writeReviews { float:right; } 
+
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .brandBarBottom { border-top:2px solid #cecece; } 
+
+#CDSPOP.cdsPropDetail2014.cdsBx .cdsData .cdsDisclaimer { margin-top:40px; padding:0; border:none; }
+
+
+/* Fall 2013 UI Refresh rounded buttons */
+.rndBtn {
+  border-radius: 2px;
+  box-shadow: 0 1px 1px rgba(128, 128, 128, .5), inset 0 1px 0 rgba(255, 255, 255, .35);
+  cursor: pointer;
+  display: inline-block;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, .15);
+  -webkit-font-smoothing: antialiased;
+}
+
+.rndBtn:hover {
+  text-decoration: none;
+}
+
+.rndBtnSmall {
+  height: 18px;
+  line-height: 18px;
+  padding: 0 7px;
+}
+
+.rndBtnMed {
+  height: 23px;
+  line-height: 23px;
+  padding: 0 11px;
+}
+
+.rndBtnLarge {
+  height: 28px;
+  line-height: 28px;
+  padding: 0 14px;
+}
+
+.rndBtnGreen {
+  background: #6BA454;
+  background: -webkit-linear-gradient(top, #7BBC60, #6BA454);
+  background: -moz-linear-gradient(top, #7BBC60 0%, #6BA454 100%);
+  background: -o-linear-gradient(top, #7BBC60 0%, #6BA454 100%);
+  background: -ms-linear-gradient(top, #7BBC60 0%, #6BA454 100%);
+  background: linear-gradient(to bottom, #7BBC60 0%, #6BA454 100%);
+  border: 1px solid #6BA353;
+  color: #FFF !important;
+}
+.subbranding {
+  padding-top: 8px; 
+  padding-right: 10px;
+}
+.rightToLeft img {
+  position:relative; 
+}

@@ -1,0 +1,2412 @@
+﻿@charset "utf-8";
+
+
+
+/* CSS Reset - Description :Base KISSY CSS Reset, add HTML5 elements ----------- */
+
+
+
+body, div, h1, h2, h3, h4, h5, h6, hr, p, blockquote,dl, dt, dd, ul, ol, li,pre, code,form, fieldset, legend, button, textarea,table, tbody, tfoot, thead, th, td,article, aside, dialog, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video{margin:0;padding:0;outline:0;background:transparent;}
+
+
+
+article, aside, dialog, figure, footer, header, hgroup, nav, section{display:block;}
+
+
+
+body,button, input, select, textarea, a{font:16px/1.5 "Hiragino Sans GB",tahoma,arial,sans-serif;}
+
+
+
+h1, h2, h3, h4, h5, h6{font-size:100%;}
+
+
+
+address, cite, dfn, var{font-style:normal;}
+
+
+
+code, kbd, pre, samp{font-family:courier new, courier, monospace;}
+
+
+
+small{font-size:12px;}
+
+
+
+ul, ol, li{list-style:none;}
+
+
+
+a{text-decoration:none;outline:thin none;color:#1d7ad9;}
+
+
+
+a:hover{color:#3c3c3c;}
+
+
+
+blockquote:before, blockquote:after,
+
+
+
+q:before, q:after{content:'';content:none;}
+
+
+
+abbr,acronym{border:0;font-variant:normal;}
+
+
+
+ins{background-color:#ff9;color:#000;text-decoration:none;}
+
+
+
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold;}
+
+
+
+del{text-decoration:line-through;}
+
+
+
+abbr[title], dfn[title]{border-bottom:1px dotted #000;cursor:help;}
+
+
+
+sup{vertical-align:text-top;}
+
+
+
+sub{vertical-align:text-bottom;}
+
+
+
+legend{color:#000;}
+
+
+
+fieldset, img{border:0;}
+
+
+
+button, input, select, textarea{font-size:100%;}
+
+
+
+table{border-collapse:collapse;border-spacing:0;}
+
+
+
+/* GLOBAL ---------------------------------------------------------------------- */
+
+
+
+*{-webkit-tap-highlight-color:rgba(0, 0, 0, 0);-webkit-text-size-adjust:none;outline:none;}
+
+
+
+a img{border:none;}
+
+
+
+.fl{float:left;padding-right:4px;}
+
+
+
+.fr{float:right;}
+
+
+
+.clear{clear:both;}
+
+
+
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+
+
+
+* html .clearfix{zoom:1;}
+
+
+
+*:first-child+html .clearfix {zoom:1;}
+
+
+
+.en{font-family:"Hiragino Sans GB",Tahoma,Simsun,sans-serif;}
+
+
+
+
+
+
+
+.yahei{font-family:"Hiragino Sans GB",microsoft yahei;}
+
+
+
+/* top */
+
+
+
+#top{width:20px;height:81px;position:fixed;right:20px;bottom:30px;z-index:999;cursor:pointer;display:none;background:url(lis/themes/NewInns/images/top.png) no-repeat 0 0;} 
+
+
+
+#top:hover{background-position:-20px 0px;}
+
+
+
+*html #top{position:absolute;}
+
+
+
+/*date input*/
+
+
+
+.dateCheckIn,.dateCheckOut,.travelDateCheckIn,.travelDateCheckOut,.rentalDateCheckIn,.rentalDateCheckOut,.filter_unit .car_rent_date,.filter_unit .car_rent_date{background:url(lis/themes/NewInns/sprite/icon_hotel_home.png) no-repeat -980px -323px;background-color:#fff;}
+
+
+
+.position_relative{position:relative;}
+
+
+
+/* header ---------------------------------------------------------------------- */
+
+
+
+.top_nav{background:#f9f9f9;height:31px;border-bottom:1px solid #d0d0d0;}
+
+.top_nav li {float: left; line-height: 31px; padding-left: 10px; padding-right: 10px; text-align: center;}
+
+.top_nav_fr{float:right;*width:230px;}
+
+
+
+.top_nav_fl {
+
+    float: left;
+
+    
+
+    height: 31px;
+
+    position: absolute;
+
+    z-index: 99;
+
+    background-color: #f9f9f9;
+
+}
+
+#destoon_city{color: red;}
+
+.top_nav_fl a{font-family:"Hiragino Sans GB",microsoft yahei;}
+
+
+
+.top_nav_fl a.jinjiang_hotel,.top_nav_fl a.jinjiang_ducheng,.top_nav_fl a.jinjiang_zhixing,.top_nav_fl a.jinjiang_jinguang,.top_nav_fl a.jinjiang_baishi,.top_nav_fl a.jinjiang_lufu{ background:#f1f1f1;}
+
+
+
+.top_nav_fl a.jinjiang_platf{ border-right:none;}
+
+
+
+.top_nav_fl a.jinjiang_platf em{background:url(lis/themes/NewInns/sprite/com_head.png) no-repeat -232px -408px; font-style:normal; display:inline-block; width:7px; height:54px;}
+
+
+
+.top_nav_fl a i{background:url(lis/themes/NewInns/sprite/com_head.png) no-repeat;width:70px;height:54px;float:left;}
+
+
+
+.top_nav_fl a.jinjiang_lufu i{width:100px;}
+
+
+
+.top_nav_fl a span{display:none;float:left;font-size:16px;color:#333333;line-height:54px;padding-right:20px;}
+
+
+
+.top_nav_fr a{font-size:14px;color:#777777;padding:0 15px;line-height:31px;font-family:"Hiragino Sans GB",microsoft yahei;}
+
+
+
+.top_nav_fr .login{background:url(lis/themes/NewInns/sprite/com_head.png) no-repeat -670px -8px;width:115px;height:54px;float:right;padding-right:0;}
+
+
+
+.top_nav_fr .logined{background:#333333;width:115px;height:54px;display:block;text-align:center;padding-right:0;color:#ba9764;font-size:12px;font-family:"Hiragino Sans GB",tahoma,arial,sans-serif;}
+
+
+
+.top_nav_fr .hint_text{color:#d70000;padding-right:2px;}
+
+
+
+.top_nav_fr .logined .user_name_text{line-height:54px;width:48px;}
+
+
+
+.top_nav_fl .jinjiang_internation i{background-position:0 -80px;}
+
+
+
+.top_nav_fl .jinjiang_platf i{background-position:-136px -460px;}
+
+
+
+.top_nav_fl .jinjiang_hotel i{background-position:-70px -80px;}
+
+
+
+.top_nav_fl .jinjiang_ducheng i{background-position:-140px -80px;}
+
+
+
+.top_nav_fl .jinjiang_zhixing i{background-position:-210px -80px;}
+
+
+
+.top_nav_fl .jinjiang_jinguang i{background-position:-280px -80px;}
+
+
+
+.top_nav_fl .jinjiang_baishi i{background-position:-350px -80px;}
+
+
+
+.top_nav_fl .jinjiang_travel i{background-position:-420px -80px;}
+
+
+
+.top_nav_fl .jinjiang_car i{background-position:-490px -80px;}
+
+
+
+.top_nav_fl .jinjiang_ecard i{background-position:-560px -80px;}
+
+
+
+.top_nav_fl a.jinjiang_lufu i{background-position:-6px -463px;}
+
+
+
+.top_nav_fl .jinjiang_internation:hover i{background-position:0 0;}
+
+
+
+.top_nav_fl .jinjiang_platf:hover i{background-position:-136px -400px;}
+
+
+
+.top_nav_fl .jinjiang_hotel:hover i{background-position:-70px 0;}
+
+
+
+.top_nav_fl .jinjiang_ducheng:hover i{background-position:-140px 0;}
+
+
+
+.top_nav_fl .jinjiang_zhixing:hover i{background-position:-210px 0;}
+
+
+
+.top_nav_fl .jinjiang_jinguang:hover i{background-position:-280px 0;}
+
+
+
+.top_nav_fl .jinjiang_baishi:hover i{background-position:-350px 0;}
+
+
+
+.top_nav_fl .jinjiang_travel:hover i{background-position:-420px 0;}
+
+
+
+.top_nav_fl .jinjiang_car:hover i{background-position:-490px 0;}
+
+
+
+.top_nav_fl .jinjiang_ecard:hover i{background-position:-560px 0;}
+
+
+
+.top_nav_fl a.jinjiang_lufu:hover i{background-position:-6px -401px;}
+
+
+
+.main_nav{background:#FFF;height:100px;border-top:1px solid #dedede;}
+
+
+
+.main_nav_fr{float:right;padding-top:12px;}
+
+
+
+.main_nav_fl{float:left;padding-top:20px;}
+
+
+
+.main_nav_fl a{background:url(lis/themes/NewInns/sprite/com_head.png) no-repeat;width:236px;height:60px;float:left;}
+
+
+
+.main_nav_fl a.internation_logo{background-position:-6px -300px;}
+
+
+
+.main_nav_fl a.jinjiancar_logo{background-position:-6px -180px;}
+
+
+
+.main_nav_fl a.jinjianhotel_logo{background-position:-276px -180px;}
+
+
+
+.main_nav_fl a.jinjiangtravel_logo{background-position:-552px -180px;}
+
+
+
+.main_nav_fr .telphone{font-size:14px;color:#777777;text-align:right;}
+
+
+
+.main_nav_fr .telphone span{color:#d1ae76;font-size:18px;font-style:italic;font-family:Arial, Helvetica, sans-serif;}
+
+
+
+.main_nav_fr .main_nav_erji{padding:20px 0 0 0;color:#d0d0d0;font-size:18px;}
+
+
+
+.main_nav_fr .main_nav_erji a{padding:0 46px;font-size:16px;font-family:"Hiragino Sans GB",microsoft yahei;color:#999999;}
+
+
+
+.main_nav_fr .main_nav_erji a:last-child{padding:0 0 0 46px;}
+
+
+
+.main_nav_fr .main_nav_erji a.a_last{padding:0 0 0 46px;}
+
+
+
+.main_nav_fr .main_nav_erji a:hover,.main_nav_fr .main_nav_erji a.on{color:#1d7ad9;}
+
+
+
+
+
+
+
+.header .login_box,.header .logined_box{width:319px;z-index:9999;position:absolute;top:55px;right:-1px;border:1px solid #e2e2e2;display:none;background-color:#f3f3f3;padding:20px 0 0;}
+
+
+
+.header .logined_box{width:184px;left:1014px;background:#f3f3f3;}
+
+
+
+
+
+
+
+/*未登录者登录弹框样式*/
+
+
+
+.login_box .title_text{height:16px;line-height:16px;color:#969696;padding:0 0 6px 20px;font-size:14px;}
+
+
+
+.login_box input{width:240px;height:14px;line-height:14px;padding:8px 0 8px 37px;margin:12px 0 0 20px;color:#dedede;background:#FFF url(lis/themes/NewInns/sprite/icon_hotel_home.png) no-repeat -700px -327px;}
+
+
+
+.login_password_box label{position:absolute;left:57px;top:105px;*top:110px;color:#dedede;}
+
+
+
+.login_box .login_password{background-position:-700px -369px;}
+
+
+
+.login_box .alarm_text{height:14px;line-height:14px;color:#d70000;padding:16px 0 0 20px;display:none;}
+
+
+
+.login_box .avoid_login_box{height:14px;line-height:14px;padding:16px 0 15px 20px;}
+
+
+
+.login_box .check_btn,.login_box .checked{width:14px;height:14px;margin-right:8px;cursor:pointer;}
+
+
+
+.login_box .checked{background-position:-9px -238px;}
+
+
+
+.login_box .tool_box{height:40px;line-height:40px;padding:0 0 23px 20px;}
+
+
+
+.tool_box .login_btn{width:121px;text-align:center;color:#fff;background:#d1ae76;font-size:18px;margin-right:26px;cursor:pointer;}
+
+
+
+.tool_box .login_btn:hover{background-color:#ab8954;}
+
+
+
+.tool_box .login_btn a{color:#fff;font-size:18px;display:block;text-align:center;}
+
+
+
+.tool_box a{width:auto;height:40px;line-height:40px;padding-right:4px;background:none;color:#1d7ad9;}
+
+
+
+.tool_box a:hover{text-decoration:underline;color:#1d7ad9;}
+
+
+
+.tool_box .desperate_notation{padding-right:6px;*padding-right:10px;color:#1d7ad9;*line-height:35px;}
+
+
+
+.login_box .company_account_box{color:#969696;padding:0 0 15px 20px;}
+
+
+
+.company_account_box a{width:48px;height:18px;line-height:18px;background:url(lis/themes/NewInns/sprite/icon_hotel_home.png) no-repeat;color:#000;}
+
+
+
+.company_account_box a:hover{text-decoration:underline;}
+
+
+
+.company_account_box .weibo_icon{padding-left:26px;background-position:-664px -411px;margin-right:4px;}
+
+
+
+.company_account_box .qq_icon{padding-left:22px;background-position:-664px -446px;}
+
+
+
+.login_box .enter_club_center_btn #aclub{height:16px;background:#333;width:auto;padding:9px 17px 10px 42px;cursor:pointer;display:block;text-align:right;color:#d1ae76;line-height:16px;vertical-align:top;font-size:14px;font-family:"Hiragino Sans GB",microsoft yahei;}
+
+
+
+.login_box .enter_club_center_btn #aclub:hover{background:#000;}
+
+
+
+/*已登录者登录弹框样式*/
+
+
+
+.logined_box .unit_box{line-height:14px;padding:0 0 12px 22px;}
+
+
+
+.logined_box a{color:#777777;}
+
+
+
+.unit_box div{color:#333;font-weight:bold;width:56px;height:14px;line-height:14px;}
+
+
+
+.ja .unit_box #memberScore,.en .unit_box #memberScore{margin-bottom:7px;width:auto;} 
+
+
+
+.ja #memberLevel,.en #memberLevel{width:auto;}
+
+
+
+.unit_box .exchange_btn{height:14px;line-height:14px;width:auto;color:#1d7ad9;cursor:pointer;background:none;}
+
+
+
+.unit_box .exchange_btn:hover{text-decoration:underline;}
+
+
+
+.logined_box .member_dealing_unit{height:16px;line-height:16px;border-top:1px solid #e2e2e2;padding:8px 0 8px 22px;cursor:pointer;}
+
+
+
+.logined_box .member_dealing_unit .logout{margin-top:8px;}
+
+
+
+.logined_box .member_dealing_unit:hover{background-color:#fff;}
+
+
+
+.member_dealing_unit .alarm_num{color:#d70000;}
+
+
+
+.logined_box .enter_club_center_btn{height:35px; line-height:35px;background-color:#333;cursor:pointer;}
+
+
+
+.logined_box .enter_club_center_btn:hover{background-color:#000;}
+
+
+
+.logined_box .enter_club_center_btn a{color:#d1ae76;display:block;height:35px;text-align:center;line-height:35px;width:auto;vertical-align:top;font-size:14px;}
+
+
+
+/* inner ----------------------------------------------------------------------- */
+
+
+
+.inner{}
+
+
+
+/* footer ---------------------------------------------------------------------- */
+
+
+
+.foot{width:100%;background:#333;}
+
+
+
+.footer{background:#333;min-width:1200px;background:#333;color:#ccc;padding:16px 0;margin:0 auto;}
+
+
+
+.footer p{height:14px;line-height:14px;}
+
+
+
+.footer .verification_link_box{float:left;}
+
+
+
+.links_box{padding-bottom:19px}
+
+
+
+.links_box a{color:#ccc;cursor:pointer;}
+
+
+
+.links_box a:hover{text-decoration:underline;}
+
+
+
+.friendly_links_box{padding-top:22px;}
+
+
+
+.friendly_links_box a{margin-right:25px;float:left;height:34px;background:url(lis/themes/NewInns/sprite/icon_hotel_home.png) no-repeat;display:block;cursor:pointer;}
+
+
+
+.friendly_links_box .gongshang_icon{width:27px;background-position:-41px -311px;}
+
+
+
+.friendly_links_box .gongshang_icon:hover{background-position:-41px -630px;}
+
+
+
+.friendly_links_box .verify_success{width:60px;background-position:-97px -311px;}
+
+
+
+.friendly_links_box .verify_success:hover{background-position:-97px -629px;}
+
+
+
+.friendly_links_box .net_policeman{width:67px;background-position:-183px -311px;}
+
+
+
+.friendly_links_box .net_policeman:hover{background-position:-183px -630px;}
+
+
+
+.friendly_links_box .collect_credit{width:68px;background-position:-275px -311px;}
+
+
+
+.friendly_links_box .collect_credit:hover{background-position:-275px -630px;}
+
+
+
+.friendly_links_box .credited_firm{width:89px;background-position:-365px -311px;}
+
+
+
+.friendly_links_box .credited_firm:hover{background-position:-365px -630px;}
+
+
+
+.footer .app_code_box{width:320px;float:right;}
+
+
+
+.app_code_box .title_text{height:14px;line-height:14px;}
+
+
+
+.app_code_box .two_dimension_code_icons_box{height:84px;margin:6px 0;}
+
+
+
+.two_dimension_code_icons_box a{width:84px;height:84px;float:left;background:url(lis/themes/NewInns/sprite/icon_hotel_home.png) no-repeat;}
+
+
+
+.two_dimension_code_icons_box .jinjiang_app_code_icon{background-position:-688px -209px;}
+
+
+
+.two_dimension_code_icons_box .jinjiang_wechat_code_icon{background-position:-791px -209px;}
+
+
+
+.app_name_box div{float:left;width:84px;word-break:break-all;}
+
+
+
+.app_name_box .app_text{float:left;}
+
+
+
+.footer .jinjiang_tool_bar{width:158px;float:right;margin-right:10px;}
+
+
+
+.jinjiang_tool_bar .iphone_app_icon{width:122px;height:36px;background:url(lis/themes/NewInns/sprite/icon_jinjiang_bar.png) no-repeat -7px -77px;display:block;margin-bottom:24px;cursor:pointer;}
+
+
+
+.jinjiang_tool_bar p{height:14px;line-height:14px;padding-bottom:14px;}
+
+
+
+.jinjiang_tool_bar .social_network_box{width:158px;height:29px;background:url(lis/themes/NewInns/sprite/icon_hotel_home.png) no-repeat -534px -320px;}
+
+
+
+.jinjiang_tool_bar .social_network_box a{width:29px;height:29px;display:block;float:left;margin-right:9px;cursor:pointer;}
+
+
+
+.social_network_box a.facebook_icon{margin-right:14px;}
+
+
+
+/* Microsoft YaHei --------------------------------------------------------------*/
+
+
+
+.class1,.class2{font-family:"Hiragino Sans GB",\5fae\8f6f\96c5\9ed1, Segoe UI;cursor:pointer;}
+
+
+
+.class1:hover,.class2:hover{text-decoration:underline;}
+
+
+
+/* pagination ---------------------------------------------------------------------- */
+
+
+
+.pagination .next{padding-left:12px;cursor:pointer;float:left;color:#1d7ad9;}
+
+
+
+.pagination .prev{cursor:pointer;}
+
+
+
+.pagination .next:hover,.pagination .prev:hover{text-decoration:underline;color:#1d7ad9;}
+
+
+
+.pagination .prev,.pagination .unprev{padding-right:12px;height:20px;line-height:20px;float:left;color:#1d7ad9;}
+
+
+
+.pagination .unprev,.pagination .unnext{color:#aaa;cursor:text;height:20px;line-height:20px;float:left;padding-left:12px;}
+
+
+
+.pagination .unprev,.pagination .list{float:left;}
+
+
+
+.pagination .list a{display:inline-block;padding:2px 6px;line-height:16px;height:16px;margin:0 2px;background:#fff;color:#333;cursor:pointer;}
+
+
+
+.pagination .list a.on,.pagination .list a:hover{background:#333;color:#fff;}
+
+
+
+.pagination .list a.on{cursor:text;}
+
+
+
+/* path ---------------------------------------------------------------------- */
+
+
+
+.path_bar{height:32px;line-height:32px;color:#777;}
+
+
+
+/* checkbox ---------------------------------------------------------------------- */
+
+
+
+label.checkbox {padding-left: 28px;cursor:pointer;line-height:34px;height:34px;display:inline-block;} 
+
+
+
+label.checked {background-position:0 -233px;} 
+
+
+
+/* citySelector ---------------------------------------------------------------------- */
+
+
+
+.citySelector{background:#fff;font-size:12px;font-family:"Hiragino Sans GB",tahoma,arial,\5b8b\4f53;}
+
+
+
+.cityslide{width:220px;list-style:none;margin:0;padding:0;border:1px solid #d3d3d3;box-shadow:1px 1px 2px #c1c1c1;border-top:0;}
+
+
+
+.cityslide li{list-style:none;overflow:hidden;height:16px;padding:4px 5px;cursor:pointer;color:#777;}
+
+
+
+.cityslide li.on{background:#1d7ad9;color:#fff;}
+
+
+
+.cityslide li b{font-weight:normal;}
+
+
+
+.cityslide li.empty{background:#fff2e8;color:#666;line-height:16px;}
+
+
+
+.cityslide li.empty em{color:red;font-style:normal;}
+
+
+
+.cityname{float:left;/*width:210px;*/}
+
+
+
+.cityspell{float:right;}
+
+
+
+.cityBox{width:460px;border:1px solid #d3d3d3;overflow:hidden;box-shadow:1px 1px 2px #c1c1c1;border-top:0;}
+
+
+
+.cityBox ul{margin:0;padding:0;overflow:hidden;background:#ececec;padding:2px 0 0 12px;}
+
+
+
+.cityBox ul li{float:left;list-style:none;padding:2px 8px;cursor:pointer;margin-left:4px;display:inline;color:#777;}
+
+
+
+.cityBox ul li.on{background: #fff;position: relative;color:#333;}
+
+
+
+.hide{display:none;}
+
+
+
+p.tip{color:#aaa;line-height:20px;padding:5px 0 5px 12px;margin:0;text-indent:3px;}
+
+
+
+.hotCity{margin-top:-1px;clear:left;overflow:hidden;padding-bottom:5px;padding-top:5px;_margin-bottom:8px;}
+
+
+
+.cityTab{overflow:hidden;}
+
+
+
+.cityTab dl{margin:0;padding:0;overflow:hidden;}
+
+
+
+.cityTab dl dt{float:left;padding-left:10px;color:#1d7ad9;text-indent:10px;font-family:"Hiragino Sans GB","Lucida console","consolas","courier new";line-height:26px;font-size:14px;width:20px;padding-top:8px;}
+
+
+
+.cityTab dl dd{margin-left:10px;float:left;width: 360px;padding:8px 0 8px 0;}
+
+
+
+.cityTab dl dd a{width:66px;height:24px;line-height:24px;display:inline-block;color:#777;text-decoration:none;text-indent:14px;margin-right:5px;margin-bottom:1px;float:left;}
+
+
+
+.cityTab dl dd a:hover{color:#1d7ad9;background:#1d7ad9;color:#fff;}
+
+
+
+.hotCity .hot dt{display:none;}
+
+
+
+/*inputText*/
+
+
+
+.tipTxt{position:absolute;left:0px;top:0px;text-indent:10px;color:#aaa;z-index:0;cursor:text;height:25px;line-height:25px;font-size:12px;float:left;}
+
+
+
+input{border:1px solid #dedede;height:22px;line-height:22px;}
+
+
+
+.enter_input_border{border:1px solid #5CB8E6;}
+
+
+
+textarea{border:1px solid #ECECEC;}
+
+
+
+/*horizontalAlign*/
+
+
+
+.horizantal{display:inline-block;vertical-align:top;position:relative;}
+
+
+
+/*
+
+
+
+  * Pre-IE7 IE hack.  On IE, display: inline-block only gives the element
+
+
+
+  * layout, but doesn't give it inline behavior.  Subsequently setting display
+
+
+
+  * to inline does the trick.
+
+
+
+  */
+
+
+
+* html .horizantal{display:inline;}
+
+
+
+/*
+
+
+
+  * IE7-only hack.  On IE, display: inline-block only gives the element
+
+
+
+  * layout, but doesn't give it inline behavior.  Subsequently setting display
+
+
+
+  * to inline does the trick.
+
+
+
+  */
+
+
+
+*:first-child+html .horizantal{display: inline;}
+
+
+
+/*ellipsis*/
+
+
+
+.ellipsis{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;line-height:24px;}
+
+
+
+/* css3 ---------------------------------------------------------------------- */
+
+
+
+.tool_box a,.tool_box a:hover,.filter_item .filter_item_hd,.filter_item .filter_item_hd:hover,.tag_box a,.tag_box a:hover,.sort_box li a,.sort_box li a:hover,.room_tab li,.room_tab li:hover,.room_info a,.room_info a:hover,.search_bar .btn_search,.search_bar .btn_search:hover,.room_info .ptips,.room_info .ptips:hover,.filter_item_bd .btn,.filter_item_bd .btn:hover,.filter_item_bd .item label,.filter_item_bd .item label:hover{-moz-transition:all .2s linear;-webkit-transition:all .2s linear;transition:all .2s linear;}
+
+
+
+a,a:hover{-moz-transition:color .3s linear;-webkit-transition:color .3s linear;transition:color .3s linear;}
+
+
+
+.w1200{width:1200px;margin:0 auto;}
+
+
+
+.position_relative {position:relative;}
+
+
+
+.w1600{width:1600px;margin:0 auto;background-color:#000;}
+
+
+
+.mt5{margin-top:5px;}
+
+
+
+.mt10{margin-top:10px;}
+
+
+
+.mt20{margin-top:20px;}
+
+
+
+.mt30{margin-top:30px;}
+
+
+
+.mb30{margin-bottom:30px;}
+
+
+
+/* seo_bar */
+
+
+
+.seo_bar,.province_seo_bar{width:1200px;border-top:1px solid #e1dfdf;margin:20px auto;padding:20px 0 0 0;color:#777;}
+
+
+
+.seo_bar p{line-height:24px;}
+
+
+
+.seo_bar p.txt{padding-left:125px;display:block;overflow:hidden;}
+
+
+
+.seo_bar p .name{width:125px;float:left;margin-left:-125px;}
+
+
+
+.seo_bar p a{color:#777;width:100px;float:left;line-height:24px;}
+
+
+
+.seo_bar p a.more_content,.seo_bar p a.pack_up_content{width:75px;float:right;cursor:pointer;text-align:right;color:#777;line-height:24px;}
+
+
+
+.seo_bar p a.pack_up_content,.seo_bar p a.hidden_link_unit{display:none;}
+
+
+
+.seo_bar p a:hover{color:#1d7ad9;text-decoration:underline;}
+
+
+
+.province_seo_bar a{width:133px;height:20px;line-height:20px;text-align:center;color:#ababab;float:left;}
+
+
+
+.province_seo_bar a:hover{color:#000;text-decoration:none;}
+
+
+
+/* jinjian_top_bar ----------------------------------------------------------------- */
+
+
+
+.jinjian_top_bar{min-width:1200px;background-color:#000;margin:0 auto;font-family:Georgia,serif;}
+
+
+
+.jinjian_top_bar a{color:#c0a354;font-family:Georgia,serif;}
+
+
+
+.jinjiang_tool_bar a:hover{color:#69592c;}
+
+
+
+.jinjian_top_bar .jinjiang_special_box{width:1200px;height:104px;margin:0 auto;}
+
+
+
+.jinjiang_special_box .jinjiang_logo{width:103px;height:93px;margin:5px 132px 6px 24px;background:url(lis/themes/NewInns/sprite/icon_jinjiang_bar.png) no-repeat -161px -25px;float:left;}
+
+
+
+.jinjiang_special_box .jinjiang_tool_bar{width:741px;height:44px;margin:37px 0 23px;float:right;}
+
+
+
+.jinjiang_tool_bar .first_row_box,.first_row_box .lg{float:right;padding-bottom:4px;}
+
+
+
+.first_row_box .lg{width:75px;height:15px;line-height:15px;padding-left:6px;font-size:10px;background:url(lis/themes/NewInns/sprite/icon_jinjiang_bar.png) no-repeat -7px -28px;color:#c0a354;}
+
+
+
+.first_row_box .tag_select,.first_row_box .tag_select_hover,.first_row_box .tag_select_open{padding-left:8px;}
+
+
+
+.first_row_box .lg ul.tag_options{background-color:#c0a354;color:#333;width:81px;*margin-left:-6px;}
+
+
+
+.first_row_box ul{float:right;margin-right:15px;}
+
+
+
+.first_row_box ul.tag_options{margin-right:0;}
+
+
+
+.first_row_box ul li{float:left;padding:0 8px 0 13px;cursor:pointer;background:url(lis/themes/NewInns/sprite/icon_jinjiang_bar.png) no-repeat -631px -25px;}
+
+
+
+.first_row_box .lg ul.tag_options li{height:18px;padding:0 0 0 13px;width:68px;background:none;font-size:11px;line-height:18px;}
+
+
+
+.first_row_box .lg ul.tag_options li.open_selected{background:url(lis/themes/NewInns/images/language_icon.png) no-repeat;}
+
+
+
+.first_row_box .lg ul.tag_options li.open_hover{background-color:#333;color:#c0a354;}
+
+
+
+.first_row_box ul li.user_login{background:none;}
+
+
+
+.jinjiang_tool_bar .seperate_line{width:100%;height:1px;background:url(lis/themes/NewInns/sprite/icon_jinjiang_bar.png) no-repeat -8px -4px;display:block;float:left;}
+
+
+
+.jinjiang_tool_bar .second_row_box{float:left;padding-top:1px;}
+
+
+
+.second_row_box ul,.second_row_box ul li{float:left;}
+
+
+
+.second_row_box ul li{padding:0 44px 0 43px;background:url(lis/themes/NewInns/sprite/icon_jinjiang_bar.png) no-repeat -630px -40px;cursor:pointer;}
+
+
+
+.second_row_box ul li.last{padding:0 0 0 40px;}
+
+
+
+.second_row_box ul.foreign_nav li{padding:0 7px 0 15px;}
+
+
+
+.second_row_box ul.foreign_nav li.last{padding:0 0 0 20px;}
+
+
+
+.second_row_box ul li a{font-size:14px;}
+
+
+
+.footer .w1200{background-color:#333;}
+
+
+
+/*popup公用部分*/
+
+
+
+.popup_title_box{padding:11px 6px 6px 21px;height:16px;line-height:16px;background-color:#f4f4f4;color:#333;font-size:14px;font-weight:bold;vertical-align:top;}
+
+
+
+.popup_title_text{float:left;}
+
+
+
+.popup_close_btn{width:13px;height:13px;cursor:pointer;background:url(lis/themes/NewInns/sprite/icon_hotel_order.png) no-repeat -116px -43px;float:right;margin-top:2px;}
+
+
+
+.popup_close_btn:hover{background-color:#000;}
+
+
+
+/*已有用户登录弹框*/
+
+
+
+.member_login_auto_box{width:476px;height:297px;}
+
+
+
+.login_info_box{margin:21px 0 30px 76px;}
+
+
+
+.login_info_box input{width:240px;height:14px;line-height:14px;padding:8px 0 8px 37px;margin:12px 0 0 20px;color:#dedede;background-color:#fff;background:url(lis/themes/NewInns/sprite/icon_hotel_home.png) no-repeat -700px -327px;}
+
+
+
+.exist_login_password_box{+margin-left:-38px;}
+
+
+
+.exist_login_password_box label{position:absolute;left:135px;top:117px;*top:122px;color:#dedede;}
+
+
+
+.login_info_box .login_password{background-position:-700px -369px;}
+
+
+
+.login_info_box .alarm_text{height:14px;line-height:14px;color:#d70000;padding:16px 0 0 20px;visibility:hidden;}
+
+
+
+.login_info_box .avoid_login_box{height:14px;line-height:14px;padding:16px 0 15px 20px;}
+
+
+
+.login_info_box .check_btn,.login_info_box .checked{width:14px;height:14px;margin-right:8px;cursor:pointer;}
+
+
+
+.login_info_box .checked{background-position:-9px -238px;}
+
+
+
+#exist_member_login_btn{width:120px;height:40px;line-height:40px;text-align:center;color:#fff;background:#1d7ad9;font-size:18px;margin:10px 0 0 106px;cursor:pointer;}
+
+
+
+#exist_member_login_btn:hover{background-color:#ff7300;}
+
+
+
+.pop_horizantal{ float:right; margin-right:100px; cursor:pointer; color:#1d7ad9;line-height:14px;}
+
+
+
+.pop_horizantal:hover{color:#1d7ad9; text-decoration:underline;}
+
+
+
+/*显示登录框时，锁住wrapper*/
+
+
+
+.wrapper_locked{*z-index:-1;*position:relative;}
+
+
+
+/*validate*/
+
+
+
+.msg-box{position:relative;*zoom:1}
+
+
+
+.n-left,.n-right{color: #d70000;margin:4px 0;}
+
+
+
+.n-invalid {border:1px solid #d70000;}
+
+
+
+.n-icon{width:16px;height:16px;overflow:hidden;background-repeat:no-repeat}
+
+
+
+.n-error .n-icon{background-image:url(lis/themes/NewInns/images/validator_default.png);background-position:0 0;margin-left:8px;}
+
+
+
+.n-ok .n-icon{background-image:url(lis/themes/NewInns/sprite/icon_hotel_order.png);background-position:-13px -43px;margin-left:8px;}
+
+
+
+/*2级导航样式*/
+
+
+
+.second_nav_box{min-width:1200px;padding:10px 0 0;height:22px;font-size:12px;background-color:#333;color:#fff;}
+
+
+
+.second_nav_content_box{width:1200px;margin:0 auto;height:22px;}
+
+
+
+.travel_second_nav_box{padding-left:460px;}
+
+
+
+.jinjiang_travel_second_nav_box{padding-left:520px;}
+
+
+
+.rent_automobile_second_nav_box{padding-left:800px;}
+
+
+
+.jinjiang_rent_automobile_second_nav_box{padding-left:885px;}
+
+
+
+.second_nav_li_unit,.unit_selected{width:60px;margin-right:25px;text-align:center;height:14px;line-height:14px;padding-bottom:5px;cursor:pointer;float:left;}
+
+
+
+.unit_selected{color:#d1ae76;border-bottom:3px solid #d1ae76;}
+
+
+
+.second_nav_li_unit:hover{color:#d1ae76;}
+
+
+
+/*自动补全样式*/
+
+
+
+#input_auto_complete_box{z-index:9999;position:absolute;background-color:#fff;border:1px solid #ccc;width:226px;display:none;padding:0 5px;}
+
+
+
+.auto_complete_unit{padding:2px;cursor:pointer;color:#ccc}
+
+
+
+.auto_complete_unit:hover{background-color:#f0f0ff;}
+
+
+
+.auto_complete_unit b{color:#000;font-weight:700;}
+
+
+
+.auto_complete_unit b span{font-weight:400;}
+
+
+
+.auto_complete_unit .district{margin-left:15px;}
+
+
+
+/*等待中图片*/
+
+
+
+.load_waiting_icon{background:#FFF url(lis/themes/NewInns/images/loading.gif) no-repeat 16px center;height:106px;padding-right:24px;text-align:left;float:left;}
+
+
+
+.load_waiting_icon span{padding:40px 0 0 108px;display:block;width:auto;font-size:14px;font-family:\5fae\8f6f\96c5\9ed1, Segoe UI;color:#777;}
+
+
+
+/*layer*/
+
+
+
+.error_alert_box{width:348px;height:177px;background:#fff;z-index:9999;position:absolute;top:0;left:0;padding-bottom:13px;}
+
+
+
+.error_alert_box .head_box{height:40px;line-height:40px;padding-left:19px;background:#f3f3f3;color:#333;}
+
+
+
+.error_alert_box .head_box .close_btn,.error_alert_box .head_box .close_btn:hover{width:13px;height:13px;float:right;margin:13px 9px 14px 0;cursor:pointer;background:url(lis/themes/NewInns/sprite/icon_hotel_detail.png) no-repeat -487px -321px;}
+
+
+
+.error_alert_box .head_box .close_btn:hover{background-color:#000;}
+
+
+
+.error_alert_box .head_box .caution_head_text{float:left;}
+
+
+
+.error_alert_box .confirm_btn{width:65px;height:24px;line-height:24px;background:#1d7ad9;text-align:center;color:#fff;cursor:pointer;float:right;margin-right:18px;}
+
+
+
+.error_alert_box .confirm_btn:hover{background:#ff7300;}
+
+
+
+.error_alert_box .caution_content_box{height:80px;padding:33px 18px 0 24px;}
+
+
+
+.error_alert_box .caution_content_box .alarm_text{height:16px;line-height:16px;font-size:14px;padding-bottom:18px;color:#d70000;}
+
+
+
+.error_alert_box .caution_content_box .caution_text{color:#777;}
+
+
+
+/*关键字上下按键*/
+
+
+
+.word_slide a:hover,.word_slide .on{background:#1d7ad9;color:#fff;}
+
+
+
+/*speculate favorite*/
+
+
+
+.speculate_favorite_box{float:left;width:100%;}
+
+
+
+.speculate_favorite_title_box{border-bottom:1px solid #dedede;padding-bottom:4px;margin-bottom:17px;line-height:16px;color:#333;height:16px;}
+
+
+
+.speculate_favorite_title_box .title_text{float:left;vertical-align:top;font-size:14px;}
+
+
+
+.speculate_favorite_title_box .refresh_box{float:right;vertical-align:top;line-height:14px;padding-left:25px;height:14px;cursor:pointer;}
+
+
+
+.speculate_favorite_title_box .refresh_box:hover{color:#1d7ad9;}
+
+
+
+.speculate_favorite_box .speculate_unit{width:222px;height:222px;border:1px solid #ccc;background-color:#fff;margin-left:20px;float:left;}
+
+
+
+.speculate_favorite_box .first_unit{margin-left:0;}
+
+
+
+.speculate_unit a{display:block;height:168px;}
+
+
+
+.speculate_script_box{padding:13px 9px 0 9px;color:#333;}
+
+
+
+.speculate_first_row{height:14px;line-height:14px;}
+
+
+
+.speculate_second_row .speculate_second_row_text{width:140px;float:left;line-height:18px;}
+
+
+
+.speculate_second_row .spqculate_price{width:64px;float:right;line-height:18px;color:#ff7300;font-size:16px;text-align:right;}
+
+
+
+.speculate_second_row .spqculate_price span{color:#333;font-family:Arial, Helvetica, sans-serif;font-size:10px;}
+
+
+
+/* top */
+
+
+
+.en #top{background-position:0 -81px;} 
+
+
+
+.en #top:hover{background-position:-20px -81px;}
+
+
+
+
+
+
+
+
+
+
+
+.ja #top{background-position:0 -162px;} 
+
+
+
+.ja #top:hover{background-position:-20px -162px;}
+
+
+
+
+
+
+
+
+
+
+
+/*login*/
+
+
+
+/*.en .header .head .login,.en .header .head .login_hover,.en .header .head .login_selected{background-position:-23px -734px;background-color:#F4F4F4;border-right:1px solid #E2E2E2;}
+
+
+
+.en .header .head .login_hover,.en.header .head .login_selected{background-position:-23px -796px;}
+
+
+
+
+
+
+
+.ja .header .head .login,.ja .header .head .login_hover,.ja .header .head .login_selected{background-position: -23px -877px;background-color:#F4F4F4;border-right:1px solid #E2E2E2;}
+
+
+
+.ja .header .head .login_hover,.en .header .head .login_selected{background-position: -23px -939px;}
+
+
+
+
+
+
+
+.en #login_box .tool_box .login_btn,.ja #login_box .tool_box .login_btn{margin-right:0;}
+
+
+
+.en #login_box .tool_box a,.ja #login_box .tool_box a{padding-right:0;}*/
+
+
+
+.en .top_nav_fr .login,.ja .top_nav_fr .login{background-position:-670px -78px;}
+
+
+
+
+
+
+
+/*国际版*/
+
+
+
+.en .cityTab dl dd a{width:85px;text-indent:2px;}
+
+
+
+.ja .cityTab dl dd a{width:80px;}
+
+
+
+.en .cityTab dl dd a{width:85px;text-indent:2px;}
+
+
+
+.ja .cityTab dl dd a{width:80px;}
+
+
+
+
+
+
+
+.friendly_link{padding-bottom:20px;line-height:24px;}
+
+
+
+.friendly_link .friendly_link_label,.friendly_link .friendly_link_content_box{float:left;}
+
+
+
+.friendly_link .friendly_link_label{font-weight:bold;width:125px;}
+
+
+
+.friendly_link .friendly_link_content_box{width:1075px;}
+
+
+
+.friendly_link .friendly_link_content_box a{color:#777;margin-right:5px;}
+
+
+
+.friendly_link .friendly_link_content_box a:hover{color:#1d7ad9;text-decoration:underline;}
+
+
+
+.friendly_link_box{margin:0 auto;}
+
+
+
+#main-intro  a.back{position:absolute;top:10px;right:20px;color:#d4b45d;font-family:Georgia,serif;font-size:15px}
+
+
+
+.en .jinjiang_special_box .jinjiang_tool_bar {width:862px;}
+
+
+
+
+
+
+
+/*公用确认框*/
+
+
+
+.com_pop_box{ width:476px; height:200px;}
+
+
+
+.pop_mian_box{ padding:10px 20px; font-size:14px; text-indent:30px;}
+
+
+
+.pop_bottom_box{ padding:10px;}
+
+
+
+.pop_sure_area{ padding-left:170px;}
+
+
+
+.sure_btn{width:90px;height:30px;line-height:30px;text-align:center;color:#fff;background:#1d7ad9;font-size:18px;cursor:pointer; display:inline-block;float:left;}
+
+
+
+.sure_btn:hover{background-color:#ff7300;color:#fff;}
+
+
+
+.cancel_link{ padding-left:10px;line-height:30px; height:20px; display:inline-block; font-size:14px; display:inline-block;float:left;}
+
+
+
+.cancel_link:hover{ color:#1d7ad9; text-decoration:underline;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*熊猫二维码*/
+
+
+
+.swing{
+
+
+
+	-webkit-animation:swinging 3s ease-in-out 0s infinite;
+
+
+
+	-moz-animation:swinging 3s ease-in-out 0s infinite;
+
+
+
+	animation:swinging 3s ease-in-out 0s infinite;
+
+
+
+	-webkit-transform-origin:0 100%;
+
+
+
+	-moz-transform-origin:0 100%;
+
+
+
+	transform-origin:0 100%;
+
+
+
+}
+
+
+
+
+
+
+
+@-webkit-keyframes swinging{
+
+
+
+	0% { -webkit-transform: rotate(0); }
+
+
+
+	5% { -webkit-transform: rotate(10deg); }
+
+
+
+	10% { -webkit-transform: rotate(-9deg); }
+
+
+
+	15% { -webkit-transform: rotate(8deg); }
+
+
+
+	20% { -webkit-transform: rotate(-7deg); }
+
+
+
+	25% { -webkit-transform: rotate(6deg); }
+
+
+
+	30% { -webkit-transform: rotate(-5deg); }
+
+
+
+	35% { -webkit-transform: rotate(4deg); }
+
+
+
+	40% { -webkit-transform: rotate(-3deg); }
+
+
+
+	45% { -webkit-transform: rotate(2deg); }
+
+
+
+	50% { -webkit-transform: rotate(0); } /* Come to rest at 50%. The rest is just stillness */
+
+
+
+	100% { -webkit-transform: rotate(0); }
+
+
+
+}
+
+
+
+
+
+
+
+@-moz-keyframes swinging{
+
+
+
+	0% { -moz-transform: rotate(0); }
+
+
+
+	5% { -moz-transform: rotate(10deg); }
+
+
+
+	10% { -moz-transform: rotate(-9deg); }
+
+
+
+	15% { -moz-transform: rotate(8deg); }
+
+
+
+	20% { -moz-transform: rotate(-7deg); }
+
+
+
+	25% { -moz-transform: rotate(6deg); }
+
+
+
+	30% { -moz-transform: rotate(-5deg); }
+
+
+
+	35% { -moz-transform: rotate(4deg); }
+
+
+
+	40% { -moz-transform: rotate(-3deg); }
+
+
+
+	45% { -moz-transform: rotate(2deg); }
+
+
+
+	50% { -moz-transform: rotate(0); } /* Come to rest at 50%. The rest is just stillness */
+
+
+
+	100% { -moz-transform: rotate(0); }
+
+
+
+}
+
+
+
+
+
+
+
+@keyframes swinging{
+
+
+
+	0% { transform: rotate(0); }
+
+
+
+	5% { transform: rotate(10deg); }
+
+
+
+	10% { transform: rotate(-9deg); }
+
+
+
+	15% { transform: rotate(8deg); }
+
+
+
+	20% { transform: rotate(-7deg); }
+
+
+
+	25% { transform: rotate(6deg); }
+
+
+
+	30% { transform: rotate(-5deg); }
+
+
+
+	35% { transform: rotate(4deg); }
+
+
+
+	40% { transform: rotate(-3deg); }
+
+
+
+	45% { transform: rotate(2deg); }
+
+
+
+	50% { transform: rotate(0); } /* Come to rest at 50%. The rest is just stillness */
+
+
+
+	100% { transform: rotate(0); }
+
+
+
+}
+
+
+
+.panda_float{ position:fixed; left:1px;top:484px; z-index:999999;}
+
+
+
+.panda_inner{height:84px;-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;}
+
+
+
+.red_panda{ background:#fa4d4f;}
+
+
+
+.panda_img{width:97px; height:97px; float:left;}
+
+
+
+.panda_img a{background:url(lis/themes/NewInns/images/panda.png) no-repeat; width:97px; height:97px; display:block; margin-top:-13px;}
+
+
+
+.panda_code{ padding:4px 10px 3px 6px; display:none; float:left;}
+
+
+
+.panda_code i{ background:url(lis/themes/NewInns/images/code.png) no-repeat; display:block; width:75px; height:75px;}
+
+
+
+
+
+
+
+.en .second_row_box ul.foreign_nav li{padding:0 18px 0 25px}
+
+
+
+.ja .second_row_box ul.foreign_nav li{padding:0 18px 0 25px}
+
+
+
+
+
+
+
+/*新增数字验证码*/
+
+
+
+.num_validate_box .num_validate_input{ background:#FFF; width:110px; padding-left:10px; display:block; float:left;}
+
+
+
+.num_validate_box .num_validate_pic{ border:1px solid #7496c4; display:block; margin-top:13px;float:left; cursor:pointer; margin-left:10px;}
+
+
+
+.num_validate_box .num_validate_icon{ display:block;margin-top:12px; height:32px; float:left;cursor:pointer;}
+
+
+
+
+
+
+
+
+
+
+
+.hometip li span .mao{color:#999;font-size:17px;font-family:microsoft yahei;}
+
+
+
+.hometip li span .mao:hover{color:#000;}
+
+
+
+
+
+
+
+.hometip li span .special{color:#999;font-size:17px;font-family:microsoft yahei;}
+
+
+
+.hometip li span .special:hover{color:#000;}
+
+
+
+
+
+
+
+.wx_bg{
+
+
+
+   	display: none;
+
+
+
+   	width: 151px;
+
+
+
+   	height: 157px;
+
+
+
+   	background: url(lis/themes/NewInns/img/wx_bg.png) no-repeat;
+
+
+
+   	position: absolute;
+
+
+
+   	right: 234px;
+
+
+
+   	top: -160px;
+
+
+
+    z-index:99999;
+
+
+
+   }
+
+
+
+   .wx_bg img{
+
+	
+
+   	margin-top: 15px;
+
+
+
+   	margin-left: 15px;
+
+
+
+   }
+
+
+
+   .hometip ul{
+
+
+
+   	position: relative;
+
+
+
+	left:0;
+
+
+
+	top:0;
+
+
+
+   }
+
+
+
+   .hometip ul .n5{
+
+
+
+   	list-style: none;
+
+
+
+    width:145px;
+
+
+
+   }
+
+
+
+   .hometip ul .n5 a{
+
+
+
+   	text-decoration:none;
+
+
+
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.en .hometip li{width:160px;padding-left:27px;background:url(lis/themes/Bestay/img/icon_10.png) no-repeat right 10px;}
+
+
+
+.en .hometip li.n1{width:213px;}
+
+
+
+.en .hometip li.n2{width:100px;}
+
+
+
+.en .hometip li.n3{width:180px;}
+
+
+
+.en .hometip li.n5{width:170px;}
+
+
+
+.en .hometip li.n6{background:none;}
+
+
+
+
+
+
+
+.en .filter_unit ul li label{width:auto;}
+
+
+
+.en .filter_box label.checkbox{ height:14px; line-height:14px; padding-left:20px;overflow:visible;}
+
+
+
+
+
+
+
+.en .seo_bar p .name {width:261px;margin-bottom: 5px;}
+
+
+
+.cityslide{ padding:6px 10px; width:280px;color:#777}
+
+
+
+.cityslide .cityslide_head{ color:#333; padding:0 2px;}
+
+
+
+.cityslide .cityslide_adress{ color:#333; padding:2px 2px 4px; border-bottom:1px solid #ececec; margin-bottom:2px;cursor: pointer;}
+
+
+
+.cityslide .cityslide_adress:hover { background:#1d7ad9;}
+
+
+
+.cityslide .cityslide_adress:hover a {color:#FFF;}
+
+
+
+.cityslide .cityslide_hotel{ margin-top:2px;}
+
+
+
+.cityslide .cityslide_hotel  li{ padding:4px 2px; line-height:16px; color:#777;}
+
+
+
+.cityslide .cityslide_hotel  li.on{ color:#FFF;}
+
+
+
+.cityslide .cityslide_hotel  li .cityslide_hotel_name{ float:left;}
+
+
+
+.cityslide .cityslide_hotel  li .cityslide_hotel_adress{ float:right;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.citySelector{opacity:0.9;filter:alpha(opacity=90);-khtml-opacity:0.9;}
+
+
+
+.cityBox,.cityslide{position:relative;}
+
+
+
+.cityslide_adress .city_letter{float:right;}
+
+
+
+/*app二维码*/
+
+.head_app_box{
+
+	position: relative;
+
+	z-index: 9;
+
+	float: right;
+
+	height: 26px;
+
+	line-height: 26px;
+
+	font-size: 14px;
+
+	color: #777;
+
+	padding: 8px 0;
+
+	margin: 5px 5px 0;
+
+	cursor: pointer;
+
+	border: 2px solid transparent;
+
+	border-bottom: none;
+
+	border-top-left-radius: 5px;
+
+	border-top-right-radius: 5px;
+
+}
+
+.head_app_wap{
+
+	position: relative;
+
+	z-index: 10;
+
+	height: 35px;
+
+}
+
+.head_app{
+
+	border-left: 1px solid #dedede;
+
+    border-right: 1px solid #dedede;
+
+  	padding: 0 6px;
+
+}
+
+.app_icon{
+
+	display: inline-block;
+
+	*zoom:1;*display:inline;
+
+	vertical-align: middle;
+
+	width:14px;
+
+	height: 25px;
+
+	background:url(http://static2.ejinjiang.com/themes/travelui/travel/images/head/com_head.png) no-repeat -24px -730px;
+
+}
+
+.app_text{
+
+	display: inline-block;
+
+	*zoom:1;*display:inline;
+
+	vertical-align: middle;
+
+}
+
+.head_app_iconbox{
+
+	display: none;
+
+	position: absolute;
+
+	top: 40px;
+
+	left: -2px;
+
+	width: 202px;
+
+	padding:12px 6px 6px;
+
+	border: 2px solid #ccc;
+
+	font-size: 12px;
+
+	border-bottom-left-radius: 5px;
+
+	border-bottom-right-radius: 5px;
+
+	border-top-right-radius: 5px;
+
+	background-color: #fff;
+
+}
+
+.line_separate{
+
+	display: inline-block;
+
+	*zoom:1;*display:inline;
+
+	width: 1px;
+
+	height: 98px;
+
+	*height: 106px;
+
+	background-color: #ccc;
+
+}
+
+.app_pic_box,.wechat_pic_box{
+
+	display: inline-block;
+
+	*zoom:1;*display:inline;
+
+	padding: 0 6px;
+
+	width: 84px;
+
+}
+
+.app_pic_box span,.wechat_pic_box span{
+
+	display: block;
+
+	margin-top: -10px;
+
+	*margin-top: -2px;
+
+}
+
+.head_app_box:hover{
+
+	border-color:#ccc;
+
+	background-color: #fff;
+
+}
+
+.head_app_box:hover .head_app{
+
+	border-color: transparent;
+
+}
+
+.head_app_box:hover .app_icon{
+
+	background-position: -24px -763px;
+
+}
+
+.head_app_box:hover .head_app_iconbox{
+
+	display: block;
+
+}
+
+.head_app_box:hover .head_app_wap{
+
+	background-color: #fff;
+
+}
+
+.head_app_iconbox a{
+
+	padding-right: 0;
+
+	line-height: 14px;
+
+}
+
+.app_pic_box a:hover{
+
+	text-decoration: underline;
+
+}
+
+
+
+.two_dimension_code_icons_box a.jinjiang_star_icon {
+
+    background: url(lis/themes/hotels/sprite/jinjiang_star_weixin_icon.jpg) no-repeat;
+
+}
+
+
+
+.mar_l_20 {
+
+    Margin-left: 20px;
+
+}
+
+
+
+.top_nav_fl a.jinjiang_kangbo i{background-position:-799px -81px;width: 90px;}
+
+.top_nav_fl a.jinjiang_kangbo:hover i{background-position:-799px -1px;}
+

@@ -1,0 +1,6 @@
+/*
+	[Hotel System] Copyright (c) 2008-2015 www.idc580.cn
+	
+*/
+body {_background-image:url('image/spacer.gif');_background-attachment:fixed;}
+#head {_position:absolute;_top:expression(documentElement.scrollTop);}

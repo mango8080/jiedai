@@ -1,0 +1,105 @@
+{template 'header'}
+
+
+
+<link href="{DT_SKIN}company.css" rel="stylesheet" type="text/css">
+
+
+
+			<div class="w1200">
+
+        <div class="leftmain">
+
+            
+
+
+
+      <div class="searchmain tabBox">
+
+      <form action="/company/search.php" method="get">
+
+      <input type="hidden" name="page" value="1">
+
+        
+
+        <div class="tabMain" style="display:block;background:#FFF">
+
+          <div class="label city">
+
+            <p class="name">入住城市</p>
+
+            <div class="city_box">
+
+              <input name="" class="input_txt city_input" id="cityInfo" value="上海" type="text">
+
+            </div>
+
+          </div>
+
+          
+
+         
+
+          <div class="label">
+
+            <p class="name">关键字</p>
+
+            <div class="kw">
+
+              <input name="kw"  value="" class="input_txt kw_input" type="text" placeholder="酒店名称/地标">
+
+            </div>
+
+          </div>
+
+          <div class="label">
+
+          <input type="submit" name="submit" value="搜索" class="btn">
+
+          </div>
+
+          <div class="clear_float"></div>
+
+        </div>
+
+        </form>
+
+    </div>
+
+
+
+
+
+
+
+            
+
+        </div>
+
+        <div class="rightmain">
+
+            <div class="brandMain tabBox">
+
+                <div class="newspage">
+
+                    <div class="tit2">
+
+                        <h1 class="yahei">{$title}</h1>
+
+                        <div class="tip">{$adddate} </div>
+
+                    </div>
+
+                </div>
+
+                <div class="newMain">{$content}</div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+{template 'footer'}

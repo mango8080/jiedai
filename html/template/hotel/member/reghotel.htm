@@ -1,0 +1,500 @@
+{template 'header1'}
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}reg.css">
+<style type="text/css">
+    html{background-color: #ececec;}
+    .reg_inp{vertical-align:middle;}
+    .btn_1{margin-top: 20px;}
+    #gender_2{vertical-align: middle;}
+
+    .book_process {
+        padding: 14px 0 23px;
+        width: 1180px;
+        background-color: #FFF;
+        margin:0 auto;
+    }
+
+    .book_process .done {
+        background-position: right 0;
+        color: #799d08;
+    }
+    .book_process li {
+        background-position: right -25px;
+        color: #999;
+        display: inline-block;
+        height: 15px;
+        line-height: 15px;
+        margin-left: 14px;
+        padding-left: 172px;
+        position: relative;
+    }
+
+    .book_process .done .arr {
+        background-position: 0 -5px;
+    }
+    .book_process .arr {
+        background-position: 0 -30px;
+        display: inline-block;
+        height: 5px;
+        left: 0;
+        position: absolute;
+        top: 5px;
+        width: 5px;
+    }
+
+    .book_process li{
+    background-image: url("../skin/hotel/image/un_hotel_join_bg.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+}
+</style>
+<div id="reg">
+<!--content-->
+<div class="subCnt">
+    
+    <div class="book_process process_step1" style="margin-top: 30px;width: 1000px;"><ol><li class="done"><i class="arr"></i>基本信息</li><li><i class="arr"></i>酒店信息</li><li><i class="arr"></i>房型提交</li><li><i class="arr"></i>提交完成</li></ol></div>
+
+    <div class="mod_cnt">
+        <div class="login">
+            <!--menus-->
+            <div class="m">
+                <a href="" class="active">加盟酒店注册--基本信息</a>
+                
+            </div>
+            <!--user reg content-->
+            <!--用户注册-->
+            <div class="b ht2 show">
+                
+                <!--用户注册详细 内容-->
+                <dl class="dl_tbe_1" style="padding-top:30px;">
+                   
+                    <dl id="mobile_cnt" style="display:block">
+                       <iframe src="" name="send" id="send" style="display:none;"></iframe>
+            <form action="reghotel.php" method="post" target="send" onsubmit="return check();">
+            <input type="hidden" name="post[regid]" value="6"/>
+            <input type="hidden" name="post[step]" value="1"/>
+            <input name="action" type="hidden" id="action" value="{crypt_action('register')}"/>
+            <input name="forward" type="hidden" value="{$forward}"/>
+            <input name="hotelstatus" type="hidden" value="active"/>
+           <input name="jiameng" type="hidden" value="1"/>
+            <table cellpadding="5" cellspacing="5" width="100%">
+            <tr onmouseover="Ds('tusername');" onmouseout="Dh('tusername');" height="40">
+            <td width="80">用户名 <span class="f_red">*</span></td>
+            <td width="220"><input type="text" class="reg_inp" style="width:200px;" name="post[username]" id="username" onblur="validator('username');" autocomplete="off" {if $username} value="{$username}" readonly{/if}/>
+            </td>
+            <td>
+            <div class="tips" id="tusername" style="display:none;">
+                <div>{$MOD[minusername]}-{$MOD[maxusername]}个字符,字母开头和结尾</div>
+            </div>
+            <span id="dusername" class="f_red"></span>&nbsp;
+            </td>
+            </tr>
+            
+            <tr onmouseover="Ds('tpassword');" onmouseout="Dh('tpassword');" height="40">
+            <td class="tl">登录密码 <span class="f_red">*</span></td>
+            <td><input type="password" class="reg_inp" style="width:200px;" name="post[password]" id="password" onblur="validator('password');" autocomplete="off"{if $password} value="{$password}" readonly{/if}/></td>
+            <td>
+            <div class="tips" id="tpassword" style="display:none;">
+                <div>{$MOD[minpassword]}-{$MOD[maxpassword]}个字符，区分大小写</div>
+            </div>
+            <span id="dpassword" class="f_red"></span>&nbsp;
+            </td>
+            </tr>
+            <tr onmouseover="Ds('tcpassword');" onmouseout="Dh('tcpassword');" height="40">
+            <td class="tl">重复输入 <span class="f_red">*</span></td>
+            <td><input type="password" class="reg_inp" style="width:200px;" size="30" name="post[cpassword]" id="cpassword" onblur="validate('cpassword');" autocomplete="off"{if $password} value="{$password}" readonly{/if}/></td>
+            <td>
+            <div class="tips" id="tcpassword" style="display:none;">
+                <div>请再输入一遍上面填写的密码</div>
+            </div>
+            <span id="dcpassword" class="f_red"></span>&nbsp;
+            </td>
+            </tr>
+            </table>
+            
+
+            <table cellpadding="5" cellspacing="5" width="100%">
+            <tr onmouseover="Ds('ttruename');" onmouseout="Dh('ttruename');" height="40">
+            <td width="80">姓名 <span class="f_red">*</span></td>
+
+            <td width="220">
+            <input type="text" class="reg_inp" style="width:80px;" name="post[truename]" id="truename" onblur="validate('truename');"/>
+            <input type="radio" name="post[gender]" value="1" checked id="gender_1" style="vertical-align:middle;" /><label for="gender_1"> 先生</label>
+            <input type="radio" name="post[gender]" value="2" id="gender_2"/><label for="gender_2" style="vertical-align:middle;" > 女士</label>
+            </td>
+            <td>
+            <div class="tips" id="ttruename" style="display:none;">
+                <div>请与有效身份证件上的姓名保持一致</div>
+            </div>
+            <span id="dtruename" class="f_red"></span>&nbsp;
+            </td>
+            </tr>
+            
+            
+            <tr height="40">
+            <td height="40">所在地区 <span class="f_red">*</span></td>
+            <td colspan="2">{ajax_area_select('post[areaid]', '请选择', $areaid, '', 2)}</td>
+            <span id="dareaid" class="f_red"></span>
+            </tr>
+            <tr onmouseover="Ds('temail');" onmouseout="Dh('temail');">
+            <td height="40">电子邮箱 </td>
+            <td><input type="text" class="reg_inp" style="width:200px;" name="post[email]" id="email" onblur="validator('email');"{if $email} value="{$email}" readonly{/if}/></td>
+            <td>
+            <div class="tips" id="temail" style="display:none;">
+                <div>
+                {if $MOD[checkuser] == 2}
+                <span class="f_red">请确保邮件地址真实有效<br/></span>
+                {/if}
+                请使用常用Email地址          
+                </div>
+            </div>
+            <span id="demail" class="f_red"></span>&nbsp;   
+            </td>
+            </tr>
+            
+
+            <tr onmouseover="Ds('tmobile');" onmouseout="Dh('tmobile');" height="40">
+            <td  width="80">手机号码 <span class="f_red">*</span></td>
+            <td><input type="text" class="reg_inp" style="width:200px;" name="post[mobile]" id="mobile"{if $could_mobilecode} onblur="validator('mobile');"{/if}/></td>
+            <td>
+            <div class="tips" id="tmobile" style="display:none;">
+                <div>{if !$could_mobilecode}请填写手机号码<br/>{/if}</div>
+            </div>
+            <span id="dmobile" class="f_red"></span>&nbsp;  
+            </td>
+            </tr>
+
+            {if $could_mobilecode}
+            <tr onmouseover="Ds('tmobilecode');" onmouseout="Dh('tmobilecode');" height="40">
+            <td >手机验证码 <span class="f_red">*</span></td>
+            <td><input type="text" class="reg_inp" style="width:80px;" name="post[mobilecode]" id="mobilecode" onblur="validator('mobilecode');"/>
+            <input type="button" value="立即发送" id="send_scode" onclick="SendSCode();"/>
+            </td>
+            <td>
+            <div class="tips" id="tmobilecode" style="display:none;">
+                <div>
+                填写手机验证码
+                </div>
+            </div>
+            <span id="dmobilecode" class="f_red"></span>&nbsp;  
+            </td>
+            </tr>
+            <tr id="sendsok" style="display:none;" height="40">
+            <td width="80">&nbsp;</td>
+            <td id="dsendsok">&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+            {/if}
+
+            </table>
+            <table cellpadding="5" cellspacing="5" width="100%">
+                <tr height="40">
+                    <td width="80">酒店名称 </td>
+                    <td width="220"><input class="reg_inp" style="width:200px;" name="post[company]" id="company" onblur="validator('company');" type="text"></td>
+                    <td>
+                        <div class="tips" id="tcompany" style="display: none;">
+                        <div>与营业执照保持一致</div>
+                        </div>
+                        <span id="dcompany" class="f_red"></span>&nbsp;
+                    </td>
+                </tr>
+                <tr height="40">
+                    <td width="80">酒店电话 </td>
+                    <td><input class="reg_inp" style="width:200px;" name="post[telephone]" id="telephone" onblur="validate('telephone');" type="text"></td>
+                    <td>
+                        <div class="tips" id="ttelephone" style="display: none;">
+                        <div>格式范例：010-88889999</div>
+                        </div>
+                        <span id="dtelephone" class="f_red"> 请输入酒店电话</span>&nbsp;
+                    </td>
+                </tr>
+                <tr height="40">
+                    <td width="80">房间数 </td>
+                    <td><input class="reg_inp" value="1" style="width:200px;" name="post[totalrooms]" id="totalrooms"  type="text" style="width:80px;"></td>
+                    <td>
+          
+                    </td>
+                </tr>
+                <tr height="40">
+                    <td width="80">星级 </td>
+                    <td colspan='2'><input class="reg_inp"  name="post[starrating]" type="radio" checked=""> 二星级及以下&nbsp; <input class="reg_inp"  name="post[starrating]" type="radio"> 三星级 &nbsp;<input class="reg_inp"  name="post[starrating]" type="radio"> 四星级&nbsp;
+                    <input class="reg_inp"  name="post[starrating]" type="radio"> 五星级
+
+                    </td>
+                    
+                </tr>
+            </table>
+            
+            <table cellpadding="5" cellspacing="5" width="100%">
+            
+            {if $MOD[captcha_register]}
+            <tr onmouseover="Ds('tcaptcha');" onmouseout="Dh('tcaptcha');" height="40">
+            <td width="80">验证码 <span class="f_red">*</span></td>
+            <td>{template 'captcha', 'chip'}</td>
+            <td>
+            <div class="tips" id="tcaptcha" style="display:none;">
+                <div>如果看不清楚，请点击图片刷新</div>
+            </div>
+            <span id="dcaptcha" class="f_red"></span>&nbsp;
+            </td>
+            </tr>
+            {/if}
+            
+            <tr id="sbm">
+            <td class="tl"></td>
+            <td>
+            <input type="submit" name="submit" value="下一步" class="btn_1 enable"/>
+            </td>
+            <td>&nbsp;</td>
+            </tr>
+            </table>
+            </form>
+                    </dl>
+                    
+                </dl>
+            </div>
+        </div>
+
+        
+        <!-- <div class="abside">
+            <dl class="welcome">
+                
+                <dd class="w"><img src="{DT_SKIN}image/m-6.jpg" width="266" height="200"></dd>
+                
+            </dl>
+        </div> -->
+        <div class="clear"></div>
+    </div>
+</div>
+<!-- footer -->
+</div>
+<script type="text/javascript" src="{DT_STATIC}file/script/guest.js"></script>
+<script type="text/javascript">
+if(Dd('username').value == '') Dd('username').focus();
+
+var vid = '';
+function dtrim(id) {
+    var str = Dd(id).value.trim();
+    if(Dd(id).value != str) Dd(id).value = str;
+}
+function validator(id) {
+    vid = id;
+    dtrim(id);
+    makeRequest('moduleid={$moduleid}&action=member&job='+id+'&value='+Dd(id).value+'&regid=6', AJPath, '_validator');
+}
+function _validator() {
+    if(xmlHttp.readyState==4 && xmlHttp.status==200) {
+        Dd('d'+vid).innerHTML = xmlHttp.responseText ? '<img src="{DT_SKIN}image/check_error.gif" align="absmiddle"/> '+xmlHttp.responseText : '<img src="{DT_SKIN}image/check_right.gif" align="absmiddle"/> ';
+    }
+}
+function err_msg(str, id) {
+    Dd('d'+id).innerHTML = '<img src="{DT_SKIN}image/check_'+(str ? 'error' : 'right')+'.gif" align="absmiddle"/> '+str;
+}
+function validate(type) {
+    if(type == 'cpassword') {
+        if(Dd('cpassword').value != Dd('password').value) {
+            err_msg('两次输入的密码不一致', type);
+        } else {
+            err_msg('', type);
+        }
+    } else if(type == 'truename') {
+        dtrim(type);
+        if(Dd('truename').value.length < 2) {
+            err_msg('请输入真实姓名', type);
+        } else {
+            err_msg('', type);
+        }
+    } else if(type == 'telephone') {
+        dtrim(type);
+        if(Dd('telephone').value.match(/^[0-9\-\(\)\+\.]{7,}$/)) {
+            err_msg('', type);
+        } else {
+            err_msg('请输入酒店电话', type);
+        }
+    }
+}
+function reg(type) {
+    if(type) {
+        Ds('company_detail');
+    } else {
+        Dh('company_detail');
+    }
+}
+function Df(ID) {
+    Dd(ID).focus();
+}
+function check() {
+    var f,p;
+    f = 'username';
+    if(Dd(f).value == '') {
+        err_msg('请填写用户登录名', f);
+        Df(f);
+        return false;
+    }
+    if(Dd('d'+f).innerHTML.indexOf('error') != -1) {
+        Df(f);
+        return false;
+    }
+    f = 'password';
+    if(Dd(f).value.length < 6) {
+        err_msg('请填写用户登录密码', f);
+        Df(f);
+        return false;
+    }
+    if(Dd('d'+f).innerHTML.indexOf('error') != -1) {
+        Df(f);
+        return false;
+    }
+    f = 'cpassword';
+    if(Dd(f).value == '') {
+        err_msg('请重复输入密码', f);
+        Df(f);
+        return false;
+    }
+    if(Dd('password').value != Dd(f).value) {
+        err_msg('两次输入的密码不一致', f);
+        Df(f);
+        return false;
+    }
+    f = 'truename';
+    if(Dd(f).value == '') {
+        err_msg('请填写真实姓名', f);
+        Df(f);
+        return false;
+    }
+    f = 'company';
+        if(Dd(f).value == '') {
+            err_msg('请填写酒店名称', f);
+            Df(f);
+            return false;
+    }
+    // f = 'email';
+    // if(Dd(f).value.length < 6) {
+    //     err_msg('请填写电子邮箱', f);
+    //     Df(f);
+    //     return false;
+    // }
+    // if(Dd('d'+f).innerHTML.indexOf('error') != -1) {
+    //     Df(f);
+    //     return false;
+    // }
+    if(Dd('areaid_1').value == 0) {
+        Dmsg('请选择所在地', 'areaid');
+        return false;
+    }
+    {if $could_emailcode}
+        f = 'emailcode';
+        if(!Dd(f).value.match(/^[0-9]{6}$/)) {
+            Dmsg('请填写邮件验证码', f);
+            return false;
+        }
+    {/if}
+    if(Dd('g_5').checked == false) {
+        f = 'company';
+        if(Dd(f).value == '') {
+            err_msg('请填写酒店名称', f);
+            Df(f);
+            return false;
+        }
+        if(Dd('d'+f).innerHTML.indexOf('error') != -1) {
+            Df(f);
+            return false;
+        }
+        if(Dd('type').value == '') {
+            Dmsg('请选择酒店类型', 'type');
+            return false;
+        }
+        f = 'telephone';
+        if(Dd(f).value.length < 7) {
+            err_msg('请填写酒店电话', f);
+            Df(f);
+            return false;
+        }
+    }
+    {if $MOD[question_register]}
+    f = 'answer';
+    if(Dd(f).value == '') {
+        Dmsg('请回答验证问题', f);
+        return false;
+    }
+    {/if}
+    {if $MOD[captcha_register]}
+    f = 'captcha';
+    if(!is_captcha(Dd(f).value)) {
+        Dmsg('请填写验证码', f);
+        return false;
+    }
+    {/if}
+    return true;
+}
+
+function StopCode() {
+    Dd('send_code').disabled = true;
+    var i = 60;
+    var interval=window.setInterval(
+        function() {
+            if(i == 0) {
+                Dd('send_code').value = '立即发送';
+                Dd('send_code').disabled = false;
+                clearInterval(interval);
+            } else {
+                Dd('send_code').value = '重新发送('+i+')';
+                i--;
+            }
+        },
+    1000);
+}
+
+function SendSCode() {
+    if(Dd('dmobile').innerHTML.indexOf('right') == -1) {
+        Dd('mobile').focus();
+        return;
+    }
+    makeRequest('action={$action_sendscode}&value='+Dd('mobile').value, '{$DT[file_register]}', '_SendSCode');
+    Dh('sendsok');
+    Dd('send_scode').value = '正在发送';
+    Dd('send_scode').disabled = true;
+}
+function _SendSCode() {
+    var f = 'mobile';
+    if(xmlHttp.readyState==4 && xmlHttp.status==200) {          
+        Dd('send_scode').value = xmlHttp.responseText == 1 ? '发送成功' : '立即发送';
+        Dd('send_scode').disabled = xmlHttp.responseText == 1 ? true : false;
+        if(xmlHttp.responseText == 1) {
+            Ds('sendsok');
+            Dd('dsendsok').innerHTML = '<img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/ico_mailok.gif" align="absmiddle"/> <span class="f_green">短信发送成功</span>';
+            StopSCode();
+        } else if(xmlHttp.responseText == 2) {
+            err_msg('手机号码格式错误，请检查', f);
+            Df(f);
+        } else if(xmlHttp.responseText == 3) {
+            err_msg('手机号码已存在，请更换', f);
+            Df(f);
+        } else if(xmlHttp.responseText == 5) {
+            alert('短信发送过快，请稍后再试');
+        } else if(xmlHttp.responseText == 6) {
+            alert('尝试发送次数太多，请稍后再试');
+        } else {
+            alert('未知错误，请重试');
+        }
+    }
+}
+function StopSCode() {
+    Dd('send_scode').disabled = true;
+    var i = 180;
+    var interval=window.setInterval(
+        function() {
+            if(i == 0) {
+                Dd('send_scode').value = '立即发送';
+                Dd('send_scode').disabled = false;
+                clearInterval(interval);
+            } else {
+                Dd('send_scode').value = '重新发送('+i+')';
+                i--;
+            }
+        },
+    1000);
+}
+
+</script>
+{template 'footer'}

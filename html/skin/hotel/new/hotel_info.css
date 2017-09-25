@@ -1,0 +1,1241 @@
+﻿@charset "utf-8";
+/*
+* @Author: zheng_j
+* @Date:   2016-05-09 11:13:19
+* @Last Modified by:   zheng_j
+* @Desc:   信息维护
+*/
+.newhotel_sidenav {
+	float: left;
+	padding-bottom: 20px;
+	position: relative;
+	width: 130px;
+	border: 2px solid #66bbdc;
+	background-color: #fff;
+}
+.newhotel_sidenav h2 {
+	background: url(http://pic.c-ctrip.com/ebooking/web/bg_newhotel.gif) no-repeat 8px center;
+	border-bottom: 1px solid #d0eaf4;
+	font-size: 14px;
+	height: 35px;
+	line-height: 35px;
+	padding: 0 0 0 18px;
+	color: #486f96;
+	height: auto;
+	line-height: 1.5;
+}
+.newhotel_sidenav .submenu_title2 {
+	border-top: 1px solid #D0EAF4;
+}
+.newhotel_submenu dd {
+	margin-bottom: 5px;
+	height: 29px;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	line-height: 29px;
+	padding: 0 0 0 18px;
+}
+.newhotel_submenu dd.selected {
+	border-top: 1px solid #41a7cf;
+	border-bottom: 1px solid #41a7cf;
+	background-color: #45b9e6;
+}
+.newhotel_submenu dd a {
+	color: #486f96;
+}
+.newhotel_submenu dd.selected a {
+	color: #fff;
+}
+.newhotel_sidenav h2 {
+	background-position: 8px 6px;
+	height: auto;
+	line-height: 1.5;
+}
+.newhotel_submenu dd {
+	height: auto;
+	line-height: 1.5;
+}
+.ebk3-main-content {
+	background-color: transparent !important;
+}
+.page_hotelInfo_content {
+	margin-left: 144px;
+}
+.page-block {
+	padding: 10px  20px;
+	margin-bottom: 10px;
+	background-color: #fff;
+	-webkit-box-shadow: -1px 2px 1px 0 #e3e7ea;
+	box-shadow: -1px 2px 1px 0 #e3e7ea;
+}
+.hotelInfo-picAcBar {
+	position: relative;
+}
+.hotelInfo-picAcBar .btn-picRule {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -9px;
+}
+.picRule-list {
+	margin-top: 10px;
+	padding: 8px 15px;
+	border: 2px solid #ddd;
+	line-height: 22px;
+}
+.picRule-list dd {
+	margin-left: 30px;
+}
+.page_hotelInfo_content .ebk3-pageNotice {
+	padding: 7px 10px;
+	border: none;
+	margin-bottom: 10px;
+	background-color: #fff7d7;
+}
+.pics-title {
+	padding: 15px 0 12px;
+	font-size: 16px;
+}
+
+.pic-box{
+	position: relative;
+	background-color: #eff3f6;
+	font-size: 0;
+	overflow: hidden;
+}
+.pic-box img {
+	display: block;
+}
+.mod-upload-res .pic-box,
+.album-pics-wrap .pic-box{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	background-color: transparent;
+}
+.mod-upload-res .pic-box img,
+.album-pics-wrap .pic-box img{
+	display: inline;
+}
+.pic-box .pic-name {
+	background-color: #288fe7;
+}
+.pic-box .pic-statusInfo {
+	left: auto;
+	right: 0;
+	background-color: #ff5f5f;
+}
+.pic-box .pic-box-btns {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 38px;
+	background-color: rgba(0, 0, 0, 0.5);
+	background-color: #000 \9;
+	filter: Alpha(opacity=50);
+	line-height: 38px;
+	font-size: 0;
+	color: #fff;
+	text-align: center;
+}
+.pic-box-btns .ebk3-simple-btn {
+	display: inline-block;
+	color: #fff;
+	font-size: 14px;
+	line-height: 1.3;
+	vertical-align: middle;
+}
+/* -----------htl_pic_map----------- */
+.htl_pic {
+	margin-bottom: 12px;
+	height: 258px;
+	background-color: #fff;
+	overflow: hidden;
+}
+.htl_pic .pic1, .htl_pic .pic2, .htl_pic .pic3, .htl_pic .pic4, .htl_pic .pic5, .htl_pic .pic6, .htl_pic .pic7, .htl_pic .pic8, .htl_pic .pic9 {
+	float: left;
+	display: inline;
+	margin-left: 6px;
+	background-color: #FFFAF0;
+	overflow: hidden;
+	/*cursor: move;*/
+}
+.htl_pic .pic-box img{
+	width: 100%;
+	height:100%;
+}
+.htl_pic .pic1, .htl_pic .pic2, .htl_pic .pic7 {
+	background-color: #eff3f6;
+}
+.htl_pic .pic1 {
+	border: 3px solid #288fe7;
+	width: 328px;
+	height: 252px;
+	margin-left: 0;
+}
+.htl_pic .pic2, .htl_pic .pic7 {
+	width: 283px;
+	height: 125px;
+}
+.htl_pic .pic3, .htl_pic .pic4, .htl_pic .pic5, .htl_pic .pic6, .htl_pic .pic8, .htl_pic .pic9 {
+	width: 115px;
+	height: 125px;
+}
+.htl_pic .pic2, .htl_pic .pic3, .htl_pic .pic4, .htl_pic .pic5 {
+	margin-bottom: 8px;
+}
+.htl_pic div div {
+	height: 100%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+.pic_bottom {
+	clear: both;
+	padding-right: 8px;
+	text-align: right;
+	color: #666;
+}
+.pic_bottom a {
+	margin-left: 12px;
+}
+.pic-box .pic-statusInfo, .pic-box .pic-name {
+	position: absolute;
+	top: -3px;
+	padding: 7px 10px;
+	height: auto;
+	color: #fff;
+	font-size: 14px;
+}
+.htl_pic .pic1 .picItem {
+	margin: -3px 0 0 -3px;
+}
+
+/*.htl_pic_map */
+.hotelInfo-picMod {
+	width: 754px;
+}
+.picMod-picBox {
+	position: relative;
+	margin-top: 20px;
+	height: 345px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.picMod-list {
+	margin: 0 -20px -20px 0;
+	overflow: hidden;
+}
+.picMod-list li {
+	float: left;
+	margin: 0 20px 20px 0;
+	width: 130px;
+	height: 130px;
+	background-color: #eff3f6;
+	font-size: 0;
+	cursor: pointer;
+}
+.picMod-list .selected {
+	border: 3px solid #93c7f3;
+	width: 124px;
+	height: 124px;
+	overflow: hidden;
+	cursor: default;
+}
+.picMod-list .pic-box img{
+	width: 130px;
+	height: 130px;
+}
+.picMod-list .selected img {
+	margin: -3px 0 0 -3px;
+}
+.picMod-list li {
+	opacity: .5;
+	filter: Alpha(opacity=50);
+}
+.picMod-list .selected {
+	opacity: 1;
+	filter: Alpha(opacity=100);
+}
+.pics-filter .ebk3-compt-lbText {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin-right: 30px;
+	vertical-align: middle;
+}
+.pics-filter .ebk3-compt-lbText-lb {
+	width: auto;
+}
+.pics-filter .ebk3-select {
+	width: 107px;
+}
+.dropdown {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	position: relative;
+	padding: 5px;
+	font-size: 12px;
+}
+.dropdown .ebk3-ico-selectBlackArrBottom {
+	margin-left: 3px;
+}
+.dropdown:hover .ebk3-ico-selectBlackArrBottom {
+	background-position: 0 -194px;
+}
+.dropdown .dropdown-btn {
+	height: 18px;
+}
+.dropdown .dropdown-menu {
+	display: none;
+	position: absolute;
+	right: 0;
+	top: 24px;
+	background-color: #fff;
+	white-space: nowrap;
+}
+.dropdown .dropdown-menu li {
+	margin: 3px 5px;
+}
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
+.pics-sec {
+	position: relative;
+	padding: 5px 20px;
+	background-color: #eff3f6;
+}
+.batchMdf .pics-sec {
+	background-color: #51728b;
+}
+.batchMdf .pics-sec .ebk3-copm-labc span {
+	color: #fff;
+	vertical-align: baseline;
+}
+.pics-sec .ebk3-copm-labc, .pics-sec .ebk3-btn {
+	margin-right: 10px;
+}
+.pics-sec .dropdown {
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	margin-top: -14px;
+}
+.edit-picsList-box {
+	margin-top: 15px;
+}
+.edit-picsList .picsList-name {
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #ddd;
+	font-size: 16px;
+}
+.edit-picsList {
+	margin: 0 -10px 13px 0;
+	overflow: hidden;
+	*zoom: 1;
+}
+.edit-picsList  .pic-box {
+	font-size: 0;
+}
+.edit-picsList  .picsList-item {
+	float: left;
+	margin: 0 10px 25px 0;
+}
+.edit-picsList .pic-box {
+	display: block;
+}
+.edit-picsList .pic-box img{
+	width: 240px;
+	height: 240px;
+}
+.edit-picsList .upload-box, .edit-picsList .pic-box {
+	position: relative;
+	width: 240px;
+	height: 240px;
+	background-color: #eff3f6;
+	overflow: hidden;
+}
+.edit-picsList .pic-box.pic-statusErr {
+	border-color: #ff5f5f !important;
+}
+.edit-picsList .pic-box.pic-statusErr,
+.edit-picsList .pic-box.pic1 {
+	border-width: 3px;
+	border-style: solid;
+	border-color: #288fe7;
+	width: 234px;
+	height: 234px;
+}
+.edit-picsList .pic-box.pic-statusErr .pic-box-btns .ebk3-simple-btn, .edit-picsList .pic-box.pic1 .pic-box-btns .ebk3-simple-btn {
+	width: 100%;
+}
+.edit-picsList .pic-box.picauditing .pic-box-btns .ebk3-simple-btn {
+	width: 100%;
+}
+.edit-picsList .pic-box.pic-statusErr img, .edit-picsList .pic-box.pic1 img {
+	margin: -3px 0 0 -3px;
+}
+.edit-picsList .pic-box-btns .ebk3-simple-btn {
+	margin-left: -1px;
+	width: 119px;
+	border-left: 1px solid #fff;
+}
+.edit-picsList .editPicName {
+	margin-top: 6px;
+	height: 31px;
+	line-height: 31px;
+	font-size: 14px;
+	text-align: center;
+}
+.editPicName-input {
+	position: relative;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+.editPicName-input .ebk3-inText {
+	width: 232px;
+}
+.editPicName-input .ebk3-close {
+	position: absolute;
+	padding: 5px !important;
+	top: 50% !important;
+	right: 0 !important;
+	margin-top: -15px !important;
+	line-height: 20px !important;
+	color: #aaa !important;
+	font-weight: normal !important;
+}
+.ebk3-ico-edit {
+	width: 14px;
+	height: 15px;
+	background-position: -230px -90px;
+	cursor: pointer;
+	margin-left: 5px;
+}
+.edit-picsList .editPicName span {
+	vertical-align: middle;
+}
+.upload-btn {
+	position: relative;
+	border: 3px dashed #93b0c7;
+	width: 234px;
+	height: 234px;
+	text-align: center;
+	cursor: pointer;
+}
+.upload-i {
+	position: absolute;
+	margin-top: -28px;
+	left: 0;
+	top: 50%;
+	width: 100%;
+	font-size: 14px;
+	color: #93b0c7;
+}
+.ebk3-ico-upload {
+	width: 26px;
+	height: 23px;
+	background-position: -240px -210px;
+}
+.upload-i .ebk3-ico-upload {
+	margin-bottom: 12px;
+}
+.upload-box:hover .upload-btn {
+	border-color: #288fe7;
+}
+.upload-box:hover .ebk3-ico-upload {
+	background-position: -270px -210px;
+}
+.upload-box:hover .upload-i {
+	color: #288fe7;
+}
+.edit-picsList  .batchCheck {
+	display: none;
+	position: absolute;
+	left: 7px;
+	bottom: 7px;
+}
+.batchMdf .edit-picsList .batchCheck {
+	display: block;
+}
+.batchMdf .edit-picsList .pic-box-btns {
+	display: none;
+}
+.audit-pop {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -18px 0 0 -51px;
+	height: 35px;
+	width: 103px;
+	background-color: rgba(0, 0, 0, 0.5);
+	background-color: #000 \9;
+	filter: Alpha(opacity=50);
+	color: #fff;
+	line-height: 35px;
+	text-align: center;
+	font-size: 14px;
+}
+.mod-upload-add {
+	padding: 60px 0 40px;
+	width: 590px;
+	text-align: center;
+	line-height: 1.6;
+}
+.mod-upload-res {
+	position: relative;
+	padding-bottom: 60px;
+	width: 750px;
+	border-bottom: 1px solid #ccc;
+}
+.mod-upload-res .resList-box{
+	position: relative;
+	height: 480px;
+	overflow: hidden;
+	overflow-y: auto;
+}
+.mod-upload-res .resList {
+	margin-top: -21px;
+
+}
+.mod-upload-res .resList li {
+	position: relative;
+	padding-top: 20px;
+	margin-top: 20px;
+	border-top: 1px dotted #ccc;
+	height: 200px;
+}
+.mod-upload-res .resList .pic-box {
+	position: relative;
+	width: 240px;
+	height: 200px;
+	*line-height: 200px;
+	font-size: 0;
+}
+.mod-upload-res .pic-uploadStatus {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 240px;
+	height: 200px;
+	background-color: rgba(0, 0, 0, 0.5);
+	background-color: #000 \9;
+	filter: Alpha(opacity=50);
+	color: #fff;
+}
+.mod-upload-res .pic-uploadStatus-text {
+	position: absolute;
+	top: 50%;
+	*top:auto;
+	left: 0;
+	margin-top: -10px;
+	*margin-top: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+}
+.mod-upload-res .ebk3-ico-error-24 {
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	margin-top: -13px;
+	cursor: pointer;
+}
+.mod-upload-res .ebk3-ico-error-24 {
+	background-position-x: -279px;
+}
+.mod-upload-res .ebk3-ico-error-24:hover {
+	background-position-x: -209px;
+}
+.mod-upload-res .pic-uploadStatus-progress {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 10px;
+	background-color: #3e9bea;
+}
+.mod-upload-res .edit-picNameType {
+	position: absolute;
+	top: 10px;
+	left: 240px;
+}
+.mod-upload-res .edit-picNameType .ebk3-inText {
+	width: 256px;
+}
+.mod-upload-res .edit-picNameType .ebk3-select {
+	width: 130px;
+}
+.mod-upload-res .upload-c {
+	position: absolute;
+	font-size: 14px;
+	left: 0;
+	bottom: 20px;
+}
+.ebk3-modwin-handle .basic-feadBack {
+	margin: 0 15px;
+}
+.ebk3-modwin-cont .mod-album{
+	margin-top: 8px;
+}
+.mod-album {
+	position: relative;
+	width: 836px;
+}
+.mod-album  .album-main{position: relative; width: 710px;}
+.mod-album .album-pics{font-size: 0;}
+.mod-album .album-pic-desc,
+.mod-album .album-pics-wrap{
+	margin: 0 90px 0 70px;
+}
+.mod-album .album-pics-wrap{
+	position: relative;
+	width: 550px;
+	height: 412px;
+	overflow: hidden;
+}
+.mod-album .album-btn-prev,
+.mod-album .album-btn-next{
+	position: absolute;
+	top: 186px;
+}
+.mod-album .album-btn-prev{left: 20px;}
+.mod-album .album-btn-next{right: 35px;}
+
+.mod-album .album-btn-prev .ebk3-ico,
+.mod-album .album-btn-next .ebk3-ico{
+	width: 23px;
+	height: 40px;
+}
+.mod-album .album-btn-prev .ebk3-ico{
+	background-position: 0 -280px;
+}
+.mod-album .album-btn-next .ebk3-ico{
+	background-position: -30px -280px;
+}
+.mod-album .album-pics{
+	position: absolute;
+	top:0;
+	left:0;
+	-webkit-transition: left 200ms cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    transition: left 200ms cubic-bezier(0.465, 0.183, 0.153, 0.946);
+}
+.mod-album .album-pics li{
+	float: left;
+}
+.mod-album .album-pics .pic-box{
+	width: 550px;
+	height: 412px;
+	background-color: #eff3f6;
+	*line-height: 412px;
+	font-size: 0;
+}
+.mod-album .desc-inputArea{
+	text-align: center;
+}
+.mod-album .desc-editName{
+	margin: 12px 0 23px;
+	text-align: center;
+	font-size: 14px;
+}
+.mod-album .desc-detail,
+.mod-album .desc-detail-box .delectBtn{
+	height: 100px;
+	background-color: #eff3f6;
+}
+.mod-album .desc-detail{
+	padding-left: 19px;
+	margin-right: 98px;
+	line-height: 22px;
+}
+.mod-album .desc-detail .lb,
+.mod-album .desc-detail .ct{
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+.mod-album .desc-detail .lb{
+	width: 70px;
+}
+.mod-album .desc-detail .ct{
+	width:140px;
+}
+.mod-album .desc-detail b{
+	font-size: 14px;
+}
+.mod-album .desc-detail-box .delectBtn{
+	float: right;
+	width: 95px;
+	line-height: 100px;
+	text-align: center;
+	font-size: 14px;
+}
+.mod-album .album-thumbnail{
+	position: absolute;
+	right: 0;
+	top:0;
+	height: 568px;
+	overflow: auto;
+	overflow-x: hidden;
+}
+.album-thumbnail{
+	padding: 0 22px;
+	border-left: 1px solid #ddd;
+}
+.album-thumbnail .thumbnail-list{
+	margin-bottom: -10px;
+	overflow: hidden;
+}
+.album-thumbnail .thumbnail-list .pic-box,
+.album-thumbnail .thumbnail-list img{
+	width: 81px;
+	height: 81px;
+}
+.album-thumbnail .thumbnail-list li{
+	margin-bottom: 10px;
+}
+.album-thumbnail .thumbnail-mask{
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #000 \9;
+    filter: Alpha(opacity=50);
+}
+.album-thumbnail .thumbnail-list li .cur .thumbnail-mask{
+	display: none;
+
+}
+.main-col-loadingImg{height:72px;background:#fff url(http://pic.c-ctrip.com/ebooking/web/loading_48.gif) center center no-repeat;}
+/*酒店基本信息*/
+.htl_info_int{padding:20px 10px 10px;margin-bottom:10px;box-shadow: 3px 3px 0 #e3e7ea;background-color:#fff;color:#666;}
+.htl_info_int .boxName{float:left;margin-right:10px;width:140px;font-size:20px;font-family:"Microsoft YaHei","微软雅黑","Hiragino Sans GB",tahoma,arial,simhei;}
+.htl_info_int .boxAc{float:right;width:141px;line-height:1.3;}
+.htl_info_int  .intPrc{margin-bottom:10px;width:730px;background-color:#eff3f6;height:30px;}
+.intPrc .intPrc-i{height:30px;background-color:#FFA02E;}
+.htl_info_int .boxMid{display:inline-block;*display:inline;*zoom:1;font-family:"Microsoft YaHei","微软雅黑","Hiragino Sans GB",tahoma,arial,simhei;}
+.htl_info_int .percentage{margin:0 6px 0 15px;font-size:24px;color:#F39800;vertical-align:top;}
+.htl_info_int .ebk3-pageNotice{
+	margin-top: 5px;
+}
+/*酒店基本信息*/
+.pageHotelInfo{
+	*position: relative;
+}
+.pageHotelInfo .htlInfo-ctHd{
+	padding: 23px 0 20px;
+	overflow: hidden;
+	*zoom: 1;
+}
+.pageHotelInfo .htlInfo-ctHd b{
+	font-weight: bold;
+	font-size: 20px;
+	font-family:"Microsoft YaHei","微软雅黑","Hiragino Sans GB",tahoma,arial,simhei;
+}
+.pageHotelInfo .htlInfo-ctHd .hd-r{
+	float: right;
+}
+.htlInfo-ctBd{
+	margin-bottom: 22px;
+}
+.pageHotelInfo .infoTable{
+	width: 100%;
+	font-size: 14px;
+}
+.infoTable th .ebk3-c-nec{vertical-align: middle;}
+.infoTable th,
+.infoTable td{
+	padding-top: 14px;
+	padding-bottom: 14px;
+	border: 1px dotted #ccc;
+	border-width: 1px 0;
+}
+.infoTable th {
+	padding-right: 20px;
+	width: 175px;
+	background-color: #f6f8fa;
+	text-align: right;
+	font-weight: normal;
+	vertical-align: top;
+}
+.infoTable td{
+	padding-left: 20px;
+}
+.infoTable .t-ct{
+	position: relative;
+	padding-right: 90px;
+}
+.infoTable .t-edt{
+	position: relative;
+	padding-right: 140px;
+}
+.edt-upBtns{
+	margin: 8px 0;
+}
+.edt-upBtns .ebk3-btn{
+	padding: 0 10px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 12px;
+}
+.edt-upBtns .ebk3-btn:hover .ebk3-ico{
+	background-position-x:-210px;
+}
+.edt-upBtns .ebk3-btn[disabled] .ebk3-ico,
+.edt-upBtns .ebk3-btn[disabled]:hover .ebk3-ico{
+	background-position-x:-360px;
+}
+.infoTable .edt-tip{
+	margin-top:3px;
+	font-size: 12px;
+	line-height: 22px;
+	color: #93b0c7;
+}
+.infoTable .edt-btns{
+	position: absolute;
+	top:0;
+	right: 0;
+}
+.infoTable .t-ct .btn-mdf{
+	position: absolute;
+	top:0;
+	right: 30px;
+	font-size: 14px;
+}
+.infoTable .info-location{
+	margin-top: 15px;
+	width: 533px;
+	height: 265px;
+	background-color: #ccc;
+}
+.edt-htlName{
+	*padding-bottom: 50px;
+	font-size: 12px;
+	overflow: hidden;
+}
+.edt-htlName .stepsList{
+	float: left;
+	padding-bottom: 3000px;
+	margin-bottom: -3000px;
+	width: 255px;
+	overflow: hidden;
+}
+.stepsList .step{
+	margin-bottom: 20px;
+}
+.stepNow .step-name{
+	margin-bottom: 8px;
+	font-weight: bold;
+}
+.stepErr .step-name{
+	margin-bottom: 8px;
+	font-weight: bold;
+	color:#ff1100;
+}
+.edt-htlName .example{
+	padding-bottom: 3000px;
+	margin-bottom: -3000px;
+	margin-left: 285px;
+	padding-left: 22px;
+	border-left: 1px solid #ccc;
+}
+.edt-htlName .example .imgBox{
+	margin-top: 8px;
+	width: 280px;
+	height: 370px;
+	background-color: #c2c9cd;
+	font-size: 0;
+}
+.edt-location{
+	background-color: #eff2f5;
+}
+.edt-location .inputs{
+	position:relative;
+	padding:0 10px;
+	overflow: hidden;
+}
+.edt-location .l-cnnWd{
+	letter-spacing: -1px;
+}
+.edt-location .p-cnnWd{
+	position: absolute;
+	top:39px;
+	color: #667d8c;
+	font-size: 12px;
+}
+.edt-location .ebk-formIpt{
+	margin: 10px 0;
+}
+.edt-location .ebk-formIpt .c-lb{
+	font-size: 14px;
+}
+.edt-location .map{
+	margin-top: 5px;
+	height: 465px;
+}
+.selectStarts {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin-right: 45px;
+	vertical-align: middle;
+	font-size: 0;
+}
+.selectStarts .starts-btn {
+	padding: 5px 2px;
+	vertical-align: middle;
+}
+.selectStarts .res{
+	margin-left: 12px;
+	vertical-align: middle;
+	font-size: 14px;
+}
+.startExample{
+	padding-top: 10px;
+	margin-top: 12px;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	border-top: 1px dotted #ccc;
+	font-size: 12px;
+}
+.startExample img{
+	margin-top: 8px;
+}
+.traTable th,
+.traTable td{
+	padding: 12px 10px 12px 22px;
+	text-align: left;
+	background-color: transparent;
+}
+.traTable th{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #496e86;
+}
+.traTable .td-fix{
+	height: 70px;
+}
+.traType {
+	width: 234px;
+	word-break: keep-all;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.mod-addTraRoute{
+	width:893px;
+}
+.addTraRout-table{
+	border-top: 1px dotted #ccc;
+	border-collapse: separate;
+	width:100%;
+}
+.addTraRout-table td,
+.addTraRout-table th{
+	border-bottom: 1px dotted #ccc;
+	border-width: 1px 0;
+	font-size: 14px;
+    vertical-align: top;
+    line-height: 2.2;
+}
+.addTraRout-table .t-lb,
+.addTraRout-table .t-ct{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.addTraRout-table th{
+    width: 105px;
+    background-color: #f6f8fa;
+	text-align: center;
+    font-weight: normal;
+}
+.addTraRout-table td{
+	padding-left: 15px;
+}
+.form-fedb{
+	font-size: 12px;
+}
+.tra-dtl .ebk3-inText {
+	margin:0 2px 3px;
+	width: 52px;
+}
+.tra-dtl .ebk-formIpt{
+	margin-bottom: 10px;
+	line-height: 1.5;
+}
+.tra-dtl .ebk-formIpt .c-lb{
+	width: 70px;
+	text-align: left;
+	font-size: 14px;
+}
+.jp .tra-dtl .ebk-formIpt .c-lb,
+.kr .tra-dtl .ebk-formIpt .c-lb,
+.en .tra-dtl .ebk-formIpt .c-lb{
+	width: auto;
+}
+.tra-dtl .ebk-formIpt .c-ct{
+	line-height: 2.2;
+}
+.jp .tra-dtl .ebk-formIpt .c-ct,
+.en .tra-dtl .ebk-formIpt .c-ct,
+.kr .tra-dtl .ebk-formIpt .c-ct {
+    width:760px;
+}
+
+.tra-dtl .ebk-formIpt .c-flTip {
+	font-size: 14px;
+}
+.innBossImg{
+	float: left;
+	margin-right: 15px;
+	width: 73px;
+	height: 73px;
+	border-radius: 50%;
+	overflow: hidden;
+	background-color: #496e86;
+	font-size: 0;
+}
+/*log*/
+.log-filter{
+	padding: 28px 0 23px;
+}
+.log-filter .ebk-formIpt{
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin-right: 45px;
+	vertical-align: middle;
+}
+.mdfLogTable-box td,
+.mdfLogTable-box th{
+	padding-left: 24px;
+	vertical-align: top;
+}
+.mdfLogTable-box td{
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+.mdfLogTable-box .t-l{
+	text-align: left;
+}
+.mdfLogTable-box .c-fix{
+    word-break: break-all;
+}
+.mdfLogTable-box img{
+	max-width: 350px;
+}
+.mdfLogTable-box .ebk3-pageNav{
+	margin-top: 10px;
+}
+.infoAcLog-detail{
+	font-size: 14px;
+}
+.infoAcLog-detail table{
+	margin-top: 10px;
+	border: 1px solid #fff;
+	border-width: 0 1px 0;
+	width: 100%;
+}
+.infoAcLog-detail table td,
+.infoAcLog-detail table th{
+	text-align: center;
+	font-size: 12px;
+}
+.infoAcLog-detail table .log-dtl{padding: 0 20px; text-align: left;}
+.infoAcLog-detail table .log-dtl img{
+	max-width: 800px;
+}
+.infoAcLog-detail table th{
+	padding: 7px 0;
+	border-bottom: 1px solid #fff;
+	background-color: #e5e9ed;
+}
+.infoAcLog-detail table td{
+	padding: 15px 0;
+	border: 1px dotted #ccc;
+}
+/*酒店秀*/
+.page-htlShow-guide .htlShow-desc{
+	margin-bottom:32px;
+	font-size: 14px;
+}
+.page-htlShow-guide .htlShow-desc .title{
+	margin-top: 25px;
+	font-size: 20px;
+}
+.page-htlShow-guide .htlShow-desc p{
+	margin: 7px 0;
+}
+.page-htlShow-guide .htlShow-desc .ebk3-btn-huge{
+	margin-top: 6px;
+	height: 45px;
+	line-height: 45px;
+}
+.page-htlShow-guide  .htlShow-desc-img{
+	font-size: 0;
+}
+.page-htlShow-create {
+  padding-top: 23px;
+}
+.page-htlShow-create .create-l{
+  float: left;
+  width: 760px;
+}
+.page-htlShow-create .create-l .hd{
+	line-height: 24px;
+}
+.page-htlShow-create .hd-r{
+  float: right;
+}
+.page-htlShow-create .showStatus{
+  font-size: 16px;
+}
+.page-htlShow-create .form-edt{
+	margin-top: 18px;
+	border: 1px solid #dcdcdc;
+	height: 799px;
+}
+.page-htlShow-create  .form-ac{
+	margin-top: 70px;
+}
+.page-htlShow-create  .form-ac .ebk3-btn{
+	margin-right: 5px;
+}
+.page-htlShow-create .create-r{
+	margin-left: 780px;
+}
+.page-htlShow-create .create-r .hd{
+	font-size: 14px;
+	line-height: 24px;
+	text-align: center;
+}
+.page-htlShow-create .create-r .show-exps{
+	margin: 18px 0 20px;
+}
+.show-exps .exp-i{
+	position: relative;
+	margin-bottom: 8px;
+	border: 1px solid #dcdcdc;
+	height: 45px;
+	line-height: 45px;
+	cursor: default;
+	text-align: center;
+	font-size: 14px;
+}
+.show-exps .exp-i .dimI{
+	margin-left: 5px;
+	width: 19px;height: 19px;background-position: -20px -390px;
+}
+.exp-i .i-dimCode  {
+	display: none;
+	position: absolute;
+	top:45px;
+	left: -1px;
+	padding: 10px 0;
+	border: 1px solid  #dcdcdc;
+	border-top-color: transparent;
+	width: 158px;
+	background-color: #fff;
+	text-align: center;
+	font-size: 0;
+	line-height: 1;
+}
+.show-exps .exp-i:hover{
+	color: #fff;
+	font-weight: bold;
+	border-color: #288fe7;
+	background-color: #288fe7;
+	z-index: 2;
+}
+.show-exps .exp-i:hover .dimI{
+	background-position: -40px -390px;
+}
+.show-exps .exp-i:hover .i-dimCode{
+	display: block;
+}
+.show-reg{
+	margin-top:5px;
+}
+.show-reg li{
+	margin-bottom:8px;
+	color: #667d8c;
+}
+.mod-vedio-agreement{
+	padding: 15px;
+	border: 1px solid #b9c3ca;
+	width: 524px;
+	max-height: 300px;
+	overflow: hidden;
+	overflow-y: auto;
+}
+.mod-vedio-agreement .ebk3-bginfo-ct{
+	margin-right: 12px;
+}
+.mod-vedio-agreement  .agreement-ct{
+	margin-top: 20px;
+}
+.agreement-ct h6{
+	margin-bottom: 10px;
+	font-size: 14px;
+	text-align: center;
+}
+.mod-vedio-uploadStep{
+	width: 818px;
+	overflow: hidden;
+}
+.mod-vedio-uploadStep ul{
+	margin-right: -38px;
+}
+.mod-vedio-uploadStep li{
+	float: left;
+	margin-right: 38px;
+	width: 390px;
+}
+.mod-vedio-uploadStep .s-title{
+	margin-top: 10px;
+}
+.mod-vedio-uploadStep .s-img{
+	margin-top: 20px;
+	font-size: 0;
+}
+.page-htlShow-view{
+	text-align: center;
+}
+.view-iphone,
+.view-ipad{
+	margin: 0 auto 50px;
+	background-image: url(http://pic.c-ctrip.com/ebooking/web/un_htlshow_viewbg.png);
+	background-repeat: no-repeat;
+}
+.view-iphone{
+	width: 404px;
+	height: 850px;
+	overflow: hidden;
+}
+.view-iphone .frameCt{
+	margin:99px 0 0 19px;
+	width: 364px;
+	height: 648px;
+	background-color: #fff;
+	overflow: hidden;
+	overflow-y: auto;
+}
+.view-ipad{
+	width: 869px;
+	height: 1137px;
+	background-position: -439px 0;
+	overflow: hidden;
+}
+.view-ipad .frameCt{
+	margin:93px 0 0 83px;
+    width: 703px;
+    height: 944px;
+	background-color: #fff;
+	overflow: hidden;
+	overflow-y: auto;
+}

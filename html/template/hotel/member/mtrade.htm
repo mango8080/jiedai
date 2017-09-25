@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>订单详情页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="../mobile/static/style/weui.min.css">
+    <link rel="stylesheet" href="../mobile/static/style/index.min.css">
+   
+<style>
+    .weui-form-preview__bd{padding-bottom: 0;}
+</style>
+</head>
+<body style="background: #f4f4f4">
+<div class="head">
+    <a onclick="history.go(-1)"><img src="../mobile/static/style/back.png" width="22" height="14"  alt=""/></a>
+    <div>订单支付页</div>
+    <a href="../mobile"><img src="../mobile/static/style/home.png" width="22" height="21"  alt=""/></a>
+</div>
+<div class="weui-form-preview">
+    <form method="post" action="?" onsubmit="return check();" id="dform">
+    <input type="hidden" name="action" value="{$action}"/>
+    <input type="hidden" name="step" value="{$step}"/>
+    <input type="hidden" name="itemid" value="{$itemid}"/>
+    <input type="hidden" name="amount" value="{$money}"/>
+    <div class="weui-form-preview__bd">
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">当前操作</label>
+            <span class="weui-form-preview__value">订单支付</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">订单编号</label>
+            <span class="weui-form-preview__value">{$td['ordercode']}</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">订单状态</label>
+            <span class="weui-form-preview__value orderstate" id="show_hide">{$td['dstatus']}</span>
+        </div>
+        
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">房型名称</label>
+            <span class="weui-form-preview__value">{$td['title']}</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">酒店</label>
+            <span class="weui-form-preview__value">{$seller['company']}</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">下单时间</label>
+            <span class="weui-form-preview__value">{$td[adddate]}</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">我的备注</label>
+            <span class="weui-form-preview__value">{$td['note']}</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">房费</label>
+            <span class="weui-form-preview__value">¥{$td['amount']}</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">房间数</label>
+            <span class="weui-form-preview__value">{$td['number']}间</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">入住天数</label>
+            <span class="weui-form-preview__value">{$td['days']}</span>
+        </div>
+        {if $td['fee']!=0}
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">电子券</label>
+            <span class="weui-form-preview__value">{$td['fee']}</span>
+        </div>
+        {/if}
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">实付金额</label>
+            <em class="weui-form-preview__value orderstate">¥{$money}</em>
+        </div>
+        {if $td['fapiao']!=""}
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">发票抬头</label>
+            <span class="weui-form-preview__value">{$td['fapiao']}</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">电子邮箱</label>
+            <span class="weui-form-preview__value">{$td['fapiao_email']}</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">纳税人识别号</label>
+            <span class="weui-form-preview__value">{$td['fapiao_number']}</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">开票项目</label>
+            <span class="weui-form-preview__value">{$td['fapiao_item']}</span>
+        </div>
+        {/if}
+        <!-- <div id="payword">
+        <td class="tl"><span class="f_red">*</span> 支付密码</td>
+        <td class="tr">{template 'password', 'chip'}&nbsp;<span id="password" class="f_red"></span></td>
+        </div> -->
+        
+    <div class="weui-form-preview__ft">
+        <a class="weui-form-prpay weui-form-preview__btn" onclick="history.go(-1)">返回</a>
+        
+       <input type="submit" name="submit" value=" 立即支付 " class="weui-form-preview__btn" style="border: 1px solid #d5d5d6;background-color: #fff;-webkit-appearance: none;border-radius: 0;" />
+    </div>
+    </form>
+</div>
+
+<script type="text/javascript" src="/file/script/config.js"></script>
+<script type="text/javascript" src="/file/script/jquery.js"></script>
+<script type="text/javascript" src="/file/script/common.js"></script>
+<script type="text/javascript" src="/file/script/admin.js"></script>
+<script type="text/javascript" src="/file/script/member.js"></script>
+<script type="text/javascript">
+
+    var total = {$money};
+    function check() {
+
+        //if(total > {$_money}) {
+
+            Go('mcharge.php?action=pay&reason=trade|{$itemid}&amount='+total);
+            return false;
+        //}
+      
+        //return confirm('您确认此订单，并立即支付吗？');
+    }
+    if($('#show_hide').text()=='待付款'){
+        $("#payword").show();
+    }
+    /*window.setInterval(
+        function() {
+            total > {$_money} ? Dh('payword') : Ds('payword');
+        }, 
+    500);*/
+ 
+    </script>
+    <script type="text/javascript">s('trade');m('action_order');</script>
+    <div style="height: 40px;background-color: #f4f4f4;"></div>
+
+    <div style="width: 100%;background: #FF8E7E;position: fixed;bottom: 0;text-align: center;line-height: 36px;">
+    <a onclick="history.go(-1)"><span style="width: 30%;display: inline-block;color: #fff;">返回</span></a>
+    <a href="../mobile/my.php"><span style="width: 32%;display: inline-block;color: #fff;">我的</span></a>
+    <a href="../mobile/search.php"><span style="width: 32%;display: inline-block;color: #fff;">预订</span></a>
+    </div>
+</body>
+</html>

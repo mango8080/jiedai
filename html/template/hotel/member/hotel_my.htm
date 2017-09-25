@@ -1,0 +1,310 @@
+{template 'hotel_header', $module} 
+
+    <link href="{DT_SKIN}new/page_pub.css" rel="stylesheet" type="text/css">
+    <style>
+      input{vertical-align: middle;}
+    </style>
+
+    <div class="box-1180">
+
+      <!--hover 浮层-->
+
+      <div id="ebk3-main-content">
+
+        <div id="ctl00_ctl00_SubMenuContainer_ContentMain_si_div" class="suminfo clearfix" style="padding-top:30px;padding-left:30px;padding-bottom: 30px;margin-top:50px;">
+
+          <form action="?">
+
+            <input name="action" value="index" type="hidden">
+
+            <select name="fields">
+
+              <option value="0" selected="selected">房型分类</option>
+
+              <option value="1">商务房</option>
+
+              <option value="2">标准房</option>
+
+              <option value="3">大床房</option>
+
+              <option value="4">单人房</option>
+
+              <option value="5">豪华房</option>
+
+              <option value="6">套间</option>
+
+              <option value="7">三人间</option>
+
+              <option value="8">其他房型</option>
+
+            </select>&nbsp;
+
+            <select name="mycatid">
+
+              <option value="-1" selected="selected">自定义分类</option>
+
+              <option value="0">默认</option></select>&nbsp;
+
+            <input size="10" name="kw" value="" title="关键词" type="text">&nbsp;
+
+            <select name="order">
+
+              <option value="0" selected="selected">结果排序方式</option>
+
+              <option value="1">更新时间降序</option>
+
+              <option value="2">更新时间升序</option>
+
+              <option value="3">添加时间降序</option>
+
+              <option value="4">添加时间升序</option>
+
+              <option value="5">房型单价降序</option>
+
+              <option value="6">房型单价升序</option>
+
+              <option value="7">订单数量降序</option>
+
+              <option value="8">订单数量升序</option>
+
+              <option value="9">销售数量降序</option>
+
+              <option value="10">销售数量升序</option>
+
+              <option value="11">库存总量降序</option>
+
+              <option value="12">库存总量升序</option>
+
+              <option value="13">评论次数降序</option>
+
+              <option value="14">评论次数升序</option>
+
+              <option value="15">浏览人气降序</option>
+
+              <option value="16">浏览人气升序</option></select>&nbsp;
+
+           
+
+            <input value=" 搜 索 " class="btn" type="submit">&nbsp;
+
+            <input value=" 重 置 " class="btn" onclick="Go('?action=index');" type="button">
+
+            <br/><br/>
+
+            单价：
+
+            <input size="3" name="minprice" type="text">
+
+            ~
+
+            <input size="3" name="maxprice" type="text">
+
+              订单：
+
+            <input size="3" name="minorders" type="text">
+
+            ~
+
+            <input size="3" name="maxorders" type="text">
+
+              销量：
+
+            <input size="3" name="minsales" type="text">
+
+            ~
+
+            <input size="3" name="maxsales" type="text">
+
+              库存：
+
+            <input size="3" name="minamount" type="text">
+
+            ~
+
+            <input size="3" name="maxamount" type="text">
+
+              评论：
+
+            <input size="3" name="mincomments" type="text">
+
+            ~
+
+            <input size="3" name="maxcomments" type="text">
+
+            
+
+          </form>
+
+        </div>
+
+        <div class="contain">
+
+          <div class="content_box">
+
+            <div class="order_tab_content">
+
+              <div>
+
+                <table class="tb_ebooking_list" id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList" style="border-width:0px;width:100%;border-collapse:collapse;table-layout:fixed" cellspacing="0" cellpadding="0" border="0">
+
+                  <tbody>
+
+                    <tr>
+
+                      <th scope="col" style="width:100px;">图片</th>
+
+                      <th scope="col" style="width:100px;">借款类型</th>
+
+                      <th scope="col" style="width:100px;">价格</th>
+
+                      <th scope="col" style="width:100px;">订单</th>
+
+                      <th scope="col" style="width:100px;">销量</th>
+
+                      <th scope="col" style="width:100px;">库存</th>
+
+                      <th scope="col" style="width:100px;">评论</th>
+
+                      <th scope="col" style="width:100px;">人气</th>
+
+                      <th scope="col" style="width:100px;">管理</th>
+
+                    </tr>
+
+                    <tr>
+
+                      <td>
+
+                        <div class="tableLayoutFix">
+
+                        </div>
+
+                      </td>
+
+                      <td>
+
+                        <div class="tableLayoutFix">
+
+                          <span>
+
+                            <span id="">
+
+                                <span>标间</span>
+
+                            </span>
+
+                          </span>
+
+                        </div>
+
+                      </td>
+
+                      <td>
+
+                        <div class="tableLayoutFix">
+
+                          <div class="fixTwoLine">3</div>
+
+                        </div>
+
+                      </td>
+
+                      <td>
+
+                        <div class="tableLayoutFix">
+
+                            <span id="">3</span>
+
+                        </div>
+
+                      </td>
+
+                      <td>
+
+                        <div class="tableLayoutFix">
+
+                          <div class="clearfix">
+
+                            <div class="geuest-wrap">
+
+                              <div class="guest">
+
+                                <span id="">3</span></div>
+
+                            </div>
+
+                            <div>
+
+                              <span id="" class="supplier"></span></div>
+
+                          </div>
+
+                        </div>
+
+                      </td>
+
+                      <td>
+
+                        <div class="tableLayoutFix">
+
+                          3</div>
+
+                      </td>
+
+                      <td>
+
+                        <div class="tableLayoutFix">
+
+                          3</div>
+
+                      </td>
+
+                      <td>
+
+                        <div class="tableLayoutFix">
+
+                          3</div>
+
+                      </td>
+
+                      <td>
+
+                        <div>关联房型</div>
+
+                        <div>修改</div>
+
+                        <div>复制信息</div>
+
+                        <div>删除</div>
+
+                      </td>
+
+                    </tr>
+
+                  </tbody>
+
+                </table>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="evaluate-box clearfix"></div>
+
+      <bgsound id="Player" loop="-1" autostart="true">
+
+        <div id="Music"></div>
+
+    </div>
+
+    <div></div>
+
+
+
+{template 'hotel_footer', $module}

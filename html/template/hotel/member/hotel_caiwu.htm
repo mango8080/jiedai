@@ -1,0 +1,226 @@
+{template 'hotel_header', $module}
+<style>
+ 	body{background: #FFF;}
+	.w1180{width: 1180px;margin: 0 auto;}
+	  .menu {
+	      border-bottom: 2px solid #3d95e5;
+	      border-left: 1px solid #ededed;
+	      height: 35px;
+	      letter-spacing: 1px;
+	      margin: 0 0 15px;
+	      overflow: hidden;
+	  }
+	  .tab {
+	      border-right: 1px solid #ededed;
+	      border-top: 1px solid #ededed;
+	  }
+	  
+	  table {
+	      border-collapse: collapse;
+	      border-spacing: 0;
+	  }
+	.tab_on {
+	    background: #3d95e5 none repeat scroll 0 0;
+	}
+
+	.tab_on a:link, .tab_on a:visited, .tab_on a:active, .tab_on a:hover {
+	    color: #ffffff;
+	    display: block;
+	    font-size: 14px;
+	    height: 35px;
+	    line-height: 35px;
+	    padding: 0 15px;
+	    text-decoration: none;
+	}
+	.tab a:link, .tab a:visited, .tab a:active {
+	    color: #001c30;
+	    font-size: 14px;
+	    line-height: 35px;
+	}
+	.tab a:link, .tab a:visited, .tab a:active {
+	    color: #001c30;
+	    display: block;
+	    font-size: 14px;
+	    height: 35px;
+	    line-height: 35px;
+	    padding: 0 15px;
+	    text-decoration: none;
+	}
+	input,select{
+	    font-size: 14px;
+	    height: 23px;
+	}
+	.tt,.ls,.btns,.chongzhi{margin:15px 0;}
+	#caiwu{background-color:#fff;-webkit-transition:color 0.2s ease 0s;-o-transition:color 0.2s ease 0s;transition:color 0.2s ease 0s;text-decoration:none;color:#288fe7;}
+
+	#Dtop{width:300px;height: 200px;background: #FFF;}
+	#Dsubmit,#remote_0{margin-left: 20px;}
+	.dhead{margin:15px 20px;}
+	#upalbum{margin:20px 20px;}
+
+	.tb {
+	            background: #ffffff none repeat scroll 0 0;
+	            width: 100%;
+	            font-size: 14px;
+	        }
+	        .tl {
+	            letter-spacing: 0;
+	            padding-right: 15px;
+	            width: 90px;
+	            background: #d4e9f9 none repeat ;
+	        }
+	        .tr {
+	            background: #ffffff none repeat scroll 0 0;
+	        }
+	        .f_gray {
+	            color: #888888;
+	        }
+
+	        .f_red {
+	            color: red;
+	        }
+	        #dform1 tr,#dform tr{height: 35px;}
+	        #dform1,#dform{margin-top: 30px;}
+
+
+</style>
+
+<link href="{DT_SKIN}new/hotel_info.css" rel="stylesheet" type="text/css"> 
+<link href="{DT_SKIN}new/page_pub.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">c(2);</script>
+
+<div style="margin:0 auto;margin-bottom: 20px;width: 900px;">
+	<form action="?" method="post" style="display: inline-block;">
+	            
+	        &nbsp;
+	        入住日期：
+	        <script type="text/javascript" src="http://www.anluze.com/file/script/calendar.js"></script><input type="text" name="fromtime" id="fromtime" value="" size="10" onfocus="ca_show('fromtime', this, '-');" ondblclick="this.value='';"> <img src="http://www.anluze.com/file/image/calendar.gif" align="absmiddle" onclick="ca_show('fromtime', this, '-');" style="cursor:pointer;"> 至 <input type="text" name="totime" id="totime" value="" size="10" onfocus="ca_show('totime', this, '-');" ondblclick="this.value='';"> <img src="http://www.anluze.com/file/image/calendar.gif" align="absmiddle" onclick="ca_show('totime', this, '-');" style="cursor:pointer;">&nbsp;
+	        <!-- <input type="text" name="fromdate" id="fromdate" value="" size="10" onfocus="ca_show('fromdate', this, '');" readonly ondblclick="this.value='';"/>  -->
+	       
+	        
+	        <input type="submit" value=" 搜 索 " class="btn">&nbsp;
+	        <div class="b10"></div>
+	        <div>
+	        </div>
+	</form>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<form action="?" method="post" style="display: inline-block;">
+	            
+	        &nbsp;
+	        离店日期：
+	        <script type="text/javascript" src="http://www.anluze.com/file/script/calendar.js"></script><input type="text" name="fromtime" id="fromtime" value="" size="10" onfocus="ca_show('fromtime', this, '-');" ondblclick="this.value='';"> <img src="http://www.anluze.com/file/image/calendar.gif" align="absmiddle" onclick="ca_show('fromtime', this, '-');" style="cursor:pointer;"> 至 <input type="text" name="totime" id="totime" value="" size="10" onfocus="ca_show('totime', this, '-');" ondblclick="this.value='';"> <img src="http://www.anluze.com/file/image/calendar.gif" align="absmiddle" onclick="ca_show('totime', this, '-');" style="cursor:pointer;">&nbsp;
+	        <!-- <input type="text" name="fromdate" id="fromdate" value="" size="10" onfocus="ca_show('fromdate', this, '');" readonly ondblclick="this.value='';"/>  -->
+	       
+	        
+	        <input type="submit" value=" 搜 索 " class="btn">&nbsp;
+	        <div class="b10"></div>
+	        <div>
+	        </div>
+	</form>
+</div>
+
+<div class="">
+
+<div class="bd">
+
+<table cellpadding="1" cellspacing="0" class="tb_ebooking_list">
+<tbody>
+<tr>
+
+<!-- <th>结算账期</th>
+
+<th>结算总金额</th>
+
+<th>现付金额</th>
+
+<th>预付金额</th>
+
+<th>支付状态</th>
+
+<th>账单下载</th>
+
+<th width="130">操作</th> -->
+
+<th>日期</th>
+<th>酒店名称</th>
+<th>集团名称</th>
+<th>金额</th>
+<th>结算方式</th>
+<th>支付方式</th>
+<th>佣金</th>
+<th>订单号</th>
+<th>姓名</th>
+<th>手机号</th>
+<th>入住日期</th>
+<th>退房时间</th>
+<th>借款类型</th>
+<th>房号</th>
+<th>间数</th>
+<th>天数</th>
+<th>酒店id</th>
+<th>集团id</th>
+<th>备注</th>
+<th>开票</th>
+<th>票号</th>
+
+</tr>
+
+<!-- {loop $cashs $k $v}
+
+<tr onmouseover="this.className='on';" onmouseout="this.className='';" align="center"> -->
+
+<!-- <td height="30"class="px11">{$v[zhangqi]}</td>
+
+<td class="px11 f_red">{$v[jine]}</td>
+
+<td class="px11 f_blue">{$v[xianfu]}</td>
+
+<td title="{$v[branch]}">{$v[yufu]}</td>
+
+<td>{if $v[ispay]==1}已支付{else}未支付{/if}</td>
+
+<td class="px11">下载</td>
+
+<td class="px11 f_gray">{if $v[status]==0 } <a href="cash.php?action=index&title=账单|{$v[zhangqi]}&zitemid={$v[itemid]}&amount={$v[jine]}">去结算</a>{elseif $v[status]==2}正在受理{elseif $v[status]==3}结算成功{elseif $v[status]==4}<a href="cash.php?action=record">受理失败</a> <a href="cash.php?action=index&title=账单|{$v[zhangqi]}&zitemid={$v[itemid]}&amount={$v[jine]}">重新申请</a>{/if}</td> -->
+
+<!-- </tr>
+
+{/loop} -->
+
+<tr>
+
+	<td>2017-01-01</td>
+	<td>双龙</td>
+	<td>锦江</td>
+	<td>199</td>
+	<td>预付</td>
+	<td>微信</td>
+	<td>19</td>
+	<td>123456</td>
+	<td>孙大辉</td>
+	<td>18133438165</td>
+	<td>2017-01-01</td>
+	<td>2017-01-03</td>
+	<td>大床房</td>
+	<td>806</td>
+	<td>1</td>
+	<td>2</td>
+	<td>12315</td>
+	<td>12345</td>
+	<td>我是备注</td>
+	<td>是</td>
+	<td>123456</td>
+
+</tr>
+
+</tbody>
+</table>
+
+</div>
+
+<div class="pages">{$pages}</div>
+
+<script type="text/javascript">s('cash');m('action_record');</script>
+
+
+{template 'hotel_footer', $module}

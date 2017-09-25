@@ -1,0 +1,1 @@
+<?php defined('IN_DESTOON') or exit('Access Denied'); return array (0 => array ('title' => '用户管理','style' => '','url' => '?moduleid=2',),1 => array ('title' => '酒店管理','style' => '','url' => '?moduleid=4',),2 => array ('title' => '数据库管理','style' => '','url' => '?file=database',),); ?>

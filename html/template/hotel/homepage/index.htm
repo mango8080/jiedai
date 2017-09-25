@@ -1,0 +1,211 @@
+{template 'header'} 
+<link type="text/css" rel="stylesheet" href="{DT_SKIN}jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="{DT_SKIN}style1.css">
+    <link type="text/css" rel="stylesheet" href="{DT_SKIN}layer_002.css">
+    <link type="text/css" rel="stylesheet" href="{DT_SKIN}hotelDetail.css">
+    <style>
+        tbody{font-size: 14px;}
+        .right_map{background: #FFF;}
+        #tuijian{font-size: 14px;margin-bottom8px;}
+
+    </style>
+<div class="wrapper jinjiang_zhixing ">
+    <div class="w1200">
+        <div class="navigation_bar">
+            <a href="{$MODULE[1][linkurl]}">首页</a> &raquo; <a href="{$MOD[linkurl]}">{$MOD[name]}</a> &raquo; {$COM[company]}
+        </div>
+        <div class="hotel_Info clearfix">
+            <div class="slideimg" style="">
+                
+                        <div class="bigimg" style="display: block;">
+                        <img src="{if $COM[thumb_b]}{DT_PATH}{$COM[thumb_b]}{else}{DT_PATH}{$COM[thumb]}{/if} " width="103%">
+                        </div>
+                    
+            </div>
+            <div class="hotel_Txt">
+                
+                <div class="hotel-list">
+                    <ul>
+                        <li class="hotel-level-icon">
+                            <span>
+                                
+                                
+                                <div class="hotel-level-tip"></div>
+                        </span></li>
+                        
+                    </ul>
+                </div>
+                <h2 class="yahei">
+                    <b class="ellipsis" title="{$COM[company]}">{$COM[company]}</b>
+                    <span class=""></span>
+                    
+                    <a class="update_promotion" href="javascript:void(0);" style="display:none;"></a>
+                </h2>
+                <div class="tag " style="display:none;">
+                    <div class="tag-nav"></div>
+                </div> 
+                <p>
+                    <span class="info">城市：{$COM[cityname]}</span>
+                    <span class="info">品牌：{$COM[groupname]}</span>
+                    <span class="info" style="">是否接待外宾：{if $COM[receptionforeigner]=='Y'}是{else}否{/if}</span>
+                    
+                </p>
+                <p>
+                    <span class="info">地址：{$COM[address]}</span>
+                </p>
+                <p>
+                    <span class="info">电话：{$COM[telephone]}</span>
+                    <span class="info" style="">开业日期：{$COM[regyear]}</span>
+                    
+                </p>
+                
+                <p class="btn">
+                    
+                    <span class="price"><span class="money_notation">¥</span>{$COM[lowprice]} 元起</span>
+                </p>
+            </div>
+        </div>
+        <div class="base_side clearfix">
+            <div class="right_map"> 
+            <p class="tit"  style="text-align: center;margin-top: 5px;color: #000"><span>推荐酒店</span></p>
+            <ul style="margin-left: 20px;margin-top:10px;">
+            <!--{php $hot=tag("moduleid=4&condition=level=2 and status=3&areaid=$areaid&pagesize=8&order=vip desc&template=null")}-->
+            {loop $hot $h $hc}
+                <li><a id="tuijian" href="{$hc['linkurl']}">{dsubstr($hc['company'],24)}</a></li>
+            {/loop}
+            </ul>
+            </div>
+        </div>
+        <div class="base_main clearfix">
+            
+            <div class="hotel_room_info_box room_list hotel_item_18119" name="hotel_room_info" id="hotel_room_info" data-hotel-id="18119">
+                <ul class="room_tab">
+                    <li class="selected">
+                        <a class="room_style room_style_selected" title=""></a>
+                        全部房型
+                    </li>
+                </ul>
+                <div class="room_info clearfix" style="display:block;">
+                    <table width="946" cellspacing="0" cellpadding="0" border="0">
+                        
+                        <thead>
+                          <tr>
+                            <th width="19"></th>
+                            <th width="50">房型名称</th>
+                            <th width="80">床型</th>
+                            <th width="140">服务</th>
+                            
+                            <th width="50">房价</th>
+                            <th width="26"></th>
+                            <th width="50"></th>
+                          </tr>
+                        </thead>
+                        <!--{php $mall=tag("moduleid=16&condition=username='".$COM[username]."' and status=3 and jihuo='A'&template=null")}-->
+                       
+                        {loop $mall $m $h}
+                        <tr class="info tit ">
+                          <td></td>
+                          <td class="promotion">
+                            {$h[title]}
+                          </td>
+                          <td>{$h[bedtype]}</td>
+                          <td>
+                          {$h[service]}
+                          </td>
+                          
+                  
+                          <td class="price" align="center">
+                            {$h[price]}
+                          </td>
+
+                          <td align="center">
+                            <a href="javascript:showDiv({$h[itemid]})" id="{$h[itemid]}detail">详细</a>
+                          </td>               
+
+                          <td class="btn yahei"  align="center" style="padding-right:10px;">
+                            <a class="btn_buy" name="booking_button" rel="nofollow" title="预订" style=""  href="/mall/show.php?itemid={$h[itemid]}&intime={$intime}&outtime={$outtime} ">预订</a>
+                          </td>
+                        </tr>
+                        <tr>
+                            <td colspan=7>
+                                <div class="room_detail_box clearfix room-brief-info" style="display: none;" id="{$h[itemid]}">                             <img class="room_icon" src="{$h[thumb]}"  onerror="this.src='/themes/hotels/images/search_default.jpg'">                             <div class="room_prop_info_box"><table style="line-height:26px" width="100%" cellspacing="0" cellpadding="0" align="center">
+                                <tbody>
+                                <tr><td width="25%">床型:{$h[bedtype]} </td><td width="25%">面积：{$h[area]}</td><td width="25%">楼层：{$h[floor]}</td><td width="25%">加床总量：{$h[rollaway]} </td></tr><tr><td width="25%">宽带:{$h[netdesc]}</td><td width="25%">早餐:{$h[breakfastbesc]}</td><td width="25%"></td></tr>
+                                </tbody>
+                                </table><p>其他：{$h[service]}</p></div>      
+                            </td>
+                        </tr>
+                        {/loop}
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="hotel_intro_info" class="tab_box hotel_other_info_box line_info" name="hotel_intro_info">
+            <ul class="tab_title_box  info_floor clearfix" >
+                <a href="#info"><li class="yahei horizantal selected" anchor_id="tabAnchor1" style="">
+                    酒店信息
+                </li></a>
+                <a href="#policy"><li class="yahei horizantal" anchor_id="tabAnchor2" style="">
+                    酒店政策
+                </li></a>
+                   
+            </ul>
+            <div class="tab_express_box unit_floor">
+                    <div class="tab_express_unit unit_content" id="tabAnchor1" style="">
+                        <h4 class="floor-tit" id="info"> 酒店信息</h4>
+                        <div class="info_main">
+                            <div style="">
+                                <span class="label_text">预定保留： </span>
+                                <span>预订保留到{$COM[holdtime]}</span>
+                            </div>
+                            <div style="">
+                                <span class="label_text">退房时间： </span>
+                                <span>{$COM[checkout]}</span>
+                            </div>
+                            <div style="">
+                                <span class="label_text">酒店介绍： </span>
+                                <span>{$COM[content]}</span>
+                            </div>
+                            
+                            
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="tab_express_unit unit_content" id="tabAnchor2" style="">
+                        <h4 class="floor-tit" id="policy"> 酒店政策</h4>
+                        <div class="info_main">
+                            <div>
+                                <span>
+                                   {$COM[policies]} 
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+        </div>
+        <!-- w2000 -->
+    </div>
+
+</div>
+<script type="text/javascript" src="{DT_STATIC}file/script/common.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/calendar.js"></script>
+<script>
+    function showDiv(a){
+        document.getElementById(a).style.display="block";
+        document.getElementById(a+"detail").innerHTML="收起";
+        document.getElementById(a+"detail").href="javascript:hideDiv("+a+")";
+    }
+    function hideDiv(a){
+        document.getElementById(a).style.display="none";
+        document.getElementById(a+"detail").innerHTML="详细";
+        document.getElementById(a+"detail").href="javascript:showDiv("+a+")";
+    }
+</script>
+
+{template 'footer'} 

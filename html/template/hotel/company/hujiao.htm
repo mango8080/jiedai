@@ -1,0 +1,249 @@
+
+ <!DOCTYPE HTML>
+<html> 
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>呼叫中心</title>
+    <link rel='stylesheet' type='text/css' href='/skin/hotel/new/basis_v3.css' />
+    <link rel='stylesheet' type='text/css' href='/skin/hotel/new/header_v3.css' />
+    <script type="text/javascript" src="/lang/zh-cn/lang.js"></script>
+    <script type="text/javascript" src="/file/script/config.js"></script>
+    <script type="text/javascript" src="/file/script/jquery.js"></script>
+    <script type="text/javascript" src="/file/script/common.js"></script>
+    <script type="text/javascript" src="/file/script/admin.js"></script>
+    <script type="text/javascript" src="/file/script/member.js"></script>
+  </head>
+  <body>
+  <div id="msgbox" style="display:none;"></div>
+    
+
+ <link href="/skin/hotel/new/page_pub.css" rel="stylesheet" type="text/css">
+    <link href="/skin/hotel/new/hotel_info.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/skin/hotel/new/lang.js"></script>
+    <script type="text/javascript" src="/skin/hotel/new/common.js"></script>
+    <script type="text/javascript" src="/skin/hotel/new/calendar.js"></script>
+    <script type="text/javascript" src="/skin/hotel/new/jquery-1.8.2.min.js"></script>
+    <style type="text/css">
+      #dingdan{background-color:#fff;-webkit-transition:color 0.2s ease 0s;-o-transition:color 0.2s ease 0s;transition:color 0.2s ease 0s;text-decoration:none;color:#288fe7;}
+      input,select{
+          font-size: 14px;
+          height: 23px;
+      }
+      .infoTable th, .infoTable td{padding-top:8px;padding-bottom: 8px;}
+    </style>
+   
+      <div class="box-1180">
+        <!--hover 浮层-->
+        <div id="ebk3-main-content">
+          <div id="ctl00_ctl00_SubMenuContainer_ContentMain_si_div" class="suminfo clearfix" style="padding-top:30px;padding-left:30px;">
+            <form action="?" method="get">
+            <input type="hidden" name="action" value="index"/>
+            
+            <!-- <option value="0" selected="selected">按条件</option>
+            <option value="1">借款类型</option>
+            <option value="2">金额</option> -->
+            
+            
+            
+            
+            
+            入住日期 <script type="text/javascript" src="http://www.anluze.com/file/script/calendar.js"></script><input type="text" name="fromtime" id="fromtime" value="{$fromtime}" size="10" onfocus="ca_show('fromtime', this, '-');"  ondblclick="this.value='';"/> <img src="http://www.anluze.com/file/image/calendar.gif" align="absmiddle" onclick="ca_show('fromtime', this, '-');" style="cursor:pointer;"/> 至 <input type="text" name="totime" id="totime" value="{$totime}" size="10" onfocus="ca_show('totime', this, '-');"  ondblclick="this.value='';"/> <img src="http://www.anluze.com/file/image/calendar.gif" align="absmiddle" onclick="ca_show('totime', this, '-');" style="cursor:pointer;"/>&nbsp;
+            <!-- <input type="text" name="fromdate" id="fromdate" value="" size="10" onfocus="ca_show('fromdate', this, '');" readonly ondblclick="this.value='';"/>  -->
+            订单号：<input type="text"  name="itemid" value="{$itemid}"/>&nbsp;
+            住客姓名：<input name="buyer_name" value="{$buyer_name}" type="text" size="10">&nbsp;
+			警号：<input name="buyer" value="{$buyer}" type="text" size="10">&nbsp;
+			联系电话：<input name="moblie" value="{$moblie}" type="text" size="10">&nbsp;
+            <input type="submit" value=" 搜 索 " class="btn"/>&nbsp;
+           <!--  <input type="button" value=" 重 置 " class="btn" onclick="Go('?action=index');"/><br/> -->
+            <div class="b10"></div>
+            <div>
+            </div>
+            </form>
+          </div>
+          <div class="container">
+            <div class="content_box">
+              <div class="order_tab_content">
+                
+                <div>
+                  <table class="tb_ebooking_list" id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList" style="border-width:0px;width:100%;border-collapse:collapse;table-layout:fixed" cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                      <tr>
+					  <th scope="col">序号</th>
+                        <th scope="col">订单类型</th>
+						<th scope="col">订单号</th>
+                       <th scope="col">代理商名称</th>
+					   <th scope="col">酒店名称</th>
+					   <th scope="col">借款类型/房价</th>
+					   <th scope="col">联系人</th>
+					   <th scope="col">联系电话</th>
+					   <th scope="col">入住人姓名</th>
+					   <th scope="col">入离日期</th>
+					   <th scope="col">到点时间</th>
+					   <th scope="col">预定时间</th>
+					   <th scope="col">房间数</th>
+					   <th scope="col">付款方式</th>
+					   <th scope="col">订单状态</th>
+					   
+                        </tr>
+						{loop $lists $k $v}
+						<tr>
+						<td>
+                          <div class="tableLayoutFix">
+                            <span class="table-orderCode">
+                             </span>
+                            
+                            {$v[xuhao]}
+                          </div>
+                        </td>
+                        <td>
+                          <div class="tableLayoutFix">
+                            <span class="table-orderCode">
+                              <a id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblOrderid" href="?itemid={$v[itemid]}&action=update&step=detail">{if $v[paytype]==1}到店付{else}预付{/if}</a></span>
+                            
+                            
+                          </div>
+                        </td>
+						<td>
+                          <div class="tableLayoutFix" style=" word-break:break-all;">
+                        
+                              {$v[ordercode]}
+                            
+                            
+                          </div>
+                        </td>
+						<td>
+                          <div class="tableLayoutFix">
+                            <span class="table-orderCode">
+                              出差网</span>
+                            
+                            
+                          </div>
+                        </td>
+						<td>
+                          <div class="tableLayoutFix" style=" word-break:break-all;">
+                            <span class="table-orderCode">
+                              {$v[seller]}</span>
+                            
+                            
+                          </div>
+                        </td>
+						<td>
+                          <div class="tableLayoutFix">
+                            <span class="table-orderCode">
+                              {$v[title]}<br />{$v[amount]}</span>
+                            
+                            
+                          </div>
+                        </td>
+						<td>
+                          <div class="tableLayoutFix" style=" word-break:break-all;">
+                            <span class="table-orderCode">
+                              {$v[buyer]}</span>
+                            
+                            
+                          </div>
+                        </td>
+						<td>
+                          <div class="tableLayoutFix" style=" word-break:break-all;">
+                            <span class="table-orderCode">
+                               {$v[buyer_phone]}</span>
+                            
+                            
+                          </div>
+                        </td>
+						<td>
+                          <div class="tableLayoutFix">
+                            <span class="table-orderCode">
+                               {$v[buyer_name]}</span>
+                            
+                            
+                          </div>
+                        </td>
+						<td>
+                          <div class="tableLayoutFix">
+                            <span class="table-orderCode">
+                             {timetodate($v[intime],0)}<br />{timetodate($v[outtime],0)}</span>
+                            
+                            
+                          </div>
+                        </td>
+                        <td>
+                          <div class="tableLayoutFix">
+                            <span class="table-orderCode">
+							 {$v[arrivetime]}
+                              </span>
+                            
+                            
+                          </div>
+                        </td>
+						<td>
+                          <div class="tableLayoutFix">
+                            <span class="table-orderCode">
+                               {$v[addtime]}</span>
+                            
+                            
+                          </div>
+                        </td>
+						<td>
+                          <div class="tableLayoutFix">
+                            <span class="table-orderCode">
+                              {$v[number]}</span>
+                            
+                            
+                          </div>
+                        </td>
+						<td>
+                          <div class="tableLayoutFix">
+                            <span class="table-orderCode">
+                             {$v[days]}</span>
+                            
+                            
+                          </div>
+                        </td>
+						<td>
+                          <div class="tableLayoutFix">
+                            <span class="table-orderCode">
+							{if $v[zhifu]=='weixin'}微信{elseif $v[zhifu]=='alipay'}支付宝{else}
+							未付款
+							{/if}
+                         </span>
+                            
+                            
+                          </div>
+                        </td>
+                      </tr>
+						{/loop}
+						
+						
+                                          </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="evaluate-box clearfix"></div>
+        <bgsound id="Player" loop="-1" autostart="true">
+          <div id="Music"></div>
+      </div>
+      <div></div>
+      <script>
+      
+      </script>
+   
+      <script type="text/javascript" src="http://www.anluze.com/skin/hotel/new/jquery.jqprint-0.3.js"></script>
+      <script type="text/javascript" src="http://www.anluze.com/skin/hotel/new/jquery-migrate-1.2.1.min.js"></script>
+      <script>
+      function  print(){
+              
+              $(".pageHotelInfo-content").each(function(){
+              var print_id=$(this).attr("id");
+          $("#"+print_id).jqprint();
+          }
+          )
+          }
+      </script>
+<div id="main"></div>
+
+</body>
+</html>

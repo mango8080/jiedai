@@ -1,0 +1,4 @@
+# Robots For Hotel
+User-agent: *
+Disallow: /image/
+Disallow: /skin/

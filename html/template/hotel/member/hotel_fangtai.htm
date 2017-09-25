@@ -1,0 +1,151 @@
+{template 'hotel_header', $module} 
+    <link href="{DT_SKIN}new/page_roomstatus.css" rel="stylesheet" type="text/css">    
+    <style>
+        #fangtai{background-color:#fff;-webkit-transition:color 0.2s ease 0s;-o-transition:color 0.2s ease 0s;transition:color 0.2s ease 0s;text-decoration:none;color:#288fe7;}
+        .th-room-name{outline: solid #eff3f6 1px;}
+    </style>
+    <div class="box-1180">
+        <div class="ebk3-main-content" id="mainPage">
+            <div class="room-maintain-action">
+                <div class="ebk3-tab">
+                    <a href="javascript:void(0)" class="ebk3-tab-item item-cur" id="roomStatusTab">房态</a>  
+                </div>
+
+                <!-- <div class="room-maintain-filter clearfix" id="menuTitle">
+                    
+                    <div class="ebk3-filter" id="roomTypefilter">
+                        <span style="cursor: pointer;" data-bind="html: IsAllSelected() ? '筛选房型（全部）' : '筛选房型（部分）'">筛选房型（全部）</span>
+                        <i class="ebk3-filter-arr" style="cursor: pointer;"></i>
+                        
+                    </div>
+                </div> -->
+            </div>
+
+            <!-- 房态日历页面 -->
+            <div id="tab_roomStatus" class="room-maintain-calendar roomStatusDisplayGroup current-tab" style="" onselectstart="javascript:return false;">
+                <div data-bind="foreach: BasicRooms">
+                    <!-- ko if:$index --><!-- /ko -->
+                    <table class="table-calendar">
+                        <tbody>
+                            <!-- 第一个元素的index为0，第一个基础房型的开头要显示日期 -->
+                            <!-- ko ifnot:$index -->
+                            <tr class="calendarTitle">
+                                <th class="">
+                                    <div class="cont" ></div>
+                                </th>
+                                <th  class="th-dates today" style="width: 68px;">
+                                    <div class="cont">
+                                        <span data-bind="html: Indicator">今天</span>
+                                        <p data-bind="html: DayNumber">{date('d')}</p>
+                                    </div>
+                                </th>
+                               <?php for($i=1;$i<15;$i++): ?>
+                                <th  class="th-dates today" style="width: 68px;">
+                                    <div class="cont">
+                                        <span data-bind="html: Indicator"><?php echo getweekday(date('w',strtotime(' + '.$i.' day'))) ?></span>
+                                        <p data-bind="html: DayNumber"><?php echo date('d',strtotime(' + '.$i.' day')) ?></p>
+                                    </div>
+                                </th>
+                               <?php endfor ?>
+                                <th  style="width: 68px;">
+                                    <div class="cont">
+                                        
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr class="calendarTitle">
+                                <th class="">
+                                    <div class="cont" ></div>
+                                </th>
+                                
+                               <?php for($i=15;$i<30;$i++): ?>
+                                <th  class="th-dates today" style="width: 68px;">
+                                    <div class="cont">
+                                        <span data-bind="html: Indicator"><?php echo getweekday(date('w',strtotime(' + '.$i.' day'))) ?></span>
+                                        <p data-bind="html: DayNumber"><?php echo date('d',strtotime(' + '.$i.' day')) ?></p>
+                                    </div>
+                                </th>
+                               <?php endfor ?>
+                                <th  style="width: 68px;">
+                                    <div class="cont">
+                                        
+                                    </div>
+                                </th>
+                            </tr>
+                            <!-- /ko -->
+
+                            {loop $lists $l $lc}
+                            <?php 
+                                $moreamount=unserialize($lc['moreamount']);
+                             ?>
+                            <tr >
+                            <form action="?" method="post">
+                            <input type="hidden" name="itemid" value="{$lc['itemid']}">
+                                <td class="th-room-name">
+                                    <div class="cont" >{$lc['title']}</div>
+
+                                </td>
+                                <td colspan="15">
+                                    <table>
+                                        <tr>
+                                            <?php for ($i=0; $i < 15; $i++) :?>
+
+                                            {php $thisday=date('Y-m-d',strtotime('+ '.$i.' day'));}
+                                            <td style="width: 68px;border-left: 1px solid #dae5ee;border-top: 1px solid #dae5ee">
+                                                <div class="cont" >  <span>
+                                                <input type="text" name="post[{$thisday}]" value="{if $moreamount[$thisday]}{$moreamount[$thisday]}{else}0{/if}" style="width:38px;border:none; height:38px; text-align:center;">
+                                                </span></div>
+                                            </td>
+                                            <?php endfor ?>
+                                        </tr>
+                                        <tr>
+                                            <?php for ($i=15; $i < 30; $i++) :?>
+
+                                            {php $thisday=date('Y-m-d',strtotime('+ '.$i.' day'));}
+                                            <td style="width: 68px;border-left: 1px solid #dae5ee;border-top: 1px solid #dae5ee">
+                                                <div class="cont" >  <span>
+                                                <input type="text" name="post[{$thisday}]" value="{if $moreamount[$thisday]}{$moreamount[$thisday]}{else}0{/if}" style="width:38px;border:none; height:38px; text-align:center;">
+                                                </span></div>
+                                            </td>
+                                            <?php endfor ?>
+                                        </tr>
+                                    </table>
+                                </td>
+                              
+                                
+                                
+                                <td style="width: 68px;border-left: 1px solid #dae5ee;border-top: 1px solid #dae5ee">
+                                    <div class="cont" >  
+                                    <span>
+                                    <input type="submit" name="submit" value="更新"  style="width:60px; background:#288fe7;height:30px;border:none;color:#fff;border-radius:5px;">
+                                    </span></div>
+                                </td>
+                                </form>
+                            </tr>
+                            {/loop}
+                            
+                            <!-- /ko -->
+                        </tbody>
+                    </table>    
+
+                </div>
+                <div style="height: 50px;"></div>
+                <div class="room-maintain-legend">
+                    <dl class="legend-list clearfix">
+                        <dt class="legend-item">房态说明：</dt>
+                       
+                    </dl>
+                    <dl class="legend-list clearfix">
+                        <dt class="legend-item">填几表示有几间房可售，0表示无房。</dt>
+                        
+                    </dl>
+                </div>
+            </div>       
+        </div>  
+
+    <bgsound id="Player" loop="-1" autostart="true">
+
+    </div>
+
+
+{template 'hotel_footer', $module}

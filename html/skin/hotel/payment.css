@@ -1,0 +1,344 @@
+﻿@charset "utf-8";
+
+/* CSS Document */
+
+.base_box{width:1000px;margin:0 auto;padding:52px 0 16px;}
+
+.base_box .base_main{width:998px;background:#fff;border:1px solid #e7e6e7;margin-bottom:25px;padding-top:50px;}
+
+.base_box .order_fail{padding:70px 0 70px;}
+
+.base_main .head_box{padding:0 0 30px 50px}
+
+.base_main .fail_head{padding:0 0 30px 267px;}
+
+.base_main .fail_operation_btns_box{padding-left:332px;}
+
+.fail_operation_btns_box a{margin-right:66px;cursor:pointer; color:#009c9c;}
+
+.fail_operation_btns_box a:hover{color:#333;text-decoration:underline;}
+
+.head_box .success_icon,.head_box .fail_icon{width:49px;height:49px;background:url(lis/themes/NewInns/sprite/icon_payment.png) no-repeat -11px -8px;float:left;margin:7px 10px 0 0;}
+
+.head_box .fail_icon{background-position:-88px -9px;}
+
+.head_box .head_text{width:670px;float:left;}
+
+.head_text div{line-height:30px;color:#777;}
+
+.head_text .order_statue_text{/*height:34px;*/line-height:34px;float:left; width:832px}
+
+.head_text .order_num_text{/*height:34px;*/line-height:34px;color:#595b63;font-size:22px;font-weight:bold;}
+
+.order_num_text p{float:left;}
+
+.order_num_text b{height:34px;line-height:34px;color:#42aba4;float:left; display:inline;}
+
+.base_main .tips_box{width:936px;margin:0 30px;border:1px solid #dfdfdf;background-color:#f3f3f3;}
+
+/*.tips_box .tip_head{width:111px;height:76px;line-height:76px;color:#777;font-weight:bold;text-align:center;border-right:1px solid #dfdfdf;padding:15px 0;float:left;}
+
+.tips_box .tip_content_box{width:769px;height:90px;padding:15px 20px 1px 35px;float:left;}*/
+
+.tips_box .tip_head{width:111px;height:76px;line-height:76px;color:#777;font-weight:bold;text-align:center;padding:15px 0;float:left;}
+
+.tips_box .tip_content_box{width:769px;padding:15px 20px 1px 35px;float:left;border-left:1px solid #dfdfdf;}
+
+.en .tips_box .tip_content_box{width:769px;/*height:107px;*/padding:15px 20px 1px 35px;float:left;}
+
+.tip_content_box .tip_box{/*height:16px;*/line-height:16px;margin-bottom:14px;color:#777;}
+
+.tip_box a{width:16px;height:16px;margin-right:9px;background:url(lis/themes/NewInns/sprite/icon_payment.png) no-repeat;float:left;display:block;}
+
+.tip_box a.msg_icon{background-position:-22px -82px;}
+
+.tip_box a.gift_icon{background-position:-22px -114px;}
+
+.tip_box a.member_icon{background-position:-22px -144px;}
+
+.tip_box .tip_label_text{font-weight:bold;}
+
+.base_main .bill_box{padding:35px 30px 16px;}
+
+.base_main .label_text{font-size:14px;color:#333;font-weight:bold;line-height:14px;}
+
+.bill_box .price{color:#ff7300;font-size:14px;}
+
+.bill_box .remind_text{color:#d70000;}
+
+.base_main .payment_channel_box{padding:0 30px 21px;}
+
+.payment_channel_box .payment_channel_list_box{border:1px solid #dfdfdf;background-color:#f3f3f3;padding:25px 17px 15px 2px;margin-top:14px;}
+
+.payment_channel_box .payment_channel_list_box .separate_line{width:897px;height:1px border-bottom:1px solid #dfdfdf;margin:5px 0 19px 20px;}
+
+.payment_channel_list_box .payment_channel_head_text{font-size:14px;font-weight:bold;color:#333;padding:0 0 11px 20px;line-height:14px;}
+
+.payment_channel_list_box .pay_channel{width:192px;height:45px;border:1px solid #dfdfdf;background-color:#fff;cursor:pointer;padding-left:14px;margin:0 0 16px 20px;float:left;position:relative;}
+
+.payment_channel_list_box .pay_channel_selected,.payment_channel_list_box .pay_channel:hover{border-color:#ff7300;}
+
+.pay_channel .unselected_check_point,.pay_channel .selected_check_point{width:12px;height:12px;float:left;display:block;margin:16px 15px 17px 0;background:url(lis/themes/NewInns/sprite/icon_hotel_order.png) no-repeat -40px -43px;}
+
+.pay_channel .payment_discount{ position:absolute;right:0; top:0; background:#1d7ad9; height:18px; line-height:16px; padding:0 4px; color:#FFF;}
+
+.pay_channel .checked_point{background-position:-64px -43px;}
+
+/*.pay_channel .payment_icon{width:104px;height:45px;display:block;background:url(lis/themes/NewInns/sprite/icon_payment.png) no-repeat;margin-right:61px;float:left;}*/
+
+.pay_channel .payment_icon{width:126px;height:45px;display:block;background:url(lis/themes/NewInns/sprite/icon_payment.png) no-repeat;margin-right:39px;float:left;}
+
+.pay_channel .wei_xin_icon{background-position:-46px -351px;}
+
+.pay_channel .zhi_fu_bao_icon{background-position:-66px -129px;}
+
+.pay_channel .kuai_qian_icon{background-position:-42px -273px;}
+
+.pay_channel .yi_zhi_fu_icon{background-position:-273px -131px;}
+
+.pay_channel .yin_lian_icon{background-position:-338px -271px; width:124px; margin-right:41px;}
+
+.pay_channel .gongshang_bank_icon{background-position:-168px -10px;}
+
+.pay_channel .jianshe_bank_icon{background-position:-327px -10px;}
+
+.pay_channel .zhaoshang_bank_icon{background-position:-469px -12px;}
+
+.pay_channel .jiaotong_bank_icon{background-position:-616px -13px;}
+
+.pay_channel .nongye_bank_icon{background-position:-189px -274px;}
+
+.pay_channel .pufa_bank_icon{background-position:-324px -68px;}
+
+.pay_channel .minsheng_bank_icon{background-position:-472px -69px;}
+
+.pay_channel .zhongguo_bank_icon{background-position:-617px -64px;}
+
+.pay_channel .shanghai_bank_icon{background-position:-398px -127px;}
+
+.pay_channel .guangda_bank_icon{background-position:-533px -130px;}
+
+.pay_channel .guangfa_bank_icon{background-position:-671px -130px;}
+
+.pay_channel .shenfa_bank_icon{background-position:-42px -207px;}
+
+.pay_channel .xingye_bank_icon{background-position:-179px -207px;}
+
+.pay_channel .zhongxin_bank_icon{background-position:-329px -206px;}
+
+.pay_channel .pingan_bank_icon{background-position:-468px -209px;}
+
+.pay_channel .youzheng_bank_icon{background-position:-601px -210px;}
+
+.pay_channel .jinjiang_card_icon{background-position:-519px -273px;}
+
+.base_main .pay_btn{width:119px;height:41px;line-height:41px;color:#fff;background:#d4443a;margin:0 0 12px 30px;text-align:center; font-size:18px;cursor:pointer;display:block;}
+
+.base_main .pay_btn:hover{background:#ab2b22;}
+
+.base_main .order_tool_bar{margin-top:24px;border-top:1px solid #dfdfdf;padding:13px 30px 14px;}
+
+.base_main .order_btns_box{padding:24px 0 24px 320px;}
+
+.order_tool_bar a{height:14px;line-height:14px;cursor:pointer;color:#42aba4;float:right;margin-left:13px;}
+
+.order_tool_bar a:hover{text-decoration:underline;}
+
+.order_btns_box .order_btn{width:87px;height:23px;line-height:23px;color:#67c8c2;border:1px solid #dfdfdf;margin-right:20px;float:left;text-align:center;font-size:14px;}
+
+.order_btns_box .order_btn:hover{background:#67c8c2;border-color:#67c8c2;color:#fff;text-decoration:none;}
+
+.order_btns_box .continue_book{background:#67c8c2;border-color:#67c8c2;color:#fff;}
+
+.order_btns_box .continue_book:hover{background:#ff7300;border-color:#ff7300;color:#fff;text-decoration:none;}
+
+.base_box .ad_board_box{margin-bottom:25px;}
+
+.ad_board_box img{background:#a2a2a2;margin-right:35px;float:left;}
+
+.ad_board_box img.last_pic{margin:0;}
+
+/*layer*/
+
+.mybg{background:#000;width:100%;height:100%;top:0;left:0;position:absolute;z-index:500;opacity:0.3;filter:Alpha(opacity=30);}
+
+.big_map_box{width:348px;height:177px;border:4px solid #cfcfcf;background:#fff;z-index:9999;position:absolute;top:0;left:0;padding-bottom:13px;}
+
+.big_map_box .head_box{height:40px;line-height:40px;padding-left:19px;background:#f3f3f3;color:#333;}
+
+.head_box .close_btn,.head_box .close_btn:hover{width:13px;height:13px;float:right;margin:13px 9px 14px 0;cursor:pointer;background:url(lis/themes/NewInns/sprite/icon_hotel_detail.png) no-repeat -487px -321px;}
+
+.head_box .close_btn:hover{background-color:#000;}
+
+.head_box .caution_head_text{float:left;}
+
+.big_map_box .confirm_btn{width:65px;height:24px;line-height:24px;background:#1d7ad9;text-align:center;color:#fff;cursor:pointer;float:right;margin-right:18px;}
+
+.big_map_box .confirm_btn:hover{background:#ff7300;}
+
+.big_map_box .caution_content_box{height:80px;padding:33px 18px 0 24px;}
+
+.caution_content_box .alarm_text{height:16px;line-height:16px;font-size:14px;padding-bottom:18px;color:#d70000;}
+
+.caution_content_box .caution_text{color:#777;}
+
+
+
+/*����*/
+
+.mbody{ position:absolute;left:0;top:0; z-index:9999;width:100%; height:100%;display:none; }
+
+.mbg{background:#000;width:100%;height:100%;position:absolute;left:0; display:none;}
+
+.mbody b.close{  width:13px; height:11px; display:block; position:absolute; right:18px; top:22px; cursor:pointer; background: url(lis/themes/NewInns/img/close.png);}
+
+.mmain{  position:fixed; left:50%; top:50%;  display:none; background:#3c3c3c; background:rgba(0,0,0,0.3); padding:6px;box-shadow:0px 0px 15px #000;border-radius:5px; }
+
+.mmain .mainPage .title{ background:#42aba4; color:#fff; height:48px; line-height:48px; font-size:15px; text-indent:20px;}
+
+
+
+.cashPage{ width:500px; height:250px;margin-left:-250px; margin-top:-125px;font-family:microsoft yahei;}
+
+.cashPage .mainPage{ background:#fff; display:block; overflow: hidden;width:500px; height:250px;border-radius:5px; }
+
+.cashPage .label{  font-size:14px; color:#666; margin-bottom:5px; line-height:30px; *margin-right:0; *float:none;}
+
+.cashPage .form{padding:20px 0 0 80px;}
+
+.cashPage .helpBtn{ color:#ea544a; text-decoration:underline;}
+
+.cashPage .helpBtn:hover{ color:#333; text-decoration:none;}
+
+.cashPage .btn{ margin-top:25px; text-align:center;}
+
+.cashPage .btn a{ text-align:center;background:#42aba4; height:36px; line-height:36px; text-align:center; font-size:14px; color:#fff; display:inline-block; border-radius:5px; width:130px; margin:0 20px;}
+
+.cashPage .btn a.cancel{ background:#9d9d9d;}
+
+
+
+.tuijian{ background:#fff;border: 1px solid #e7e6e7; padding:20px; overflow:hidden;}
+
+.tuijian h2{ font-weight:normal; font-size:14px; font-family:microsoft yahei; margin-bottom:18px;}
+
+.tuijian li{ float:left; width:306px; margin-right:13px;}
+
+.tuijian li .pic{ width:150px; height:112px; background:#f3f3f3; margin-right:10px; float:left;}
+
+.tuijian li .txt b{ font-size:14px; display:block; font-weight:normal;font-family:microsoft yahei; color:#666;}
+
+.tuijian li .txt{ line-height:30px; color:#999;}
+
+.tuijian li .txt .en{ font-size:14px; color:#009c9c;}
+
+
+
+
+
+/*国际化样式重构*/
+
+.en .base_main .head_box{padding:0 0 30px 40px}
+
+.en .head_box .head_text{width:670px;}
+
+.en .tip_content_box .tip_box{margin-bottom:7px;}
+
+
+
+
+
+
+
+/*2016-01-04*/
+
+.equity{
+
+	/*width: 540px;*/
+
+	padding-left: 25px;
+
+}
+
+.mar_l {
+
+    margin-left: 245px;
+
+}
+
+.en .mar_l {
+
+    margin-left: 86px;
+
+}
+
+
+
+.equity li{
+
+	line-height: 24px;
+
+	font-size: 12px;
+
+	color: #333333;
+
+	background: url(../images/true.jpg) no-repeat left;
+
+	padding-left: 13px;
+
+}
+
+
+
+
+
+
+
+/*2016-04-26*/
+
+.yi_activity {
+
+    margin: 10px 3px 10px 20px;
+
+    background-color: #ffe;
+
+    height: 30px;
+
+    line-height: 30px;
+
+    border: 1px solid #e9e9e9;
+
+}
+
+.icon_yi_logo {
+
+    width: 16px;
+
+    height: 16px;
+
+    margin: 8px 9px 0;
+
+    background: url(lis/themes/NewInns/sprite/icon_payment.png) no-repeat -22px -177px;
+
+    float: left;
+
+}
+
+.yi_text{
+
+	float: left;
+
+margin-right: 30px;
+
+}
+
+.yi_jump{
+
+	float: left;
+
+line-height: 30px;
+
+text-decoration: underline;
+
+}
+

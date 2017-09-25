@@ -1,0 +1,1 @@
+<?php defined('IN_DESTOON') or exit('Access Denied'); return array (3 => array ('typeid' => '3','parentid' => '0','typename' => '重要通知','style' => '',),2 => array ('typeid' => '2','parentid' => '0','typename' => '使用说明','style' => '',),1 => array ('typeid' => '1','parentid' => '0','typename' => '网站公告','style' => '',),); ?>

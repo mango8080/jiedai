@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>订单详情页</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+   <!--  <style>
+       .weui-form-preview__label {
+           color: #999;
+           float: left;
+           margin-right: 1em;
+           min-width: 4em;
+           text-align: justify;
+           text-align-last: justify;
+       }
+       .weui-form-preview__item {
+           overflow: hidden;
+       }
+       .weui-form-preview__value {
+           display: block;
+           overflow: hidden;
+           overflow-wrap: break-word;
+           word-break: normal;
+       }
+   </style> -->
+	<link rel="stylesheet" href="mobile/static/style/weui.min.css">
+    <link rel="stylesheet" href="mobile/static/style/index.min.css">
+    <!-- <script type="text/javascript" src="static/script/jquery-2.1.1.min.js"></script>
+    <script>
+        var i=9;
+        var j=59;
+        var timer=setInterval("clock()",1000);
+        function clock(){
+            if(j>0){
+                j--;
+                $("#second").text(j);
+            }else{
+                if(i>0){
+                    i--;
+                    $("#minute").text(i);
+                }else{
+                     clearInterval(timer);
+                     location.href ="http://www.baidu.com";
+                };
+                j=59;
+                $("#second").text(j);
+            }
+        }
+    </script> -->
+</head>
+<body style="background: #f4f4f4">
+<div class="head">
+	<a onclick="history.go(-1)"><img src="static/style/back.png" width="22" height="14"  alt=""/></a>
+  	<div>订单支付页</div>
+    <a href="../mobile"><img src="static/style/home.png" width="22" height="21"  alt=""/></a>
+</div>
+<div class="weui-form-preview">
+    <div class="weui-form-preview__hd">
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">当前操作</label>
+            <span class="weui-form-preview__value">订单支付</span>
+        </div>
+    </div>
+    <div class="weui-form-preview__bd">
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">订单编号</label>
+            <span class="weui-form-preview__value">{$order['ordercode']}</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">订单状态</label>
+            <span class="weui-form-preview__value orderstate">{$orderstatus[$order['status']]}</span>
+        </div>
+        
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">房型名称</label>
+            <span class="weui-form-preview__value">{$order['title']}(¥{$order['price']})</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">房型图片</label>
+            <span class="weui-form-preview__value"><a href="{$td[linkurl]}" target="_blank"><img src="{if $td[thumb]}{DT_PATH}{$td[thumb]}{else}{DT_SKIN}image/nopic60.gif{/if}" width="60" height="60"/></a></span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">酒店</label>
+            <span class="weui-form-preview__value">{if $DT[im_web]}{im_web($td[seller])}&nbsp;{/if}<a href="message.php?action=send&touser={$td[seller]}"><img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/ico_message.gif" title="发送站内信" align="absmiddle"/></a> <a href="{userurl($td[seller], 'file=contact')}" target="_blank" class="t">{$td[seller]}</a></span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">下单时间</label>
+            <span class="weui-form-preview__value">{$td[adddate]}</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">我的备注</label>
+            <span class="weui-form-preview__value"></span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">房间价格</label>
+            <span class="weui-form-preview__value">20.00</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">房间数量</label>
+            <span class="weui-form-preview__value">1</span>
+        </div>
+        <div class="weui-form-preview__hd">
+            <div class="weui-form-preview__item">
+                <label class="weui-form-preview__label">实付金额</label>
+                <em class="weui-form-preview__value orderstate">¥{$order['amount']}</em>
+            </div>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">账户余额</label>
+            <span class="weui-form-preview__value">￥0.00</span>
+        </div>
+    </div>
+    <div class="weui-form-preview__ft">
+        <a class="weui-form-preview__btn weui-form-preview__btn_default" href="javascript:">立即支付</a>
+   <?php if ($order['status']==1): ?>
+        <a  class="weui-form-preview__btn weui-form-preview__btn_primary" href="../mobile">返回</a>
+   <?php endif ?>
+       
+    </div>
+</div>
+{template 'footer', 'mobile'}
+</body>
+</html>

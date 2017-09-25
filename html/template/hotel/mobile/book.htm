@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="Cache-control" content="no-cache">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="address=no" name="format-detection">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>预订信息</title>
+<link type="text/css" rel="stylesheet" href="static/css/bootstrap.css">
+<link type="text/css" rel="stylesheet" href="static/css/bootstrap-datetimepicker.css">
+<link type="text/css" rel="stylesheet" href="static/css/base.css">
+<link type="text/css" rel="stylesheet" href="static/css/default.css">
+<link type="text/css" rel="stylesheet" href="static/css/iocn.css">
+<script charset="utf-8" src="static/book_files/v.htm"></script><script src="static/js/hm.js"></script><script type="text/javascript" src="static/js/jquery-1.js"></script>
+<script type="text/javascript" src="static/js/bootstrap.js"></script>
+<script type="text/javascript" src="static/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="static/js/bootstrap-datetimepicker_002.js" charset="UTF-8"></script>
+<script type="text/javascript" src="static/js/time.js"></script>
+<script type="text/javascript" src="static/js/zepto.js"></script>
+<script type="text/javascript" src="static/js/touch.js"></script>
+
+<style type="text/css">
+.coupons2,.select_date{position:fixed;  left:0; right:0;  top:0; bottom:0; width:100%; height:100%; overflow:hidden;  z-index:99;  background-color:#fff;}
+select.ui-select,select.ui-select option{direction: rtl;}
+.book_info .info_list>.row .room_name{font-size:14px;}
+.book_info .info_list>.row .xinxi{font-size:14px;}
+ .bottom_box {
+    display: block;
+    width: 90%;
+    height: 45px;
+    margin: 0 auto;
+    color: #fff;
+    border-radius: 23px;
+    background-color: rgba(255, 99, 76, 1);
+}
+ .bottom_box div.col-xs-6 {
+    padding: 0;
+}
+.bottom_box div.col-xs-6:nth-child(1){
+    margin-top:15px;
+    border-right:1px solid #fff;
+    font-size:12px;
+    text-align:center;
+}
+.bottom_box div.col-xs-6:nth-child(2) a{
+    font-size:18px;
+}
+select.ui-select, select.ui-select option{font-size:14px !important}
+</style>
+</head>
+<body style="width: 1304px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?d60bce426675399b1df45728b48f107d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+</script>
+
+
+
+
+<script type="text/javascript" src="static/book_files/stats.js" name="MTAH5" sid="500002101" cid="500002102"></script>
+
+
+
+
+<!-- 引用JS文件：弹出 -->
+<!-- Dependencies -->
+<link rel="stylesheet" href="static/css/ui-dialog.css">
+<script src="static/js/jquery-1.js"></script>
+<script type="text/javascript" src="static/js/dialog-min.js"></script>
+<script type="text/javascript">
+//jquery和tap冲突的解决方式
+$.noConflict();
+//自定义弹出框，dialog
+function jAlert(content){
+	var d = dialog({
+	    title: '提示',
+	    content: content,
+	    okValue: '确定',
+	    ok: function () {
+	    }
+	});
+	d.showModal();
+}
+
+function isWeiXin(){
+	var ua = window.navigator.userAgent.toLowerCase();
+	if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+		return true;
+	}else{
+		return false;
+	}
+} 
+
+if(isWeiXin()){
+	//是微信浏览器
+	 var openid = "";
+	 if(openid == null || openid ==''){
+		 //获取授权失败
+		 var authUrl = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxbc71831f7bfba903&redirect_uri=http%3A%2F%2Fm.jinjianginns.com%2Fmemberhubs1%2FbookInfo.htm%3Fhid%3D00360326%26beginDate%3D2016-10-27%26endDate%3D2016-10-28%26roomId%3DSIRA%26ratePlanId%3DSIRA%26hotelName%3D%25E9%2594%25A6%25E6%25B1%259F%25E4%25B9%258B%25E6%2598%259F%25E6%25AD%25A6%25E6%25B1%2589%25E5%2585%25AD%25E6%25B8%25A1%25E6%25A1%25A5%25E9%2585%2592%25E5%25BA%2597%26roomName%3D%25E5%258D%2595%25E4%25BA%25BA%25E6%2588%25BFA%26roomNum%3D1&response_type=code&scope=snsapi_base&state=1#wechat_redirect';
+		 window.location.href=authUrl;
+	 }
+}
+
+//提示后，点击确定跳转
+function jAlert2(content,redictUrl){
+	var d = dialog({
+	    title: '提示',
+	    content: content,
+	    okValue: '确定',
+	    ok: function () {
+	    	window.location.href = redictUrl;
+	    }
+	});
+	d.showModal();
+}
+//转菊花的加载效果
+jQuery(function() {
+	var d = dialog( {
+		zIndex : 87
+	});
+	jQuery(document).ajaxStart(function() {
+		d.showModal();
+	});
+	jQuery(document).ajaxComplete(function() {
+		d.close();
+	});
+});
+</script>
+
+<script type="text/javascript">
+window.onload=function(){
+	var _width=document.documentElement.clientWidth;
+	document.body.style.width=_width+'px';
+}
+function goBack(){
+	var referrer = document.referrer;
+	var url = window.location.href;
+	//alert(url);
+	if(referrer == null || referrer ==''){
+		//从微信访问进来，没有上一个页面时，默认返回到首页
+		window.location.href="static//index.htm";
+	}else{
+		/* window.history.back(); */
+		if(referrer.indexOf('/book/hotel_list.htm') > 0){
+			window.location.href="static//book/book_search.htm";
+		}else if(url.indexOf('/book/book_search.htm') > 0){
+			window.location.href="static//index.htm";
+		}else if(url.indexOf('/bookhubs1/hotelList.htm') > 0){
+			window.location.href="static//bookhubs1/book_search.htm";
+		}else if(url.indexOf('/bookhubs1/book_search.htm') > 0){
+			window.location.href="static//index.htm";
+		}else if(url.indexOf('/platform/findHotelByConditionJinJiang.htm') > 0){
+			window.location.href="static//platform/book_search.htm";
+		}else if(url.indexOf('/platform/hotelShow.htm') > 0){
+			window.location.href="static//platform/book_search.htm";
+		}else if(url.indexOf('/platform/book_search.htm') > 0){
+			window.location.href="static//index.htm";
+		}else if(url.indexOf('/memberhubs1/orderPay.htm') > 0){
+			self.location=document.referrer;
+		}else if(url.indexOf('/memberhubs1/order_show.htm') > 0){
+			window.location.href="static//platform/otaOrderList.htm?orderStatus=R&flag=1";
+		}else{
+			window.history.back();
+		} 
+	}
+}
+</script>
+<header class="clearfix" style="position:fixed;top:0;width:100%;background:#FFF;z-index:99">
+	
+	
+	
+		
+		
+		
+			<a href="onclick="history.go(-1);" class="back"><img src="static/img/back.png" height="14"></a>
+		
+	
+	<h1 class="f-16 b" style="font-size:16px;">
+		
+		填写信息
+	</h1>
+	<a href="../mobile" class="home"><img src="static/img/home.png" height="21px"></a>
+</header>
+<form id="submitForm" action="/memberhubs1/postOrder.htm" method="post"> 
+<section class="ui-box">
+<div class="book_info">
+	<div class="top">
+    	<p>锦江之星武汉六渡桥酒店</p>
+    </div>
+    <div class="container-fluid info_list">
+    	<div class="row">
+    		<div class="col-xs-4">
+    			<p class="l_title">借款类型</p>
+    		</div>
+    		<div class="col-xs-8">
+    			<span class="room_name">单人房A</span>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-xs-5 date"><span>入住</span> 2016-10-27</div>
+    		<div class="col-xs-5 date"><span>离店</span> 2016-10-28</div>
+    		<div class="col-xs-2"><a class="xiugai">修改</a></div>
+    	</div>
+    	<div class="row">
+    		<div class="col-xs-4">
+    			<p class="l_title">房间数</p>
+    		</div>
+    		<div class="col-xs-8">
+    			<div class="rooms_mp">
+	    			<div id="minus"><img alt="" src="static/img/minus.png" height="25"></div>
+		            <div class="room_number">1</div>
+		            <div id="plus"><img alt="" src="static/img/plus.png" height="25"></div>
+	            </div>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-xs-4">
+    			<p class="l_title">联系人</p>
+    		</div>
+    		<div class="col-xs-8">
+    			<input class="xinxi" name="name" placeholder="请填写真实姓名" type="text">
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-xs-4">
+    			<p class="l_title">联系方式</p>
+    		</div>
+    		<div class="col-xs-8">
+    			<input class="xinxi" name="mobile" value="18133438165" placeholder="请填写有效手机号" type="text">
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-xs-4">
+    			<p class="l_title">使用优惠券</p>
+    		</div>
+    		<div class="col-xs-8 btn_coupons">
+    			<select class="ui-select" name="userCoupon" id="dzq"><option value="0">不使用优惠券</option><option value="1" selected="selected">使用优惠券减￥10</option></select>
+    		</div>
+    	</div>
+    	
+    </div>
+    <p id="tips">订单保留至入住当日18:00，18:00后入住需预付房费。
+请在入住日当天18:00前取消。如需发票，请向酒店前台咨询。
+预付订单保留至入住次日12:00。</p>
+    
+   <!--  <a href="static/javascript:void(0)" id="submit" class="btn btn_default" role="button" style="width:100%; margin-top: 20px;">提 交</a> -->
+    <div style="height:44px;width:90%;color"></div>
+    <div class="bottom_box">
+  		<div class="col-xs-6">
+  			 <p style="text-align:right">¥<span class="realPrice" style="font-size:14px;margin-right:10px;">179</span> <a class="mingxi" style="text-decoration: underline; color: #fff;font-size:12px;margin-right:30px">明细</a></p>
+		</div>
+		<div class="col-xs-6">
+			<a href="javascript:void(0)" id="submit" class="btn btn_default" role="button" style="width:auto;">提交</a>
+		</div>
+	</div>
+</div>
+
+
+<div class="mingxi_info" style="display:none;">
+	<a class="btn_guanbi"><img alt="" src="static/img/guanbi.png" height="20"></a>
+	<dl>
+		<dt>房价明细</dt>
+		<dd class="clearfix">
+			<span>日期</span>
+			<span>&nbsp;&nbsp;</span>
+			<span>单人房A</span>
+		</dd>
+	<dd class="clearfix"><span>2016-10-27</span><span style="wdith:100%;font-size: 0.8em;text-align:center;">减￥10</span><span class="roomPrice">￥189.0*1间</span></dd><dd class="clearfix"><span>总额</span><span style="wdith:100%;font-size: 0.8em;text-align:center;">减￥10</span><span class="roomPrice">￥179.0</span></dd></dl>
+	<p>
+		<span class="left couponValue" style="display:none;">优惠 ：<em><span class="discount">-0</span></em></span>
+		<span class="right">应付金额：<em><span class="realPrice">179</span></em></span>
+	</p>
+</div>
+
+<div class="hotel_search select_date" style="display: none;">
+	<header>
+		<a class="back_dlrq"><img alt="" src="static/img/back.png" height="14"></a>
+		<h1 style="font-size: 17px;">修改抵离日期</h1>
+		<a href="../mobile" class="home"><img src="static/img/home.png" height="21px"></a>
+	</header>
+	<ul class="search_list">
+		<li id="checkInDate" class="arrow date input-group" dacta-date-format="dd MM yyyy" data-link-format="yyyy-mm-dd" data-date="" data-link-field="dtp_input2">
+            <input id="dtp_input2" readonly="readonly" value="2016-10-27">
+            <span id="checkInweek">（今天）</span>
+            <span class="b_2">入住</span>
+        </li>
+        <li id="checkOutDate" class="arrow date input-group" data-date-format="dd MM yyyy" data-link-format="yyyy-mm-dd" data-date="" data-link-field="dtp_input3">
+            <input id="dtp_input3" readonly="readonly" value="2016-10-28">
+            <span id="checkOutweek">（周五）</span>
+            <span class="b_2">离店</span>
+            <span id="godays">（共1晚）</span>
+        </li>
+	</ul>
+	<div style="padding: 20px 15px">
+		<a id="btnSelectDate" class="btn btn_default">确 认</a>
+	</div>
+</div>
+<div class="mask" style="display:none;"></div>
+</section>
+
+<!-- 电子券 -->
+<input name="beginDate" value="2016-10-27" type="hidden">
+<input name="endDate" value="2016-10-28" type="hidden">
+<input name="hid" value="00360326" type="hidden">
+<input name="roomId" value="SIRA" type="hidden">
+<input name="ratePlanId" value="SIRA" type="hidden">
+<input name="roomNum" value="1" type="hidden">
+<input name="hotelName" value="锦江之星武汉六渡桥酒店" type="hidden">
+<input name="roomName" value="单人房A" type="hidden">
+<input name="priceTotal" value="179" type="hidden">
+<input name="maxNum" value="3" type="hidden">
+<input name="coupons" value="[{&quot;desc&quot;:&quot;抵用10元&quot;,&quot;date&quot;:&quot;2016-10-27&quot;,&quot;amount&quot;:10,&quot;couponId&quot;:&quot;10120&quot;}]" type="hidden">
+<input name="struts.token.name" value="token" type="hidden">
+<input name="token" value="7VOSJOVONBDOTJT6F2OG3M1E5Y1FRDIT" type="hidden">
+</form>
+
+<script type="text/javascript">
+$(function(){
+	$("input[type=text]").select();
+	
+	var flag = true;
+	var count = 1;
+	//选择房间数
+	var reg=/^1[34578][0-9]\d{8}$/;
+     function verifyOrder(){
+    	$('#submit').text('正在确认中');
+ 		$('#submit').attr('disabled','disabled');
+ 		$.ajax({
+			url:'/memberhubs1/verifyOrder.htm',
+			data:$('#submitForm').serialize(),
+			dataType:'json',
+			success:function(data){
+				if(data.stat != 1){
+					alert(data.msg);
+					$('#submit').text('提交');
+					return false;
+				}
+				$('.bottom').show();
+				$('#tips').text(data.result.tips);
+				$('.realPrice').text(data.result.orderInfo.totalPrice);
+				$('input[name=priceTotal]').val(data.result.orderInfo.totalPrice);
+				var groups =  data.result.groups;
+				var couponUse = $('#dzq').val();
+				var coupons = data.result.coupons;
+				if(coupons != null && coupons.length > 0){
+					$('input[name=coupons]').val(JSON.stringify(coupons));
+				}
+				if(groups.length > 1){
+					var coupon = data.result.groups[1].rows[0].detail.choice;
+					if(coupon.length == 2){
+						$('#dzq').empty();
+						for(var i=0;i<coupon.length;i++){
+							$('#dzq').append('<option value='+coupon[i].value+'>'+coupon[i].key+'</option>');
+						}
+						if(couponUse == '0'){
+							$('#dzq').val('0');
+						}else{
+							$('#dzq').val('1');
+						}
+						$('.btn_coupons').show();
+					}
+				}
+				var orderInfo = data.result.groups[0].rows;
+				for(var i=0;i<orderInfo.length;i++){
+					if(orderInfo[i].detail != null){
+						var maxNum = orderInfo[i].detail.maxNum;
+						$('input[name=maxNum]').val(maxNum);
+					}
+				}
+				var roomInfo = data.result.orderInfo.priceDetail.text,
+					roomNum = $('input[name=roomNum]').val();
+				//房价明细
+				$('.mingxi_info dl dd:gt(0)').remove();
+				for(var i=0;i<roomInfo.length;i++){
+					var moddile = roomInfo[i].middle;
+					if(moddile != '' && moddile != null){
+						moddile = '<span style="wdith:100%;font-size: 0.8em;text-align:center;">'+roomInfo[i].middle+'</span>';
+					}else{
+						moddile = '<span style="wdith:100%;font-size: 0.8em;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;</span>';
+					}
+					$('.mingxi_info dl').append('<dd class="clearfix"><span>'+roomInfo[i].left+'</span>'+moddile+'<span class="roomPrice">'+roomInfo[i].right+'</span></dd>');
+				}
+				var maxNum = $('input[name=maxNum]').val(),
+				    roomNum = $('.room_number').text();
+				if(parseInt(maxNum) < parseInt(roomNum)){
+					alert('可预定房型还剩'+maxNum+'间,请重新选择数量');
+					$('#submit').text('请重新选择房间数量');
+					return false;
+				}
+				$('#submit').text('提交');
+				$('#submit').removeAttr('disabled');
+			}
+		});
+     }
+     verifyOrder();
+     $('.select_showdown').change(function(){
+    	 var checkInDate = '';//入住日期
+    	 var checkInTime = $(this).val();
+    	 $('input[name=checkInDate]').val(checkInDate+' '+ checkInTime);
+     });
+     
+     $("select[name='userCoupon']").change(function(e){
+    	 verifyOrder();
+  	 });
+     $('#submit').on('tap', function(e) {
+ 		
+ 		if( $.trim($("input[name='name']").val()) == '' ){//判断宾客姓名是否为空
+ 			jAlert("宾客姓名不能为空！");
+ 			return false;
+ 		}
+ 		if( $.trim($("input[name='name']").val()).length > 10){//判断宾客姓名是否超出长度
+ 			jAlert("宾客姓名超出长度！");
+ 			return false;
+ 		}
+ 		if(!reg.test($.trim($("input[name='mobile']").val()))){//判断宾客姓名是否为空
+ 			jAlert("联系电话格式不正确！");
+ 			return false;
+ 		}
+ 		if(flag){
+ 			flag = false;
+ 		}else{
+ 			return false;
+ 		}
+ 		if(count ==1 ){
+ 			count++;
+ 			$("#submitForm").submit();
+ 		}
+ 		
+ 	});
+     $('.mingxi').click(function(){
+     	$('.mingxi_info,.mask').show();
+     })     
+    $('.btn_guanbi').click(function(){
+    	$('.mingxi_info,.mask').hide();
+    })
+    $('.xiugai').on("click",function(){
+		$(".select_date").show();
+	})
+	$('.back_dlrq').on("click",function(){
+		$(".select_date").hide();
+	})
+	$('#btnSelectDate').on("click",function(){
+		var checkInDateUrl = changeURLArg(window.location.href,'beginDate',$('#dtp_input2').val());//替换起始时间
+   		var checkOutDateUrl =changeURLArg(checkInDateUrl,'endDate',$('#dtp_input3').val());//替换结束时间 
+   		window.location.href= checkOutDateUrl;
+	})
+    $("#minus").click(function(event) {
+        var num=parseInt($(".room_number").text())-1
+        if(num<1){
+             num=1
+             return false;
+        }
+        $(".room_number").text(num);
+        $(".number").text(num);
+        $('input[name=roomNum]').val(num);
+        verifyOrder();
+     });
+     $("#plus").click(function(event) {  
+        var num=parseInt($(".room_number").text())+1;
+        var maxNum = $('input[name=maxNum]').val();
+        if(num > maxNum){
+        	num = maxNum;
+        	return false;
+        }
+        $(".room_number").text(num);
+        $(".number").text(num);
+        $('input[name=roomNum]').val(num);
+        verifyOrder();
+     });
+})
+//替换URL链接中的某个参数 
+function changeURLArg(url,arg,arg_val){ 
+    var pattern=arg+'=([^&]*)'; 
+    var replaceText=arg+'='+arg_val; 
+    if(url.match(pattern)){ 
+        var tmp='/('+ arg+'=)([^&]*)/gi'; 
+        tmp=url.replace(eval(tmp),replaceText); 
+        return tmp; 
+    }else{ 
+        if(url.match('[\?]')){ 
+            return url+'&'+replaceText; 
+        }else{ 
+            return url+'?'+replaceText; 
+        } 
+    } 
+    return url+'\n'+arg+'\n'+arg_val; 
+} 
+</script>
+
+<div class="datetimepicker datetimepicker-dropdown-bottom-right dropdown-menu" style="left: 15px; z-index: 1010;"><div class="datetimepicker-minutes" style="display: none;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: hidden;"><span class="glyphicon glyphicon-arrow-left"></span> </th><th colspan="5" class="switch">27 十月 2016</th><th class="next" style="visibility: visible;"><span class="glyphicon glyphicon-arrow-right"></span> </th></tr></thead><tbody><tr><td colspan="7"><fieldset class="minute"><legend>上午</legend><span class="minute disabled">9:00</span><span class="minute disabled">9:05</span><span class="minute disabled">9:10</span><span class="minute disabled">9:15</span><span class="minute disabled">9:20</span><span class="minute disabled">9:25</span><span class="minute disabled">9:30</span><span class="minute disabled">9:35</span><span class="minute disabled">9:40</span><span class="minute">9:45</span><span class="minute">9:50</span><span class="minute">9:55</span></fieldset></td></tr></tbody><tfoot><tr><th colspan="7" class="today">今天</th></tr></tfoot></table></div><div class="datetimepicker-hours" style="display: none;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: hidden;"><span class="glyphicon glyphicon-arrow-left"></span> </th><th colspan="5" class="switch">27 十月 2016</th><th class="next" style="visibility: visible;"><span class="glyphicon glyphicon-arrow-right"></span> </th></tr></thead><tbody><tr><td colspan="7"><fieldset class="hour"><legend>上午</legend><span class="hour disabled hour_am">12</span><span class="hour disabled hour_am">1</span><span class="hour disabled hour_am">2</span><span class="hour disabled hour_am">3</span><span class="hour disabled hour_am">4</span><span class="hour disabled hour_am">5</span><span class="hour disabled hour_am">6</span><span class="hour disabled hour_am">7</span><span class="hour disabled hour_am">8</span><span class="hour active hour_am">9</span><span class="hour hour_am">10</span><span class="hour hour_am">11</span></fieldset><fieldset class="hour"><legend>下午</legend><span class="hour hour_pm">12</span><span class="hour hour_pm">1</span><span class="hour hour_pm">2</span><span class="hour hour_pm">3</span><span class="hour hour_pm">4</span><span class="hour hour_pm">5</span><span class="hour hour_pm">6</span><span class="hour hour_pm">7</span><span class="hour hour_pm">8</span><span class="hour hour_pm">9</span><span class="hour hour_pm">10</span><span class="hour hour_pm">11</span></fieldset></td></tr></tbody><tfoot><tr><th colspan="7" class="today">今天</th></tr></tfoot></table></div><div class="datetimepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: hidden;"><span class="glyphicon glyphicon-arrow-left"></span> </th><th colspan="5" class="switch">十月 2016</th><th class="next" style="visibility: visible;"><span class="glyphicon glyphicon-arrow-right"></span> </th></tr><tr><th class="dow">日</th><th class="dow">一</th><th class="dow">二</th><th class="dow">三</th><th class="dow">四</th><th class="dow">五</th><th class="dow">六</th></tr></thead><tbody><tr><td class="day old disabled">25</td><td class="day old disabled">26</td><td class="day old disabled">27</td><td class="day old disabled">28</td><td class="day old disabled">29</td><td class="day old disabled">30</td><td class="day disabled">1</td></tr><tr><td class="day disabled">2</td><td class="day disabled">3</td><td class="day disabled">4</td><td class="day disabled">5</td><td class="day disabled">6</td><td class="day disabled">7</td><td class="day disabled">8</td></tr><tr><td class="day disabled">9</td><td class="day disabled">10</td><td class="day disabled">11</td><td class="day disabled">12</td><td class="day disabled">13</td><td class="day disabled">14</td><td class="day disabled">15</td></tr><tr><td class="day disabled">16</td><td class="day disabled">17</td><td class="day disabled">18</td><td class="day disabled">19</td><td class="day disabled">20</td><td class="day disabled">21</td><td class="day disabled">22</td></tr><tr><td class="day disabled">23</td><td class="day disabled">24</td><td class="day disabled">25</td><td class="day disabled">26</td><td class="day today active">27</td><td class="day">28</td><td class="day">29</td></tr><tr><td class="day">30</td><td class="day">31</td><td class="day new">1</td><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td><td class="day new">5</td></tr></tbody><tfoot><tr><th colspan="7" class="today">今天</th></tr></tfoot></table></div><div class="datetimepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: hidden;"><span class="glyphicon glyphicon-arrow-left disabled"></span> </th><th colspan="5" class="switch">2016</th><th class="next" style="visibility: visible;"><span class="glyphicon glyphicon-arrow-right disabled"></span> </th></tr></thead><tbody><tr><td colspan="7"><span class="month disabled">一月</span><span class="month disabled">二月</span><span class="month disabled">三月</span><span class="month disabled">四月</span><span class="month disabled">五月</span><span class="month disabled">六月</span><span class="month disabled">七月</span><span class="month disabled">八月</span><span class="month disabled">九月</span><span class="month active">十月</span><span class="month">十一月</span><span class="month">十二月</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today">今天</th></tr></tfoot></table></div><div class="datetimepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: hidden;"><span class="glyphicon glyphicon-arrow-left"></span> </th><th colspan="5" class="switch">2010-2019</th><th class="next" style="visibility: visible;"><span class="glyphicon glyphicon-arrow-right"></span> </th></tr></thead><tbody><tr><td colspan="7"><span class="year old disabled">2009</span><span class="year disabled">2010</span><span class="year disabled">2011</span><span class="year disabled">2012</span><span class="year disabled">2013</span><span class="year disabled">2014</span><span class="year disabled">2015</span><span class="year active">2016</span><span class="year">2017</span><span class="year disabled">2018</span><span class="year disabled">2019</span><span class="year old disabled">2020</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today">今天</th></tr></tfoot></table></div></div><div class="datetimepicker datetimepicker-dropdown-bottom-left dropdown-menu" style="left: 15px; z-index: 1020;"><div class="datetimepicker-minutes" style="display: none;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: hidden;"><span class="glyphicon glyphicon-arrow-left"></span> </th><th colspan="5" class="switch">28 十月 2016</th><th class="next" style="visibility: visible;"><span class="glyphicon glyphicon-arrow-right"></span> </th></tr></thead><tbody><tr><td colspan="7"><fieldset class="minute"><legend>上午</legend><span class="minute active">12:00</span><span class="minute">12:05</span><span class="minute">12:10</span><span class="minute">12:15</span><span class="minute">12:20</span><span class="minute">12:25</span><span class="minute">12:30</span><span class="minute">12:35</span><span class="minute">12:40</span><span class="minute">12:45</span><span class="minute">12:50</span><span class="minute">12:55</span></fieldset></td></tr></tbody><tfoot><tr><th colspan="7" class="today">今天</th></tr></tfoot></table></div><div class="datetimepicker-hours" style="display: none;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: hidden;"><span class="glyphicon glyphicon-arrow-left"></span> </th><th colspan="5" class="switch">28 十月 2016</th><th class="next" style="visibility: visible;"><span class="glyphicon glyphicon-arrow-right"></span> </th></tr></thead><tbody><tr><td colspan="7"><fieldset class="hour"><legend>上午</legend><span class="hour active hour_am">12</span><span class="hour hour_am">1</span><span class="hour hour_am">2</span><span class="hour hour_am">3</span><span class="hour hour_am">4</span><span class="hour hour_am">5</span><span class="hour hour_am">6</span><span class="hour hour_am">7</span><span class="hour hour_am">8</span><span class="hour hour_am">9</span><span class="hour hour_am">10</span><span class="hour hour_am">11</span></fieldset><fieldset class="hour"><legend>下午</legend><span class="hour hour_pm">12</span><span class="hour hour_pm">1</span><span class="hour hour_pm">2</span><span class="hour hour_pm">3</span><span class="hour hour_pm">4</span><span class="hour hour_pm">5</span><span class="hour hour_pm">6</span><span class="hour hour_pm">7</span><span class="hour hour_pm">8</span><span class="hour hour_pm">9</span><span class="hour hour_pm">10</span><span class="hour hour_pm">11</span></fieldset></td></tr></tbody><tfoot><tr><th colspan="7" class="today">今天</th></tr></tfoot></table></div><div class="datetimepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: hidden;"><span class="glyphicon glyphicon-arrow-left"></span> </th><th colspan="5" class="switch">十月 2016</th><th class="next" style="visibility: visible;"><span class="glyphicon glyphicon-arrow-right"></span> </th></tr><tr><th class="dow">日</th><th class="dow">一</th><th class="dow">二</th><th class="dow">三</th><th class="dow">四</th><th class="dow">五</th><th class="dow">六</th></tr></thead><tbody><tr><td class="day old disabled">25</td><td class="day old disabled">26</td><td class="day old disabled">27</td><td class="day old disabled">28</td><td class="day old disabled">29</td><td class="day old disabled">30</td><td class="day disabled">1</td></tr><tr><td class="day disabled">2</td><td class="day disabled">3</td><td class="day disabled">4</td><td class="day disabled">5</td><td class="day disabled">6</td><td class="day disabled">7</td><td class="day disabled">8</td></tr><tr><td class="day disabled">9</td><td class="day disabled">10</td><td class="day disabled">11</td><td class="day disabled">12</td><td class="day disabled">13</td><td class="day disabled">14</td><td class="day disabled">15</td></tr><tr><td class="day disabled">16</td><td class="day disabled">17</td><td class="day disabled">18</td><td class="day disabled">19</td><td class="day disabled">20</td><td class="day disabled">21</td><td class="day disabled">22</td></tr><tr><td class="day disabled">23</td><td class="day disabled">24</td><td class="day disabled">25</td><td class="day disabled">26</td><td class="day today disabled">27</td><td class="day active">28</td><td class="day">29</td></tr><tr><td class="day">30</td><td class="day">31</td><td class="day new">1</td><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td><td class="day new">5</td></tr></tbody><tfoot><tr><th colspan="7" class="today">今天</th></tr></tfoot></table></div><div class="datetimepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: hidden;"><span class="glyphicon glyphicon-arrow-left disabled"></span> </th><th colspan="5" class="switch">2016</th><th class="next" style="visibility: visible;"><span class="glyphicon glyphicon-arrow-right disabled"></span> </th></tr></thead><tbody><tr><td colspan="7"><span class="month disabled">一月</span><span class="month disabled">二月</span><span class="month disabled">三月</span><span class="month disabled">四月</span><span class="month disabled">五月</span><span class="month disabled">六月</span><span class="month disabled">七月</span><span class="month disabled">八月</span><span class="month disabled">九月</span><span class="month active">十月</span><span class="month">十一月</span><span class="month">十二月</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today">今天</th></tr></tfoot></table></div><div class="datetimepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: hidden;"><span class="glyphicon glyphicon-arrow-left"></span> </th><th colspan="5" class="switch">2010-2019</th><th class="next" style="visibility: visible;"><span class="glyphicon glyphicon-arrow-right"></span> </th></tr></thead><tbody><tr><td colspan="7"><span class="year old disabled">2009</span><span class="year disabled">2010</span><span class="year disabled">2011</span><span class="year disabled">2012</span><span class="year disabled">2013</span><span class="year disabled">2014</span><span class="year disabled">2015</span><span class="year active">2016</span><span class="year">2017</span><span class="year disabled">2018</span><span class="year disabled">2019</span><span class="year old disabled">2020</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today">今天</th></tr></tfoot></table></div></div><div style="display: none; position: absolute; outline: 0px none; left: 615px; top: 229px;" tabindex="-1" aria-labelledby="title:1477532406859" aria-describedby="content:1477532406859"><div i="dialog" class="ui-dialog"><div class="ui-dialog-arrow-a"></div><div class="ui-dialog-arrow-b"></div><table class="ui-dialog-grid"><tbody><tr><td i="header" class="ui-dialog-header" style="display: none;"><button i="close" class="ui-dialog-close" title="cancel">×</button><div i="title" class="ui-dialog-title" id="title:1477532406859"></div></td></tr><tr><td i="body" class="ui-dialog-body"><div i="content" class="ui-dialog-content" id="content:1477532406859"><span class="ui-dialog-loading">Loading..</span></div></td></tr><tr><td i="footer" class="ui-dialog-footer" style="display: none;"><div i="statusbar" class="ui-dialog-statusbar" style="display: none;"></div><div i="button" class="ui-dialog-button"></div></td></tr></tbody></table></div></div></body></html>

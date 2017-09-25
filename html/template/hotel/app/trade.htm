@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>我的电子券</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	<link rel="stylesheet" href="static/style/weui.min.css">
+	<link rel="stylesheet" href="static/style/index.min.css">
+</head>
+<body style="background: #f4f4f4">
+<script type="text/javascript">
+function goBack(){
+	var referrer = document.referrer;
+	var url = window.location.href;
+	//alert(url);
+	if(referrer == null || referrer ==''){
+		//从微信访问进来，没有上一个页面时，默认返回到首页
+		window.location.href="/index.htm";
+	}else{
+		
+			window.history.back();
+		
+	}
+}
+var AJPath = '../ajax.php';
+</script>
+<div class="head" style="position: fixed;top: 0;width: 100%;z-index: 99;">
+	<a onclick="history.go(-1)"><img src="static/style/back.png" width="22" height="14"  alt=""/></a>
+  	<div>我的电子券</div>
+    <a href="../mobile"><img src="static/style/home.png" width="22" height="21"  alt=""/></a>
+</div>
+<div style="height: 44px;"></div>
+{loop $trade $k $v}
+<div class="weui-panel weui-panel_access">
+    <a href="javascript:void(0);">
+        <div class="weui-panel__hd weui-cell">
+                <span class="weui-cell__bd"> {$v['title']}</span>
+                <span class="weui-cell__ft">¥{$v['amount']}元</span>
+        </div>
+        <div class="weui-panel__bd">
+            {loop $v['quanlist'] $k1 $v1}
+            <div class="weui-media-box weui-media-box_text">
+                <ul class="weui-media-box__info" style="line-height: 1.5em;">
+                    <li class="weui-media-box__info__meta">
+                    <span style="font-size: 20px;color: #950101;">提取码：<em style="font-size: 16px;">{$v1['code']}</em></span></li>
+                    <li class="weui-media-box__info__meta">有效期：</li>
+                    <li class="weui-media-box__info__meta orderstate">{$v1['enddate']}</li>
+                   
+                </ul>
+            </div>
+            {/loop}
+        </div>
+    </a>
+</div>
+{/loop}
+<div style="height: 36px;"></div>
+ {template 'footer', 'mobile'}
+</body>
+</html>

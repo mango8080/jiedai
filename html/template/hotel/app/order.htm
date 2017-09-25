@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>我的订单</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+
+	<link rel="stylesheet" href="static/style/weui.min.css">
+	<link rel="stylesheet" href="static/style/index.min.css">
+  <link rel="stylesheet" href="static/dialog/ui-dialog.css" />
+  <style type="text/css">
+    .fp{width: 150px;margin: 0 auto;}
+    .fp input{width: 150px; margin-bottom: 15px;height: 26px;line-height: 26px;font-size: 14px;}
+    .fp select{width: 150px;height: 28px;background-color: #FFF;line-height: 28px;font-size: 14px;}
+    .bottom_box {
+    background-color: rgba(255, 99, 76, 1);
+    border-radius: 23px;
+    color: #fff;
+    display: block;
+    height: 45px;
+    width: 100%;
+    margin-top: 40px;
+    border: none;
+    font-size: 16px;
+}
+  </style>
+  <script type="text/javascript" src="static/script/jquery-2.1.1.min.js"></script>
+  <script type='text/javascript' src='static/dialog/dialog-min.js'></script>
+  <script type="text/javascript">
+  //jquery和tap冲突的解决方式
+/*  $.noConflict();*/
+  //自定义弹出框，dialog
+  function jAlert(content){
+    var d = dialog({
+        title: '提示',
+        content: content,
+        okValue: '确定',
+        ok: function () {
+        }
+    });
+    d.showModal();
+  }
+
+  //提示后，点击确定跳转
+  function jAlert2(content,redictUrl){
+    var d = dialog({
+        title: '提示',
+        content: content,
+        okValue: '确定',
+        ok: function () {
+          window.location.href = redictUrl;
+        }
+    });
+    d.showModal();
+  }
+  //转菊花的加载效果
+  jQuery(function() {
+    var d = dialog( {
+      zIndex : 87
+    });
+    jQuery(document).ajaxStart(function() {
+      d.showModal();
+    });
+    jQuery(document).ajaxComplete(function() {
+      d.close();
+    });
+  });
+  </script>
+</head>
+<body style="background: #f4f4f4">
+<script type="text/javascript">
+function goBack(){
+	var referrer = document.referrer;
+	var url = window.location.href;
+	//alert(url);
+	if(referrer == null || referrer ==''){
+		//从微信访问进来，没有上一个页面时，默认返回到首页
+		window.location.href="/index.htm";
+	}else{
+		/* window.history.back(); */
+		
+			window.history.back();
+		
+	}
+}
+</script>
+
+
+<div class="head" style="position:fixed;top:0;width:100%;background:#FFF;z-index:99">
+	<a onclick="history.go(-1)" class="back"><img src="static/style/back.png" width="22" height="14"  alt=""/></a>
+  	<div>我的订单</div>
+    <a href="../mobile"><img src="static/style/home.png" width="22" height="21"  alt=""/></a>
+</div>
+<div style="margin-bottom: 40px;" id="piao_hide">
+ <span style="display:none;" id="nowtime" >{$DT_TIME}</span>
+{loop $order $k $v}
+<div class="weui-panel weui-panel_access" style="margin-top: 38px;" data-id="{$v['itemid']}">
+
+    <!-- <input type="hidden" id="" value=""> -->
+   
+    <span style="display:none;" id="updatetime_{$v['itemid']}" >{timetodate($v['updatetime'])}</span>
+    <span style="display:none;" id="status_{$v['itemid']}" >{$v['status']}</span>
+
+    <a href="showorder.php?itemid={$v['itemid']}">
+        <div class="weui-panel__hd weui-cell">
+                <span class="weui-cell__bd">订单编号： {$v['ordercode']}</span>
+                <span class="weui-cell__ft">时间：{timetodate($v['addtime'],0)}</span>
+        </div>
+        <div class="weui-panel__bd">
+            <div class="weui-media-box weui-media-box_text">
+                <h4 class="weui-media-box__title">{$v['company']}</h4>
+                <!-- <p class="weui-media-box__desc">
+                    {$v['address']}(邮编：{$v['postcode']})
+                </p> -->
+                <p class="weui-media-box__desc">{timetodate($v['intime'],0)}至{timetodate($v['outtime'],0)} {$v['days']}晚</p>
+                <span style="display: none;" id="ruzhu_{$v['itemid']}">{timetodate($v['intime'],0)}</span>
+                <ul class="weui-media-box__info">
+                    <li class="weui-media-box__info__meta">订单状态：</li>
+                    <li class="weui-media-box__info__meta orderstate" id="zhuangtai_{$v['itemid']}">{$orderstatus[$v[status]]}</li>
+                    {if $v[status]==4 && empty($v[seller_star])}<li class="weui-media-box__info__meta"><a href="comment.php?action=comment&itemid={$v['itemid']}"  style="color:#008000;">评价</a></li>{/if}
+                </ul>
+                <ul class="weui-media-box__info" id="remain_{$v['itemid']}">
+                    <li class="weui-media-box__info__meta" id="weui-media-box__info__meta">剩余时间：</li>
+                    <li id="clock_{$v['itemid']}"></li>    
+                </ul>
+            </div>
+            <div class="weui-form-preview__ft" id="fapiao_{$v['itemid']}" style="display: none;">
+                    <a class="weui-form-preview__btn" id="tui_{$v['itemid']}">取消订单</a>
+                    <a class="weui-form-preview__btn" id="yao_{$v['itemid']}">我要发票</a>
+            </div>
+        </div>
+    </a>
+</div>
+<!-- <script>
+    var abcde_{$v['itemid']}=$("#updatetime_{$v['itemid']}").text();
+    console.log(abcde_{$v['itemid']});
+    (function (a) { 
+                    abcde_{$v['itemid']} = a.replace(/\-/g, "/");   
+    })(abcde_{$v['itemid']});
+    var startTime_{$v['itemid']}=new Date(abcde_{$v['itemid']});
+    var abc_{$v['itemid']}=parseInt(startTime_{$v['itemid']}.getTime()/1000);
+    var old_{$v['itemid']} = parseInt(abc_{$v['itemid']});
+    var now_{$v['itemid']}=parseInt($("#nowtime").text());
+    var future_{$v['itemid']}=parseInt(old_{$v['itemid']}+10*60);
+    if($("#zhuangtai_{$v['itemid']}").text()=="待付款"){
+        var timer_{$v['itemid']}=setInterval(function (){
+            now_{$v['itemid']}=parseInt(now_{$v['itemid']}+1);
+            var time_{$v['itemid']}=future_{$v['itemid']}-now_{$v['itemid']};
+            var min_{$v['itemid']}=Math.floor(time_{$v['itemid']}/60%60);
+            var sec_{$v['itemid']}=Math.floor(time_{$v['itemid']}%60);
+            if(time_{$v['itemid']}<0){
+                $("#zhuangtai_{$v['itemid']}").text("已取消");
+                clearInterval(timer_{$v['itemid']});
+                var url = window.location.href+"&action=cancel";
+                $.getJSON(url,function(result){
+                    if(result.stat !== 1){
+                            alert(result.msg);
+                    }
+                });
+            }else{
+                $("#clock_{$v['itemid']}").text(min_{$v['itemid']}+"分"+sec_{$v['itemid']}+"秒");
+            }
+        },1000);
+    }else{
+        $(".remain_{$v['itemid']}").hide();
+    }
+</script> -->
+{/loop}
+</div>
+
+<!-- <div id="piao_show" style="display: none;">
+<form action="?action=update" method="post">
+<div style="height: 60px;"></div>
+  <div class="">
+    <div id="spaninvoice" style="">
+    
+     <div class="fp"><input type="hidden" name="itemid" value="value">{$order['itemid']}</div>
+
+      <div class="fp"><input  name="invoice" placeholder="请输入发票抬头" type="text"></div>
+      <div class="fp"><input  name="youxiang" placeholder="请输入电子邮箱" type="text"></div>
+      <div class="fp"><input  name="shibiehao" placeholder="请输入纳税人识别号" type="text"></div>
+      <div class="fp">
+        <select name="">
+          <option value="">代订房费</option>
+          <option value="">代订住宿费</option>
+          <option value="">旅游服务费</option>
+          <option value="">会议服务费</option>
+          </select>
+        </div>
+    </div>
+  </div>
+    <div style="padding: 0 30px;"><input type="submit" class="bottom_box" value="提 交" name=""></div>
+  <form>
+</div> -->
+
+{template 'footer', 'mobile'}
+</body>
+<script>  
+        function trans(a){
+            return a.replace(/\-/g, "/");
+        }
+        $(".weui-panel").each(function(){
+
+           var this_id=$(this).data("id");
+           var xiadan=$("#updatetime_"+$(this).data("id")).text();
+
+           xiadan=trans(xiadan);
+
+           var startTime=new Date(xiadan);
+           var old=parseInt(startTime.getTime()/1000);
+           var now=parseInt($("#nowtime").text());
+           var future=parseInt(old+10*60);
+           var state_text=$("#zhuangtai_"+this_id).text();
+           var url = window.location.href.replace("myorder","showorder")+"?itemid="+this_id+"&action=cancel";
+           
+           if(state_text=="待付款"){
+               var timer=setInterval(function (){
+                   now=parseInt(now+1);
+                   var time=future-now;
+                   var min=Math.floor(time/60%60);
+                   var sec=Math.floor(time%60);
+                   if(time<0){
+                       $("#zhuangtai_"+this_id).text("用户取消");
+                       clearInterval(timer);
+                       $.getJSON(url,function(){
+                       });
+                       $("#remain_"+this_id).hide();
+                   }else{
+                       $("#clock_"+this_id).text(min+"分"+sec+"秒");
+                   }
+               },1000);
+           }else if((state_text=="已付款")||(state_text=="到店付款")){
+                $("#fapiao_"+this_id).show();
+                $("#remain_"+this_id).hide();
+
+                var arr=$("#ruzhu_"+this_id).text();
+                arr=trans(arr);
+                var arrive=new Date(arr);
+                var arrive_sec=parseInt((arrive.getTime()/1000)+18*60*60);
+                var out_sec=arrive_sec+18*60*60;
+                
+               if (now<arrive_sec){
+                   $("#tui_"+this_id).click(function(){
+                    if(confirm("确定取消订单?")){
+                      console.log(url);
+                        $.getJSON(url,function(data){
+                          if (data.stat==1){
+                            jAlert2('取消订单成功,正在刷新订单页!','myorder.php');
+                          }else{
+                            jAlert(data.msg);
+                          }
+                        });
+                        $("#zhuangtai_"+this_id).text("用户取消");
+                        $("#fapiao_"+this_id).hide();
+                    }
+                   })
+               }else{
+                    $("#tui_"+this_id).click(function(){
+                         jAlert("超过18:00无法取消订单");
+                         $("#fapiao_"+this_id).hide();
+                    })
+               }
+           }else if((state_text=="用户取消")||(state_text=="待确认")){
+            
+                $("#fapiao_"+this_id).hide();
+                $("#remain_"+this_id).hide();
+
+           }else if((state_text=="已入住")||(state_text=="已离店")){
+                
+                $("#fapiao_"+this_id).hide();
+                $("#remain_"+this_id).hide();
+
+           }else if (now>out_sec){
+
+                $.getJSON(url,function(){});
+                $("#zhuangtai_"+this_id).text("用户取消");
+                $("#fapiao_"+this_id).hide();
+                    
+           }else{
+                $("#fapiao_"+this_id).hide();
+                $("#remain_"+this_id).hide();
+           };
+           $("#yao_"+this_id).click(function(){
+                jAlert("请联系酒店处理");
+           })
+        })
+</script>
+</html>

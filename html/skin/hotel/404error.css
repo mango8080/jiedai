@@ -1,0 +1,49 @@
+﻿@charset "utf-8";
+
+/* CSS Document */
+
+.base_main{width:944px;margin:0 auto;padding:142px 109px 113px 147px;}
+
+.error_icon{width:335px;height:188px;background:url(lis/themes/hotels/sprite/icon_common.png) no-repeat -14px -14px;margin:6px 70px 135px 0;}
+
+.error_info_box{width:345px;height:282px;margin:0 12px 66px 0;}
+
+.error_info_box div{height:18px;line-height:18px;font-size:14px;}
+
+.error_info_box .error_title{height:30px;line-height:30px;font-size:28px;color:#1d7ad9;padding-bottom:14px;}
+
+.erroe_head_text{margin-bottom:10px;font-weight:bold;}
+
+.error_info_box .operation_box{height:41px;margin:17px 0 33px;}
+
+.operation_box .return_homepage_btn,.operation_box .return_super_level_btn{width:121px;height:41px;line-height:41px;margin-right:32px;background-color:#1d7ad9;text-align:center;font-size:18px;color:#fff;cursor:pointer;}
+
+.operation_box .return_homepage_btn:hover,.operation_box .return_super_level_btn:hover{text-decoration:underline;}
+
+.operation_box .return_super_level_btn{background-color:#ff7300;}
+
+.error_info_box .customer_service_box{height:32px;margin:13px 0 13px 0;}
+
+.error_info_box .dot_icon{width:5px;height:5px;background:url(lis/themes/hotels/sprite/icon_common.png) no-repeat -577px -145px;margin:14px 7px 0 0;}
+
+.error_info_box .customer_service_text{padding:7px 0 0 0;}
+
+.error_info_box .customer_service_phone_num{height:18px;line-height:18px;font-size:18px;padding:5px 0 0 0;}
+
+.app_box a{background:url(lis/themes/hotels/sprite/icon_common.png) no-repeat;color:#777;cursor:pointer;font-weight:bold;}
+
+.app_box a:hover{color:#777;}
+
+.error_info_box .app_icon,.error_info_box .wechat_icon{width:52px;height:14px;line-height:14px;padding:16px 0 2px 36px; background-position:-570px -18px;}
+
+.error_info_box .app_icon{margin-right:11px;}
+
+.error_info_box .wechat_icon{background-position:-571px -85px;}
+
+.error_info_box .desperate_line{height:32px;line-height:32px;border-left:1px solid #e1e1e1;margin-right:14px;}
+
+.wechat_two_dimension_code_icons_box{width:179px;height:174px;background:url(lis/themes/hotels/sprite/icon_common.png) no-repeat -362px -9px;margin-top:174px;}
+
+.error_info_box .app_box{height:32px;}
+
+.app_two_dimension_code_icons_box{ background:url(lis/themes/hotels/images/app_two_d_icon.png) no-repeat -10px -16px; width:179px;height:174px;margin:174px 0 0 -135px;}

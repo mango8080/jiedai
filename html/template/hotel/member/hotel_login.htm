@@ -1,0 +1,109 @@
+{template 'header1'}
+    <link rel="stylesheet" type="text/css" href="{DT_SKIN}reg.css">
+    <link rel="stylesheet" type="text/css" href="{DT_SKIN}footer.css">
+<div id="reg">
+<!--content-->
+<div class="subCnt">
+    <div class="mod_cnt">
+        <div class="login">
+            <!--menus-->
+            <div class="m">
+                <a href="javascript:void(0)" class="active">加盟酒店登录</a>
+            </div>
+            <!--user login content-->
+            <!--用户登录 内容-->
+            <div class="b ht1 show">
+                <form id="memberLoginForm" action="{$DT[file_login]}" onsubmit="return Dcheck();" method="POST" class="nice-validator n-default" >
+                    <input name="forward" type="hidden" value="{$forward}"/>
+                    <input name="goto" value="1" id="goto" type="hidden">
+        <input name="auth" type="hidden" value="{$auth}"/>
+                    <dl class="dl_tbe_1 pt70">
+                        <dd class="f"><label><select name="option">
+                            <option value="username">用户名</option>
+                            
+                            <option value="mobile">手机号</option>
+                            
+                        </select></label>
+                            <p class="cl"><input id="username" name="username" class="ipt" maxlength="40" placeholder="" type="text" value=""></p>
+                            <p class="cl msg"></p>
+                        </dd>
+                        <dd class="f"><label>密码：</label>
+                            <p class="cl"><input name="password" class="ipt" id="password" type="password"></p>
+                            <p class="cl msg"></p>
+                        </dd>
+                        
+                        <dd class="f" style="margin-bottom:0"><label>&nbsp;</label>
+                            <p class="cl"><input name="cookietime" type="checkbox" style="vertical-align:middle">&nbsp;<span class="txt_1" value="1" style="vertical-align:middle">一个月内免登录</span></p>
+                        </dd>
+                        <dd class="f" style="padding-left: 160px;">
+                            <p class="cl msg">
+                                 <span class="en_msg">
+                                      
+                                 </span>
+                            </p>
+                        </dd>
+                        <dd class="f">
+                            <label>&nbsp;</label>
+                            <p class="cl cl_w1">
+                                <input name="submit" class="btn_1 enable" value="登 录" type="submit">
+                                <span class="ifo">
+                                    <a href="send.php">忘记密码</a> &nbsp;|&nbsp;
+                                    
+                                        
+                                        
+                                            <a href="reghotel.php" target="_blank">注册新账号</a>  
+                                </span>
+                            </p>
+                        </dd>
+                        <dd class="cf"></dd>
+                    </dl>
+                </form>
+            </div>
+        </div>
+        <!--锦江旅行家用户手册登录 内容-->
+        <!-- <div class="abside">
+            <dl class="welcome">
+                <dd class="r">
+                    <p class="ptxt pr"><span class="fr">
+                                <a href="reghotel.php" class="aBtn1">注册</a>
+                        
+                        </span>没有账号？&nbsp;&nbsp;&nbsp;&nbsp;立即
+                    </p>
+                    
+                </dd>
+                <dd class="w"><img src="{DT_SKIN}image/m-6.jpg" height="200" width="266"></dd>
+            </dl>
+        </div> -->
+        <div class="clear"></div>
+    </div>
+</div>
+</div>
+<script type="text/javascript">
+if(Dd('username').value == '') {
+    Dd('username').focus();
+} else {
+    Dd('password').focus();
+}
+function Dcheck() {
+    if(Dd('username').value == '') {
+        confirm('请输入登录名称');
+        Dd('username').focus();
+        return false;
+    }
+    if(Dd('password').value == '') {
+        confirm('请输入密码');
+        Dd('password').focus();
+        return false;
+    }
+{if $MOD[captcha_login]}
+    if(!is_captcha(Dd('captcha').value)) {
+        confirm('请填写验证码');
+        Dd('captcha').focus();
+        return false;
+    }
+{/if}
+    return true;
+}
+</script>
+<!--footer-->
+{template 'footer'}

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-control" content="no-cache">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="mobileephone=no" name="format-detection">
+<meta content="address=no" name="format-detection">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<title>酒店详情</title>
+
+<link type="text/css" rel="stylesheet" href="static/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" href="static/css/bootstrap-datetimepicker.min.css">
+<link type="text/css" rel="stylesheet" href="static/css/base.css">
+<link type="text/css" rel="stylesheet" href="static/css/default.css">
+<link type="text/css" rel="stylesheet" href="static/css/iocn.css">
+<link type="text/css" rel="stylesheet" href="static/css/index.css">
+<link type="text/css" rel="stylesheet" href="static/dialog/ui-dialog.css" />
+<link type="text/css" rel="stylesheet" href="static/style/weui.min.css" />
+
+<style type="text/css">
+.arrowdown::after{ border-right: 2px solid #b5975a; border-top: 2px solid #b5975a; content: ""; display: block; width:8px; height:8px; margin: -5px 0 0 -20px; position: absolute; left: 100%; top: 45%; transform: rotate(135deg); }
+.room_show{width: 90%;background: #fff;position:fixed;z-index:9999;top: 18%;left: 5%; padding:0 5%;}
+.room_show h3{font-size:20px; color:#1b1b1b; font-weight:normal;}
+.room_show img{display:inline-block; width:100%;}
+.room_show p{font-size:14px; color: #666;}
+
+/* .room_list .list{padding: 0 15px;} */
+.room_list .list .title{line-height:30px; font-size: 18px; color: #333;}
+.room_list .list .title span{font-size: 12px; color: #999;}
+/* .room_list .list .box{margin: 10px 0 20px;} */
+.room_list .list .box .row{line-height:64px; border-bottom: 1px solid #e3e3e3;background-color:#F6F6F6}
+.room_list .list .box .row>div{padding: 0;}
+.room_list .list .box .jg{font-size: 14px; color: #ff3b30;}
+.room_list .list .box .jg em{font-size:20px;}
+.room_list .list .box .jg1{color:#a2a2a2; text-decoration:line-through;}
+.room_list .list .box .sf{font-size: 14px; color: #fea831;}
+.room_list .list .box .kyq{display: inline-block; /* width: 45px; */ height: 20px; line-height:20px; font-size:12px; font-style:italic; text-align:center; color:#ff5f56;}
+.room_list .list .box .yh{font-size: 14px; color: #a0a0a0;}
+.room_list .list .box .btn_yd{display: inline-block; float:right; width: 56px; height: 30px; margin-top:15px; line-height: 30px; font-size:14px; text-align: center; border-radius:15px; color: #fff; background-color: rgba(255, 99, 76, 1);margin-right:15px;}
+.room_list .list .box .btn_mf{display: inline-block; float:right; width: 56px; height: 30px; margin-top:15px; line-height: 30px; font-size:14px; text-align: center; border-radius:15px; color: #fff; margin-right:15px;background-color: #c2c0c1;}
+.room_list .list .box .container-fluid{display:none}
+.room_list .list .box .title{height:74px;border-bottom:1px solid #D4D4D4}
+.container-fluid .row .col-xs-9{text-indent:15px;}
+.namePart,.pricePart{float:left;height:100%;overflow:hidden}
+.namePart{width:60%;text-indent:15px;}
+.pricePart{width:40%;line-height:74px;}
+.pricePart p{font-size:10px;color:#999;float:right;margin-right:15px;}
+.pricePart p em{color:#FF3B30}
+.box .title .pricePart p span{color:#FF3B30;font-size:20px;}
+.box .title .pricePart p img{margin-left:10px;}
+.namePart p{font-size:16px;color:#333;line-height:1.5;margin-top:15px}
+.namePart p:nth-child(2){font-size:12px;color:#999999;margin-top:5px;}
+.pricePart p.jiage2{color:#ff3b30;display:none;font-size:20px;}
+.box .title .pricePart p.jiage2 span{color: #ff3b30;font-size: 20px;text-decoration: line-through;}
+.box .title .pricePart p.jiage2 span em{color:#ff3b30;text-decoration: line-through;font-size: 10px;}
+.room_list .list .box .sf{
+	position: absolute;
+    right: 14px;
+    bottom: -19px;
+    width: 56px;
+    font-size: 10px;
+    line-height: 16px;
+    text-align: center;
+    color: #ff7901;}
+/* 详情卡片 */
+.infoCard{position:fixed;width:90%;background-color:#fff;height:340px;border-radius:6px;z-index:999;left:5%;top:10%;text-align:center;overflow:hidden;display:none;overflow-y: auto;}
+.infoCard h4{font-size:15px;color:#333333;line-height:normal;margin-top:20px;}
+.infoCard .btn_guanbi{padding:8px;}
+.infoCard .hotelPic{width:90%;display:block;height:200px;margin:15px auto;}
+.infoCard .row{font-size:13px;color:#333333;text-align:center;height: 25px;width: 90%;margin: 0 auto;}
+.infoCard .row .small{font-size:12px;color:#999;}
+.infoCard .toBook{height:44px;line-height:44px;width:90%;margin:0 auto;color:#fff;background-color:#FF634C;font-size:15px;border-radius:22px;display:block;margin-top:15px;}
+#comment{height:500px;}
+</style>
+</head>
+<body>
+
+<header class="clearfix" style="position:fixed;top:0;width:100%;background:#FFF;z-index:99">
+	<a onclick="history.go(-1)" class="back"><img src="static/images/back.png" height="14" /></a>
+	<h1 class="f-16 b" style="font-size:16px;">酒店详情</h1>
+	<a href="../mobile" class="home"><img src="static/images/home.png" height="21px"/></a>
+</header>
+<div class="room_list">
+	<div class="top">
+		<div class="touchslider">
+		    <div class="touchslider-viewport">
+		    	<div class="touchslider-item"><img src="{if $COM['thumb_m']}{DT_PATH}{$COM['thumb_m']}{else}{$COM['thumb']}{/if}" alt="" style="height:300px;"></div>
+		    	
+	    	</div>
+		    <div class="touchslider-nav">
+		    	<div class="sonpic">
+		    		<a class="touchslider-nav-item touchslider-nav-item-current"></a>
+		    		
+		        </div>
+		    </div>
+		</div>
+        <p class="d_title">{$company}</p>
+        <p class="dzdh clearfix">
+        	<input type="hidden" id = "companyname" value="{$company}" />
+        	<input type="hidden" id = "curLat" value="{$COM['latitude']}" /><input type="hidden" id = "curLong" value="{$COM['longitude']}" />
+        	<input type="hidden" id = "commentcount" value="{$commentcount}" />
+        	
+        		<a onclick="navigateWithMap();" id="openLocation">&nbsp;
+        		<img src="static/images/dizhi.png" alt="" width="13"> {$COM['address']}</a>
+        	<div style="padding-left: 20px;padding-bottom: 10px;">
+        		<a class="dianhua" href="tel:{$COM['telephone']}"><img src="static/images/dianhua.png" alt="" width="17">&nbsp;{$COM['telephone']}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        		<a id="openComment" class="comment" href="javascript:;" style="color: rgba(153, 153, 153, 1);">{if $commentcount!=0}<img src="static/images/icon_05.png" alt="" width="13">{$commentcount}{else}&nbsp;{/if}</a>
+        	</div>
+        </p>
+    </div>
+	<div class="box_time">
+		<div class="b_box clearfix">
+			<p id="checkInDate" class="date input-group" data-date-format="dd MM yyyy" data-link-format="yyyy-mm-dd" data-date=""  data-link-field="dtp_input2" onclick="this.isclick=1">
+				<!-- <span class="calendar"><span class="calendar_top"></span></span> -->
+				<span class="in_date"></span>
+				<input id="dtp_input2" value="{$beginDate}" readonly type="hidden">
+				<span class="b_3">入住<img alt="" src="static/images/Triangle.png" width="11"></span>       
+			</p>
+			<p id="checkOutDate" class="date input-group" data-date-format="dd MM yyyy" data-link-format="yyyy-mm-dd" data-date=""  data-link-field="dtp_input3">
+				<!-- <span class="calendar"><span class="calendar_top"></span></span> -->
+				<span class="out_date"></span>
+				<input id="dtp_input3" value="{$endDate}" readonly type="hidden">
+				<span class="b_3">离店 <img alt="" src="static/images/Triangle.png" width="11"></span>   
+			</p>
+		</div>      
+	</div>
+	<div class="list">
+		{loop $malls $m $fx}
+		<div class="box clearfix">
+			<div class="title">
+				<div class="namePart">
+					<p>{$fx['title']}</p>
+					<p> {$fx['bedtype']}</p>
+					<input type="hidden" name = "roomName" value="{$fx['title']}" />
+					<input type="hidden" name = "roomImg" value="/{$fx['thumb']}" />
+					<input type="hidden" name = "key1Name" value="面积" />
+					<input type="hidden" name = "key1Value" value="{$fx['area']}" />
+					<input type="hidden" name = "key2Name" value="床型" />
+					<input type="hidden" name = "key2Value" value="{$fx['bedtype']}" />
+					<input type="hidden" name = "key3Name" value="无线" />
+					<input type="hidden" name = "key3Value" value="{$fx['netdesc']}" />
+			    </div>
+				<div class="pricePart">
+			          <p class="jiage1"><em>&yen;</em><span> {$fx['price']}</span>{if $days!=1}<span style="font-size: 10px;color: #999;text-decoration: none;">起</span>{/if} <img src="static/images/triangle2.png" alt="" width="9"></p> 
+			         <p class="jiage2"> <em>&yen;</em> {$fx['price']}{if $days!=1}<span style="font-size: 10px;color: #999;text-decoration: none;">起</span>{/if}<img src="static/images/triangle2.png" alt="" width="9"></p>
+			    </div>
+			</div>
+			<div class="container-fluid ">
+				<div class="row">
+					<div class="col-xs-9" style="font-size: 13px;">
+						{$fx['service']}
+					</div>
+					<div class="col-xs-3">
+					   
+						{if $fx['RoomStatus']=='A'}
+						<a href="purchase.php?moduleid=16&itemid={$fx['itemid']}&beginDate={$beginDate}&endDate={$endDate}&roomNum={$roomNum}" class="btn_yd">预订</a>
+						{else}
+						<a href="javascript:void(0);" class="btn_mf">满房</a>
+						{/if}
+						<p class="sf"></p>
+					</div>
+				</div>
+				<!-- <div class="row">
+					<div class="col-xs-9">
+						<p>
+							<span class="jg">￥<em>119</em></span>
+							<span class="yh">APP特惠房</span>
+							<span class="kyq">限预付</span>
+						</p>
+					</div>
+					<div class="col-xs-3">
+						<a href="http://m.jinjianginns.com/memberhubs1/bookInfo.htm?hid=00360659&beginDate=2016-10-21&endDate=2016-10-22&roomId=BURB&ratePlanId=DISG37&hotelName=锦江之星常州武进春秋淹城永胜路酒�?roomName=商务房B&roomNum=1" class="btn_yd">预订</a>
+					</div>
+				</div> -->
+				<!-- <div class="row">
+					<div class="col-xs-9">
+						<p>
+							<span class="jg">￥<em>140</em></span>
+							<span class="yh">连住3天及以上88折</span>
+							<span class="kyq">限预付</span>
+						</p>
+					</div>
+					<div class="col-xs-3">
+						<a href="http://m.jinjianginns.com/memberhubs1/bookInfo.htm?hid=00360659&beginDate=2016-10-21&endDate=2016-10-22&roomId=BURB&ratePlanId=LOS5&hotelName=锦江之星常州武进春秋淹城永胜路酒�?roomName=商务房B&roomNum=1" class="btn_yd">预订</a>
+					</div>
+				</div> -->
+			</div>
+		</div>
+		{/loop}
+	</div>
+</div>
+<!-- 详情卡片 -->
+<div class="infoCard" id="infoCard">
+	<h4>商务大床房</h4>
+	<a class="btn_guanbi"><img alt="" src="static/images/guanbi.png" height="20"></a>
+	<img  class="hotelPic" src="static/images.hubs1.net/images/9d03fa0f8d30f7d8_640_480.jpg">
+	<div class="row">
+		<div class="col-xs-4 small">面积</div>
+		<div class="col-xs-4 small">床形</div>
+		<div class="col-xs-4 small">窗户</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-4">16-20m</div>
+		<div class="col-xs-4">大床1.8m</div>
+		<div class="col-xs-4">有窗</div>
+	</div>
+</div>
+<div class="mask" style="display:none;opacity: 0.99;">
+<header class="clearfix">
+	<a href="javascript:goClose();" class="back"><img src="static/images/back.png" height="14" /></a>
+	<h1 class="f-16 b" style="font-size:16px;">地图位置</h1>
+</header>
+<div id="container" style="width:100%;height:100%;border:1px solid #ccc;"></div>
+</div>
+<div class="infoCard" id="comment">
+	<h4>住客评价</h4>
+	<a class="btn_guanbi"><img alt="" src="static/images/guanbi.png" height="20"></a>
+	{loop $comment $k $v}
+	<div class="weui-panel weui-panel_access">
+	        <div class="weui-panel__hd weui-cell">
+	                <span class="weui-cell__bd" style="text-align: left;"><img src="{useravatar($v['username'], 'small')}" width="20" height="20" id="myavatar" style="border-radius: 50%;margin-right: 5px;"/> {$v['username']}</span>
+	                <span class="weui-cell__ft">{$v['adddate']}</span>
+	        </div>
+	        <div class="weui-panel__bd">
+	            <div class="weui-media-box weui-media-box_text" style="padding: 5px 15px 0;">
+	                <ul class="weui-media-box__info" style="margin: 0;padding: 0;">
+	                    <li class="weui-media-box__info__meta">
+	                    <span style="color: #950101;"><img src="{DT_STATIC}file/image/star{$v['seller_star']}.gif" width="36" height="12" alt="" align="absmiddle"/> {$STARS[$v['seller_star']]}</span></li>
+	                </ul>
+	                <h4 class="weui-media-box__title" style="text-align: left;">{$v['seller_comment']}</h4>
+	                
+	            </div>
+	        </div>
+	</div>
+	{/loop}
+
+</div>
+
+<script type="text/javascript" src="static/script/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="static/script/bootstrap.min.js"></script>
+<script type="text/javascript" src="static/script/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="static/script/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript" src="static/script/moment.min.js"></script>
+<script type="text/javascript" src="static/script/moment-zh-cn.js"></script>
+<script type="text/javascript" src="static/script/date.js" ></script>
+<!-- <script type="text/javascript" src="static/script/jquery.touchslider.js"></script> -->
+<script type="text/javascript" src="static/script/select_controls_jinjiang.js"></script>
+<script type='text/javascript' src='static/dialog/dialog-min.js'></script>
+
+<script type="text/javascript">
+
+/*$(document).ready(function(){
+   var screenWidth = $("body").width();
+   var responseH = 480 * screenWidth / 640 *0.8;
+   $(".touchslider-viewport").css("height",responseH);
+});
+$(function(){
+	
+	$(".touchslider-nav").css("margin-left",-$(".touchslider-nav a").length*$(".touchslider-nav a").width())
+	$(".touchslider-item img").css('width',$(document.body).width());
+    $(".touchslider").touchSlider({mouseTouch: true,autoplay: true});
+    
+});*/
+function navigateWithMap(){
+    var ua = navigator.userAgent.toLowerCase();
+    if (/iphone|ipad|ipod/.test(ua)) {
+        test({$COM['latitude']},{$COM['longitude']});	
+    }else{
+        window.AndroidWebView.getLatLng({$COM['latitude']},{$COM['longitude']});
+    }
+    return ;
+}
+function init() {
+	  //设置地图中心点
+	  var myLatlng = new qq.maps.LatLng($('#curLat').val(),$('#curLong').val());
+	  //定义工厂模式函数
+	  var myOptions = {
+	    zoom: 20,
+	    center: myLatlng,
+	    content:'文本标注'
+	  }
+	  //获取dom元素添加地图信息
+	  var map = new qq.maps.Map(document.getElementById("container"), myOptions);
+	  var marker = new qq.maps.Marker({
+		    position: myLatlng,
+		    map: map
+		});
+	  var label = new qq.maps.Label({
+	        position: myLatlng,
+	        map: map,
+	        content:$("#companyname").val()
+	    });
+	  $(".mask").show();
+	}
+/*$('#openLocation').click(function(){
+	
+	  var script = document.createElement("script");
+	  
+	  script.type = "text/javascript";
+	
+	  script.src = "http://map.qq.com/api/js?v=2.exp&key=V6IBZ-J5NRF-5NIJE-JX227-FCSDE-IYB26&libraries=convertor&callback=init";
+	
+	  document.body.appendChild(script);
+	  
+});*/
+
+/* 点击显示详细内容 */
+$(".box").on("click",".pricePart",function(){
+	var that = this;
+	var content = $(this).parent().siblings(".container-fluid ");
+	if(content.is(":hidden")){
+		$(this).find(".jiage2").show();
+		$(this).find(".jiage1").hide();
+		content.slideDown();
+		$(that).find("img").css("transform","rotate(180deg)");
+	}else{
+		$(this).find(".jiage2").hide();
+		$(this).find(".jiage1").show();
+		content.slideUp();
+		$(that).find("img").css("transform","rotate(0deg)");
+	}
+})
+$(".list .container-fluid").eq(0).show();
+$(".list .title").eq(0).find("img").css("transform","rotate(180deg)")
+$(".list .title").eq(0).find(".jiage2").show();
+$(".list .title").eq(0).find(".jiage1").hide();
+/* 点击显示房间详细内容 */
+$(".box").on("click",".namePart",function(){
+	var roomName=$(this).find('input[name="roomName"]').val();
+	var roomImg=$(this).find('input[name="roomImg"]').val();
+	var key1Name=$(this).find('input[name="key1Name"]').val();
+	var key1Value=$(this).find('input[name="key1Value"]').val();
+	var key2Name=$(this).find('input[name="key2Name"]').val();
+	var key2Value=$(this).find('input[name="key2Value"]').val();
+	var key3Name=$(this).find('input[name="key3Name"]').val();
+	var key3Value=$(this).find('input[name="key3Value"]').val();
+	$("#infoCard").find("h4").text(roomName);
+	$("#infoCard").find(".hotelPic").attr("src",roomImg);
+	$("#infoCard").show();
+	$("#infoCard .row").eq(0).find("div").eq(0).text(key1Name);
+	$("#infoCard .row").eq(1).find("div").eq(0).text(key1Value);
+	$("#infoCard .row").eq(0).find("div").eq(1).text(key2Name);
+	$("#infoCard .row").eq(1).find("div").eq(1).text(key2Value);
+	$("#infoCard .row").eq(0).find("div").eq(2).text(key3Name);
+	$("#infoCard .row").eq(1).find("div").eq(2).text(key3Value);
+	$(".mask").show();
+});
+$("#openComment").on("click",function(){
+	if ($("#commentcount").val()>0){
+		$("#comment").show();
+		$(".mask").show();
+	}
+	
+});
+$(".btn_guanbi").on("click",function(){
+	$(".infoCard").hide();
+	$(".mask").hide();
+});
+function goBack(){ 
+	var referrer = document.referrer;
+	var url = window.location.href;
+	//alert(url);
+	if(referrer == null || referrer ==''){
+		//从微信访问进来，没有上一个页面时，默认返回到首页
+		window.location.href="static//index.htm";
+	}else{
+		/* window.history.back(); */
+		
+			window.history.back();
+		
+	}
+}
+function goClose(){
+	$(".infoCard").hide();
+	$(".mask").hide();
+}
+</script>
+
+<div style="height: 60px;"></div>
+ {template 'footer', 'mobile'}
+</body>
+</html>

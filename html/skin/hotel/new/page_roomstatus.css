@@ -1,0 +1,508 @@
+﻿ /**
+ *
+ * @Theme   eBooking room
+ * @Time    2014-08-04
+ *
+ */
+
+/*spirit start*/
+.ui-room-btns .icon-ask,
+.sec-room-guide .ui-guide-info .room-icon,
+.table-room .icon-bed,
+.table-price .ui-number .ico-dining,
+.sec-filter-toolbar .btn-add,
+.sec-filter-toolbar .btn-remove,
+.ui-help,.icon-ask,.room-ico,.icon-info-white,
+.sec-room-msg .icon-warn,.ico-room{background:url(http://pic.c-ctrip.com/ebooking/web/v2_base_24.png) no-repeat;_background-image:url(http://pic.c-ctrip.com/ebooking/web/v2_base.png); }
+/*spirit end*/
+.c-org{color:#f60;}
+
+
+.allotmentsNote {margin-left:400px;}
+
+.icon-info-white{display:inline-block;width:18px;height:18px;vertical-align:middle;background-position:-165px -142px;}
+.room-white{background-color:#fff !important;}
+.room-pink{background-color:#fb988c !important;}
+.room-yellow{background-color:#fbddbb !important;}
+.room-gray{background-color:#cbcbcb !important;}
+.room-blue{background-color:#bceeff !important;}
+.room-blues{background-color:#0d94f2 !important;}
+.room-orange{background-color:#fc9a0e !important;}
+.room-guarantee{background-color:#c0eaff !important;}
+
+.ui-msg{ padding:2px 5px; color:#666; border:1px solid #d6c197; background-color:#fffcd8;margin: 0 10px}
+.ui-msg .ico-warn{display:inline-block; width:12px; height:12px; margin-right:5px; vertical-align:middle; overflow:hidden;background:url(http://pic.c-ctrip.com/ebooking/web/un_base.png) -75px 0 no-repeat;}
+.ui-help{display: inline-block;width: 16px;height: 16px;background-position: -165px -125px;vertical-align: middle;cursor: pointer;}
+
+.ui-room-tabs{float:right; overflow:hidden;}
+.ui-room-tabs a{float:left; height:24px; line-height:24px; padding:0 10px; color:#666; border:1px solid #cacaca;}
+.ui-room-tabs a:hover{text-decoration:none;}
+.ui-room-tabs .current{color:#19b4ee; font-weight:bold; border-color:#19b4ee;}
+
+.ui-room-btns{float:right;}
+.ui-room-btns .btn{vertical-align:top; font-size:12px;}
+.ui-room-btns .btn-text, .ui-room-btns .icon-ask{display:inline-block;}
+.ui-room-btns .icon-ask{vertical-align:middle;}
+.ui-room-btns .icon-ask{width:16px; height:16px; margin-left:5px; background-position:-165px -50px; overflow:hidden;}
+
+/*room toolbar*/
+.sec-room-toolbar{padding:15px 30px; background-color:#fff;width:1120px;position: relative;}
+.sec-room-toolbar .ui-date{position:relative; display:inline-block;}
+.sec-room-toolbar .ui-date .in-text{width:208px;}
+.sec-room-toolbar .ui-date label{position:absolute; top:1px; right:1px; *top:2px; height:30px; line-height:30px; padding:0 5px; color:#999; background-color:#fff;}
+.sec-room-toolbar .btn-query{width:80px; padding:0; background-color:#f07d66;}
+.sec-room-toolbar .btn-query:hover{background-color:#ef6245;}
+.sec-room-toolbar .ui-link{color:#06c; font-size:14px;}
+.sec-room-toolbar .text-month{width:50px;}
+
+.sec-room-toolbar .ui-select .icon-arrow{width:0; height:0; font-size:0; margin-left:10px; border:3px dashed transparent; border-top:6px solid #000; overflow:hidden;}
+.sec-room-toolbar p{position:absolute;left:644px;top:18px;}
+.sec-room-guide .label{display:inline-block;*zoom:1; margin-right: 5px;height:37px;line-height: 37px;}
+.identifying-status .label{float:left;}
+.changeWeekBtns{float:right;line-height: 37px;}
+.changeWeekBtns .ui-link{color:#06c;font-size:14px;}
+.maintain_ct{padding:0 0 43px 0;}
+.roomStatusInfo{position:relative; padding:15px 30px;border:2px solid #f6f8f9;background-color:#fff;}
+.roomStatusInfo .icon-info-white{margin-left:5px;}
+.roomStatusInfo-detail{border:1px solid #51a9ff;width:380px;background-color:#fff;color:#333;position:absolute;z-index:100;margin-left:550px;}
+.roomStatusInfo-detail ul{padding-left:10px;list-style:disc;}
+.roomStatusTableSel{padding:2px 7px;}
+.acceptInfo{margin-left:15px;}
+.acceptInfo span{margin:5px;font-size:24px;color:#ffa524;vertical-align:bottom;}
+.identifying-color,.identifying-status,.identifying-room{float:left;}
+.identifying-color,.identifying-color .ui-guide-info{display:inline-block;}
+.identifying-color{margin-right: 60px;}
+.statusItem{margin-right: 15px;}
+/*room guide*/
+.sec-room-guide{position:relative;padding:10px 30px 7px 38px;background-color: #fff}
+.sec-room-guide .ui-guide-info{float:left;margin:7px 30px 0 0;}
+.sec-room-guide .ui-guide-info li{float:left; margin-right:15px;}
+.sec-room-guide .room-color,.room-ico,
+.sec-room-guide .ui-guide-info .room-icon{display:inline-block;vertical-align:middle; margin-right:10px; overflow:hidden;}
+.sec-room-guide .room-color{width:14px; height:14px; border:1px solid #e3e5e6;}
+.tb_room_header .in-select{width:155px;}
+.sec-room-guide .ui-guide-info .room-icon{width:18px; height:16px;}
+.sec-room-guide .ui-guide-info .big-bed{background-position:-165px -75px;}
+.sec-room-guide .ui-guide-info .dual-bed{background-position:-165px -100px;}
+.sec-room-guide .ui-guide-info .icon-breakfast{width:12px; height:16px; background-position:-135px -135px;}
+.sec-room-guide .ui-guide-info .guide-msg{color:#666;}
+
+.sec-room-guide .ui-room-info{float:left}
+.sec-room-guide .ui-room-info li{float:left; margin-right:15px; text-align:center;}
+.sec-room-guide .ui-room-info .ui-text{display:block; padding:0 5px;}
+.sec-room-guide .ui-room-info .text1{border-bottom:1px solid #ccc;}
+.sec-room-guide .ui-room-info .text2{color:#999;}
+/*table room fixed header S*/
+.fixedHeader_ct{padding:0 15px;background-color:#006091;z-index: 10;}
+.tb_room_header{width:100%;background-color:#196a95;color:#fff;font-size:14px;}
+.cell-ctn{padding:4px 0;margin-left:1px;height:42px;width:69px;background-color:#006091;}
+.hover .cell-ctn{position:relative;height:39px;border-bottom:3px solid #14aeff;background-color:#007bba;}
+.arrow_bottom_bdr{display:none;position:absolute;width:0;height:0;border-color:#14aeff transparent transparent transparent;border-width:5px;border-style:solid dashed dashed dashed;overflow:hidden;}
+.tb_room_header .hover .arrow_bottom_bdr{display:block;left:30px;bottom:-13px;}
+.tb_room_header .weekend{color:#ffa524;}
+.fs-normal{font-weight:normal;}
+
+.tb_room_header .ui-select{background-color: #fff; line-height: 18px; width: 139px; display:inline-block; padding: 2px 7px; color:#666; cursor:default; border:1px solid #d9dcde; font: normal normal normal 100%/normal Arial; vertical-align: baseline; }
+.tb_room_header .icon-arrow {float:right; margin-top:5px; width: 0;height: 0;font-size: 0;  border: 3px dashed transparent;border-top: 6px solid #000;overflow: hidden;}
+
+.change_weeks{line-height:42px;}
+.change_weeks .cell-ctn{margin-left:0;width:170px;text-align: left; overflow:hidden;}
+.btn-change_weeks{padding:7px 10px;margin-right: 5px; background-color:#0d82be;border-radius: 5px; color:#fff;}
+.btn-change_weeks:hover{text-decoration:none;}
+/*table room fixed header E*/
+/*table room status S*/
+.mod-room_status{margin:0 15px;}
+.room_name{padding-left:7px;margin-top:25px;font-size:16px;color:#666;font-weight:bold;}
+.table_room_status{margin-top:10px;width:100%;background-color:#fff;}
+.date_status-cont{background:#fff;}
+.room_info,.date_status{background-color:#fff;height:74px;}
+.room_info{border-left:2px solid #8bdfff;background-color:#e3f7ff;font-size:14px;}
+.room_desc{padding-left:10px;width:159px;}
+.room_info .roomType{padding-left:10px;font-size:12px;}
+.date_status{position:relative;}
+.date_status-cont{top:0;left:0;height:72px;width:68px;overflow:hidden;border:1px solid #fff;border-left:1px solid #ddd;text-align:center;font-weight:bold;}
+.date_status:hover .date_status-cont,.table_room_status .date_status .room-current{border:1px solid #5fbdee;z-index:2}
+.date_status-usable{display:inline-block;*display:inline;*zoom:1;padding:0 7px;margin-top:16px;border-bottom:1px solid #333;font-size:14px;}
+.date_status-contract{font-size:14px;color:#999;}
+.ico-room{display:inline-block;*zoom:1;position:absolute;}
+.ico-room_status{left:5px;bottom:5px;width:16px;height:16px;}
+.ico-room_type{right:5px;bottom:5px;}
+.room_kingRoom{width:15px;height:15px;background-position:-185px -90px;}
+.room_twinRoom{width:18px;height:15px;background-position:-185px -75px;}
+.status_disabled{background-position:-185px -109px;}
+.bg-room_closed .date_status-cont{border:1px solid #fb988c;border-left:1px solid #fff;background-color:#fb988c}
+.bg-room_closed .date_status-usable,.bg-room_closed .date_status-contract{color:#fff;}
+.bg-room_closed .date_status-usable{border-bottom:1px solid #fff;}
+.bg-room_limit .date_status-cont{border:1px solid #fbddbb;border-left:1px solid #fff;background-color:#fbddbb}
+.bg-room_closed .room_twinRoom,.bg-room_limit .room_twinRoom{background-position:-204px -75px;}
+.bg-room_closed .room_kingRoom,.bg-room_limit .room_kingRoom{background-position:-201px -90px;}
+.bg-room_closed .status_disabled,.bg-room_limit .status_disabled{background-position:-202px -109px;}
+.date_status:hover .date_status-cont,.date_status .room-current{border:1px solid #5fbdee;z-index:2}
+.room_guarantee .date_status-cont{
+	border: 1px solid #c0eaff;
+	border-left: 1px solid #fff;
+	background-color: #c0eaff;
+}
+/*table room status E*/
+
+
+/*room price*/
+.sec-room-price{width:100%; padding-bottom:40px;}
+.sec-room-price .room-price-hd{position:relative; height:31px; text-align:center; border-bottom:1px solid #fff;}
+.sec-room-price .room-price-hd .ui-room-title{font-size:16px; font-weight:bold; font-family:"Microsoft YaHei"; border-bottom:1px solid #cfcfcf; cursor:pointer;}
+.sec-room-price .room-price-hd .ui-room-title span{display:inline-block; height:28px; line-height:28px; padding:0 10px; border-bottom:2px solid #cfcfcf;}
+.sec-room-price .room-price-hd .btn-unfold, .sec-room-price .room-price-hd .btn-fold{position:absolute; bottom:4px; right:0; text-decoration:none; color:#06c;}
+.sec-room-price .room-price-hd .btn-unfold .icon-arrows, .sec-room-price .room-price-hd .btn-fold .icon-arrows{display:inline-block; width:0; height:0; font-size:0; border:5px dashed #f1f2f7; overflow:hidden;}
+.sec-room-price .room-price-hd .btn-unfold .icon-arrows{vertical-align:-4px; border-top:5px solid #06c;}
+.sec-room-price .room-price-hd .btn-fold .icon-arrows{vertical-align:2px; border-bottom:5px solid #06c;}
+.sec-room-price .room-price-bd{padding:0 30px;}
+
+.table-price{width:100%; margin-bottom:20px;}
+.table-price thead th{padding:15px 0; text-align:center; font-size:16px; font-weight:normal;}
+.table-price tbody{background-color:#fff;}
+.table-price tbody th, .table-price tbody td{width:160px;}
+.table-price tbody th{padding:10px 0; text-align:center; color:#fff; font-size:14px; border-bottom:1px solid #dfdfdf; background-color:#19b4ee;}
+.table-price tbody td{border:1px solid #cecece;}
+
+.table-price .box-room-price{border:1px solid #fff;}
+.table-price .box-room-price:hover, .table-price .selected{border:1px solid #19b4ee;}
+
+.table-price .ui-date{height:22px; line-height:22px; text-align:center; color:#333;}
+
+.table-price .box-price{padding:5px 0;}
+.table-price .price-list li{position:relative; height:26px; font-family:Tahoma; overflow:hidden; white-space:nowrap;}
+
+.table-price .ui-price{display:inline-block; height:26px; line-height:26px; vertical-align:top;}
+.table-price .ui-price .ui-max, .table-price .ui-price .ui-min{display:inline-block; vertical-align:middle; width:55px; overflow:hidden;}
+.table-price .ui-price .ui-max{text-align:right; font-size:14px; font-weight:bold;}
+
+.table-price .ui-number{position:absolute; top:0; right:0; width:35px; line-height:26px; color:#666; font-weight:bold; overflow:hidden;}
+.table-price .ui-number .ico-dining{display:inline-block; vertical-align:middle; width:12px; height:16px; margin-right:5px; background-position:-135px -135px; overflow:hidden;}
+
+.table-price .price-blue{color:#0d94f2;}
+.table-price .price-orange{color:#fc9a0e;}
+.table-price .price-gray{border-color:#dcdcdc; background-color:#dcdcdc;}
+
+.table-price .disable:hover{border-color:#fff;}
+.table-price .disable .ui-date,
+.table-price .disable .ui-price,
+.table-price .disable .ui-number{color:#c8c8c8;}
+.table-price .disable .ico-dining{background-position:-135px -161px;}
+
+
+/*load*/
+.sec-room-load{text-align:center; margin-top:20px;}
+.sec-room-load .icon-load{display:inline-block; width:32px; height:32px; background:url(http://pic.c-ctrip.com/ebooking/web/loading.gif) no-repeat; overflow:hidden;}
+
+/*fixed*/
+.box-fixed-top{position:fixed; _position:absolute; top:0; left:0; z-index:80; width:100%; display:none;}
+.box-fixed-top .box-fixed-cont{width:1180px; margin:0 auto; background-color:#fff; box-shadow:0px 5px 20px rgb(220,220,220);}
+
+.box-fixed-top .sec-room-guide{margin:0 0 10px 0; padding:10px 30px;width:1120px;z-index: 1}
+
+.box-fixed-top .box-table-room{padding:0 30px; background-color:#19b4ee;}
+.box-fixed-top .table-room thead{color:#fff; background-color:#19b4ee;}
+.box-fixed-top .table-room thead th{border-bottom:none;}
+.box-fixed-top .table-room .ui-week{color:#333;}
+
+.box-fixed-top .sec-room-title{height:45px; line-height:45px; text-align:center; color:#fff; font-size:16px; font-family:"Microsoft YaHei"; background-color:#19b4ee; overflow:hidden;}
+
+
+/*form*/
+.form-room-item{margin-bottom:15px;}
+.form-room-item .form-label{float:left; display:inline; width:100px; line-height:22px; text-align:right; color:#666; font-weight:bold; overflow:hidden;}
+.form-room-item .form-field{margin-left:110px; overflow:hidden;}
+.hack_il{*display:inline;}
+.form-field em{font-weight: bold;font-style: normal;line-height: 22px;}
+.form-room-item:after{content:""; display:block; clear:both; height:0;}
+.form-room-item{zoom:1;}
+.final_limt_price{margin-bottom: 5px;}
+.final_price{padding-bottom:13px;margin:0px 15px 15px 20px;border-bottom:1px solid #d2d2d2;}
+.final_price .form-label{width:80px;}
+.final_price .form-field{margin-left:90px;}
+.form-room-item input{vertical-align:middle;}
+.form-room-item .in-text{height:12px;width:88px; line-height:12px;}
+.form-room-item .in-select{padding:2px 4px;}
+.form-room-item .input-text{width:80px;}
+.form-room-item .price-text{display:inline-block; width:88px;}
+.preView_result{margin-left: 8px;color:#0066cc;}
+.form-room-item .form-list{margin-bottom:10px;}
+.form-room-item .form-inline{display:inline-block; margin-right:10px;}
+.form-room-item .form-block{display:block; margin-bottom:10px;}
+
+.form-room-item .box-input{position:relative; display:inline-block;}
+.form-room-item .box-input .ui-unit{position:absolute; top:1px; right:1px; *top:2px; *right:2px; padding:0 5px; height:20px; line-height:20px; background-color:#fff;}
+.form-room-item .box-service {text-align:right; margin-right:45px;}
+
+.form-room-tool{padding-bottom:20px; text-align:center;}
+.form-room-tool .btn{ margin:0 5px;font-weight: bold;}
+/*.form-room-tool .btn-cancel{color:#666; background-color:#dbdbdb;}*/
+/*.form-room-tool .btn-cancel:hover{background-color:#c5c5c5;}*/
+
+
+/*filter*/
+.box-room-filter{margin:20px 0px; padding:0 20px; overflow:hidden;}
+.box-room-filter .filter-list{margin-top:-1px; padding-bottom:8px; border-top:1px solid #e5e5e5;}
+.box-room-filter .filter-list dl{overflow:hidden; *zoom:1;}
+.box-room-filter .filter-list dt{float:left; clear:left; width:180px; font-weight:bold; overflow:hidden;}
+.box-room-filter .filter-list dd{overflow:hidden; *zoom:1;}
+.box-room-filter .filter-list label{display:inline-block; margin:8px 10px 0 0; white-space:nowrap;}
+.box-room-filter .filter-list input{vertical-align:middle;}
+
+.sec-room-filter{height:300px; background-color:#f5f6fa; overflow:auto;}
+
+
+/*filter toolbar*/
+.sec-filter-toolbar .form-label{width:80px;}
+.sec-filter-toolbar .form-field{margin-left:90px;}
+.sec-filter-toolbar .box-room-filter{margin-bottom:0;}
+.sec-filter-toolbar .box-form .form-room-item{float:left;}
+.sec-filter-toolbar .box-date{margin-top:10px; padding-left:16px;}
+.sec-filter-toolbar .input-date{width:100px; height:16px; line-height:16px;}
+.sec-filter-toolbar .btn-add,
+.sec-filter-toolbar .btn-remove{display:inline-block; vertical-align:middle; width:24px; height:24px; overflow:hidden;}
+.sec-filter-toolbar .btn-add{background-position:-40px -80px;}
+.sec-filter-toolbar .btn-remove{background-position:-40px -138px;}
+.sec-filter-toolbar .btn-add:hover{background-position:-40px -109px;}
+.sec-filter-toolbar .btn-remove:hover{background-position:-40px -167px;}
+
+.sec-filter-toolbar .icon-ask{display:inline-block; vertical-align:middle; width:16px; height:16px; margin-left:5px; background-position:-165px -125px; overflow:hidden;}
+
+.table-room-list{margin-bottom:15px;}
+.table-room-list th,
+.table-room-list td{text-align:left;}
+.table-room-list .date-range{width:300px;}
+.table-room-list .date-range span{display:inline-block;}
+
+.sec-room-tool{margin-bottom:15px; text-align:center;}
+.sec-room-tool .input-intro{width:250px;}
+
+/*popup*/
+.popup-min{width:500px;}
+.popup-mid{width:700px;}
+.popup-dining{width:300px;}
+
+.autoClosePop {z-index:100; position:fixed; top:200px; left:450px;}
+
+.box-popup-cont{padding:0 10px;}
+
+.sec-price-type{padding-bottom:10px; border-bottom:1px solid #d2d2d2;}
+.sec-price-type .ui-money{float:right;}
+
+.sec-client-type{margin-top:-10px;}
+
+.sec-price-set{margin-bottom:20px; padding:10px 0; border-top:1px solid #d2d2d2;}
+.sec-price-set .box-formula{display:none; margin-bottom:20px;}
+.sec-price-set .formula-item{color:#666;}
+
+.sec-price-set .formula-item .formula-title{float:left; display:inline; width:100px; text-align:right;}
+.sec-price-set .formula-item .formula-cont{margin-left:100px; overflow:hidden;}
+
+.sec-price-set .formula-item dt{float:left; width:40px;}
+.sec-price-set .formula-item dd{margin-left:40px; overflow:hidden;}
+
+.sec-price-set .box-tool input{vertical-align:middle;}
+.sec-price-set .box-tool .btn-unfold,
+.sec-price-set .box-tool .btn-fold{float:right; text-decoration:none; color:#06c;}
+.sec-price-set .box-tool .btn-unfold .icon-arrows,
+.sec-price-set .box-tool .btn-fold .icon-arrows{display:inline-block; width:0; height:0; font-size:0; border:5px dashed #fff; overflow:hidden;}
+.sec-price-set .box-tool .btn-unfold .icon-arrows{vertical-align:-4px; border-top:5px solid #06c;}
+.sec-price-set .box-tool .btn-fold .icon-arrows{vertical-align:2px; border-bottom:5px solid #06c;}
+
+.sec-room-more{padding:0 10px 10px 0; text-align:right;}
+.sec-room-more a{color:#06c;}
+
+.sec-room-date{padding:15px 25px 15px 20px; cursor:pointer; font-weight:bold; word-break:break-all; word-wrap:break-word;}
+.sec-room-date span{color:#999; font-weight:normal;}
+
+.box-date-jmp{padding:10px; font-weight:bold; border:1px solid #19b4ee; background-color:#fff; word-break:break-all; word-wrap:break-word;}
+.box-date-jmp span{display:inline-block; padding:0 5px; font-weight:bold;}
+.box-date-jmp .to{color:#999; font-weight:normal;}
+
+.sec-room-edit .text-value{width:30px;}
+.sec-room-edit .btn-modify{display:inline-block; width:48px; height:18px; margin-right:10px; line-height:18px; text-align:center; color:#06c;}
+.sec-room-edit .btn-modify:hover{text-decoration:none;}
+.sec-room-edit .select{color:#fff; background-color:#19b4ee;}
+
+
+.sec-assure-info{padding:0 20px 20px 20px;}
+.sec-assure-info .assure-date{padding-bottom:20px;}
+.sec-assure-info .assure-date label{color:#666; font-weight:bold;}
+.sec-assure-info .assure-date .in-text{height:12px; line-height:12px;}
+.sec-assure-info .assure-tips h3{font-size:14px; font-weight:bold;}
+
+.sec-room-msg{padding:20px 20px 40px 20px; text-align:center; font-size:14px;}
+.sec-room-msg .icon-warn{display:inline-block; width:32px; height:32px; margin-right:10px; vertical-align:middle; background-position:-220px 0; overflow:hidden;}
+
+
+
+.side_fixed{position:fixed; bottom:50px; right:10px;}
+.side_fixed .to-top{display:block; width:50px; height:50px; text-indent:-9999px; background:url(http://pic.c-ctrip.com/ebooking/web/un_sidebar.png) no-repeat 0 0; overflow:hidden;}
+.side_fixed .to-top:hover{background-position:0 -50px;}
+
+.sec-room-price .room-price-bd .table-price .ui-bg-highlight{ border: 1px solid #19b4ee !important;}
+.textbox-background{ background-color:#eee;}
+.textbox-error{ background-color:#fffcd8;}
+
+
+/*help sec S*/
+.pop_help{border:2px solid #d2d2d2; width:240px; padding:10px;}
+.pop_help dt{margin:3px 0 0 0; font-weight: bold}
+/*help sec E*/
+/*<!-- overLay guide S-->*/
+/*<!-- overLay guide S-->*/
+body{position:relative;}
+.hidden{display:none;}
+.modWindow-guide { z-index: 90; position: absolute; top: 0; left: 0; right: 0; bottom: 0; _width: 100%; _height: 970px; /* width: 100%; height: 100%;  */ }
+.mod-overLay{position:fixed;_position:absolute;top:0;left:0;right:0;bottom:0;_width:100%;_height:970px;_zoom:1;overflow:hidden;background:#000;opacity:.7;filter:alpha(opacity=70);}
+.guide-cont{position:relative;background:#e8e7e7 url(http://pic.c-ctrip.com/ebooking/web/guide_status_bg_8.png) center top no-repeat;margin:0 auto;width:1180px;height:970px;}
+
+.guide-over .close_btn,
+.guide-begain .close_btn,
+.guide-nav .step,
+.guide-nav li a{margin:0 auto;background:url(http://pic.c-ctrip.com/ebooking/web/guide_un_icon_24.png) no-repeat;text-align:center;}
+.guide-nav{position:fixed;_position:absolute;margin:-170px 0 0 1128px;top:50%;width:49px;height:340px;line-height:0}
+.step-prev a,.step-next a{cursor:pointer;display:inline-block;*zoom:1;width:49px;height:46px;}
+.guide-nav .step{margin-bottom:27px;width:16px;height:17px;background-position:-50px -142px}
+.guide-nav .active{background-position:-67px -142px;}
+.guide-nav .step-prev{margin-bottom:25px;}
+.guide-nav .step-prev a{background-position:0 -128px;}
+.guide-nav .step-prev a:hover{background-position:0 -175px;}
+.guide-nav .step-next{margin-top:-2px;}
+.guide-nav .step-next a{background-position:-84px -128px;}
+.guide-nav .step-next a:hover{background-position:-84px -175px;}
+.guide-begain,.guide-over{position:fixed;_position:absolute;top:50%;margin-top:-196px;width:1180px;height:423px;}
+.guide-begain_btn{position:absolute;bottom:53px;left:528px;display:inline-block;*zoom:1;width:174px;height:62px;}
+.guide-begain_btn:hover{background-position:0 -64px;}
+.guide-step{position:absolute;}
+.guide-over{background:url(http://pic.c-ctrip.com/ebooking/web/guide_step7_bg.png) no-repeat;}
+.guide-over a,.guide-begain a{position:absolute;display:inline-block;*zoom:1;}
+.guide-over .start_btn{top:155px;left:488px;width:254px;height:62px;background-position:0 -129px;}
+.guide-over .start_btn:hover{background-position:0 -193px;}
+.guide-over .close_btn,
+.guide-begain .close_btn{top:43px;left:765px;width:62px;height:59px;background-position:0 -62px;}
+.guide-begain .close_btn{top:90px;}
+.guide-over .close_btn:hover,
+.guide-begain .close_btn:hover{background-position:0 0;}
+.guide-over .guide-again_btn{top:247px;left:521px;width:182px;height:37px;background-position:0 -257px;}
+.guide-over .guide-again_btn:hover{background-position:0 -297px;}
+/* <!-- overLay guide E--> */
+
+/*guide internationnal S*/
+.zh .guide-begain{background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step1_bg.png) no-repeat;}
+.zh .guide-begain_btn,
+.zh .guide-over .start_btn,
+.zh .guide-over .guide-again_btn{background-image:url(http://pic.c-ctrip.com/ebooking/web/guide_un_btns_24_cn.png);}
+.zh .guide-step2{top:62px; width:855px; height:300px; background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step2_bg.png) no-repeat;}
+.zh .guide-step3{top:410px; left:72px; width:1020px; height:305px; background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step3_bg.png) no-repeat;}
+.zh .guide-step4{top:511px; left:278px; width:800px; height:175px; background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step4_bg.png) no-repeat;}
+.zh .guide-step5{top:511px; left:164px; width:810px; height:280px; background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step5_bg.png) no-repeat;}
+.zh .guide-step6{top:235px; left:463px; width:720px; height:150px; background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step6_bg.png) no-repeat;}
+.zh .guide-step7{top:170px; left:370px; width:810px; height:170px; background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step7_bg.png) no-repeat;}
+
+.en .guide-cont{background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_bg_8_en.png) no-repeat center top;}
+.en .guide-begain{margin-top: -216px;height:423px;background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step1_bg_en.png);}
+.en .guide-begain_btn,
+.en .guide-over .start_btn,
+.en .guide-over .guide-again_btn{background-image:url(http://pic.c-ctrip.com/ebooking/web/guide_un_btns_24_en.png);}
+.en .guide-over .guide-again_btn{background-position:0 -257px;}
+.en .guide-over .guide-again_btn:hover{background-position:0 -296px;}
+.en .guide-step2{top:92px;width:1121px;height:329px;background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step2_bg_en.png) no-repeat;}
+.en .guide-step3{top:409px;left:74px;width:1028px;height:310px;background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step3_bg_en.png) no-repeat;}
+.en .guide-step4{top:476px;left:280px;width:783px;height:176px;background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step4_bg_en.png) no-repeat;}
+.en .guide-step5{top:475px;left:110px;width:920px;height:294px;background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step5_bg_en.png) no-repeat;}
+.en .guide-step6{top:227px;left:255px;width:925px;height:190px;background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step6_bg_en.png) no-repeat;}
+.en .guide-step7{top:158px; left:230px; width:949px; height:196px; background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step7_bg_en.png) no-repeat;}
+
+.jpn .guide-cont{background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_bg_8_jpn.png) no-repeat center top;}
+.jpn .guide-begain{background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step1_bg_jpn.png) no-repeat;height:432px;}
+.jpn .guide-begain_btn,
+.jpn .guide-over .start_btn,
+.jpn .guide-over .guide-again_btn{background-image:url(http://pic.c-ctrip.com/ebooking/web/guide_un_btns_24_jpn.png);}
+.jpn .guide-over .guide-again_btn{width:210px;background-position:0 -256px;}
+.jpn .guide-over .guide-again_btn:hover{background-position:0 -295px;}
+.jpn .guide-step2{top:85px;width:1141px;height:215px;background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step2_bg_jpn.png) no-repeat;}
+.jpn .guide-step3{top:409px;left:46px;width:1094px;height:310px;background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step3_bg_jpn.png) no-repeat;}
+.jpn .guide-step4{top:476px;left:250px;width:844px;height:155px;background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step4_bg_jpn.png) no-repeat;}
+.jpn .guide-step5{top:476px;left:164px;width:909px;height:237px;background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step5_bg_jpn.png) no-repeat;}
+.jpn .guide-step6{top:230px;left:550px;width:629px;height:162px;background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step6_bg_jpn.png) no-repeat;}
+.jpn .guide-step7{top:158px;left:343px;width:837px;height:178px;background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step7_bg_jpn.png) no-repeat;}
+
+.kr .guide-cont{background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_bg_8_kr.png) no-repeat center top;}
+.kr .guide-begain{margin-top:-216px;background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step1_bg_kr.png) no-repeat;height:434px;}
+.kr .guide-begain_btn,
+.kr .guide-over .start_btn,
+.kr .guide-over .guide-again_btn{background-image:url(http://pic.c-ctrip.com/ebooking/web/guide_un_btns_24_kr.png);}
+.kr .guide-over .guide-again_btn{background-position:40px -256px;}
+.kr .guide-over .guide-again_btn:hover{background-position:40px -295px;}
+.kr .guide-step2{top:85px;width:1141px;height:270px;background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step2_bg_kr.png) no-repeat;}
+.kr .guide-step3{top:409px;left:25px;width:1094px;height:310px;background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step3_bg_kr.png) no-repeat;}
+.kr .guide-step4{top:476px;left:250px;width:844px;height:155px;background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step4_bg_kr.png) no-repeat;}
+.kr .guide-step5{top:476px;left:170px;width:909px;height:260px;background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step5_bg_kr.png) no-repeat;}
+.kr .guide-step6{top:230px;left:572px;width:629px;height:162px;background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step6_bg_kr.png) no-repeat;}
+.kr .guide-step7{top:158px;left:275px;width:910px;height:178px;background:url(http://pic.c-ctrip.com/ebooking/web/guide_status_step7_bg_kr.png) no-repeat;}
+
+/*guide internationnal E*/
+
+.maskClass{position:absolute; display:none; top:0; left:0; z-index:83; height:0px; width:100%; background-color:#fff; filter:alpha(opacity=0); opacity:0.0;}
+.maskTransClass{position:absolute; display:none; top:0; left:0; z-index:83; height:0px; width:100%; background-color:#000; filter:alpha(opacity=0.5); opacity:0.5;}
+
+
+#noviceGuide{ display: none; z-index: 200; position: fixed; left: 0px; top: 0px; background-position:center top; background-repeat:no-repeat; background-color:#454545;}
+
+
+
+/********************************************************
+ * ebk3.0  css begain
+ ********************************************************/
+.room-maintain-action{position:relative;padding:20px 20px 10px;background-color:#fff; z-index: 3;}
+.room-maintain-mdf{position:absolute;right:20px;top:20px;line-height:1;}
+.room-maintain-mdf .ebk3-btn{margin-left:5px;}
+.room-maintain-mdf .acceptInfo .ebk3-c-org{font-size:24px;}
+.room-maintain-mdf .ebk3-btn{position:relative;}
+.room-maintain-mdf .ebk3-btn .ebk3-mod-tip{position:absolute;bottom:43px;right:0;border-color:#496e86;width:235px;background-color:#496e86;color:#fff;line-height: 1.5;text-align: left;font-weight: normal;}
+.room-maintain-mdf .ebk3-btn .ebk3-mod-tip .ebk3-mod-tip-arrDown-bd{right:15px;left:inherit;border-color:#496e86 transparent transparent;}
+
+
+.room-maintain-action .ebk3-tab{margin-bottom:10px;}
+.room-maintain-filter{height:38px;line-height: 38px;}
+.room-maintain-filter .ebk3-calendar-handle{float:right;}
+.room-maintain-filter .ebk3-switch{margin-left:37px;}
+.room-maintain-calendar{ background-color: #f4f7fa;}
+.room-maintain-calendar .table-calendar{margin-bottom:10px;}
+.room-maintain-legend .ebk3-org-tip{position:absolute;top:-46px;left:30px;}
+.modwin-maintain{width:640px;}
+.modwin-maintain-time{padding:10px 0 10px 20px;border-bottom: 1px solid #ccc; }
+.ebk3-modwin-cont{ padding:5px 20px 5px 20px;}
+.ebk3-modwin-cont .mdf-title{float:left;clear:both;font-weight: bold;line-height: 27px; }
+.mdf-list{padding-top: 8px;margin-bottom:5px }
+.mdf-list dd{margin:0 0 0 74px; }
+.mdf-list .ebk3-copm-labc{display:inline-block;*zoom: 1;min-width: 110px; margin-right:10px; height: 27px;line-height: 27px; }
+.mdf-list input{margin-top: 0; vertical-align:middle;}
+.mdf-list .ebk3-intext{width:28px;height: 25px;}
+.retain-list{padding:8px 0;margin-bottom:-1px;border-top:1px dotted #ccc;border-bottom:1px dotted #ccc;}
+.ebk3-modwin-handle input{ vertical-align:middle;}
+.modwin-maintain .ebk3-modwin-handle .ebk3-copm-labc{position: absolute;right: 460px;top:50%;margin-top: -9px;}
+.ebk3-main-content .room-maintain-legend{position:fixed;margin:0 auto;bottom:0;width:1180px;z-index:4}
+.maintain-fixed{display:none; top:0; width:1180px;background-color:#fff;}
+.maintain-fixed .room-maintain-filter{margin:0 20px 10px 20px;}
+.maintain-fixed .table-calendar{margin-bottom:0;}
+.mdf-list .disabled{color: #ccc !important;}
+.mdf-tips{color:#93b0c7}
+.modwin-maintain .mdf-tips{position:absolute;top:10px;right:15px;}
+/*.mod-batchMdf{width:700px;}
+.mod-batchMdf .ebk3-filter-it{width:510px;}*/
+.mod-batchMdf .ebk3-filter-list label input{margin-top: 3px;}
+.mod-batchMdf .ebk3-filter-mod-ct{margin-top:0;padding-top:20px;background-color:#f5f6fa;}
+.timeRange-list dd .ebk3-compt-lbText{margin-top:0;}
+.timeRange-list dt{float:left;font-size:14px;line-height:2.2;}
+.timeRange-list dd{float:left;}
+.timeRange-list dd .inText-date{width:75px;}
+.timeRange-list .ebk3-compt-lbText-lb{font-size:14px;color:inherit;width:auto;}
+.ebk3-filter-mod-timeRange{
+	position: relative;
+}
+.ebk3-filter-mod-timeRange .mdf-tips{position:absolute;top:0;right:0;max-width:365px;}
+/********************************************************
+ * ebk3.0  css over
+ ********************************************************/

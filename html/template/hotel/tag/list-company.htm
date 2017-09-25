@@ -1,0 +1,130 @@
+{loop $tags $k $t}
+<!--{php $mall=tag("moduleid=16&condition=username='".$t[username]."'and status=3 and jihuo='A' and amount >0&template=null")}-->
+						         
+<div class="hotel_item clearfix" style="">
+
+					  <ul class="hotel_info">
+
+					    <li class="pic">
+
+					      <a href="{DT_PATH}index.php?homepage={$t[username]}" target="_blank" >
+
+					        <img src="{DT_PATH}{$t[thumb]}"  width="140" height="105"></a>
+
+					    </li>
+
+					    <li class="info">
+
+					      <div class="info-tit">
+
+					        <h2>
+
+					          <a id="hotelDetailHeader1" class="yahei" href="{DT_PATH}index.php?homepage={$t[username]}" target="_blank" title="">
+
+					            {$t[company]}</a>
+
+					          
+
+					        </h2>
+
+					      </div>
+
+					      <div>
+
+					        <div class="address ellipsis horizantal" title="">地址：{$t[address]}</div>
+
+					        </div>
+
+					      <p class="introduction ellipsis" >{$t[introduce]}</p>
+					    </li>
+					    <li class="price">
+
+					      <span>¥</span>
+
+					      <b>{$t[lowprice]}</b>起</li>
+
+					  </ul>
+
+						  <div class="room_list">
+
+						    <div id="{$t[hotelid]}" class="room_info" style="display:block;overflow: hidden; height: 130px;">
+
+						      <table class="room_info_table" width="100%" cellspacing="0" cellpadding="0" border="0">
+
+						        <thead>
+
+						          <tr>
+
+						            <th class="room_type_head" width="235">借款类型</th>
+
+						           
+
+						            <th width="109">床型</th>
+
+						            <th width="90">价格</th>
+
+						            <th width="82"></th>
+
+						        </thead>
+
+						        <tbody>
+						          {loop $mall $m $h}
+
+						          <tr class="info  planid_73749 ">
+
+						            <td class="promotion">
+
+						              <span>{$h[title]}</span>
+
+						            </td>
+
+						            <td class="cancel">
+
+						              <span class="ptips ">
+
+						                <span class="">{$h[bedtype]}
+
+						                  <i></i>
+
+						                </span>
+
+						              </span>
+
+						            </td>
+
+						            <td class="price">
+
+						              <span>¥<b>{$h[price]}</b></span>
+
+						              </td>
+
+						              <td>
+
+						              	<a class="btn_buy" data-btntype="" href="/mall/show.php?itemid={$h[itemid]}&intime={$Check_in_date}&outtime={$Check_out_date}" rel="nofollow" title="" style="display:block;" data-notbooking="预订" class="btn_buy">预订</a>
+
+						              </td>
+
+						          </tr> 
+
+						          <tr class="linebox ">
+
+						            <td colspan="8">
+
+						              <div class="line"></div>
+
+						            </td>
+
+						          </tr> 
+						          
+						          {/loop}       
+
+						        </tbody>
+
+						      </table>
+
+						    </div>
+						  </div>
+<a href="javascript:showdiv('{$t[hotelid]}')" id="{$t[hotelid]}more" style="float: right;">显示更多</a>		</div>
+{/loop}		
+
+{if $showpage && $pages}<div class="pagination">{$pages}</div>{/if}

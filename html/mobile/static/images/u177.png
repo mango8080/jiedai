@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv=Pragma content=no-cache>
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="address=no" name="format-detection">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link type="text/css" rel="stylesheet"  href="/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"  href="/css/base.css">
+<link type="text/css" rel="stylesheet"  href="/css/index.css">
+<title>没找到....&gt;o&lt;....</title>
+<style >
+img{ border: 0}
+</style>
+</head>
+
+<body style="width: 100%;">
+<header><a href="javascript:(window.history.back());" class="back"><img src="/images/back.png" height="19" /></a><h1 class="f-16 b">没找到....&gt;o&lt;....</h1><a href="/index.htm" class="home"><img src="/images/home.png" height="25"/></a></header>
+<div style="text-align: center;">
+<img src="/images/404.png" alt="404 页面未找到" width="80%" style="margin-top: 40px;"/>
+</div>
+</body>
+</html>

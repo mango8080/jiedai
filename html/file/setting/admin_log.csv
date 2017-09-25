@@ -1,0 +1,5 @@
+logid,ID,
+qstring,网址参数,
+username,管理员用户名,
+ip,IP,
+logtime,日志记录时间,

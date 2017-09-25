@@ -1,0 +1,103 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2015-05-08 10:15:16
+ * @version $Id$
+ */
+html, body{ width: 100%; height:100%; margin: 0 auto; padding: 0; color:#666; font-size: 100%; }
+ol, ul,dl,p{ margin:0; padding: 0; }
+li{ list-style-type: none; }
+em,i{ font-style:normal; }
+a:hover{ text-decoration: none; }
+select{appearance:none;-moz-appearance:none; /* Firefox */-webkit-appearance:none; /* Safari 和 Chrome */}
+/** 清除浮动**/
+.c{ clear:both; height:0; line-height:0; font-size:0; overflow:hidden;}
+.c_5{ clear:both; height:5px; overflow:hidden;}
+.c_10{ clear:both; height:10px; overflow:hidden;}
+.c_15{ clear:both; height:15px; overflow:hidden;}
+.c_20{ clear:both; height:20px;  overflow:hidden;}
+.c_25{ clear:both; height:25px; overflow:hidden;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{display:inline-table;}/* Hides from IE-mac \*/
+*html .clearfix{height:1%;}
+.clearfix{display:block;}/* End hide from IE-mac */
+*+html .clearfix{min-height:1%;}
+/*溢出隐藏*/
+.ellipsis{display: block;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+/**/
+.left{display: block; float: left;}
+.right{display: block; float: right;}
+.btn_default{display: block; width: 100%; height: 45px; margin: 0 auto; font-size: 21px; line-height: 33px; color: #fff; border-radius: 23px; background-color:rgba(255, 99, 76, 1); }
+.btn_default:hover{color: #fff;}
+.mask{width:100%; height:100%; position:fixed; top:0; left:0; z-index:100; background-color:#000; filter:alpha(opacity=70); -moz-opacity:0.3;-khtml-opacity: 0.3;opacity: 0.7; }
+.btn_guanbi{display:block; padding:15px; position:absolute; top:0; right:0;}
+.box_h_48{ width: 90%; height: 48px; border: 1px solid #c9c9c9; margin: 0 auto; }
+.box_h_48 span{ float: left; line-height: 48px; }
+.box_h_48 .b_1,.box_h_48 .b_2{ width:90px; height:34px; line-height:34px; margin:7px 10px 0 16px; border-right:2px solid #c9c9c9; }
+.box_h_48 .b_2{ margin:7px 10px 0 5px; }
+
+.box_time {
+    height: 41px;
+    padding: 8px 0;
+    border-bottom: 1px solid #d2d2d2;
+    background-color: #f0f0f0;
+}
+.box_time .b_box{width: 310px; margin: 0 auto;}
+.box_time .b_box .time{ font-size: 18px; position: absolute; left: 50%; margin-left: -25px; }
+.box_time .b_box .b_3{font-size:12px; color: #999; }
+.box_time .b_box>p{position: relative; height:25px; /* line-height:25px; */ text-align:center; cursor: pointer;}
+.box_time #checkInDate{float: left; width: 160px; border-right: 1px solid #dad7d7;}
+.box_time #checkOutDate{float: right; width: 150px;}
+.box_time #dtp_input2,.box_time #dtp_input3{float:left; width:100px; line-height:24px; text-align:center; border:none;height: 24px; background-color: #f0f0f0;}
+/**/
+/*登陆注册修改*/
+.box_tel,.box_captcha,.box_name,.box_password { display: block; width: 90%; margin: 0 auto 20px; position: relative; vertical-align:middle; }
+.tel,.captcha,.name,.password{ height: 48px; padding-left: 48px; font-size: 16px; color: #444444; }
+.tel{ width: 65%; float: left; }
+.box_captcha .lr_arrow{ position: absolute; top: 16px; left: 10px; margin: 0; }
+.box_tel img{ position: absolute; left: 10px; top: 10px; }
+.box_name img{ position: absolute; left: 10px; top: 10px; }
+.box_password img,.box_captcha img{ position: absolute; left: 10px; top: 9px; }
+.yanzm{ display: inline-block; width: 34%; height: 48px; line-height: 48px; text-align: center; color: rgba(255, 99, 76, 1); background-color: #f2f2f2; float: right; }
+.yanzm img{position:relative;left:0;top:0;width:100%;height:48px;}
+.btn_zzxf{ display: block; width: 45%; height: 42px; font-size: 20px; font-weight: 700; line-height: 30px; color: #45ceb0; background-color: #fff; border: 1px solid #c9c9c9; }
+.btn_zzxf:hover{color: #45ceb0;}
+.btn_qxdd{ display: block; width: 100%; height: 48px; margin: 0 auto; font-size: 21px; line-height: 36px;  border-radius:24px; color: #c9c9c9; background-color: #fff; border: 1px solid #c9c9c9; }
+.btn_qxdd:hover{color: #c9c9c9;}
+/*切换列表*/
+.tab_list{ padding: 10px; }
+.tab_list ul{ display: block; width: 100%; height: 36px; position: relative; }
+.tab_list ul li{ position: absolute; }
+.tab_list ul li:nth-child(1){ left: 0; }
+.tab_list ul li:nth-child(2){ left: 40%; }
+.tab_list ul li:nth-child(3){ right: 0; }
+.tab_list ul li a{ width: 75px; height: 36px; text-align: center; margin: 0; padding: 0; color: #666; }
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{ cursor: default; background: url('../images/arrow_active.png') center 25px no-repeat; color: #ff6600; border: none; border-bottom-color: transparent; }
+header{height: 44px; border-bottom:1px solid rgba(233, 233, 233, 1); overflow: hidden;}
+header span{margin-right: 3px;font-size: 16px;}
+header a{float: left;line-height: 44px; padding: 0 15px;}
+header a img{vertical-align: middle;}
+header h1{position: absolute; top: 0; left: 20%; width: 60%; margin: 0; line-height: 44px; font-size: 20px; text-align: center; color: rgba(51, 51, 51, 1); overflow: hidden;}
+header .home{float: right;}
+/*日历*/
+.datetimepicker{width:90%}
+.table-condensed{width:100%}
+/*touchslider*/
+.touchslider{width: 100%; height: 24.5%; position:relative;}
+.touchslider-viewport{width: 100%; height: 100%; margin: 0 auto; overflow: hidden; position: relative;}
+.touchslider-item{width:100%; height: 100%; list-style-type: none; float: left;}
+.touchslider-item img{width: 100%; height: 100%;}
+.touchslider-nav{height: 10px; position: absolute; left: 50%; bottom:10px; z-index: 999;}
+.touchslider-nav-item{display:block; float: left; width: 8px; height: 8px; margin:0 4px; border-radius:5px; background-color:#fff; opacity: 0.5;}
+.touchslider-nav-item-current{opacity: 1;}
+/**/
+.datetimepicker table tr td.active:active, .datetimepicker table tr td.active:hover:active, .datetimepicker table tr td.active.disabled:active, .datetimepicker table tr td.active.disabled:hover:active, .datetimepicker table tr td.active.active, .datetimepicker table tr td.active:hover.active, .datetimepicker table tr td.active.disabled.active, .datetimepicker table tr td.active.disabled:hover.active{
+	background-color: #00c7bd;
+}
+.datetimepicker table tr td.active, .datetimepicker table tr td.active:hover, .datetimepicker table tr td.active.disabled, .datetimepicker table tr td.active.disabled:hover{background-color: #00c7bd;
+    background-image: -moz-linear-gradient(top,rgba(255, 99, 76, 1),rgba(255, 99, 76, 1));
+    background-image: -ms-linear-gradient(top,rgba(255, 99, 76, 1),rgba(255, 99, 76, 1));
+    background-image: -webkit-linear-gradient(top,rgba(255, 99, 76, 1),rgba(255, 99, 76, 1));
+    background-image: -o-linear-gradient(top,rgba(255, 99, 76, 1),rgba(255, 99, 76, 1));
+    background-image: linear-gradient(top,rgba(255, 99, 76, 1),rgba(255, 99, 76, 1));}

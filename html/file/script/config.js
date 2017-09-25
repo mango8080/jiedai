@@ -1,0 +1,1 @@
+var DTPath = "http://www.anluze.com/";var SKPath = "http://www.anluze.com/skin/hotel/";var MEPath = "http://www.anluze.com/member/";var DTEditor = "fckeditor";var CKDomain = "";var CKPath = "/";var CKPrex = "c9a_";

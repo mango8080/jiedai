@@ -1,0 +1,190 @@
+{template 'hotel_header', $module}
+
+    <link href="{DT_SKIN}new/page_pub.css" rel="stylesheet" type="text/css">
+
+    <form name="aspnetForm" method="post" action="./OrderList.aspx" id="aspnetForm">
+      <div class="ebk3-page-navs"></div>
+      <div class="box-1180">
+
+        <!--hover 浮层-->
+        <div id="ebk3-main-content">
+          <div id="ctl00_ctl00_SubMenuContainer_ContentMain_si_div" class="suminfo clearfix">
+            <div class="suminfo-total">
+              <h3>
+                <span class="sumtips" tips="拒单率越低、回复时长越短、投诉率越低则满意度越高">预订满意度</span></h3>
+              <em>
+                <span id="ctl00_ctl00_SubMenuContainer_ContentMain_si_seviceRating">99.57%</span></em>
+            </div>
+            <div class="suminfo-item">
+              <h4>
+                <span class="sumtips" tips="拒绝的订单数/总订单数">拒单率</span>
+                <em>
+                  <span id="ctl00_ctl00_SubMenuContainer_ContentMain_si_rejectRate">0.33%</span></em>
+              </h4>
+              <h5>竞争圈酒店
+                <em>
+                  <span id="ctl00_ctl00_SubMenuContainer_ContentMain_si_rejectRate_ch">0.00%</span></em>
+              </h5>
+            </div>
+            <div class="suminfo-item">
+              <h4>
+                <span class="sumtips" tips="平均回复时长">回复时长</span>
+                <em>
+                  <span id="ctl00_ctl00_SubMenuContainer_ContentMain_si_ConfirmLength">1分钟</span>
+                  <i tips="70.5%的客人10分钟未确认订单会取消当前预订,改订其他酒店" class="ebk3-ico ebk3-ico-alert-r12 sumtips"></i>
+                </em>
+              </h4>
+              <h5>竞争圈酒店
+                <em>
+                  <span id="ctl00_ctl00_SubMenuContainer_ContentMain_si_ConfirmLength_ch">6分钟</span></em>
+              </h5>
+            </div>
+            <div class="suminfo-item">
+              <h4>
+                <span class="sumtips" tips="投诉的订单数/总订单数">投诉率</span>
+                <em>
+                  <span id="ctl00_ctl00_SubMenuContainer_ContentMain_si_ComplaintRate">--</span></em>
+              </h4>
+              <h5>竞争圈酒店
+                <em>
+                  <span id="ctl00_ctl00_SubMenuContainer_ContentMain_si_ComplaintRate_ch">--</span></em>
+              </h5>
+            </div>
+            
+            <div class="drowDown-box">
+              <div class="drowDown-content" style="display:block;" id="drowDownTipInfo">
+                <p class="f-14">
+                  <b>当天入住订单请于
+                    <span class="ebk3-c-org">5分钟</span>内确认。隔天及以上入住订单请于
+                    <span class="ebk3-c-org">10分钟</span>内确认。</b></p>
+                <p class="f-12">超过时间，我司会进行系统语音催单；提升订单回复速度将有助于提高酒店在网站的推荐度，让更多客人看见。</p></div>
+              <div class="drowDown-btn">
+                <!-- 箭头朝下 arr-d -->
+                <a href="javascript:void(0);" class="ebk3-simple-btn arr-u" id="dropDownTipBtn">收起
+                  <i class="ebk3-arrows"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="content_box">
+              <div class="order_tab_content">
+                <div class="table-caption clearfix">
+                  <div class="btn_order_list">
+                    <a href="http://ebooking.ctrip.com/ebkassembly/usercenter/remindsetting/reminderlist.aspx" id="ctl00_ctl00_SubMenuContainer_ContentMain_aOrderRemind" class="btn_search btn_order_list">新订单提醒</a>&nbsp;&nbsp;</div>
+                  <p>共有未处理订单：
+                    <strong>
+                      <span id="ctl00_ctl00_SubMenuContainer_ContentMain_lblOrderCount" style="font-weight:bold;">1</span></strong>
+                  </p>
+                </div>
+                <div>
+                  <table class="tb_ebooking_list" id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList" style="border-width:0px;width:100%;border-collapse:collapse;table-layout:fixed" cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                      <tr>
+                        <th scope="col" style="width:150px;">订单号</th>
+                        <th scope="col" style="width:60px;white-space:nowrap;">状态</th>
+                        <th scope="col" style="width:156px;">借款类型/房间数</th>
+                        <th scope="col">入离日期</th>
+                        <th scope="col" style="width:186px;">客人/特殊要求</th>
+                        <th scope="col">通知时间</th>
+                        <th scope="col" style="width:80px;">操作</th></tr>
+                      <tr>
+                        <td>
+                          <div class="tableLayoutFix">
+                            <span class="table-orderCode">
+                              <a id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblOrderid" href="http://ebooking.ctrip.com/ebooking/Order/OrderProcess.aspx?formid=300376161&amp;orderFrom=0&amp;r=1781823854">2784331847</a></span>
+                            <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblFormType">
+                              <span class="table-ico-orderType stauts-new ">
+                                <i class="arrBd-left"></i>
+                                <i class="arrBg-left"></i>新订</span>
+                            </span>
+                            <div class="table-orderTags">
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblGuaranteed"></span>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblIsResend"></span>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblIsPP"></span>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblIsArrival"></span>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblIsGroup"></span>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblIsQunar" onmouseenter="javascript:showTip(this, 2);" onmouseleave="javascript:hideTip();"></span>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblIsElong" onmouseenter="javascript:showTip(this, 3);" onmouseleave="javascript:hideTip();"></span>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblIsSupplier"></span>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblIsReserve" onmouseenter="javascript:showTip(this);" onmouseleave="javascript:hideTip();">
+                                <span class="table-orderTag-item tags-retain">保留房</span></span>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblIsFreeSale" onmouseenter="javascript:showTip(this, 1);" onmouseleave="javascript:hideTip();"></span>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblIsCreditOrder"></span>
+                            </div>
+                          </div>
+                        </td>
+                        <td style="white-space:nowrap;">
+                          <div class="tableLayoutFix">
+                            <span>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblFormStatus">
+                                <font color="red">未读</font></span>
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="tableLayoutFix">
+                            <div class="fixTwoLine">精致双床房(内宾)[含早]</div>
+                            <strong>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblRoomQuantity">1间</span></strong>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="tableLayoutFix">
+                            <div>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblArrival">2016-11-9</span></div>
+                            <div>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblDeparture">2016-11-10</span></div>
+                            <strong>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblQuantity">共1晚</span></strong>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="tableLayoutFix">
+                            <div class="clearfix">
+                              <div class="geuest-wrap">
+                                <div class="guest">
+                                  <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblClientName" title="张明明">张明明</span></div>
+                              </div>&nbsp;
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblFormName" class="supplier"></span></div>
+                            <div class="c-gra demand">
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblRemarks"></span>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="tableLayoutFix">
+                            <div>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblFormDate">2016-11-9</span></div>
+                            <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lblFormDateTime">11:16</span>
+                            <div>
+                              <span id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_lalOverTimeFlag"></span>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="tableLayoutFix">
+                            <a id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_hlProcess" href="http://ebooking.ctrip.com/ebooking/Order/OrderProcess.aspx?formid=300376161&amp;orderFrom=0&amp;r=1781823854">处理</a>
+                            <br>
+                            <a href="javascript:void(0);" id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_aPrint" class="printOrder">打印
+                              <i class="arrBottom"></i></a>
+                            <a href="javascript:void(0);" id="ctl00_ctl00_SubMenuContainer_ContentMain_gvOrderList_ctl02_formLog" onclick="ShowLogDialog('300376161', 'False', 'False', 'False')">日志</a>
+                            
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="evaluate-box clearfix"></div>
+        <bgsound id="Player" loop="-1" autostart="true">
+          <div id="Music"></div>
+      </div>
+      <div></div>
+      
+    </form>
+
+{template 'hotel_footer', $module}

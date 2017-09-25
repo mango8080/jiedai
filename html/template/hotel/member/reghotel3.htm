@@ -1,0 +1,1120 @@
+{template 'hotel_header1', 'member'}
+<link href="{DT_SKIN}new/page_pub.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}reg.css">
+<style>
+  html{height: 50%;}
+  body{background: #ececec;height: 100%;}
+  .w1180{width: 1000px;margin:0 auto;height: 100%;padding: 0 20px;box-sizing: border-box;}
+  .menu {
+      border-bottom: 2px solid #3d95e5;
+      border-left: 1px solid #ededed;
+      height: 35px;
+      letter-spacing: 1px;
+      margin: 0 0 15px;
+      overflow: hidden;
+  }
+  .tab {
+      border-right: 1px solid #ededed;
+      border-top: 1px solid #ededed;
+  }
+  
+  table {
+      border-collapse: collapse;
+      border-spacing: 0;
+  }
+.tab_on {
+    background: #3d95e5 none repeat scroll 0 0;
+}
+
+.tab_on a:link, .tab_on a:visited, .tab_on a:active, .tab_on a:hover {
+    color: #ffffff;
+    display: block;
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 15px;
+    text-decoration: none;
+}
+.tab a:link, .tab a:visited, .tab a:active {
+    color: #001c30;
+    font-size: 14px;
+    line-height: 35px;
+}
+.tab a:link, .tab a:visited, .tab a:active {
+    color: #001c30;
+    display: block;
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 15px;
+    text-decoration: none;
+}
+input,select{
+    font-size: 14px;
+    height: 23px;
+}
+.tt,.ls,.btns,.chongzhi{margin:15px 0;}
+#fangxing{background-color:#fff;-webkit-transition:color 0.2s ease 0s;-o-transition:color 0.2s ease 0s;transition:color 0.2s ease 0s;text-decoration:none;color:#288fe7;}
+
+.tb {
+    background: #ffffff none repeat scroll 0 0;
+    width: 100%;
+    font-size: 14px;
+}
+.tl {
+    letter-spacing: 0;
+    padding-right: 15px;
+    width: 90px;
+    background: #d4e9f9 none repeat ;
+    font-size: 14px;
+}
+.tr {
+    background: #ffffff none repeat scroll 0 0;
+}
+.f_gray {
+    color: #888888;
+}
+.f_red {
+    color: red;
+}
+.dhead{display:none;}
+
+#Dtop{background: #FFF;}
+#Dsubmit{margin-bottom: 30px;}
+#Dsubmit,#remote_0{margin-left: 20px;}
+#remote_0{margin-top: 20px;}
+.dhead{margin:15px 20px;}
+#upalbum{margin:20px 20px;}
+.active{color: #d64c4c;
+    cursor: default;
+    display: block;
+    
+    font-size: 18px;
+    height: 50px;
+    line-height: 63px;
+    margin-right: 10px;
+    overflow: hidden;
+    padding: 0 50px;
+    text-align: center;}
+        .book_process {
+            padding: 14px 0 23px;
+            width: 1180px;
+            background-color: #FFF;
+            margin:30px auto;
+            margin-bottom: 15px;
+        }
+
+        .book_process .done {
+            background-position: right 0;
+            color: #799d08;
+        }
+        .book_process li {
+            background-position: right -25px;
+            color: #999;
+            display: inline-block;
+            height: 15px;
+            line-height: 15px;
+            margin-left: 14px;
+            padding-left: 172px;
+            position: relative;
+        }
+
+        .book_process .done .arr {
+            background-position: 0 -5px;
+        }
+        .book_process .arr {
+            background-position: 0 -30px;
+            display: inline-block;
+            height: 5px;
+            left: 0;
+            position: absolute;
+            top: 5px;
+            width: 5px;
+        }
+
+        .book_process li{
+        background-image: url("../skin/hotel/image/un_hotel_join_bg.png");
+        background-repeat: no-repeat;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .bg{background: #fff;}
+</style>
+<!-- <script src="{DT_SKIN}new/jquery-1.8.2.min.js"></script>
+<script>
+	$(function(){
+		
+	})
+</script> -->
+
+<script type="text/javascript">c(1);</script>
+<div class="book_process process_step1" style="width: 1000px;"><ol><li><i class="arr"></i>基本信息</li><li><i class="arr"></i>酒店信息</li><li class="done"><i class="arr"></i>房型提交</li><li><i class="arr"></i>提交完成</li></ol></div>
+<div class="w1180 bg">
+	
+<div  style="width:100%">
+            <!--menus-->
+            <div class="m bg">
+                <a class="active">加盟酒店注册--房型提交</a>
+                
+            </div>
+</div>
+<div class="menu bg">
+
+<table cellpadding="0" cellspacing="0">
+
+<tr>
+
+<td class="tab" id="add" style="background-color: #3d95e5"><a href="?mid=16&action=add"><span style="color: #FFF;">添加房型</span></a></td>
+
+
+</tr>
+
+</table>
+
+</div>
+
+{if $action=='add' || $action=='edit'}
+
+<iframe src="" name="send" id="send" style="display:none;"></iframe>
+
+<form method="post" id="dform" action="?" target="send" onsubmit="return check();">
+
+<input type="hidden" name="action" value="{$action}"/>
+
+<input type="hidden" name="mid" value="{$mid}"/>
+
+<input type="hidden" name="itemid" value="{$itemid}"/>
+
+<input type="hidden" name="forward" value="{$forward}"/>
+
+<input type="hidden" name="jihuo" value="A"/>
+<table cellpadding="6" cellspacing="1" class="tb_ebooking_list bg">
+
+{if $status==1 && $action=='edit' && $note}
+
+<tr>
+
+<td class="tl">未通过原因</td>
+
+<td class="tr f_blue">{$note}</td>
+
+</tr>
+
+{/if}
+
+<tr>
+
+<td class="tl"><span class="f_red">*</span> 房型分类</td>
+
+<td class="tr"><div id="catesch"></div>{ajax_category_select('post[catid]', '选择分类', $catid, $moduleid, $DT_TOUCH ? '' : 'size="2" style="height:120px;width:180px;"')}<span id="dcatid" class="f_red"></span></td>
+
+</tr>
+
+<tr>
+
+<td class="tl"><span class="f_red">*</span> 房型名称</td>
+
+<td class="tr f_gray"><input name="post[title]" type="text" id="title" size="50" value="{$title}"/> （2-30个字）<span id="dtitle" class="f_red"></span></td>
+
+</tr>
+
+<tr>
+
+<td class="tl"><span class="f_red">*</span> 房型价格</td>
+
+<td class="tr">
+<input name="post[step][p1]" type="text" size="10" value="{$p1}" id="p1"/>
+<span id="dp1" class="f_red"></span>
+</td>
+
+</tr>
+<tr>
+
+<td class="tl"><span class="f_red">*</span> 最高价格</td>
+
+<td class="tr">
+<input name="post[hiprice]" type="text" size="10" value="{$hiprice}" id="hiprice"/>
+<span id="dhiprice" class="f_red"></span>
+</td>
+
+</tr>
+<tr>
+
+<td class="tl"><span class="f_red">*</span> 房型库存</td>
+
+<td class="tr"><input name="post[amount]" type="text" size="10" value="{$amount}" id="amount"/> <input name="post[unit]" type="text" size="2" value="{if $unit}{$unit}{else}间{/if}" id="unit" title="计量单位"/> <span id="damount" class="f_red"></span></td>
+
+</tr>
+<tr>
+<td class="tl"> 面积</td>
+<td class="tr"><input name="post[area]" type="text" size="10" value="{$area}" id="area"/> <span id="darea" class="f_red"></span></td>
+</tr>
+<tr>
+<td class="tl"> 楼层</td>
+<td class="tr"><input name="post[floor]" type="text" size="10" value="{$floor}" id="area"/> <span id="dfloor" class="f_red"></span></td>
+</tr>
+<tr>
+<td class="tl"> 床型</td>
+<td class="tr"><input name="post[bedtype]" type="text" size="10" value="{$bedtype}" id="area"/> <span id="dbedtype" class="f_red"></span></td>
+</tr>
+<tr>
+<td class="tl"> 早餐</td>
+<td class="tr">
+<select name="post[breakfastdesc]">
+  <option value="含早餐" {if $breakfastdesc=='含早餐'}selected{/if}>含早餐</option>
+  <option value="不含早餐" {if $breakfastdesc=='不含早餐'}selected{/if}>不含早餐</option>
+</select>
+</td>
+</tr>
+<tr>
+<td class="tl"> 宽带</td>
+<td class="tr">
+<select name="post[netdesc]">
+  <option value="有免费宽带" {if $netdesc=='有免费宽带'}selected{/if} >有免费宽带</option>
+  <option value="无免费宽带" {if $netdesc=='无免费宽带'}selected{/if}>无免费宽带</option>
+</select>
+</td>
+</tr>
+<tr>
+<td class="tl"> 其他服务信息</td>
+<td class="tr">
+<textarea name="post[service]" style="width:300px;">{$service}</textarea>
+</td>
+</tr>
+{if $CP}
+
+<script type="text/javascript">
+
+var property_catid = {$catid};
+
+var property_itemid = {$itemid};
+
+var property_admin = 0;
+
+</script>
+
+<script type="text/javascript" src="{DT_STATIC}file/script/property.js"></script>
+
+<tbody id="load_property" style="display:none;">
+
+<tr><td></td><td></td></tr>
+
+</tbody>
+
+{/if}
+
+
+<tr>
+
+<td class="tl">房型图片</td>
+
+<td class="tr">
+
+	<input type="hidden" name="post[thumb]" id="thumb" value="{DT_PATH}{$thumb}"/>
+
+
+	<input type="hidden" name="post[thumb1]" id="thumb1" value="{DT_PATH}{$thumb1}"/>
+
+	<input type="hidden" name="post[thumb2]" id="thumb2" value="{DT_PATH}{$thumb2}"/>
+
+
+	<table width="360">
+
+	<tr align="center" height="120" class="c_p">
+
+	<td width="120"><img src="{if $thumb}{DT_PATH}{$thumb}{else}{DT_SKIN}image/waitpic.gif{/if}" width="100" height="100" id="showthumb" title="预览图片" alt="" onclick="if(this.src.indexOf('waitpic.gif') == -1){_preview(Dd('showthumb').src, 1);}else{Dalbum('',{$moduleid},{$MOD[thumb_width]},{$MOD[thumb_height]}, '{DT_PATH}'+Dd('thumb').value, true);}"/></td>
+
+
+	<td width="120"><img src="{if $thumb1}{DT_PATH}{$thumb1}{else}{DT_SKIN}image/waitpic.gif{/if}" width="100" height="100" id="showthumb1" title="预览图片" alt="" onclick="if(this.src.indexOf('waitpic.gif') == -1){_preview(Dd('showthumb1').src, 1);}else{Dalbum(1,{$moduleid},{$MOD[thumb_width]},{$MOD[thumb_height]}, Dd('thumb1').value, true);}"/></td>
+
+
+
+	<td width="120"><img src="{if $thumb2}{DT_PATH}{$thumb2}{else}{DT_SKIN}image/waitpic.gif{/if}" width="100" height="100" id="showthumb2" title="预览图片" alt="" onclick="if(this.src.indexOf('waitpic.gif') == -1){_preview(Dd('showthumb2').src, 1);}else{Dalbum(2,{$moduleid},{$MOD[thumb_width]},{$MOD[thumb_height]}, Dd('thumb2').value, true);}"/></td>
+
+
+
+	</tr>
+
+	<tr align="center" class="c_p">
+
+	<td><img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/img_upload.gif" width="12" height="12" title="上传" onclick="Dalbum('',{$moduleid},{$MOD[thumb_width]},{$MOD[thumb_height]}, Dd('thumb').value, true);"/>&nbsp;&nbsp;<img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/img_select.gif" width="12" height="12" title="选择" onclick="selAlbum('');"/>&nbsp;&nbsp;<img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/img_delete.gif" width="12" height="12" title="删除" onclick="delAlbum('','wait');"/></td>
+
+
+
+	<td><img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/img_upload.gif" width="12" height="12" title="上传" onclick="Dalbum(1,{$moduleid},{$MOD[thumb_width]},{$MOD[thumb_height]}, Dd('thumb1').value, true);"/>&nbsp;&nbsp;<img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/img_select.gif" width="12" height="12" title="选择" onclick="selAlbum(1);"/>&nbsp;&nbsp;<img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/img_delete.gif" width="12" height="12" title="删除" onclick="delAlbum(1,'wait');"/></td>
+
+	<td><img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/img_upload.gif" width="12" height="12" title="上传" onclick="Dalbum(2,{$moduleid},{$MOD[thumb_width]},{$MOD[thumb_height]}, Dd('thumb2').value, true);"/>&nbsp;&nbsp;<img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/img_select.gif" width="12" height="12" title="选择" onclick="selAlbum(2);"/>&nbsp;&nbsp;<img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/img_delete.gif" width="12" height="12" title="删除" onclick="delAlbum(2,'wait');"/></td>
+
+
+
+	</tr>
+
+	</table>
+
+	<span id="dthumb" class="f_red"></span>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td class="tl"><span class="f_red">*</span> 房型详情</td>
+
+<td class="tr f_gray"><textarea name="post[content]" id="content" class="dsn">{$content}</textarea>
+
+{deditor($moduleid, 'content', $group_editor, '100%', 350)}<br/><span id="dcontent" class="f_red"></span>
+
+</td>
+
+</tr>
+
+{if $MOD[swfu] == 1 && DT_EDITOR == 'fckeditor' && !$DT_TOUCH}
+
+{php include DT_ROOT.'/api/swfupload/editor.inc.php';}
+
+{/if}
+
+
+{if $need_question}
+
+<tr>
+
+<td class="tl"><span class="f_red">*</span> 验证问题</td>
+
+<td class="tr">{template 'question', 'chip'} <span id="danswer" class="f_red"></span></td>
+
+</tr>
+
+{/if}
+
+{if $need_captcha}
+
+<tr>
+
+<td class="tl"><span class="f_red">*</span> 验证码</td>
+
+<td class="tr">{template 'captcha', 'chip'} <span id="dcaptcha" class="f_red"></span></td>
+
+</tr>
+
+{/if}
+
+
+
+<tr>
+
+<td class="tl">&nbsp;</td>
+
+<td class="tr" height="50"><input type="submit" name="submit" value=" 提 交 " class="btn"/>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value=" 返 回 " class="btn" onclick="history.back(-1);"/></td>
+
+</tr>
+
+</table>
+
+</form>
+
+{load('clear.js')}
+
+{if $action=='add'}
+
+<script type="text/javascript">s('mid_{$mid}');m('{$action}');</script>
+
+{else}
+
+<script type="text/javascript">s('mid_{$mid}');m('s{$status}');</script>
+
+{/if}
+
+{elseif $action=='relate'}
+
+<form method="post" action="?" id="dform">
+
+<input type="hidden" name="mid" value="{$mid}"/>
+
+<input type="hidden" name="action" value="{$action}"/>
+
+<input type="hidden" name="itemid" value="{$itemid}"/>
+
+<input type="hidden" name="forward" value="{$forward}"/>
+
+<table cellpadding="2" cellspacing="1" class="tb_ebooking_list">
+
+<tr>
+
+<td class="tl">关联名称</td>
+
+<td class="tr f_gray"><input type="text" size="20" name="relate_name" id="relate_name" value="{$M[relate_name]}"/>&nbsp;&nbsp; 例如“颜色”、“尺寸”、“型号”等</td>
+
+</tr>
+
+<tr>
+
+<td colspan="2" class="tr">
+
+{loop $lists $k $v}
+
+<div style="width:130px;float:left;">
+
+	<table width="120">
+
+	<tr align="center" height="110" class="c_p">
+
+	<td width="120"><a href="{$MOD[linkurl]}{$v[linkurl]}" target="_blank"><img src="{$v[thumb]}" width="100" height="100" alt=""/></a></td>
+
+	</tr>
+
+	<tr align="center">
+
+	<td>标题 <input type="text" size="8" name="post[{$v[itemid]}][relate_title]" value="{$v[relate_title]}"/></td>
+
+	</tr>
+
+	<tr align="center">
+
+	<td>排序 <input type="text" size="8" name="post[{$v[itemid]}][listorder]" value="{$k}"/></td>
+
+	</tr>
+
+	<tr align="center">
+
+	<td><a href="?mid={$mid}&action=relate_del&itemid={$itemid}&id={$v[itemid]}" onclick="return _delete();" class="t">[移除]</a></td>
+
+	</tr>
+
+	</table>
+
+</div>
+
+{/loop}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td colspan="2">
+
+&nbsp;<input type="submit" name="submit" value="更 新" class="btn"/>
+
+&nbsp;<input type="button" value="新增房型" onclick="add();" class="btn"/></td>
+
+</tr>
+
+</table>
+
+</form>
+
+<form method="post" action="?" id="dform_add">
+
+<input type="hidden" name="mid" value="{$mid}"/>
+
+<input type="hidden" name="action" value="relate_add"/>
+
+<input type="hidden" name="itemid" value="{$itemid}"/>
+
+<input type="hidden" name="id" id="id" value="0"/>
+
+<input type="hidden" name="relate_name" id="relate_name_add" value=""/>
+
+</form>
+
+<script type="text/javascript">
+
+function add() {
+
+	if(Dd('relate_name').value.length < 2) {
+
+		alert('请填写关联名称');
+
+		Dd('relate_name').focus();
+
+		return;
+
+	}
+
+	Dd('relate_name_add').value = Dd('relate_name').value;
+
+	select_item('{$mid}&username={$M[username]}', 'relate');
+
+}
+
+</script>
+
+<script type="text/javascript">s('mid_{$mid}');m('s3');</script>
+
+{else}
+
+<div class="tt bg">
+
+<form action="?">
+<div class="chongzhi">
+<input type="hidden" name="mid" value="{$mid}"/>
+
+<input type="hidden" name="status" value="{$status}"/>
+
+
+
+<input type="text" size="30" name="kw" value="{$kw}" title="关键词"/>&nbsp;
+
+
+
+<input type="submit" value=" 搜 索 " class="btn"/>
+
+<input type="button" value=" 重 置 " class="btn" onclick="Go('?mid={$mid}&status={$status}');"/>
+
+</div>
+
+<div class="b10"></div>
+
+</form>
+
+</div>
+
+<div class="ls bg">
+
+<form method="post">
+
+<table cellpadding="0" cellspacing="0" class="tb_ebooking_list">
+
+<tr>
+
+<th width="20"><input type="checkbox" onclick="checkall(this.form);"/></th>
+
+<th width="60">图片</th>
+
+<th width="60">借款类型</th>
+
+<th width="60">价格</th>
+
+<th width="60">最高价格</th>
+
+
+
+<th width="60">管理</th>
+
+</tr>
+
+{loop $lists $k $v}
+
+<tr onmouseover="this.className='on';" onmouseout="this.className='';" align="center">
+
+<td><input type="checkbox" name="itemid[]" value="{$v[itemid]}"/></td>
+
+<td><a href="javascript:_preview('{DT_PATH}{$v[thumb]}');"><img src="{if $v[thumb]}{DT_PATH}{$v[thumb]}{else}{DT_SKIN}image/nopic50.gif{/if}" width="50" class="thumb"/></a></td>
+
+<td align="left" title="{$v[alt]}"><ul><li>&nbsp;{if $v[elite]}<span class="f_red" title="公司主页推荐">[荐]</span> {/if}{$v[title]}{if $v[status]==1 && $v[note]} <a href="javascript:" onclick="alert('{$v[note]}');"><img src="{DT_STATIC}{$MODULE[2][moduledir]}/image/why.gif" title="未通过原因"/></a>{/if}</li><li title="更新时间 {timetodate($v[edittime], 5)} 添加时间 {timetodate($v[addtime], 5)}" class="px11 f_gray">&nbsp;{if $timetype=='add'}{timetodate($v[addtime], 5)}{else}{timetodate($v[edittime], 5)}{/if}</li></ul></td>
+
+<td class="f_price">{$v[price]}</td>
+
+<td class="f_price" >{$v[hiprice]}</td>
+
+<td>
+
+<a href="?mid={$mid}&action=edit&itemid={$v[itemid]}"><img width="16" height="16" src="{DT_STATIC}{$MODULE[2][moduledir]}/image/edit.png" title="修改" alt=""/></a>
+
+<a href="?mid={$mid}&action=delete&itemid={$v[itemid]}" onclick="return confirm('确定要删除吗？此操作将不可撤销');"><img width="16" height="16" src="{DT_STATIC}{$MODULE[2][moduledir]}/image/delete.png" title="删除" alt=""/></a>
+
+</td>
+
+</tr>
+
+{/loop}
+
+</table>
+
+</div>
+
+
+
+</form>
+
+
+
+<div class="pages bg">{$pages}</div>
+<a href="reghotel4.php" style="background-color: #d64c4c;color: #fff;font-size: 16px;height: 34px;width: 195px;border: 0 none;padding:5px 20px;margin-bottem:20px;">下一步</a>
+</div>
+<script type="text/javascript">s('mid_{$mid}');m('s{$status}');</script>
+
+{/if}
+
+{if $action == 'add' || $action == 'edit'}
+
+<script type="text/javascript">
+
+function _p() {
+
+	if(Dd('tag').value) {
+
+		Ds('reccate');
+
+	}
+
+}
+
+function check() {
+
+	var l;
+
+	var f;
+
+
+
+	f = 'catid_1';
+
+	if(Dd(f).value == 0) {
+
+		Dmsg('请选择房型分类', 'catid', 1);
+
+		return false;
+
+	}
+
+	f = 'title';
+
+	l = Dd(f).value.length;
+
+	if(l < 2) {
+
+		Dmsg('房型名称最少2字，当前已输入'+l+'字', f);
+
+		return false;
+
+	}
+
+
+	f = 'amount';
+
+	l = Dd(f).value;
+
+	if(l < 1) {
+
+		Dmsg('请填写库存', f);
+
+		return false;
+
+	}
+
+
+	f = 'hiprice';
+
+	l = Dd(f).value;
+
+	if(l < 1) {
+
+		Dmsg('请填写最高价格', f);
+
+		return false;
+
+	}
+
+	f = 'thumb';
+
+	l = Dd(f).value.length;
+
+	if(l < 5) {
+
+		Dmsg('请上传第一张房型图片', f, 1);
+
+		return false;
+
+	}
+
+	f = 'content';
+
+	l = FCKLen();
+
+	if(l < 15 || l > 50000) {
+
+		Dmsg('详细说明应为15-50000字，当前已输入'+l+'字', f);
+
+		return false;
+
+	}
+
+
+
+	if(Dd('v1').value) {
+
+		if(!Dd('n1').value) {
+
+			alert('请填写属性名称');
+
+			Dd('n1').focus();
+
+			return false;
+
+		}
+
+		if(Dd('v1').value.indexOf('|') == -1) {
+
+			alert(Dd('n1').value+'至少需要两个属性');
+
+			Dd('v1').focus();
+
+			return false;
+
+		}
+
+	}
+
+	if(Dd('v2').value) {
+
+		if(!Dd('n2').value) {
+
+			alert('请填写属性名称');
+
+			Dd('n2').focus();
+
+			return false;
+
+		}
+
+		if(Dd('v2').value.indexOf('|') == -1) {
+
+			alert(Dd('n2').value+'至少需要两个属性');
+
+			Dd('v2').focus();
+
+			return false;
+
+		}
+
+	}
+
+	if(Dd('v3').value) {
+
+		if(!Dd('n3').value) {
+
+			alert('请填写属性名称');
+
+			Dd('n3').focus();
+
+			return false;
+
+		}
+
+		if(Dd('v3').value.indexOf('|') == -1) {
+
+			alert(Dd('n3').value+'至少需要两个属性');
+
+			Dd('v3').focus();
+
+			return false;
+
+		}
+
+	}
+
+	if(Dd('n1').value && (Dd('n1').value == Dd('n2').value || Dd('n1').value == Dd('n3').value)) {
+
+		alert('属性名称不能重复');
+
+		return false;
+
+	}
+
+	if(Dd('n2').value && (Dd('n2').value == Dd('n1').value || Dd('n2').value == Dd('n3').value)) {
+
+		alert('属性名称不能重复');
+
+		return false;
+
+	}
+
+	if(Dd('n3').value && (Dd('n3').value == Dd('n1').value || Dd('n3').value == Dd('n2').value)) {
+
+		alert('属性名称不能重复');
+
+		return false;
+
+	}
+
+	if(Dd('express_name_1').value && (Dd('express_name_1').value == Dd('express_name_2').value || Dd('express_name_1').value == Dd('express_name_3').value)) {
+
+		alert('快递名称不能重复');
+
+		return false;
+
+	}
+
+	if(Dd('express_name_2').value && (Dd('express_name_2').value == Dd('express_name_1').value || Dd('express_name_2').value == Dd('express_name_3').value)) {
+
+		alert('快递名称不能重复');
+
+		return false;
+
+	}
+
+	if(Dd('express_name_3').value && (Dd('express_name_3').value == Dd('express_name_1').value || Dd('express_name_3').value == Dd('express_name_2').value)) {
+
+		alert('快递名称不能重复');
+
+		return false;
+
+	}
+
+
+
+	{if $FD}{fields_js()}{/if}
+
+	{if $CP}{property_js()}{/if}
+
+{if $need_password}
+
+	f = 'password';
+
+	l = Dd(f).value.length;
+
+	if(l < 6) {
+
+		Dmsg('请填写支付密码', f);
+
+		return false;
+
+	}
+
+{/if}
+
+{if $need_question}
+
+	f = 'answer';
+
+	l = Dd(f).value.length;
+
+	if(l < 1) {
+
+		Dmsg('请填写验证问题', f);
+
+		return false;
+
+	}
+
+	if(Dd('c'+f).innerHTML.indexOf('error') != -1) {
+
+		Dd(f).focus();
+
+		return false;
+
+	}
+
+{/if}
+
+{if $need_captcha}
+
+	f = 'captcha';
+
+	l = Dd(f).value;
+
+	if(!is_captcha(l)) {
+
+		Dmsg('请填写正确的验证码', f);
+
+		return false;
+
+	}
+
+	if(Dd('c'+f).innerHTML.indexOf('error') != -1) {
+
+		Dd(f).focus();
+
+		return false;
+
+	}
+
+{/if}
+
+	return Dstep();
+
+}
+
+function Dexpress(i, s) {
+
+	if(Dd('express_'+i).value > 0) {
+
+		var t1 = s.split('[');
+
+		var t2 = t1[1].split(',');
+
+		Dd('express_name_'+i).value = t2[0];
+
+		Dd('fee_start_'+i).value = t2[1];
+
+		Dd('fee_step_'+i).value = t2[2];
+
+	} else {
+
+		Dd('express_name_'+i).value = '';
+
+		Dd('fee_start_'+i).value = '';
+
+		Dd('fee_step_'+i).value = '';
+
+	}
+
+}
+
+function Nexpress(i, s) {
+
+	Dd('express_name_1').value = s;
+
+	Dd('fee_start_1').value = i;
+
+	Dd('fee_step_1').value = '0.00';
+
+	$('#express_1').val(0);
+
+	Dd('express_name_2').value = '';
+
+	Dd('fee_start_2').value = '0.00';
+
+	Dd('fee_step_2').value = '0.00';
+
+	$('#express_2').val(0);
+
+	Dd('express_name_3').value = '';
+
+	Dd('fee_start_3').value = '0.00';
+
+	Dd('fee_step_3').value = '0.00';
+
+	$('#express_3').val(0);
+
+}
+
+function Dstep() {
+
+	Dd('p_a_1').innerHTML=Dd('p_p_1').innerHTML=Dd('p_a_2').innerHTML=Dd('p_p_2').innerHTML=Dd('p_a_3').innerHTML=Dd('p_p_3').innerHTML='';
+
+	var a1 = parseInt(Dd('a1').value);
+
+	var p1 = parseFloat(Dd('p1').value);
+
+	var a2 = parseInt(Dd('a2').value);
+
+	var p2 = parseFloat(Dd('p2').value);
+
+	var a3 = parseInt(Dd('a3').value);
+
+	var p3 = parseFloat(Dd('p3').value);
+
+	var u = Dd('unit').value;
+
+	if(u.length < 1) Dd('unit').value = u = '件';
+
+	var m = '{$DT[money_unit]}';
+
+	if(!a1 || a1 < 1) {
+
+		alert('起订量必须大于0');
+
+		Dd('a1').value = '1';
+
+		Dd('a1').focus();
+
+		return false;
+
+	}
+
+	if(!p1 || p1 < 0.1) {
+
+		alert('请填写房型价格');
+
+		Dd('p1').value = '';
+
+		Dd('p1').focus();
+
+		return false;
+
+	}
+
+	Dd('p_a_1').innerHTML = a1+u+'以上';
+
+	Dd('p_p_1').innerHTML = p1+m+'/'+u;
+
+	if(a2 > 1 && p2 > 0.01) {
+
+		if(a2 <= a1) {
+
+			alert('数量必须大于'+a1);
+
+			Dd('a2').value = '';
+
+			Dd('a2').focus();
+
+			return false;
+
+		}
+
+		if(p2 >= p1) {
+
+			alert('价格必须小于'+p1);
+
+			Dd('p2').value = '';
+
+			Dd('p2').focus();
+
+			return false;
+
+		}
+
+		Dd('p_a_1').innerHTML = a1+'-'+a2+u;
+
+		Dd('p_p_1').innerHTML = p1+m+'/'+u;
+
+		Dd('p_a_2').innerHTML = '>'+a2+u;
+
+		Dd('p_p_2').innerHTML = p2+m+'/'+u;
+
+	}
+
+	if(a3 > 1 && p3 > 0.01) {
+
+		if(a3 <= a2) {
+
+			alert('数量必须大于'+a2);
+
+			Dd('a3').value = '';
+
+			Dd('a3').focus();
+
+			return false;
+
+		}
+
+		if(p3 >= p2) {
+
+			alert('价格必须小于'+p2);
+
+			Dd('p3').value = '';
+
+			Dd('p3').focus();
+
+			return false;
+
+		}
+
+		Dd('p_a_2').innerHTML = (a2+1)+'-'+a3+u;
+
+		Dd('p_p_2').innerHTML = p2+m+'/'+u;
+
+		Dd('p_a_3').innerHTML = '>'+a3+u;
+
+		Dd('p_p_3').innerHTML = p3+m+'/'+u;
+
+	}
+
+	return true;
+
+}
+
+var destoon_oauth = '{$EXT[oauth]}';
+
+</script>
+
+{/if}
+
+{if $action=='add' && strlen($EXT[oauth]) > 1}{load('weibo.js')}{/if}
+
+{template 'hotel_footer1', 'member'}

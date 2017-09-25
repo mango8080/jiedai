@@ -1,0 +1,191 @@
+{template 'header'}
+      
+      <div class="w1200" >
+
+      	<div id="ad" style="width: 260px;height: 160px;position: absolute;left: 0;top: 0;z-index: 100;">
+			<div style="border-bottom: 1px solid gray;height: 40px;background: #e83b0c;text-align: center;line-height: 40px;font-size: 16px;color: #FFF;">出差网使用说明</div>
+			<div style="background: #FFFFE0;height: 110px;">
+			<!--{php $shuoming=tag("table=announce&condition=typeid=2&areaid=$cityid&pagesize=5&order=addtime desc&template=null")}-->
+				<ul>
+				{loop $shuoming $s $sc}
+				<li style="padding-left:10px; line-height:20px; font-size:16px;"><a href="{$sc[linkurl]}" target="_blank">{dsubstr($sc[title],24)}</a></li>	
+				{/loop}
+				</ul>
+
+			</div>
+
+      	</div>
+		
+		<div class="homeRight tabBox">
+		  <div class="title">
+		    <h2 class="tabs"><span id="one-click">最新公告</span></h2>
+		    <h2 class="tabs" style="margin-left:200px;"><span id="two-click">新闻中心</span></h2>
+		  </div>
+
+		  <div class="hotel_address clearfix">
+
+		    <div class="right_list fl clearfix" id="one" style="display: inline-block;">
+		    <!--{php $announce=tag("table=announce&condition=typeid=1&areaid=$cityid&pagesize=7&order=addtime desc&template=null")}-->
+		      <ul class="fl" style="display: inline-block;">
+		      {loop $announce $k $t}
+		        <li>
+		          <a href="{$t[linkurl]}" target="_blank">{dsubstr($t[title],30)}</a>
+		        </li>
+		          {php $id=$t[itemid];}
+		      {/loop}  
+		      </ul>
+
+		      <!--{php $news=tag("moduleid=24&condition=status=3&areaid=$cityid&pagesize=7&order=addtime desc&template=null")}-->
+		      <ul class="fl" style="margin-left:50px";>
+		      {loop $news $k $t}
+		        <li>
+		          <a href="{$t[linkurl]}" target="_blank">{dsubstr($t[title],30)}</a>
+		        </li>
+		      {/loop}  
+		      </ul>
+		    </div>
+
+		   <!--  <div class="right_list fl clearfix" style="margin-left: 238px;font-size:14px;display: inline-block;" id="two">
+		   惠动“双十一” 维也纳酒店携“阿里旅行”掀乐购狂欢，双十一要来了！
+		   </div> -->
+
+		  </div>
+		</div>
+
+		<div class="homeLeft">
+		  <div class="erweima">
+		    <a href="#" target="_blank" rel="nofollow">
+		      <img src="{DT_SKIN}image/erweima.jpg" style="display: block;width: 630px;height: 300px;"></a>
+		  </div>
+		</div>
+
+         <img src="{DT_SKIN}image/banner4.jpg" style="margin-top: 15px;">
+
+        <div class="clear_float"></div>
+      </div>
+
+
+
+	<div class="pub_wrap recom_brand" style="margin-bottom:40px;">
+	<div class="clearfix">
+	
+	<h2 class="clearfix"><a class="pr10" href="" target="_blank">合作品牌</a></h2>
+	</div>
+	<div class="mt20 recom_brand_b">
+	<ul class="recom_brand_list">
+<!--{php $brand=tag("moduleid=26&condition=status=3&areaid=$cityid&pagesize=16&order=addtime desc&template=null")}-->
+{loop $brand $bc}
+	<li>
+		<a class=""  href="{$bc['linkurl']}" target="_blank">
+		<i class="zhouji"><img src="{$bc['thumb']}" width="110" height="80"></i>
+		<p>{$bc['title']}</p>
+		</a>
+	</li>
+	{/loop}
+	</ul>
+	</div>
+	<div class="recom_brand_prev" style="display: none;"></div>
+	<div class="recom_brand_next"></div>
+	</div>
+
+	<div class="homeRotator" style="width:1200px;margin:0 auto;">
+	  <div class="w1200">
+	    <div class="searchBox tabBox" style="margin-left: 53px;background:#f0f0f0"">
+	    <form action="company/search.php" method="get">
+	      
+	      <div class="tabs">
+	        <span class="on">酒店搜索</span></div>
+	      <div class="tabMain" style="display: block;">
+	        <div class="lable city">
+	          <span class="name">入住城市</span>
+	          <div class="city_box">
+	            
+	            	<input type="text" value="" size="15" id="homecity_name" class="input_txt city_input" name="homecity_name" mod="address|notice" mod_address_source="hotel"  mod_address_reference="cityid" mod_notice_tip="请选择地点" />
+	            	<input id="cityid" name="areaid" type="hidden" value="{$cityid}" />
+	            	<div id="jsContainer" class="jsContainer" style="height:0">
+	            	</div>
+
+	          </div>
+	        </div>
+	        <div class="clear_float"></div>
+	        <div class="lable">
+	          <span class="name">入住时间</span>
+	          <input name="Check_in_date" class="w210 dateCheckIn hasDatepicker" id="Check_in_date" value="{date('Y-m-d')}" readonly="readonly" type="text" onfocus="ca_show('Check_in_date', this, '-');"  ondblclick="this.value='';"/></div>
+	        <div class="lable">
+	          <span class="name">离店时间</span>
+	          <input name="Check_out_date" class="w210 dateCheckOut hasDatepicker" id="Check_out_date" value="{date('Y-m-d',strtotime('+1 day'))}" readonly="readonly" type="text" onfocus="ca_show('Check_out_date', this, '-');"  ondblclick="this.value='';"/></div>
+	        <div class="lable keyword">
+	          <span class="name">关键字</span>
+	          <div class="kw">
+	            <input name="kw" autocomplete="off" id="key_input" class="input_txt kw_input" title="" type="text" value="" placeholder="酒店名称/地标" onclick="this.value='';">
+	           </div>
+	        </div>
+	        <div class="lable btn">
+	          <span class="name">&nbsp;</span>
+	          <input type="submit" value="搜索" class="btn1">
+	          </div>
+	      </div>
+	       </form>
+	    </div>
+	  </div>
+	  <div class="slidebox" style="background-image: url(&quot;{DT_SKIN}image/banner.jpg&quot;); background-position:-160px 0px; opacity: 1;"></div>
+	</div>
+
+<script type="text/javascript" src="/lang/zh-cn/lang.js"></script>
+
+<script type="text/javascript" src="{DT_STATIC}file/script/common.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/calendar.js"></script>
+
+<script type="text/javascript" src="{DT_STATIC}file/script/fixdiv.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/address.js"></script>
+<script src="{DT_STATIC}file/script/jquery-1.8.2.min.js"></script>
+
+<script>
+	var move=$("#ad");
+	var x=0;
+	var y=0;
+	var xs=2;
+	var ys=2;
+
+	function go(){
+		x+=xs;
+		y+=ys;
+		if (x>=$(window).width()-265||x<0) {
+			xs=-1*xs;
+			
+		}
+
+		if (y>=$(document).height()-160||y<0) {
+			ys=-1*ys;
+			
+		}
+
+		move.offset({top:y,left:x});
+	}
+
+
+	var timer=setInterval("go()",100);
+
+	move.hover(function(){
+		clearInterval(timer);
+	},function(){
+		timer=setInterval("go()",100)
+	})
+
+</script>
+<script type="text/javascript">
+	var browser=navigator.appName
+	var b_version=navigator.appVersion
+	var version=b_version.split(";");
+	var trim_Version=version[1].replace(/[ ]/g,"");
+	if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE6.0"){
+		if(confirm('您的浏览器版本过低，是否升级至IE8？')){
+			location.href="app/IE8.exe";
+		}
+	}else if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE7.0"){
+		if(confirm('您的浏览器版本过低，是否升级至IE8？')){
+			location.href="app/IE8.exe";
+		}
+	}
+</script>
+{template 'footer'}      

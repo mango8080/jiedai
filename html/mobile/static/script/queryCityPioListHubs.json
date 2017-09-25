@@ -1,0 +1,36 @@
+{
+	"result":[
+		{
+			"id":5928,
+			"cityName":"南京",
+			"title":"景点",
+			"name":"大屠杀遇难同胞纪念馆",
+			"location":"32.035269,118.741887",
+			"pinYin":"datushayunantongbaojinianguan",
+			"synopsis":"dtsyntbjng",
+			"createTime":"Mar 24, 2016 12:39:49 PM",
+			"modifyTime":"Apr 11, 2016 10:49:59 PM"
+		},{
+			"id":5931,
+			"cityName":"南京",
+			"title":"景点",
+			"name":"南京大学",
+			"location":"32.055956,118.779759",
+			"pinYin":"nanjingdaxue",
+			"synopsis":"njdx",
+			"createTime":"Mar 24, 2016 12:39:49 PM",
+			"modifyTime":"Apr 11, 2016 10:49:59 PM"
+		},{
+			"id":5938,
+			"cityName":"南京",
+			"title":"景点",
+			"name":"长江大桥",
+			"location":"32.114482,118.743698",
+			"pinYin":"zhangjiangdaqiao",
+			"synopsis":"zjdq",
+			"createTime":"Mar 24, 2016 12:39:49 PM",
+			"modifyTime":"Apr 11, 2016 10:49:59 PM"
+		}
+	],
+	"stat":1
+}

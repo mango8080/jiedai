@@ -1,0 +1,1 @@
+<?php defined('IN_DESTOON') or exit('Access Denied'); return array (24 => array ('catid' => '24','catname' => '合作酒店','style' => '','catdir' => '24','linkurl' => 'list.php?catid=24','letter' => '','level' => '1','property' => '0','parentid' => '0','arrparentid' => '0','child' => '0','arrchildid' => '24',),); ?>

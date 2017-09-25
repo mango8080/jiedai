@@ -1,0 +1,164 @@
+{template 'hotel_header1', 'member'}
+<link href="{DT_SKIN}new/page_pub.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}reg.css">
+<style>
+  body{background: #ececec;}
+  .w1180{width: 1000px;margin:0 auto;}
+  .menu {
+      border-bottom: 2px solid #3d95e5;
+      border-left: 1px solid #ededed;
+      height: 35px;
+      letter-spacing: 1px;
+      margin: 0 0 15px;
+      overflow: hidden;
+  }
+  .tab {
+      border-right: 1px solid #ededed;
+      border-top: 1px solid #ededed;
+  }
+  
+  table {
+      border-collapse: collapse;
+      border-spacing: 0;
+  }
+.tab_on {
+    background: #3d95e5 none repeat scroll 0 0;
+}
+
+.tab_on a:link, .tab_on a:visited, .tab_on a:active, .tab_on a:hover {
+    color: #ffffff;
+    display: block;
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 15px;
+    text-decoration: none;
+}
+.tab a:link, .tab a:visited, .tab a:active {
+    color: #001c30;
+    font-size: 14px;
+    line-height: 35px;
+}
+.tab a:link, .tab a:visited, .tab a:active {
+    color: #001c30;
+    display: block;
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 15px;
+    text-decoration: none;
+}
+input,select{
+    font-size: 14px;
+    height: 23px;
+}
+.tt,.ls,.btns,.chongzhi{margin:15px 0;}
+#fangxing{background-color:#fff;-webkit-transition:color 0.2s ease 0s;-o-transition:color 0.2s ease 0s;transition:color 0.2s ease 0s;text-decoration:none;color:#288fe7;}
+
+.tb {
+    background: #ffffff none repeat scroll 0 0;
+    width: 100%;
+    font-size: 14px;
+}
+.tl {
+    letter-spacing: 0;
+    padding-right: 15px;
+    width: 90px;
+    background: #d4e9f9 none repeat ;
+    font-size: 14px;
+}
+.tr {
+    background: #ffffff none repeat scroll 0 0;
+}
+.f_gray {
+    color: #888888;
+}
+.f_red {
+    color: red;
+}
+.dhead{display:none;}
+
+#Dtop{width:300px;height: 200px;background: #FFF;}
+#Dsubmit,#remote_0{margin-left: 20px;}
+#remote_0{margin-top: 20px;}
+.dhead{margin:15px 20px;}
+#upalbum{margin:20px 20px;}
+.active{color: #d64c4c;
+    cursor: default;
+    display: block;
+    
+    font-size: 18px;
+    height: 50px;
+    line-height: 63px;
+    margin-right: 10px;
+    overflow: hidden;
+    padding: 0 50px;
+    
+    text-align: center;}
+        .book_process {
+            padding: 14px 0 23px;
+            width: 1180px;
+            background-color: #FFF;
+            margin:30px auto;
+            margin-bottom: 15px;
+        }
+
+        .book_process .done {
+            background-position: right 0;
+            color: #799d08;
+        }
+        .book_process li {
+            background-position: right -25px;
+            color: #999;
+            display: inline-block;
+            height: 15px;
+            line-height: 15px;
+            margin-left: 14px;
+            padding-left: 172px;
+            position: relative;
+        }
+
+        .book_process .done .arr {
+            background-position: 0 -5px;
+        }
+        .book_process .arr {
+            background-position: 0 -30px;
+            display: inline-block;
+            height: 5px;
+            left: 0;
+            position: absolute;
+            top: 5px;
+            width: 5px;
+        }
+
+        .book_process li{
+        background-image: url("../skin/hotel/image/un_hotel_join_bg.png");
+        background-repeat: no-repeat;
+        display: inline-block;
+        vertical-align: middle;
+    }
+</style>
+<!-- <script src="{DT_SKIN}new/jquery-1.8.2.min.js"></script>
+<script>
+	$(function(){
+		
+	})
+</script> -->
+
+
+<div class="w1180">
+  <div class="book_process process_step1" style="width: 1000px;"><ol><li><i class="arr"></i>基本信息</li><li><i class="arr"></i>酒店信息</li><li><i class="arr"></i>房型提交</li><li  class="done"><i class="arr"></i>提交完成</li></ol></div>
+	<div  style="width:100%; background: #FFF;" >
+	            <!--menus-->
+	            <div class="m">
+	                <a class="active">加盟酒店注册--资料提交完成</a>
+	                
+	            </div>
+	</div>
+	<div style="text-align:center;font-size:18px;background: #FFF; line-height:50px; heigth:50px; padding:10px;">
+		你的信息已提交，请耐心等待审核！
+	</div>
+</div>
+
+
+{template 'hotel_footer', 'member'}

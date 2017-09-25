@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* CSS Document */
+
+ /*详情页轮播图*/
+.focus{ width:100%;height:auto;    margin:0 auto; position:relative; overflow:hidden;   }
+.focus .hd{ width:100%; height:5px;  position:absolute; z-index:1; bottom:0; text-align:center;  }
+.focus .hd ul{ overflow:hidden; display:-moz-box; display:-webkit-box; display:box; height:5px; background-color:rgba(51,51,51,0.5);   }
+.focus .hd ul li{  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+.focus .hd ul .on{ background:#007aff;  }
+.focus .bd{ position:relative; z-index:0; }
+.focus .bd li img{ width:100%;  height:auto; }
+.focus .bd li a{ -webkit-tap-highlight-color:rgba(0, 0, 0, 0); /* 取消链接高亮 */ }
+
+ /*首页*/	
+.main{ padding:10px;}
+.main_t,.main_b{ width:100%; display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;}
+.main_t_l,.main_r_1{-webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1}
+.main_t_l{ display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;flex-flow:column}
+.main_l_1,.main_l_2,.main_b_1,.main_b_2{-webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1 padding:10px 0}
+.main_r_1{ padding:50px 0}
+
+.main_l_1{ background-color:#5ad7f5}
+.main_l_2{ background-color:#00c7bd}
+.main_r_1{ background-color:#ff5f56;}
+.main_b_1{ background-color:#f3af84}
+.main_b_2{ background-color:#ef93ce}
+.main_t,.main_l_1{ margin-bottom:10px}
+.main_t_l,.main_b_1{ margin-right:10px}
+.main a{ display:block; width:100%; height:100%; }
+.main a .box{ text-align:center; width:100px; margin:0 auto }
+.main a .box img{ width:36px; height:auto;vertical-align: middle;margin-top: 10px;}
+.main a .box p{ color:#FFF;}
+
+.index_bottom img{ width:100%; height:auto}
+
+.footer{ text-align:center; }
+.footer a{ color:#FF634C; display:inline-block; height:25px; line-height:25px}
+.footer a img{ float:left; margin-right:2px}
+.footer p{ font-size:12px; color:#b6b6b6}
+
+ /*用户登陆*/
+.head{ height:44px; line-height:44px; border-bottom:1px solid #CCC;  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; background: #fff;}
+.head a{ float:left; display:inline-block; width:22pxl; padding:0 10px}
+.head div{-webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1; text-align:center}
+
+.name label{ background: url(iconfont-ren.png) no-repeat 0 0; background-size:22px 22px}
+.password label{ background: url(password.png) no-repeat 0 0; background-size:22px 22px}
+.weui-cell_vcode label{ background: url(iconyzm_03.png) no-repeat 0 0; background-size:22px 22px}
+.weui-label{ padding-left:26px; width:60px; border-right:1px solid #CCC; margin-right:10px}
+.weui-btn_primary{ background-color:rgba(255, 99, 76, 1)!important}
+.foget {  height:auto; overflow:hidden; padding:0 20px}
+.foget a{ float:right; color:rgba(255, 99, 76, 1); height:36px; line-height:36px; text-decoration:underline}
+.register_btn {margin: 1.17647059em 15px .3em;}
+
+ /*注册*/
+.rigister_tel{background: url(tel.png) no-repeat 14px 11px; background-size:22px 22px; padding-left:42px}
+.rigister_v{background: url(iconyzm_03.png) no-repeat 14px 11px; background-size:22px 22px; padding-left:42px}
+.rigister_p{background: url(password.png) no-repeat 14px 11px; background-size:22px 22px; padding-left:42px}
+.rigister_name{background: url(iconfont-ren.png) no-repeat 14px 11px; background-size:22px 22px; padding-left:42px}
+.rigister_gender{background: url(iconfont-ren.png) no-repeat 14px 11px; background-size:22px 22px; padding-left:42px}
+.rigister_address{background: url(tel.png) no-repeat 14px 11px; background-size:22px 22px; padding-left:42px}
+.rigister_police{background: url(tel.png) no-repeat 14px 11px; background-size:22px 22px; padding-left:42px}
+.rigister_num{background: url(tel.png) no-repeat 14px 11px; background-size:22px 22px; padding-left:42px}
+
+ /*优惠精选*/
+
+.actives{ padding:10px}
+.actives a{ display:block}
+.actives img{ width:100%}
+.actives p{ padding:0 10px; height:40px}
+.actives span{ color:#666; display:inline-block}
+.actives span.l{ float:left}
+.actives span.r{ float:right}
+
+.weui-media-box__title{
+	color: #333;
+}
+.orderstate{
+	color: #ff634c;
+}
+.weui-panel__bd{
+	background: #fff;
+}
+.orderdetailtime{
+	background: #fff;text-align: center; padding: 8px 32px; border-bottom: 1px solid #ececec;
+}
+.orderdetailtime .tip{
+	font-size: 12px; color: #999;
+}
+/* .orderdetailtime #countdown{
+  color: #ff634c; font-size: 30px;
+} */
+#minute,#second,#dot{
+  color: #ff634c; font-size: 30px;
+}
+
+
+
+
+

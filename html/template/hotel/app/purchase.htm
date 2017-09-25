@@ -1,0 +1,836 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-control" content="no-cache">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="address=no" name="format-detection">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>预订信息</title>
+<link type="text/css" rel="stylesheet"  href="static/css/bootstrap.min.css">
+<!-- <link  type="text/css" rel="stylesheet" href="static/css1/bootstrap-datetimepicker.min.css"> -->
+<link type="text/css" rel="stylesheet"  href="static/css/base.css">
+<link type="text/css" rel="stylesheet"  href="static/css/default.css">
+<link type="text/css" rel="stylesheet"  href="static/css/iocn.css">
+<script type="text/javascript" src="static/script/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="static/script/bootstrap.min.js"></script>
+<script type="text/javascript" src="static/script/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="static/script/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript" src="static/script/time.js" ></script>
+<script type="text/javascript" src="static/script/zepto.min.js"></script>
+<script type="text/javascript" src="static/script/src/touch.js"></script>
+
+<style type="text/css">
+.coupons2,.select_date{position:fixed;  left:0; right:0;  top:0; bottom:0; width:100%; height:100%; overflow:hidden;  z-index:99;  background-color:#fff;  }
+select.ui-select,select.ui-select option{direction: rtl;}
+.book_info .info_list>.row .room_name{font-size:14px;}
+.book_info .info_list>.row .xinxi{font-size:14px;}
+ .bottom_box {
+    display: block;
+    width: 90%;
+    height: 45px;
+    margin: 0 auto;
+    color: #fff;
+    border-radius: 23px;
+    background-color: rgba(255, 99, 76, 1);
+}
+ .bottom_box div.col-xs-6 {
+    padding: 0;
+}
+.bottom_box div.col-xs-6:nth-child(1){
+    margin-top:11px;
+    border-right:1px solid #fff;
+    font-size:12px;
+    text-align:center;
+}
+.bottom_box div.col-xs-6:nth-child(2) a{
+    font-size:18px;
+}
+select.ui-select, select.ui-select option{font-size:14px !important}
+</style>
+</head>
+<body>
+
+<link rel="stylesheet" href="static/dialog/ui-dialog.css" />
+<!-- <script src="static/script/jquery-1.11.2.min.js"></script> -->
+<script type='text/javascript' src='static/dialog/dialog-min.js'></script>
+<script type="text/javascript">
+//jquery和tap冲突的解决方式
+/*$.noConflict();*/
+//自定义弹出框，dialog
+function jAlert(content){
+	var d = dialog({
+	    title: '提示',
+	    content: content,
+	    okValue: '确定',
+	    ok: function () {
+	    }
+	});
+	d.showModal();
+}
+
+//提示后，点击确定跳转
+function jAlert2(content,redictUrl){
+	var d = dialog({
+	    title: '提示',
+	    content: content,
+	    okValue: '确定',
+	    ok: function () {
+	    	window.location.href = redictUrl;
+	    }
+	});
+	d.showModal();
+}
+//转菊花的加载效果
+jQuery(function() {
+	var d = dialog( {
+		zIndex : 87
+	});
+	jQuery(document).ajaxStart(function() {
+		d.showModal();
+	});
+	jQuery(document).ajaxComplete(function() {
+		d.close();
+	});
+});
+</script>
+
+<script type="text/javascript">
+window.onload=function(){
+	var _width=document.documentElement.clientWidth;
+	document.body.style.width=_width+'px';
+}
+function goBack(){
+	var referrer = document.referrer;
+	var url = window.location.href;
+	//alert(url);
+	if(referrer == null || referrer ==''){
+		//从微信访问进来，没有上一个页面时，默认返回到首页
+		window.location.href="/index.htm";
+	}else{
+		/* window.history.back(); */
+		
+			window.history.back();
+		
+	}
+}
+</script>
+<header class="clearfix" style="position:fixed;top:0;width:100%;background:#FFF;z-index:99">
+<a onclick="history.go(-1)" class="back"><img src="static/images/back.png" height="14" /></a>
+	<h1 class="f-16 b" style="font-size:16px;">填写信息</h1>
+	<a href="../mobile" class="home"><img src="static/images/home.png" height="21px"/></a>
+</header>
+<form id ="submitForm" action="" method="post"> 
+<section class="ui-box">
+<div class="book_info">
+	<div class="top">
+    	<p>{$t['company']}</p>
+    </div>
+    <div class="container-fluid info_list">
+    	<div class="row">
+    		<div class="col-xs-4">
+    			<p class="l_title">借款类型</p>
+    		</div>
+    		<div class="col-xs-8">
+    			<span class="room_name">{$t['title']}</span>
+    		</div>
+    	</div>
+
+		<div class="row">
+			<div class="col-xs-4">
+				<p class="l_title">房价</p>
+			</div>
+			<div class="col-xs-8">
+				<span class="room_name" style="color: #ff3b30; font-size: 20px;" id="danjia">
+				</span>
+			</div>
+		</div>
+
+    	<div class="row">
+    		<div class="col-xs-5 date"><span>入住</span> {$beginDate}</div>
+    		<div class="col-xs-5 date"><span>离店</span> {$endDate}</div>
+    		<!-- <div class="col-xs-2">
+                <a class="xiugai">修改</a>
+            </div> -->
+    	</div>
+    	<div class="row">
+    		<div class="col-xs-4">
+    			<p class="l_title">房间数</p>
+    		</div>
+    		<div class="col-xs-8">
+    			<div class="rooms_mp">
+	    			<div id="minus"><img alt="" src="static/images/minus.png" height="25"></div>
+		            <div class="room_number">{$roomNum}</div>
+		            <div id="plus"><img alt="" src="static/images/plus.png" height="25"></div>
+	            </div>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-xs-4">
+    			<p class="l_title">联系人</p>
+    		</div>
+    		<div class="col-xs-8">
+    			<input class="xinxi" type="text" name="name" value="{$u['truename']}" placeholder="请填写真实姓名">
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-xs-4">
+    			<p class="l_title">联系方式</p>
+    		</div>
+    		<div class="col-xs-8">
+    			<input class="xinxi" type="text" name="mobile" value="{$u['mobile']}" placeholder="请填写有效手机号">
+    		</div>
+    	</div>
+
+        <div class="row">
+            <div class="col-xs-4">
+                <p class="l_title">电子发票</p>
+            </div>
+            <div class="col-xs-8">
+            	<span id="invoice" style="float:right;width: 100%;text-align: right;padding-right: 10px;">
+                    <span id="invoice1" style="font-size: 11px;border:1px solid #ddd;padding: 4px 0;">
+                        <span id="need" style="cursor: pointer;padding: 3px;border-radius: 0 5px 5px 0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span id="unneed" style="color: #FFF;background:#ddd;padding: 3px;border-radius: 5px 0 0 5px;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </span>
+                </span>
+                <div id="spaninvoice" style="display:none;">
+                    <input class="xinxi" type="text" name="invoice" placeholder="请输入发票抬头">
+                    <input class="xinxi" type="text" name="invoice_email" placeholder="请输入电子邮箱">
+                	<input class="xinxi" type="text" name="invoice_number" placeholder="请输入纳税人识别号">
+                    <select name="invoice_item" style="float: right;margin-bottom: 10px;height: 28px;background-color: #FFF;line-height: 28px;font-size: 14px;">
+                        <option value="住宿费">住宿费</option>
+                       <!--  <option value="代订住宿费">代订住宿费</option>
+                        <option value="旅游服务费">旅游服务费</option>
+                        <option value="会议服务费">会议服务费</option> -->
+                    </select>
+                </div>
+            </div>
+        </div>
+
+    	<div class="row">
+    		<div class="col-xs-4">
+    			<p class="l_title">支付方式</p>
+    		</div>
+    		<div class="col-xs-8" style="text-align:right";>
+                <input type="radio" name="paytype" value="0"; checked="checked" id="bao"/> 在线支付<br/>
+                <input type="radio" name="paytype" value="1" id="cash"/> 到店支付
+    		</div>
+    	</div>
+
+            <div class="row">
+                <div class="col-xs-4">
+                    <p class="l_title">最晚到店时间</p>
+                </div>
+                <div class="col-xs-8" style="text-align:right";>
+                    <select name="arrivetime" class="select" style="border:none;background-color: #FFF;">
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                            <option value="20:00">20:00</option>
+                            <option value="21:00">21:00</option>
+                            <option value="22:00">22:00</option>
+                            <option value="23:00">23:00</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-4">
+                    <p class="l_title">住客留言</p>
+                </div>
+                <div class="col-xs-8" style="text-align:right";>
+                    <input id="note" name="snote" class="h90" style="border:none;text-align: right;" placeholder="留言...">
+                    </input>
+                </div>
+            </div>
+        
+    	<div class="row">
+    		<div class="col-xs-4" style="width:48%">
+    			<p class="l_title">购买电子券</p>
+    		</div>
+    		<div class="col-xs-8 quan"  style="width:50%">
+                <span id="usequan" style="float:right;width: 100%;text-align: right;">
+                    <span id="kuang" style="font-size: 11px;border:1px solid #ddd;padding: 4px 0;">
+                        <span id="xuyao" style="cursor: pointer;padding: 3px;border-radius: 0 5px 5px 0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span id="buxuyao" style="color: #FFF;background:#ddd;padding: 3px;border-radius: 5px 0 0 5px;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </span>
+                </span>
+    		</div>
+    	</div>
+	    <div class="row" style="border-bottom: none;">
+            <div class="col-xs-4" style="width:100%">
+                <span id="spanquan" style="display:none;">
+                
+                <dl style="margin-top: 10px;">
+                    <dt></dt>
+                    <dd>
+                        {loop $coup $k $v}
+                            <p style="clear: both;margin-top: 10px;">
+                                <input type="checkbox" name="userCoupon" data-id="{$v['itemid']}" data-price="{$v['price']}" data-stock="{$v['nNum']}" data-maxamount="{$v['maxamount']}" data-title="{$v['title']}" data-enddate="{$v['enddate']}" id="chk_{$v['itemid']}">{$v['title']}<span id="quannote" class="quannote" data-id="{$v['itemid']}" style="margin-left:10px;color:#ff0000;cursor:pointer;">说明</span>
+                                <span style="margin-right: 10px;float:right;">
+                                    <img class="reduce" src="static/images/minus.png" height="25" data-id="{$v['itemid']}" id="reduce_{$v['itemid']}">
+                                    <input type="hidden" name="couponcount[]" id="count_{$v['itemid']}" value="1" />
+                                    <span id="spancount_{$v['itemid']}" style="padding:0 10px;">1</span>
+                                    <img class="add" src="static/images/plus.png" height="25" data-id="{$v['itemid']}" id="add_{$v['itemid']}">  {$v['price']}元
+                                </span>
+                            </p>
+                        {/loop}
+                    </dd>
+                </dl>
+                
+                </span>
+            </div>
+        </div>
+    </div>
+    <p id="tips"></p>
+    
+   <!--  <a href="javascript:void(0)" id="submit" class="btn btn_default" role="button" style="width:100%; margin-top: 20px;">提 交</a> -->
+    <div style="height:44px;width:90%;color"></div>
+    <div class="bottom_box">
+
+        <div class="col-xs-6">
+             <p style="text-align: center;"><span class="realPrice" style="font-size:18px;width: 100%;">0</span>&nbsp;&nbsp;
+             <a class="mingxi" style="text-decoration: underline; color: #fff;font-size:17px;margin-right:2px">明细</a>
+             </p>
+        </div>
+
+		<div class="col-xs-6">
+			<a href="javascript:void(0)" id="submit" class="btn btn_default" role="button" style="width:auto;">提 交</a>
+		</div>
+	</div>
+</div>
+<div class="mingxi_info" id="note_info" style="display:none;">
+	<a class="btn_guanbi"><img alt="" src="static/images/guanbi.png" height="20"></a>
+	<dl>
+		<dt>电子券使用说明</dt>
+		<dd class="clearfix">
+			<span style="width:100%;text-align:left;"></span>
+		</dd>
+	</dl>
+</div>
+<div class="mingxi_info" id="mingxi_info" style="display:none;">
+	<a class="btn_guanbi"><img alt="" src="static/images/guanbi.png" height="20"></a>
+	<dl>
+		<dt>房价明细</dt>
+		<dd class="clearfix">
+			<span>日期</span>
+			<span>&nbsp;&nbsp;</span>
+			<span>{$t['title']}</span>
+		</dd>
+	</dl>
+	<p>
+		<span class="right">应付金额：<em><span class="realPrice"></span></em></span>
+	</p>
+</div>
+
+<div class="hotel_search select_date" style="display: none;">
+	<header>
+		<a class="back_dlrq"><img alt="" src="static/images/back.png" height="14"></a>
+		<h1 style="font-size: 17px;">修改抵离日期</h1>
+		<a href="/index.htm" class="home"><img src="static/images/home.png" height="21px"></a>
+	</header>
+	<ul class="search_list">
+		<li id="checkInDate" class="arrow date input-group" data-date-format="dd MM yyyy" data-link-format="yyyy-mm-dd" data-date=""  data-link-field="dtp_input2">
+            <input id="dtp_input2" readonly="readonly"/>
+            <span id="checkInweek">（今天）</span>
+            <span class="b_2" >入住</span>
+        </li>
+        <li id="checkOutDate" class="arrow date input-group" data-date-format="dd MM yyyy" data-link-format="yyyy-mm-dd" data-date=""  data-link-field="dtp_input3">
+            <input id="dtp_input3" readonly="readonly"/>
+            <span id="checkOutweek">（明天）</span>
+            <span class="b_2">离店</span>
+            <span id="godays">（共1晚）</span>
+        </li>
+	</ul>
+	<div style="padding: 20px 15px">
+		<a id="btnSelectDate" class="btn btn_default">确 认</a>
+	</div>
+</div>
+<div class="mask" style="display:none;"></div>
+</section>
+
+<!-- 电子券 -->
+<input type="hidden" name="beginDate" value="{$beginDate}" />
+<input type="hidden" name="endDate" value="{$endDate}" />
+<input type="hidden" name="itemid" value="{$t['itemid']}" />
+<input type="hidden" name="ratePlanId" value="DISG37" />
+<input type="hidden" name="roomNum" value="{$roomNum}"/>
+<input type="hidden" name="hotelName" value="{$t['company']}"/>
+<input type="hidden" name="roomName" value="{$t['title']}"/>
+<input type="hidden" name="priceTotal" value=""/>
+<input type="hidden" name="maxNum" value="{$t['amount']}"/>
+<input type="hidden" name="coupons" value=""/>
+<input type="hidden" name="couponsnum" value=""/>
+<input type="hidden" name="couponsPrice" value="0"/>
+<input type="hidden" name="ok" value="token" />
+<input type="hidden" id="snote" value="{$DT[voucher_dis]}" />
+</form>
+
+<script type="text/javascript">
+$(function(){
+	$("input[type=text]").select();
+	var coupons="";
+	var couponsPrice=0;
+	var couponsNum="";
+	var flag = true;
+	var count = 1;
+	var danjia=0;
+    var RoomStatus='N';
+	//选择房间数
+	var reg=/^1[34578][0-9]\d{8}$/;
+     function verifyOrder(){
+    	$('#submit').text('正在确认中');
+ 		$('#submit').attr('disabled','disabled');
+ 		$.ajax({
+			url:'verifyOrder.php',
+			data:changeURLArg($('#submitForm').serialize(),'roomNum',$('input[name=roomNum]').val()),
+			dataType:'json',
+
+            async: false,
+
+			success:function(data){
+                RoomStatus=data.result.orderInfo.RoomStatus;
+				danjia=data.result.orderInfo.totalPrice;
+
+				if(data.stat != 1){
+					jAlert(data.msg);
+					$('#submit').text(data.msg);
+					return false;
+				}
+                $("#danjia").text("￥"+danjia);
+				$('.bottom').show();
+				$('#tips').text(data.result.tips);
+				$('.realPrice').text("￥"+(data.result.orderInfo.totalPrice+couponsPrice)+"元");
+				$('input[name=priceTotal]').val(data.result.orderInfo.totalPrice+couponsPrice);
+				$('input[name=maxNum]').val(data.result.orderInfo.amount);
+							
+				var roomInfo = data.result.orderInfo.priceDetail,
+				roomNum = $('input[name=roomNum]').val();
+
+				//房价明细
+				$('#mingxi_info dl dd:gt(0)').remove();
+				for(var i=0;i<roomInfo.length;i++){
+					moddile = '<span style="wdith:100%;font-size: 0.8em;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;</span>';
+					right="￥"+roomInfo[i].Price+"*"+roomNum+"间";
+					$('#mingxi_info dl').append('<dd class="clearfix"><span>'+roomInfo[i].left+'</span>'+moddile+'<span class="roomPrice">'+right+'</span></dd>');
+				}
+				$("input[name=userCoupon]").each(function(){
+		    		if ($(this).is(":checked")) {
+		    			right="￥"+$(this).data("price")+"*"+$("#count_"+$(this).data("id")).val()+"张";
+		    			$('#mingxi_info dl').append('<dd class="clearfix"><span>'+$(this).data("title")+'</span>'+moddile+'<span class="roomPrice">'+right+'</span></dd>');
+		    		}
+		    	 });
+
+                if (RoomStatus=='A'){
+                    $('#submit').text('提交');
+                    $('#submit').removeAttr('disabled');
+                }else{
+                    $('#submit').text('房满');
+                }
+				count = 1;
+			}
+		});
+     }
+
+
+
+     function calcoupons(){
+    		couponsPrice=0;
+    		couponsNum="";
+    		 coupons="";
+    		 aa="";
+    		$("input[name=userCoupon]").each(function(){
+    			if ($(this).is(":checked")) {
+    				coupons+=$(this).data("id")+",";
+    				couponsNum+=$("#count_"+$(this).data("id")).val()+",";
+    				couponsPrice+=parseFloat($(this).data("price"))*parseInt($("#count_"+$(this).data("id")).val());
+    				if (aa==""){
+    					aa=$(this).data("title");
+    				}else{
+    					aa+=","+$(this).data("title");
+    				}
+    			}
+    		 });
+    		 $('input[name=couponsPrice]').val(couponsPrice);
+    		 $('input[name=coupons]').val(coupons);
+    		 $('input[name=couponsnum]').val(couponsNum);
+    		 
+    		 verifyOrder();
+    }
+     verifyOrder();
+
+     /*setTimeout(function(){
+         $("#danjia").text("￥"+danjia);
+     },500);*/
+
+     
+     
+     $('.select_showdown').change(function(){
+    	 var checkInDate = '';//入住日期
+    	 var checkInTime = $(this).val();
+    	 $('input[name=checkInDate]').val(checkInDate+' '+ checkInTime);
+     });
+     /*$('#usequan').on('tap click', function(e) {
+    	 if ($("#spanquan").is(":hidden")) {
+    		 $("#spanquan").show();
+    	 }else{
+    		 $("#spanquan").hide();
+    	 }
+     });*/
+     $("#need").on('tap click',function(){
+         $("#spaninvoice").show();
+         $("#unneed").css({
+         	"color":"#000",
+             "background":"#FFF",
+             "cursor": "pointer"
+         });
+         $("#invoice1").css("border-color","rgba(255, 99, 76, 1)")
+         $("#need").css({
+             "color":"#FFF",
+             "background":"rgba(255, 99, 76, 1)",
+             "cursor": "default"
+         });
+      });
+      $("#unneed").on('tap click',function(){
+         $("#spaninvoice").hide();
+         $("#need").css({
+             "color":"#000",
+             "background":"#FFF",
+             "cursor": "pointer"
+         });
+        $("#invoice1").css("border-color","#ddd")
+         $("#unneed").css({
+             "color":"#FFF",
+             "background":"#ddd",
+             "cursor": "default"
+         });
+      });
+     
+     
+     $('#submit').on('tap click', function(e) {
+ 		
+ 		if( $.trim($("input[name='name']").val()) == '' ){//判断宾客姓名是否为空
+ 			jAlert("宾客姓名不能为空！");
+ 			return false;
+ 		}
+ 		if( $.trim($("input[name='name']").val()).length > 10){//判断宾客姓名是否超出长度
+ 			jAlert("宾客姓名超出长度！");
+ 			return false;
+ 		}
+ 		if(!reg.test($.trim($("input[name='mobile']").val()))){//判断宾客姓名是否为空
+ 			jAlert("联系电话格式不正确！");
+ 			return false;
+ 		}
+	     if(count ==1 ){
+            count++;
+            var param = $('#submitForm').serialize();
+            var url = "purchase.php?" + param + "&moduleid=16";
+           console.log(url);
+            $.getJSON(url,function(result){
+                if(result.stat == 1){
+                    /*var ua = navigator.userAgent.toLowerCase();
+                                        if (/iphone|ipad|ipod/.test(ua)) {
+                                            getPush();  
+                                        }else{
+                                            window.AndroidWebView.getPush();
+                    }*/
+                    jAlert2("订单提交成功，即将转到个人订单页面","myorder.php");
+                }else {
+                   
+                    jAlert(result.msg);
+                    console.log(result);
+                    console.log(result.stat);
+                }
+            });
+        }
+ 		
+ 	});
+     $('.mingxi').click(function(){
+    	scrolltop=$(document).scrollTop();
+    	if (scrolltop<=0) scrolltop=$('html,body').scrollTop();
+    	nowtop= ($(window).height() - $('#mingxi_info').outerHeight())/2+scrolltop;
+    	/*nowleft=($(window).width() - $('#mingxi_info').width())/2+$(document).scrollLeft()-30; */
+    	$('#mingxi_info').css({top: nowtop});
+     	$('#mingxi_info,.mask').show();
+     })     
+    $('.btn_guanbi').click(function(){
+    	$('.mingxi_info,.mask').hide();
+    })
+    $('.xiugai').on("click",function(){
+		$(".select_date").show();
+	})
+	$('.back_dlrq').on("click",function(){
+		$(".select_date").hide();
+	})
+	$('#btnSelectDate').on("click",function(){
+        var checkUrl=changeURLArg(window.location.href,'roomNum',$('input[name=roomNum]').val());
+		var checkInDateUrl = changeURLArg(checkUrl,'beginDate',$('#dtp_input2').val());//替换起始时间
+   		var checkOutDateUrl =changeURLArg(checkInDateUrl,'endDate',$('#dtp_input3').val());//替换结束时间 
+   		window.location.href= checkOutDateUrl;
+	})
+    $("#minus").click(function(event) {
+        var num=parseInt($(".room_number").text())-1;
+        
+        if(num<1){
+             num=1;
+             return false;
+        }
+        
+        $(".room_number").text(num);
+        $(".number").text(num);
+        $('input[name=roomNum]').val(num);
+        verifyOrder();
+     });
+     $("#plus").click(function(event) {  
+        var num=parseInt($(".room_number").text())+1;
+        var maxNum = $('input[name=maxNum]').val();
+        if(num > maxNum){
+        	num = maxNum;
+        	return false;
+        }/*
+        if(num > 3){
+        	num = 3;
+        	return false;
+        }*/
+
+        $(".room_number").text(num);
+        $(".number").text(num);
+        $('input[name=roomNum]').val(num);
+        verifyOrder();
+     });
+     
+     $("#xuyao").on('tap click',function(){
+        if ($("#cash").is(":checked")) {
+            jAlert("到店付款不能购买电子券")
+        }else{
+         $("#spanquan").show();
+         $("#kuang").css("border-color","rgba(255, 99, 76, 1)")
+         $("#buxuyao").css({
+         	"color":"#000",
+             "background":"#FFF",
+             "cursor": "pointer"
+         });
+         $("#xuyao").css({
+             "color":"#FFF",
+             "background":"rgba(255, 99, 76, 1)",
+             "cursor": "default"
+         });
+         }
+      });
+
+       /*var $res=$('<div class="row">'
+          +'<div class="col-xs-4" style="width:100%">'
+            +'<span id="spanquan">'
+            +'{loop $coupcats $ct $ctv}'
+              +'<dl>'
+                +'<dt>{$ctv}</dt>'
+                +'<dd>{loop $coup $k $v} {if $v[typeid]==$ct}'
+                  +'<input type="checkbox" name="userCoupon" data-id="{$v[itemid]}"'
+                   +'data-price="{$v[price]}" data-stock="{$v[amount]}"' 
+                   +'data-title="{$v[title]}" id="chk_{$v[itemid]}">{$v[title]}'
+                  +'<span style="margin: 0 10px;float:right;">'
+                    +'<img class="reduce" src="static/images/minus.png" height="25" '
+                    +'data-id="{$v[itemid]}" id="reduce_{$v[itemid]}">'
+                    +'<input type="hidden" name="couponcount[]" id="count_{$v[itemid]}" value="0" />'
+                    +'<span id="spancount_{$v[itemid]}" style="padding:0 10px;">0</span>'
+                    +'<img class="add" src="static/images/plus.png" height="25"'
+                     +'data-id="{$v[itemid]}" id="add_{$v[itemid]}">'
+                     +'{$v[price]}元</span>{/if} {/loop}</dd></dl>{/loop}</span>'
+          +'</div>'
+        +'</div>'
+        );
+
+
+
+      var $div=$("<div style='position:absolute;z-index:999;background-color:#FFF;padding:15px;padding-right:0;'></div>");
+      var $mask=$("<div style='background-color:#ccc;opacity:0.9;filter: alpha(opacity=90); position:absolute; left:0;top:0;z-index:99;'></div>");
+
+      var $wid=$(window).width();
+      var $hei=$(window).height();
+      var lef=($wid-270)/2+"px";
+
+      $("#xuyao").on('tap click',function(){
+          $("#buxuyao").css({
+            "color":"#000",
+              "background":"#FFF",
+              "cursor": "pointer"
+          });
+          $("#xuyao").css({
+              "color":"#FFF",
+              "background":"rgba(255, 99, 76, 1)",
+              "cursor": "default"
+          });
+          $("#kuang").css("border-color","rgba(255, 99, 76, 1)")
+          var $scro=$(document).scrollTop();
+          var to=$scro+100+"px";
+
+          $mask.css({
+            "width":$wid,
+            "height":$(document).height()
+          });
+          $div.css({
+            "left":lef,
+            "top":to
+          });
+
+          $('body').append($mask);
+            $($div).append($res);
+            $('body').append($div);
+
+          $mask.on("click",function(){
+            $(this).remove();
+            $div.remove();
+            $("#kuang").css("border-color","#ddd");
+            $("#xuyao").css({
+                "color":"#000",
+                "background":"#FFF",
+                "cursor": "pointer"
+            });
+            $("#buxuyao").css({
+                "color":"#FFF",
+                "background":"#ddd",
+                "cursor": "default"
+            });
+          });*/
+
+          $("#spanquan").on("click","input",function(){
+             if ($("input[data-id]").is(":checked")) {
+                 $("#cash").prop('checked',false);
+                 $("#bao").prop('checked',true);
+                 $("#cash").attr('disabled', 'disabled');
+                 calcoupons();
+             }else{
+                 $("#cash").removeAttr('disabled');
+
+                 var ba=$(this).data("id");
+                 $("#spancount_"+ba).html("1");
+                 $("#count_"+ba).val("1");
+
+                 calcoupons();
+             }
+          });
+
+            $(".reduce").click(function(event){
+             cid=$(this).data("id");
+             if ($("#chk_"+cid).is(":checked")){
+                 if ($("#count_"+cid).val()==0){
+                     return false;
+                 }else{
+                     bb=parseInt($("#count_"+cid).val())-1;
+                     $("#count_"+cid).val(bb);
+                     $("#spancount_"+cid).html(bb);
+                 }
+             }
+             calcoupons();
+            });
+            $(".add").click(function(event){
+             cid=$(this).data("id");
+             if ($("#chk_"+cid).is(":checked")){
+                if (parseInt($("#chk_"+cid).data("maxamount"))>parseInt($("#chk_"+cid).data("stock"))){
+                    maxamount=parseInt($("#chk_"+cid).data("stock"));
+                }else{
+                    maxamount=parseInt($("#chk_"+cid).data("maxamount"));
+                }
+                 if ($("#count_"+cid).val()>=maxamount){
+                     return false;
+                 }else{
+                     bb=parseInt($("#count_"+cid).val())+1;
+                     $("#count_"+cid).val(bb);
+                     $("#spancount_"+cid).html(bb);
+                 }
+             }
+             calcoupons();
+            });
+          
+       });
+
+      $("#buxuyao").on('tap click',function(){
+         $("#spanquan").hide();
+         $("#kuang").css("border-color","#ddd")
+         $("#xuyao").css({
+             "color":"#000",
+             "background":"#FFF",
+             "cursor": "pointer"
+         });
+         $("#buxuyao").css({
+             "color":"#FFF",
+             "background":"#ddd",
+             "cursor": "default"
+         });
+         /*$("input[name=userCoupon]").each(function(){
+          	$(this).removeAttr("checked");
+          	$("#count_"+$(this).data("id")).val(1);
+          	$("#count_"+$(this).data("id")).attr("disabled","disabled");
+  		});
+          calcoupons();*/
+      });
+    
+     
+     /*$("input[name='userCoupon']").click(function(event){
+        console.log('0');
+    	 $("input[name='userCoupon']").each(function(){
+                console.log(1);
+    			if ($(this).is(":checked")) {
+    				$("#count_"+$(this).data("id")).removeAttr("disabled");
+                    console.log(11);
+    			}else{
+    				$("#count_"+$(this).data("id")).attr("disabled","disabled");
+                    var cid=$(this).data("id");
+                    $("#spancount_"+cid).html("0");
+                    console.log(22);
+    			}
+    	});
+    	  calcoupons();
+     });*/
+
+
+    
+
+     
+      $(".quannote").on('tap click',function(){
+         cid=$(this).data("id");
+         enddate=$("#chk_"+cid).data("enddate");
+         addnote=$("#snote").val()+'<div>4.本券有效期到：'+enddate+'</div>';
+         $('#note_info dl dd span').html(addnote);
+        scrolltop=$(document).scrollTop();
+        if (scrolltop<=0) scrolltop=$('html,body').scrollTop();
+        nowtop= ($(window).height() - $('#note_info').outerHeight())/2+scrolltop;
+        /*nowleft=($(window).width() - $('#note_info').width())/2+$(document).scrollLeft()-30; */
+        $('#note_info').css({top: nowtop});
+        $('#note_info,.mask').show();
+      });
+
+     
+     $("input[name='couponcount[]']").bind("input propertychange",function(){
+    	 calcoupons();
+	 /*});*/
+
+});
+
+//替换URL链接中的某个参数 
+function changeURLArg(url,arg,arg_val){ 
+    var pattern=arg+'=([^&]*)'; 
+    var replaceText=arg+'='+arg_val; 
+    if(url.match(pattern)){ 
+        var tmp='/('+ arg+'=)([^&]*)/gi'; 
+        tmp=url.replace(eval(tmp),replaceText); 
+        return tmp; 
+    }else{ 
+        if(url.match('[\?]')){ 
+            return url+'&'+replaceText; 
+        }else{ 
+            return url+'?'+replaceText; 
+        } 
+    } 
+    return url+'\n'+arg+'\n'+arg_val; 
+} 
+
+</script>
+
+<div style="height: 36px;"></div>
+ {template 'footer', 'mobile'}
+</body>
+</html>

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-control" content="no-cache">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="address=no" name="format-detection">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>酒店查询</title>
+<link type="text/css" rel="stylesheet"  href="static/css/bootstrap.min.css">
+<link  type="text/css" rel="stylesheet" href="static/css/bootstrap-datetimepicker.min.css">
+<link type="text/css" rel="stylesheet"  href="static/css/base.css">
+<link type="text/css" rel="stylesheet"  href="static/css/default.css">
+<link type="text/css" rel="stylesheet"  href="static/css/iocn.css">
+<link type="text/css" rel="stylesheet"  href="static/css/weui.min.css">
+<link rel="stylesheet" href="static/dialog/ui-dialog.css" />
+<style>
+    #location{display:block;width:100%;height:100%;z-index:2;cursor: pointer}
+    #districtPage{position: fixed; top:0px; bottom:0px; left: 0px; right: 0px;background-color:#fff}
+    #districtPage .searchbox{width: 100%; height: 40px; text-align:center; background-color: #54c7c5;}
+    #districtPage .searchbox input{width: 80%; height:28px; margin-top:7px; padding-left:40px; border: none; background:#fff url("images/u42.png") left center no-repeat;}
+    #districtPage .title_top{position:relative; width: 100%; height: 40px; border-bottom: 1px solid #ccc; background-color: #fff; z-index: 1;}
+    #districtPage .title_top a{float:left; display:block;  width: 50%; height: 40px; line-height: 40px; text-align: center; color: #999;}
+    #districtPage .title_top a.active{ border-bottom: 3px solid #54c7c5; color: #54c7c5;}
+    #districtPage .title_tab{position:relative; height:100%; bottom:0px; left:0px; right: 0px;}
+    #districtPage .title_tab .title_tab_list li{padding:7px 10px; border-bottom: 1px solid #ccc;}
+    #districtPage .title_tab .nav-tabs{width: 80px; height:100%; border: none; background: #f0f0f0; overflow-x:auto;}
+    #districtPage .title_tab .nav>li>a{width: 80px; padding:10px 0; text-align:center; color:#666; border-bottom: 1px solid #ccc;}
+    #districtPage .title_tab .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{color:#666; background: #fff;}
+    #districtPage .title_tab .tab-content{position:absolute; top:0px; bottom:0px; left:80px; right: 0px;}
+    #districtPage .title_tab .tab-content>.tab-pane{width: 100%; height: 100%;}
+    #districtPage .title_tab .tab-content>.tab-pane>div{width: 100%; height: 100%;}
+    #districtPage .title_tab .tab-content>.tab-pane>div>ul{width: 100%; height: 100%; overflow-y:auto;margin-left: 10px;}
+    #districtPage .title_tab .tab-content>.tab-pane>div>ul>li{padding:7px 0px 7px 10px;border-bottom: 1px solid #ccc;height: 40px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+    #districtPage .title_tab .list_one{width: 100px; height: 100%; float: left; overflow-y:auto;}
+    #districtPage .title_tab .list_one>li>a{display:block; width: 100px; padding:20px 10px; color: #666;}
+    #districtPage .title_tab .list_one>li>a.active{background-color: #d2d2d2;}
+    #districtPage .title_tab #traffic_line>div{height: 100%; margin-left:100px; box-shadow:-10px 0px 20px #c7c7c7;}
+    #districtPage .station{padding:7px 0px;}
+    .no_result{position: absolute;top: 104px;display:none;}
+    .search{width:14px;height:14px;top:16px;}
+    #districtPage{z-index:1001;}
+    #districtPage header{background-color:#fff}
+</style>
+</head>
+<body ontouchstart="" onmouseover="">
+<div id="searchPage">
+<script type="text/javascript" src="http://pingjs.qq.com/h5/stats.js" name="MTAH5" sid="500002101" cid="500002102" ></script>
+
+    <header class="clearfix">
+        <a onclick="history.go(-1)" class="back"><img src="static/images/back.png" height="14" /></a>
+            <h1 class="f-16 b" style="font-size:16px;">
+                酒店查询
+            </h1>
+        <a href="../mobile" class="home"><img src="static/images/home.png" height="21px"/></a>
+    </header>   
+    <form id="dform" action="search.php" method="post">
+        <div class="hotel_search" style="padding:10px 0;">
+            <ul class="search_list">
+                <li id="searchNearby" class="clearfix">
+                    <div class="right"><span id="location"><img alt="" src="static/images/weizhi.png" height="40"></span></div>
+                    <p id="city" class="arrow">             
+                        <span class="text">请选择城市</span>
+                        <input type="hidden" name="cityName" value=""/>
+                        <input type="hidden" name="cityId" value=""/>
+                    </p>           
+                </li>
+                <li id="checkInDate" class="arrow input-group date" data-date-format="dd MM yyyy" data-link-format="yyyy-mm-dd" data-date=""  data-link-field="dtp_input2" >
+                    <input id="dtp_input2" readonly/>
+                    <span id="week2"></span>
+                    <span id="checkInweek">（今天）</span>
+                    <span>入住</span>
+                </li>
+                <li id="checkOutDate" class="arrow input-group date" data-date-format="dd MM yyyy" data-link-format="yyyy-mm-dd" data-date=""  data-link-field="dtp_input3">
+                    <input id="dtp_input3" readonly/>
+                    <span id="week3"></span>
+                    <span id="checkOutweek">（明天）</span>
+                    <span>离店</span>
+                    <span id="godays">(共1晚)</span>
+                </li>
+                <li id="roomNumber">
+                    <span class="b_2">房间数量</span>
+                    <p class="rooms_mp">
+                        <span id="minus"><img alt="" src="static/images/minus.png" height="25"></span>
+                        <span class="rooms">1间</span>
+                        <span id="plus"><img alt="" src="static/images/plus.png" height="25"></span>
+                    </p>
+                </li>
+                <li id="district" class="arrow"><span>关键字/位置/酒店名</span><input type="hidden" name="wd" id="wd" >
+                </li>
+                <input type="submit" value="查 询" class="btn btn_default" id="SearchGo">
+                            
+            </ul>
+        </div>
+        <input type="hidden" name="curLat" value=""/>
+        <input type="hidden" name="curLong" value=""/>
+        <input type="hidden" name="lng" value=""/>
+        <input type="hidden" name="lat" value=""/>
+        <input type="hidden" name="beginDate"/>
+        <input type="hidden" name="endDate"/>
+        <input type="hidden" name="from" value="2"/>
+        <input type="hidden" name="roomNum" value="1"/>
+        <input name="ok" value="1" type="hidden">
+        <input type="hidden" name="wtype" value=""/>
+        <input name="action" value="mod4" type="hidden">
+    </form>
+</div>
+<div id="cityPage" class="page" style="display:none;">
+    <header>
+        <a href="../mobile/search.php" class="back"><img src="static/images/back.png" height="14" /></a>
+        <h1 class="f-16 b" style="font-size:17px;">城市选择</h1>
+    </header>
+<!--     <div class="city_search">
+    <input id="citySearch" type="text" name="" value="" placeholder="城市名/拼音">
+    <span class="del"><img src="static/images/x.png"/ width="12"></span>
+    <div class="search"></div>
+    <div class="empty_x"></div>
+    <div class="citylist_search"></div>
+</div> -->
+    <div class="history_city">
+        <span>历史选择</span>
+        <span id="history_city"></span>
+    </div> 
+    <ul class="city_nav clearfix"></ul>
+    <div class="hot_city clearfix">
+       <h4 data-key="RM">热门城市</h4>
+    </div>
+    <div class="city_select">
+        <h4 data-key="A">A</h4>
+        <h4 data-key="B">B</h4>
+        <h4 data-key="C">C</h4>
+        <h4 data-key="D">D</h4>
+        <h4 data-key="E">E</h4>
+        <h4 data-key="F">F</h4>
+        <h4 data-key="G">G</h4>
+        <h4 data-key="H">H</h4>
+        <h4 data-key="I">I</h4>
+        <h4 data-key="J">J</h4>
+        <h4 data-key="K">K</h4>
+        <h4 data-key="L">L</h4>
+        <h4 data-key="M">M</h4>
+        <h4 data-key="N">N</h4>
+        <h4 data-key="O">O</h4>
+        <h4 data-key="P">P</h4>
+        <h4 data-key="Q">Q</h4>
+        <h4 data-key="R">R</h4>
+        <h4 data-key="S">S</h4>
+        <h4 data-key="T">T</h4>
+        <h4 data-key="U">U</h4>
+        <h4 data-key="V">V</h4>
+        <h4 data-key="W">W</h4>
+        <h4 data-key="X">X</h4>
+        <h4 data-key="Y">Y</h4>
+        <h4 data-key="Z">Z</h4>
+    </div>
+    <div class="backtop"></div>
+</div>
+<div id="districtPage" class="page" style="display:none;">
+    <header>
+        <a href="javascript:void(0);" class="back"><img src="static/images/back.png" height="14" /></a>
+        <h1 class="f-16 b" style="font-size:17px;">关键字</h1>
+    </header>
+    <div class="district_search">
+        <input id="districtSearch" type="text" name="" value="" placeholder="关键字/位置/酒店名"/>
+        <input id="districtSearch2" type="hidden" />
+        <input id="cityId" type="hidden"/>
+        <span class="del"><img src="static/images/x.png" width="12px" height="12px"></span>
+        <div class="search"></div>
+        <div class="districtlist_search"></div>
+    </div>
+    <div class="district_history" style="display:none;">
+    	<p class="js_filtertitle "><i class="hotel-keyword-icon1"></i>已选条件<span class="js_clear clearall">清空</span></p>
+    	<ul class="hotel-keyword-filter">
+    	</ul>
+    </div>
+    <div class="title_tab active">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation"><a href="static/#bussiness" aria-controls="bussiness" role="tab" data-toggle="tab">品牌</a></li>
+            <li role="presentation"><a href="static/#spot" aria-controls="spot" role="tab" data-toggle="tab">星级</a></li>
+            <li role="presentation"><a href="static/#area" aria-controls="area" role="tab" data-toggle="tab">行政区</a></li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="traffic_hub">
+                <div>
+                    <ul></ul>       
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="traffic_line">
+                <ul class="list_one"></ul>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="bussiness">
+                <div>
+                    <ul></ul>           
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="spot">
+                <div>
+                    <ul></ul>       
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="area">
+                <div>
+                    <ul></ul>           
+                </div>
+            </div>
+        </div>  
+    </div>
+    <input type="button" value="确定" class="btn btn_default" style="position: absolute;bottom: 0;" id="SelOK">
+    <div class="no_result" style="width: 100%;text-align: center;">
+        抱歉暂时没有相关数据,<a id="page_back" href="static/javascript:void(0)">返回</a>
+    </div>
+</div>
+<div id="loadingToast" style="display:none;">
+    <div class="weui-mask_transparent"></div>
+    <div class="weui-toast">
+        <i class="weui-loading weui-icon_toast"></i>
+        <p class="weui-toast__content">查询地址信息</p>
+    </div>
+</div>
+
+<iframe id="geoPage" width=0 height=0 frameborder=0  style="display:none;" scrolling="no"
+    src="https://apis.map.qq.com/tools/geolocation?key=AVTBZ-HVVWX-27545-TIZIY-VBCVK-MKBFG&referer=wap站">
+</iframe> 
+</body>
+<script type="text/javascript" src="static/script/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="static/script/bootstrap.min.js"></script>
+<script type='text/javascript' src='static/dialog/dialog-min.js'></script>
+<script type="text/javascript" src="static/script/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="static/script/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript" src='static/script/jquery.scrollTo.js'></script>
+<script type="text/javascript" src="static/script/date.js" ></script>
+<script type="text/javascript" src="static/script/alphabet.js" ></script>
+<script type="text/javascript" src="static/script/time.js" ></script>
+<script type="text/javascript" src="static/script/book_search_hubs.js"></script>
+<script type="text/javascript" src="static/script/district_hubs.js"></script>
+<script type="text/javascript">
+var $loadingToast;
+var userAgent = navigator.userAgent.toLowerCase(); 
+$.browser = { 
+    version: (userAgent.match( /.+(?:rv|it|ra|ie)[\/: ]([\d.]+)/ ) || [])[1], 
+    safari: /webkit/.test( userAgent ), 
+    opera: /opera/.test( userAgent ), 
+    msie: /msie/.test( userAgent ) && !/opera/.test( userAgent ), 
+    mozilla: /mozilla/.test( userAgent ) && !/(compatible|webkit)/.test( userAgent ) 
+};
+
+$(function(){
+	$('#wd').val("");
+	$('input[name=wtype]').val("");
+    var location = true;
+    $loadingToast = $('#loadingToast');
+    getHistoryCity();
+    function getHistoryCity(){
+        var city = localStorage.getItem('city');
+        if(city == 'undefined' || city == null){
+            $('#history_city').text('无');
+        }else{
+            $('#history_city').text(city);
+            $('#history_city').attr('location',city.location);
+        }
+    }
+    function pageShow(pagename){
+        $('#searchPage').hide();
+        $('.hotel_list').hide();
+        $('#'+pagename).show().addClass('current');
+    }
+    function pageHide(pagename){
+        $('#searchPage').show();
+        $('.hotel_list').show();
+        $('#'+pagename).hide().removeClass('current');
+    }
+    function cityShow(){
+        $('.citylist_search').hide().empty();
+        $('.del').hide();
+        $('.hot_city,.city_select,.history_city,.city_nav').show();
+        $('.cancel').remove();
+        $('#citySearch').removeAttr('style');
+    }
+    function cityHide(){
+        $('#citySearch').css('width','70%');
+        $('#citySearch').after('<a class="cancel">取消</a>');
+        $('.citylist_search').show();
+        $('.hot_city,.city_select,.history_city,.city_nav').hide();
+        $('.cancel').click(function(){
+            cityShow();
+            flag = true;
+        });
+    }
+    function selectSearch(){//选择搜索结果
+        $('.citylist_search p').click(function(){
+            var location = $(this).attr('location').split(',');
+            $('input[name=lng]').val(location[0]);
+            $('input[name=lat]').val(location[1]);
+            console.log($(this));
+            $('input[name=cityId]').val($(this).attr('data-id'));
+            $('input[name=cityName]').val($(this).text());
+            $('.text').text($(this).text());
+            $('#district span').text('关键字/位置/酒店名');
+            pageHide("cityPage");
+            //将选择的信息存储在本地localStorage
+            var record = {'location':$(this).attr('location'),'city':$(this).text()};
+            localStorage.setItem('city',$(this).text());
+            localStorage.setItem('cityid',$(this).attr('data-id'));
+            localStorage.setItem('location',$(this).attr('location'));
+            localStorage.removeItem("district");
+            var searchHistory = localStorage.getItem('searchHistory'),
+                location = $(this).attr('location'),
+                city = $(this).text();
+            if(searchHistory == null){
+                searchHistory = new Array();
+            }else{
+                searchHistory = JSON.parse(searchHistory);
+                var index = '';
+                for(var i=0;i<searchHistory.length;i++){
+                    if(city == searchHistory[i].city){
+                        index = i;
+                        return false;
+                    }
+                }
+                if(index != ''){
+                    searchHistory.splice(index,1);
+                }
+            }
+            searchHistory.push(record);
+            localStorage.setItem('searchHistory',JSON.stringify(searchHistory));
+            //localStorage.setItem('city',$(this).text()+','+id);
+            getHistoryCity();
+            cityShow();
+            $('#citySearch').val('');
+        });
+    }
+    function cleanSearch(){
+        $('#citySearch').val('');
+        $('.citylist_search').empty();
+        $('.del').hide();
+        var searchHistory = localStorage.getItem('searchHistory');
+        if(searchHistory != null){
+            var array = JSON.parse(searchHistory);
+            for(var i=array.length-1;i>=0;i--){
+                var location = array[i].location;
+                var cityName = array[i].city;
+                $('.citylist_search').append('<p location="'+location+'">'+cityName+'</p>');
+            }
+            $('.citylist_search').append('<a class="btn btn-default history">清除搜索历史</a>');
+            $('.history').click(function(){
+                localStorage.removeItem('searchHistory');
+                cleanSearch();
+            });
+             selectSearch();
+        }else{
+            $('.citylist_search').empty();
+        }
+    }
+    
+    function selectCity(obj){
+        $('.text').text(obj.text());
+        var location =obj.attr('location');
+        console.log(location);
+        location = location.split(',');
+        $('input[name=lng]').val(location[0]);
+        $('input[name=lat]').val(location[1]);
+        $('input[name=cityId]').val(obj.attr('data-id'));
+        $('input[name=cityName]').val(obj.text());
+        $('#district span').text('关键字/位置/酒店名');
+        var record = {'location':obj.attr('location'),'city':obj.text()};
+        pageHide("cityPage");
+        //将选择的信息存储在本地localStorage
+        localStorage.setItem('city',obj.text());
+        localStorage.setItem('cityid',obj.attr('data-id'));
+        localStorage.setItem('location',obj.attr('location'));
+        localStorage.removeItem("district");
+        getHistoryCity();
+    }
+    var selectCityCode = '',
+        hotelId = '',
+        flag = true;
+    //获取城市信息列表
+    //getHistoryCity();
+    $.ajax({
+        url: "static/script/listareacountcityhubs.json",     
+        type: "get",
+        dataType: "json",
+        success: function(data){
+            if(data.stat != 1){
+                alert(data.msg);
+                return false;
+            }
+            var cityArray = data.result,
+                count = 0,
+                hotArray =  new Array();
+            for( var i = 0;i < cityArray.length; i++){
+                var code = cityArray[i].firstIndex;
+                var h4Select = $('.city_select h4[data-key="' + code + '"]');
+                var name = cityArray[i].cityName;
+                if(name.length > 6 && name.indexOf('(') != -1){
+                    name = name.substring(0,name.indexOf('('));
+                }
+                h4Select.attr('show','T');
+                h4Select.after('<ul><li data-id="' + cityArray[i].id + '" location="'+ cityArray[i].longitude+','+cityArray[i].latitude +'">'+name+'</li></ul>');
+                if(cityArray[i].isHot == 1){
+                    hotArray[count] = cityArray[i];
+                    count++;
+                }
+            }
+            $('.city_nav').append('<li>热</li>');
+            $('.city_select h4').each(function(){
+               if($(this).attr('show') != 'T'){
+                   $(this).hide();
+               }else{
+                   $('.city_nav').append('<li>'+$(this).text()+'</li>');
+               }
+            });
+            hotArray.sort(function(a,b){return a.hotWeight-b.hotWeight});
+            for(var i=0;i<hotArray.length;i++){
+                $('.hot_city').append('<ul><li  data-id="' + hotArray[i].id + '" location="'+ hotArray[i].longitude+','+hotArray[i].latitude +'">'+hotArray[i].cityName+'</li></ul>');
+            }
+            if(selectCityCode == ''){
+                $('#cityName').text(cityArray[0].name);
+            }
+            $('.hot_city li').click(function(){ 
+                selectCity($(this));
+            });
+
+            $('.city_select li').click(function(){
+               selectCity($(this));
+            });
+            $('.city_nav li').click(function(){
+                var letter = $(this).html(),
+                index = 0,
+                found = 0;
+                console.log(letter);
+                if(letter == '热'){
+                    var rangeCity = $(".hot_city h4");
+                    $.scrollTo(rangeCity, 100);
+                    return false;
+                }
+                $(".city_select h4").each(function(i) {
+                    if (found == 0) {
+                        var initial = $(this).html().charAt(0);
+                        if (initial == letter) {
+                            index = i;
+                            found = 1;
+                        }
+                    }
+                });
+                var rangeCity = $(".city_select h4:eq(" + (index) + ")");
+                $.scrollTo(rangeCity, 100);
+            });
+        } 
+    });
+    
+    $('.back').click(function(){
+        pageHide("cityPage");
+        $('#citySearch').val('');
+        cityShow();
+        flag = true;
+    });
+    //内容滚动时回到顶部按钮
+    $(window).scroll(function(event){
+        if($('body').scrollTop()>0){
+            $('.backtop').show().click(function(){
+                $('body').scrollTop(0);             
+            })
+        }else{
+            $('.backtop').hide();
+        }
+    });
+    $('#history_city').click(function(){
+        /* selectCity($(this)); */
+        $('input[name=cityName]').val(localStorage.getItem('city'));
+        $("#city span").text($('input[name=cityName]').val());
+        if($(this).text()=="无"){
+            $("#city .text").text("请选择城市");
+            pageHide("cityPage");
+        }else{
+            var loction = localStorage.getItem('location');
+            $('input[name=lng]').val(localStorage.getItem('location').split(",")[0]);
+            $('input[name=lat]').val(localStorage.getItem('location').split(",")[1]);
+            pageHide("cityPage");
+        }
+        
+    });
+    $('#city').click(function(){
+        $("#citylist").html('');
+        pageShow("cityPage");
+        cityShow();
+    });
+    $('.del').click(function(){
+        cleanSearch();
+    });
+    $('#citySearch').bind('focus', function (){
+        cityHide();
+        cleanSearch();
+    });
+    $('#citySearch').bind('input', function (){
+        var key = $(this).val().trim();
+        if(key != ''){
+            $('.del').show();
+            $.ajax({
+                url: "./script/listareacountcityhubs.json", 
+                data:{key:key},
+                type: "post",
+                dataType: "json",    
+                success: function(data){
+                    $('.citylist_search').empty();
+                    if(data.stat != 1){
+                        $('.citylist_search').append('<p>无查询结果</p>');
+                        return false;
+                    }
+                    var cityArray = data.result;
+                    for(var i=0;i<cityArray.length;i++){//循环添加城市信息
+                        $('.citylist_search').append('<p location="'+cityArray[i].longitude+','+cityArray[i].latitude +'">'+cityArray[i].cityName+'</p>');
+                    }
+                    selectSearch();
+                }
+            });
+        }else{ 
+            cleanSearch();
+        }
+    });
+    window.addEventListener('message', function(event) {
+        // 接收位置信息
+        var loc = event.data; 
+        $('#location').click(function(){
+        	console.log('location', loc); 
+        	var city = loc.city;
+        	var index = city.indexOf("市");
+        	city = city.substring(0,index)
+        	console.log(city);
+        	$('input[name=cityName]').val(city);
+        	$('.text').text( loc.addr);
+        	var curLat = loc.lat;
+        	var curLong = loc.lng;
+        	$('input[name=curLat]').val(curLat);
+    		$('input[name=curLong]').val(curLong);
+    		$('input[name=lat]').val(curLat);
+    		$('input[name=lng]').val(curLong);
+    		$('#district span').text('关键字/位置/酒店名');
+    		localStorage.setItem('city',city);
+    		localStorage.setItem('location',curLong+","+curLat); 
+    		$("#history_city").text(localStorage.getItem('city')); 
+        });
+    }, false);
+
+
+    var city = localStorage.getItem('city');
+    if(city != 'undefined' && city != null && city != ''){
+        var location = localStorage.getItem('location');
+        location = location.split(',');
+        $('input[name=lng]').val(location[0]);
+        $('input[name=lat]').val(location[1]);
+        $('input[name=cityName]').val(city);
+        $('.text').text(city);
+    }else{
+        window.onload = loadScript();
+    }
+});
+var marker = null;
+var info = null;
+var map = null;
+var geocoder =  null;
+var url = window.location.href;
+
+function translatePoint(position){ 
+    var curLat = position.coords.latitude; //纬度
+    var curLong = position.coords.longitude; //经度
+    var latlng= new qq.maps.LatLng(curLat, curLong);
+    var geo = new qq.maps.Geocoder({
+      complete : function(result){
+            console.log(result);
+            var address = result.detail.address;
+            var detailAddress = address;
+            if(address.indexOf("香港特别行政区")!=-1||address.indexOf("澳门特别行政区")!=-1){
+               address=address.substring(9);
+            }else{
+                var index = address.indexOf("省",0);
+                if(index!=-1){
+                  address=address.substring(index+1);
+                  $('.text').text(address);
+                  index = address.indexOf('市');
+                  if(index != -1){
+                      $('input[name=cityName]').val(address.substring(0,index));
+                  }
+                }else{
+                     $('.text').text(address.substring(2));
+                      index = address.indexOf('市');
+                      if(index != -1){
+                          $('input[name=cityName]').val(address.substring(address.indexOf('中国',0)+2,index));
+                      }
+                }
+            }
+            $('input[name=curLat]').val(curLat);
+            $('input[name=curLong]').val(curLong);
+            $('input[name=siteCurLat]').val('');
+            $('input[name=siteCurLong]').val('');
+            $('input[name=cityId]').val('');
+            localStorage.removeItem('districtHistory');
+            $loadingToast.fadeOut(100);
+            $('#district span').text('关键字/位置/酒店名');
+            
+      }
+    });
+   qq.maps.convertor.translate(new qq.maps.LatLng(curLat, curLong), 1, function(res){
+        latlng = res[0];
+        geo.getAddress(latlng);
+   });
+}
+function init() {
+    navigator.geolocation.getCurrentPosition(translatePoint); 
+}
+function loadScript() {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "http://map.qq.com/api/js?v=2.exp&key=V6IBZ-J5NRF-5NIJE-JX227-FCSDE-IYB26&libraries=convertor&callback=init";
+    document.body.appendChild(script);
+}
+function clear(){
+    $('input[name=curLat]').val('');
+    $('input[name=curLong]').val('');
+    $('input[name=lat]').val('');
+    $('input[name=lng]').val('');
+    $('input[name=cityName]').val('');
+    $('input[name=cityId]').val('');
+    $('.text').text('');
+    $('#wd').val("");
+	$('input[name=wtype]').val("");
+    localStorage.removeItem("city");
+    localStorage.removeItem("district");
+}
+
+</script> 
+</html>

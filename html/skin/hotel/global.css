@@ -1,0 +1,1401 @@
+/*初始化*/
+
+
+
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td,select{margin:0;padding:0;}
+
+
+
+body,button,input,select,textarea{font:12px/1.5 tahoma,arial,\5b8b\4f53;color:#555;}
+
+
+
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+
+
+
+address,cite,dfn,em,var{font-style:normal;}
+
+
+
+code,kbd,pre,samp{font-family:courier new,courier,monospace;}
+
+
+
+input,button,select,textarea{ outline:none;}
+
+
+
+textarea{resize:none;}
+
+
+
+ul,ol{list-style:none;}
+
+
+
+a{text-decoration:none;color:#555;}
+
+
+
+a:hover{text-decoration:none;color:#67c8c2;outline:none;hide-focus:expression(this.hideFocus=true);}
+
+
+
+sup{vertical-align:text-top;vertical-align:super}sub{vertical-align:text-bottom;}
+
+
+
+fieldset,img{border:0;}
+
+
+
+button,input,select,textarea{font-size:100%;}
+
+
+
+table{border-spacing:0;}
+
+
+
+.clear_float:after{ font-size:0;display:block;visibility:hidden;height:0;line-height:0;clear:both;content:"";}.clear_float{display:inline-block;}/*asdfasdf\*/ * html .clear_float{zoom:1;}.clear_float{display:block;}
+
+
+
+.red{color:#d01111;}.clear_float{line-height:0;}
+
+
+
+.en,.arial{ font-family:Arial, Helvetica, sans-serif;}.fl{ float:left;}.fr{ float:right;}.mr30{ margin-right:30px;}.p20{ padding:20px;}
+
+
+
+.w1200{ width:1200px;margin:0 auto;display:block;}.wrap{ margin:0 auto;}
+
+
+
+body{ background:#fafbfb;}.yahei{ font-family:microsoft yahei;}
+
+
+
+.hidden {display: none!important;}
+
+
+
+.path{ display:block;overflow:hidden;height:40px;line-height:40px;margin:10px 0 0 0;}
+
+
+
+.clear{clear:both;}
+
+
+
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+
+
+
+* html .clearfix{zoom:1;}
+
+
+
+*:first-child+html .clearfix {zoom:1;}
+
+
+
+.yahei{font-family:microsoft yahei;}
+
+
+
+.yahei a{font-family:microsoft yahei;}
+
+
+
+/*topbar*/
+
+
+
+.topbar{ background:#f3f3f3 url(lis/themes/NewInns/img/topbar/topbar_bg.png) repeat-x 0 1px;height:42px;width:100%;padding-top:1px;font-family:microsoft yahei;}
+
+
+
+.topbar .fr{ *width:300px;}
+
+
+
+.topbar .logo li{ float:left;display:block;}
+
+
+
+.topbar .logo a{ padding:0 14px;float:left;display:block;height:42px;text-indent:-9999px;}
+
+
+
+.topbar .logo .n1 a{ background:url(lis/themes/NewInns/img/topbar/logo_1.png) no-repeat center 0;width:27px;}
+
+
+
+.topbar .logo .n2 a{ background:url(lis/themes/NewInns/img/topbar/logo_2.png) no-repeat center 0;width:27px;}
+
+
+
+.topbar .logo .n3 a{ background:url(lis/themes/NewInns/img/topbar/logo_3.png) no-repeat center 0;width:28px;}
+
+
+
+.topbar .logo .n4 a{ background:url(lis/themes/NewInns/img/topbar/logo_4.png) no-repeat center 0;width:36px;}
+
+
+
+.topbar .logo .n5 a{ background:url(lis/themes/NewInns/img/topbar/logo_5.png) no-repeat center 0;width:35px;}
+
+
+
+.topbar .logo .n6 a{ background:url(lis/themes/NewInns/img/topbar/logo_6.png) no-repeat center 0;width:35px;}
+
+
+
+.topbar .logo .n7 a{ background:url(lis/themes/NewInns/img/topbar/logo_7.png) no-repeat center 0;width:34px;}
+
+
+
+.topbar .logo .n8 a{ background:url(lis/themes/NewInns/img/topbar/logo_8.png) no-repeat center 0;width:28px;}
+
+
+
+.topbar .logo .n9 a{ background:url(lis/themes/NewInns/img/topbar/logo_9.png) no-repeat center 0;width:28px;}
+
+
+
+.topbar .logo .n10 a{ background:url(lis/themes/NewInns/img/topbar/logo_10.png) no-repeat center 0;width:28px;}
+
+
+
+.topbar .logo .n11 a{ background:url(lis/themes/NewInns/img/topbar/logo_11.png) no-repeat center 0;width:28px;}
+
+
+
+.topbar .logo .n12 a{ background:url(lis/themes/NewInns/img/topbar/logo_12.png) no-repeat center 0;width:47px;}
+
+
+
+.topbar .logo .n13 a{ background:url(lis/themes/NewInns/img/topbar/logo_13.png) no-repeat center 0;width:47px;}
+
+
+
+.topbar .logo a.on,.topbar .logo a.on:hover{ background-position:center -84px;background-color:#fff;}
+
+
+
+.topbar .logo a:hover{ background-position:center -42px;}
+
+
+
+.topbar .loginbox{ float:right;}
+
+
+
+.topbar .about{ float:right;padding:0 15px;line-height:42px;height:42px;}
+
+
+
+.topbar .loginTip{ background:#B8B8B8 url(lis/themes/NewInns/img/topbar/tip.png) no-repeat center center;width:100px;height:42px;line-height:42px;display:block;text-indent:-9999px;}
+
+
+
+.topbar .loginTip:hover{ background-color:#3c3c3c;}
+
+
+
+/*header footer*/
+
+
+
+.head{ background:#fff;font-family:microsoft yahei;}
+
+
+
+.head .logo{ background:url(image/banner2.jpg) no-repeat;height: 113px;}
+
+
+
+.head .logo a{ display:block;height:100%;width:100%}
+
+
+
+.head .tel{ float:right;height:44px;line-height:44px;color:#009c9c;font-family:Arial, Helvetica, sans-serif;font-size:15px;background:url(lis/themes/NewInns/img/header/tel.png) no-repeat left center;text-indent:24px;}
+
+
+
+.head .menu{ float:right;margin-top:5px;}
+
+
+
+.head .menu li{ padding-right:25px;display:inline;height:44px;line-height:44px;padding-left:25px;background:url(lis/themes/NewInns/img/header/line.png) no-repeat right center;}
+
+
+
+.head .menu li a{ color:#fff;font-size:18px;}
+
+
+
+.head .menu li a:hover{ color:#333;}
+
+
+
+.head .menu li.on a{ color:#fff;}
+
+
+
+.head .w1200{ position:relative;}
+
+
+
+.head .w1200 .tel{ position:absolute;right:57px;top:0;height:20px;line-height:20px;}
+
+
+
+.head .menu li.last{ background:none;padding-right:0;}
+
+
+
+
+
+
+
+.hotcity{ margin-top:20px;}
+
+
+
+.hotcity h2{ font-size:18px;height:28px;line-height:28px;display:block;font-weight:normal;margin-bottom:10px;font-family:microsoft yahei;}
+
+
+
+.hotcity a{ font-size:12px;color:#666;margin:0 21px 7px 0;float:left;display:block;}
+
+
+
+.hotcity a:hover{color:#64c6c0;}
+
+
+
+
+
+
+
+.hometip{ background:#f7f7f7;padding:10px 0;/*height:28px;*/margin:25px 0;}
+
+
+
+.hometip li{ height:28px;line-height:28px;color:#999;font-size:17px;float:left;width:145px;background:url(lis/themes/NewInns/img/icon_10.png) no-repeat right center;padding-left:50px;}
+
+
+
+.hometip li img{ float:left;margin-right:10px;}
+
+
+
+.hometip li.n6{ background:none;}
+
+
+
+.hometip li span{ display: inline-block;font-family:microsoft yahei;}
+
+
+
+/*.hometip li.n1 span{ background:url(lis/themes/NewInns/img/icon_04.png) no-repeat 42px center;}
+
+
+
+.hometip li.n2 span{ background:url(lis/themes/NewInns/img/icon_05.png) no-repeat 45px center;}
+
+
+
+.hometip li.n3 span{ background:url(lis/themes/NewInns/img/icon_06.png) no-repeat 48px center;}
+
+
+
+.hometip li.n4 span{ background:url(lis/themes/NewInns/img/icon_07.png) no-repeat 50px center;}
+
+
+
+.hometip li.n5 span{ background:url(lis/themes/NewInns/img/icon_08.png) no-repeat 32px center;}
+
+
+
+.hometip li.n6 span{ background:url(lis/themes/NewInns/img/icon_09.png) no-repeat 43px center;}*/
+
+
+
+
+
+
+
+.footLink{ text-align:center;height:24px;line-height:24px;}
+
+
+
+.footLink u{ color:#eeefef;font-size:12px;height:24px;line-height:24px;padding:0 8px;}
+
+
+
+.footLink a{height:24px;line-height:24px;color:#999;}
+
+
+
+.footLink a:hover{color:#64c6c0;}
+
+
+
+
+
+
+
+.copyRight{ text-align:center;color:#999;display:block;margin-top: 30px;}
+
+
+
+
+
+
+
+
+
+
+
+/*select3
+
+
+
+.select{ float:left; position:relative;width:168px; border:1px solid #e0e0e0; height:28px; line-height:28px; background:#fff url(lis/themes/NewInns/img/icon_33.png) no-repeat 150px 9px;border-radius: 3px; text-indent:6px;}
+
+
+
+.select .selBox{ position:absolute; left:0px; top:29px; background:#fff;border-radius:3px; display:none; max-height:118px; width:168px; border:1px solid #e0e0e0; overflow:scroll; overflow-x:hidden;}
+
+
+
+.select .selBox li{ height:28px; line-height:28px; text-indent:12px; cursor:pointer; overflow:hidden;}
+
+
+
+.select .selBox li:hover{ background:#0d449c; color:#fff;}
+
+
+
+.select .selBox li:active{ background:#0d449c;}
+
+
+
+.select .valTxt{ width:168px; height:28px; line-height:28px; text-indent:12px; cursor:pointer; display:block; color:#888;}*/
+
+
+
+/*海外城市框*/
+
+
+
+.select{ float:left; position:relative;width:210px;}
+
+
+
+.select .abroadCity{width:210px; height:32px; line-height:32px; float:left; background-position:190px 12px;border-radius: 3px; border:none; text-indent:6px;}
+
+
+
+.select .selBox{ background:#FFF; position:absolute; left:-1px; top:32px; width:400px;border:1px solid #d3d3d3;overflow:hidden;box-shadow:1px 1px 2px #c1c1c1;border-top:0;}
+
+
+
+.selBox .selBox_title{margin:0;padding:0;overflow:hidden;background:#ececec;padding:2px 0 0 12px;}
+
+
+
+.selBox .selBox_title span{float:left;list-style:none;padding:2px 8px;cursor:pointer;margin-left:4px;display:inline;color:#777;background: #fff; position: relative; color:#333; line-height:23px;}
+
+
+
+.select .selBox ul{ margin:4px 0 4px 10px; padding:8px 0;}
+
+
+
+.select .selBox li{ height:28px; line-height:28px; padding:0 8px;cursor:pointer; float:left;}
+
+
+
+.select .selBox li:hover{ background:#67c8c2; color:#fff;}
+
+
+
+.select .selBox li:active{ background:#67c8c2;}
+
+
+
+.select .valTxt{ width:168px; height:28px; line-height:28px; text-indent:12px; cursor:pointer; display:none; color:#888;}
+
+
+
+
+
+
+
+/*焦点图*/
+
+
+
+.slidebox{ position:absolute;width:100%;height:530px;z-index:1;overflow:hidden;}
+
+
+
+.w1200_position{ width:1200px;margin:0 auto;position:relative;z-index:9;}
+
+
+
+.fouce span{ display:inline-block;width:100%;height:530px;margin:0px;position:absolute;left:0;top:0;z-index:1;background-position:center top;background-repeat:no-repeat;}
+
+
+
+.fouce span.last-active{ z-index:5;}
+
+
+
+.fouce span.active{ z-index:6;}
+
+
+
+.fouce span a{ width:100%;height:100%;display:block;}
+
+
+
+.slidebar{position:absolute;left:-200px;top:496px;z-index:999;zoom:1;width:1600px;height:34px;background: url(lis/themes/NewInns/img/icon_11.png) repeat;_background:#7a7a7a;}
+
+
+
+.slidebox ul li{ float:left;display:inline-block;width:20%;height:34px;line-height:34px;text-align:center;cursor:pointer;color:#333;position:relative;font-size:12px;}
+
+
+
+.slidebox ul li a{ display:block;color:#333;width:100%;overflow:hidden;height:34px;line-height:34px;white-space: nowrap;
+
+
+
+text-overflow: ellipsis;
+
+
+
+-o-text-overflow: ellipsis;
+
+
+
+display: block;
+
+
+
+overflow: hidden;}
+
+
+
+.slidebox ul{ width:1200px; margin:0 auto;}
+
+
+
+.slidebox ul li b{ display:none;background:url(lis/themes/NewInns/img/icon_15.gif) no-repeat;position:absolute;left:90px;top:-5px;width:9px;height:9px;}
+
+
+
+.slidebox ul li.active{ background:url(lis/themes/NewInns/img/icon_12.png) repeat;color:#fff;}
+
+
+
+.slidebox ul li.active a{ color:#fff;}
+
+
+
+.slidebox ul li.active b{ display:block;}
+
+
+
+
+
+
+
+/* citySelector ---------------------------------------------------------------------- */
+
+
+
+.city_box{ position:relative;z-index:9;}
+
+
+
+.citySelector{background:#fff;font-size:12px;font-family:"Hiragino Sans GB",tahoma,arial,\5b8b\4f53;}
+
+
+
+.cityslide{width:220px;list-style:none;margin:0;padding:0;border:1px solid #d3d3d3;box-shadow:1px 1px 2px #c1c1c1;border-top:0;}
+
+
+
+.cityslide li{list-style:none;overflow:hidden;height:16px;padding:4px 5px;cursor:pointer;color:#777;}
+
+
+
+.cityslide li.on{background:#64c6c0;color:#fff;}
+
+
+
+.cityslide li b{font-weight:normal;}
+
+
+
+.cityslide li.empty{background:#fff2e8;color:#666;line-height:16px;}
+
+
+
+.cityslide li.empty em{color:red;font-style:normal;}
+
+
+
+.cityname{float:left;/*width:210px;*/}
+
+
+
+.cityspell{float:right;}
+
+
+
+.cityBox{width:400px;border:1px solid #d3d3d3;overflow:hidden;box-shadow:1px 1px 2px #c1c1c1;border-top:0;}
+
+
+
+.cityBox ul{margin:0;padding:0;overflow:hidden;background:#ececec;padding:2px 0 0 12px;}
+
+
+
+.cityBox ul li{float:left;list-style:none;padding:2px 8px;cursor:pointer;margin-left:4px;display:inline;color:#777;}
+
+
+
+.cityBox ul li.on{ background: #fff;position: relative;color:#333;}
+
+
+
+.hide{display:none;}
+
+
+
+p.tip{color:#aaa;line-height:20px;padding:5px 0 5px 12px;margin:0;text-indent:3px;}
+
+
+
+.hotCity{margin-top:-1px;clear:left;overflow:hidden;padding-bottom:5px;padding-top:5px;_margin-bottom:8px;}
+
+
+
+.cityTab{overflow:hidden;}
+
+
+
+.cityTab dl{margin:0;padding:0;overflow:hidden;}
+
+
+
+.cityTab dl dt{float:left;padding-left:10px;color:#64c6c0;text-indent:10px;font-family:"Hiragino Sans GB","Lucida console","consolas","courier new";line-height:26px;font-size:14px;width:20px;padding-top:8px;}
+
+
+
+.cityTab dl dd{margin-left:10px;float:left;width: 360px;padding:8px 0 8px 0;}
+
+
+
+.cityTab dl dd a{width:66px;height:24px;line-height:24px;display:inline-block;color:#777;text-decoration:none;text-indent:14px;margin-right:5px;margin-bottom:1px;float:left;}
+
+
+
+.cityTab dl dd a:hover{color:#64c6c0;background:#64c6c0;color:#fff;}
+
+
+
+.hotCity .hot dt{display:none;}
+
+
+
+/*inputText*/
+
+
+
+.tipTxt{ position:absolute;left:0px;top:0px;text-indent:6px;color:#aaa;z-index:0;cursor: text;height:32px;line-height:32px;font-size:14px;}
+
+
+
+/* search_bar */
+
+
+
+.searchBox>span,.searchBox .keyword,.searchBox .city{ margin-right:30px;*margin-right:25px;display:block;color:#f3f3f3;float:left;line-height:23px;}
+
+
+
+.searchBox .input_txt{ height:32px;line-height:32px;background:#fff;border-radius:3px;width:210px;border:0;text-indent:8px;vertical-align: middle;font-size:14px;font-family:microsoft yahei;*float:left;}
+
+
+
+.searchBox .btn_search{ width:92px;height:27px;line-height:24px;background:#1d7ad9;color:#fff;border:0;float:right;font-family:microsoft yahei;cursor:pointer;}
+
+
+
+.searchBox .btn_search:hover{ background:#FF7300;}
+
+
+
+.searchBox .pos{position:relative;}
+
+
+
+.searchBox .keyword .name{ float:left;margin-right:5px;}
+
+
+
+.searchBox .kw{ float:left;position:relative;z-index:2;width:210px;top:0;}
+
+
+
+.kerword_box,.word_slide{ width:370px;padding:6px 12px;text-indent:0;border:1px solid #e7e7e7;box-shadow:#e7e7e7 0px 0px 5px;position: absolute;top:31px;left:-1px;font-size:12px;background:#fff;color:#333;z-index:9;}
+
+
+
+.word_slide{width:220px;padding:0;display:none;}
+
+
+
+.word_slide a{ display:block;list-style:none;overflow:hidden; height:16px;padding:4px 5px;cursor:pointer;color:#777;}
+
+
+
+.word_slide a:hover{ background:#64c6c0;color:#fff;}
+
+
+
+.word_slide a:hover b{ font-weight:normal;}
+
+
+
+.kerword_box p{ border-bottom:1px solid #ececec;padding-bottom:5px;margin-bottom:5px;line-height:24px;font-size:14px;font-family:microsoft yahei;}
+
+
+
+.kerword_box p a{ margin-right:10px;display:inline-block;font-size:12px;}
+
+
+
+.kerword_box p a:hover{ color:#64c6c0;}
+
+
+
+.kerword_box p.last{ padding:0;margin:0;border:0;}
+
+
+
+.city_box{ float:left;margin-left:0;*margin-left:-4px;width:210px;position:relative;}
+
+
+
+.out_kw{ position:relative;}
+
+
+
+.out_kw .tipTxt{ left:80px;}
+
+
+
+
+
+
+
+.ui-widget-content{ border:1px solid #c1c1c1;display:none;}
+
+
+
+.ui-datepicker td{border:1px solid #f1f1f1;}
+
+
+
+.ui-datepicker-calendar .ui-state-hover,.ui-state-active, .ui-widget-content .ui-state-active{ background-color:#64c6c0;color:#fff;}
+
+
+
+.ui-widget-content{ }
+
+
+
+
+
+
+
+.topbar .w1200{ position:relative;}
+
+
+
+/* checkbox ---------------------------------------------------------------------- */
+
+
+
+label.checkbox {padding-left:19px;cursor:pointer;background: url(lis/themes/NewInns/img/icon_14.png) no-repeat left center;/*line-height:22px;height:21px;*/ display:inline-block;} 
+
+
+
+label.checked {background: url(lis/themes/NewInns/img/icon_15.png) no-repeat  left center;} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*hRadio*/
+
+
+
+.hRadio { padding-left:20px;display: inline-block;background:url(lis/themes/NewInns/img/company/icon_1.png) no-repeat left center;height: 14px;line-height:14px;cursor:pointer;vertical-align:middle;margin-right:12px;}
+
+
+
+.hRadio_Checked {background:url(lis/themes/NewInns/img/company/icon_2.png) no-repeat left center;}
+
+
+
+
+
+
+
+/*css3*/
+
+
+
+.topbar .loginTip,.topbar .loginTip:hover,.homeRotator .searchBox .tabMain .btn1:hover,.homeRotator .searchBox .tabMain .btn2:hover,.search_bar .btn_search,.search_bar .btn_search:hover,.room_info .btn_buy,.room_info .btn_buy:hover,.hotelInfo .tabs span,.hotelInfo .tabs span:hover,.btn .sure,.btn .sure:hover,.qMenu li,.qMenu li:hover,.searchmain .label .btn,.searchmain .label .btn:hover,.info_edit .sure,.info_edit .sure:hover,.numBar .tags a,.numBar .tags a:hover,.recommend .box .more,.recommend .box .more:hover,.notesTable td a,.notesTable td a:hover,.info_mg .again,.info_mg .again:hover,.searchBox .btn,.searchBox .btn:hover,.yzmBtn,.yzmBtn:hover{-moz-transition:all .2s linear;-webkit-transition:all .2s linear;transition:all .2s linear;}
+
+
+
+a,a:hover{-moz-transition:color .3s linear;-webkit-transition:color .3s linear;transition:color .3s linear;}
+
+
+
+
+
+
+
+/*--------------------------add head gnb 2015-04-28 begin----------------------------------*/
+
+
+
+.position_relative{position:relative;}
+
+
+
+/* header -------- */
+
+
+
+/*inputText*/
+
+
+
+/*.tipTxt{position:absolute;left:0px;top:0px;text-indent:10px;color:#aaa;z-index:0;cursor:text;height:25px;line-height:25px;font-size:12px;float:left;}
+
+
+
+input{border:1px solid #dedede;height:22px;line-height:22px;padding:0 0 0 9px;}*/
+
+
+
+.enter_input_border{border:1px solid #59c6c0;}
+
+
+
+textarea{border:1px solid #ECECEC;}
+
+
+
+/*horizontalAlign*/
+
+
+
+.horizantal{display:inline-block;vertical-align:top;position:relative;}
+
+
+
+/*
+
+
+
+  * Pre-IE7 IE hack.  On IE, display: inline-block only gives the element
+
+
+
+  * layout, but doesn't give it inline behavior.  Subsequently setting display
+
+
+
+  * to inline does the trick.
+
+
+
+  */
+
+
+
+* html .horizantal{display:inline;}
+
+
+
+/*
+
+
+
+  * IE7-only hack.  On IE, display: inline-block only gives the element
+
+
+
+  * layout, but doesn't give it inline behavior.  Subsequently setting display
+
+
+
+  * to inline does the trick.
+
+
+
+  */
+
+
+
+*:first-child+html .horizantal{display: inline;}
+
+
+
+/*ellipsis*/
+
+
+
+.ellipsis{/*overflow:hidden;*/white-space:nowrap;text-overflow:ellipsis;line-height:24px;}
+
+
+
+
+
+
+
+
+
+
+
+/*未登录者登录弹框样式*/
+
+
+
+.login_box .title_text{height:16px;line-height:16px;color:#969696;padding:0 0 6px 20px;font-size:14px;}
+
+
+
+.login_box input{width:240px;height:14px;line-height:14px;padding:8px 0 8px 37px;margin:12px 0 0 20px;color:#dedede;background:#FFF url(lis/themes/NewInns/sprite/icon_hotel_home.png) no-repeat -700px -327px;}
+
+
+
+.login_password_box label{position:absolute;left:57px;top:105px;*top:110px;color:#dedede;}
+
+
+
+.login_box .login_password{background-position:-700px -369px;}
+
+
+
+.login_box .alarm_text{height:14px;line-height:14px;color:#d70000;padding:16px 0 0 20px;display:none;}
+
+
+
+.login_box .avoid_login_box{height:14px;line-height:14px;padding:16px 0 15px 20px;}
+
+
+
+.login_box .check_btn,.login_box .checked{width:14px;height:14px;margin-right:8px;cursor:pointer;}
+
+
+
+.login_box .checked{background-position:-9px -238px;}
+
+
+
+.login_box .tool_box{height:40px;line-height:40px;padding:0 0 23px 20px;}
+
+
+
+.tool_box .login_btn{width:121px;text-align:center;color:#fff;background:#d1ae76;font-size:18px;margin-right:26px;cursor:pointer;}
+
+
+
+.tool_box .login_btn:hover{background-color:#ab8954;}
+
+
+
+.tool_box .login_btn a{color:#fff;font-size:18px;display:block;text-align:center;}
+
+
+
+.tool_box a{width:auto;height:40px;line-height:40px;padding-right:4px;background:none;color:#1d7ad9;}
+
+
+
+.tool_box a:hover{text-decoration:underline;color:#1d7ad9;}
+
+
+
+.tool_box .desperate_notation{padding-right:6px;*padding-right:10px;color:#1d7ad9;*line-height:35px;}
+
+
+
+.login_box .company_account_box{color:#969696;padding:0 0 15px 20px;}
+
+
+
+.company_account_box a{width:48px;height:18px;line-height:18px;background:url(lis/themes/NewInns/sprite/icon_hotel_home.png) no-repeat;color:#000;}
+
+
+
+.company_account_box a:hover{text-decoration:underline;}
+
+
+
+.company_account_box .weibo_icon{padding-left:26px;background-position:-664px -411px;margin-right:4px;}
+
+
+
+.company_account_box .qq_icon{padding-left:22px;background-position:-664px -446px;}
+
+
+
+.login_box .enter_club_center_btn #aclub{height:16px;background:#333;width:auto;padding:9px 17px 10px 42px;cursor:pointer;display:block;text-align:right;color:#d1ae76;line-height:16px;vertical-align:top;font-size:14px;font-family:"Hiragino Sans GB",microsoft yahei;}
+
+
+
+.login_box .enter_club_center_btn #aclub:hover{background:#000;}
+
+
+
+/*已登录者登录弹框样式*/
+
+
+
+.logined_box .unit_box{line-height:14px;padding:0 0 12px 22px;}
+
+
+
+.logined_box a{color:#777777;}
+
+
+
+.unit_box div{color:#333;font-weight:bold;width:56px;height:14px;line-height:14px;}
+
+
+
+.ja .unit_box #memberScore,.en .unit_box #memberScore{margin-bottom:7px;width:auto;} 
+
+
+
+.ja #memberLevel,.en #memberLevel{width:auto;}
+
+
+
+.unit_box .exchange_btn{height:14px;line-height:14px;width:auto;color:#1d7ad9;cursor:pointer;background:none;}
+
+
+
+.unit_box .exchange_btn:hover{text-decoration:underline;}
+
+
+
+.logined_box .member_dealing_unit{height:16px;line-height:16px;border-top:1px solid #e2e2e2;padding:8px 0 8px 22px;cursor:pointer;}
+
+
+
+.logined_box .member_dealing_unit .logout{margin-top:8px;}
+
+
+
+.logined_box .member_dealing_unit:hover{background-color:#fff;}
+
+
+
+.member_dealing_unit .alarm_num{color:#d70000;}
+
+
+
+.logined_box .enter_club_center_btn{height:35px; line-height:35px;background-color:#333;cursor:pointer;}
+
+
+
+.logined_box .enter_club_center_btn:hover{background-color:#000;}
+
+
+
+.logined_box .enter_club_center_btn a{color:#d1ae76;display:block;height:35px;text-align:center;line-height:35px;width:auto;vertical-align:top;font-size:14px;}
+
+
+
+/* inner ----------------------------------------------------------------------- */
+
+
+
+.inner{}
+
+
+
+/* footer ---------------------------------------------------------------------- */
+
+
+
+.foot{width:100%;background:#333;}
+
+
+
+.footer{background:#333;min-width:1200px;background:#333;color:#ccc;padding:16px 0;margin:0 auto;}
+
+
+
+.footer p{height:14px;line-height:14px;}
+
+
+
+.footer .verification_link_box{float:left;}
+
+
+
+.links_box{padding-bottom:19px}
+
+
+
+.links_box a{color:#ccc;cursor:pointer;}
+
+
+
+.links_box a:hover{text-decoration:underline;}
+
+
+
+.friendly_links_box{padding-top:22px;}
+
+
+
+.friendly_links_box a{margin-right:25px;float:left;height:34px;background:url(lis/themes/NewInns/sprite/icon_hotel_home.png) no-repeat;display:block;cursor:pointer;}
+
+
+
+.friendly_links_box .gongshang_icon{width:27px;background-position:-41px -311px;}
+
+
+
+.friendly_links_box .gongshang_icon:hover{background-position:-41px -630px;}
+
+
+
+.friendly_links_box .verify_success{width:60px;background-position:-97px -311px;}
+
+
+
+.friendly_links_box .verify_success:hover{background-position:-97px -629px;}
+
+
+
+.friendly_links_box .net_policeman{width:67px;background-position:-183px -311px;}
+
+
+
+.friendly_links_box .net_policeman:hover{background-position:-183px -630px;}
+
+
+
+.friendly_links_box .collect_credit{width:68px;background-position:-275px -311px;}
+
+
+
+.friendly_links_box .collect_credit:hover{background-position:-275px -630px;}
+
+
+
+.friendly_links_box .credited_firm{width:89px;background-position:-365px -311px;}
+
+
+
+.friendly_links_box .credited_firm:hover{background-position:-365px -630px;}
+
+
+
+.footer .app_code_box{width:187px;float:right;}
+
+
+
+.app_code_box .title_text{height:14px;line-height:14px;}
+
+
+
+.app_code_box .two_dimension_code_icons_box{height:84px;margin:6px 0;}
+
+
+
+.two_dimension_code_icons_box a{width:84px;height:84px;float:left;background:url(lis/themes/NewInns/sprite/icon_hotel_home.png) no-repeat;}
+
+
+
+.two_dimension_code_icons_box .jinjiang_app_code_icon{background-position:-688px -209px;margin-right:19px;}
+
+
+
+.two_dimension_code_icons_box .jinjiang_wechat_code_icon{background-position:-791px -209px;}
+
+
+
+.app_name_box div{float:right;width:84px;word-break:break-all;}
+
+
+
+.app_name_box .app_text{float:left;}
+
+
+
+.footer .jinjiang_tool_bar{width:158px;float:right;margin-right:69px;}
+
+
+
+.jinjiang_tool_bar .iphone_app_icon{width:122px;height:36px;background:url(lis/themes/NewInns/sprite/icon_jinjiang_bar.png) no-repeat -7px -77px;display:block;margin-bottom:24px;cursor:pointer;}
+
+
+
+.jinjiang_tool_bar p{height:14px;line-height:14px;padding-bottom:14px;}
+
+
+
+.jinjiang_tool_bar .social_network_box{width:158px;height:29px;background:url(lis/themes/NewInns/sprite/icon_hotel_home.png) no-repeat -534px -320px;}
+
+
+
+.jinjiang_tool_bar .social_network_box a{width:29px;height:29px;display:block;float:left;margin-right:9px;cursor:pointer;}
+
+
+
+.social_network_box a.facebook_icon{margin-right:14px;}
+
+
+
+/*--------------------------add head gnb 2015-04-28 end----------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+.order_head .book_num{height:29px;margin:12px 30px 18px 0;color:#59c6c0;background: url(lis/themes/NewInns/img/header/tel2.png) no-repeat;padding-left:31px;float:right;}
+
+
+
+.order_head .internation_book_num{height:29px;margin:12px 30px 18px 0;color:#5cb8e6;background: url(lis/themes/NewInns/img/header/tel0.png) no-repeat;padding-left:31px;float:right;}
+
+
+
+.order_head .book_num div{height:11px;line-height:11px;text-align:left;font-size:11px;}
+
+
+
+.order_head .book_num .phone_num{height:19px;line-height:19px;font-size:19px;}
+
+
+
+
+
+
+
+.order_head .international_jinjiang_logo a{width:115px;height:30px;float:left;background: url(lis/themes/NewInns/img/header/logo2.png) no-repeat;border-left:none;color:#fff;margin:10px 0 0 0;}
+
+
+
+.order_head .international_order_logo a{width:115px;height:30px;float:left;background: url(lis/themes/NewInns/img/header/logo0.jpg) no-repeat;border-left:none;color:#fff;margin:10px 0 0 0;}
+
+
+
+.order_head .login_box, .order_head .logined_box{top:68px;}
+
+
+
+.navbg{ background:#fff;}
+
+
+
+
+
+
+
+/*--------------------------企业客户登陆----------------------------------*/
+
+
+
+.head .enterprise_login { position:absolute; top:0; right:0; color:#009c9c;}
+
+
+
+.head .desperate_notetion { position:absolute; top:0; right:50px; color:#009c9c;}
+
+
+
+
+
+
+
+.en .head .desperate_notetion { position:absolute; top:0; right:97px; color:#009c9c;}
+
+
+
+.en .head .w1200 .tel{ position:absolute;right:103px;top:0;height:20px;line-height:20px;}
+
+
+
+
+
+
+
+.en .logined_box .enter_club_center_btn {padding: 9px 0px 10px 19px;}
+
+
+
+.en .header .logined_box {width: 228px;left: 970px;}
+
+
+
+
+
+
+
+
+
+
+
+.cityslide{ padding:6px 10px; width:280px;color:#777}
+
+
+
+.cityslide .cityslide_head{ color:#333; padding:0 2px;}
+
+
+
+.cityslide .cityslide_adress{ color:#333; padding:2px 2px 4px; border-bottom:1px solid #ececec; margin-bottom:2px;cursor: pointer;}
+
+
+
+.cityslide .cityslide_adress:hover { background:#1d7ad9;}
+
+
+
+.cityslide .cityslide_adress:hover a {color:#FFF;}
+
+
+
+.cityslide .cityslide_hotel{ margin-top:2px;}
+
+
+
+.cityslide .cityslide_hotel  li{ padding:4px 2px; line-height:16px; color:#777;}
+
+
+
+.cityslide .cityslide_hotel  li.on{ color:#FFF;}
+
+
+
+.cityslide .cityslide_hotel  li .cityslide_hotel_name{ float:left;}
+
+
+
+.cityslide .cityslide_hotel  li .cityslide_hotel_adress{ float:right;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.citySelector{opacity:0.9;filter:alpha(opacity=90);-khtml-opacity:0.9;}
+
+
+
+.cityBox,.cityslide{position:relative;}
+
+
+
+.cityslide_adress .city_letter{float:right;}
+
+
+
+
+
+
+
+.memberNotice{ background:#fefcd5; border:1px solid #ffd700; color:#000000; font-size:12px; position:relative; line-height:30px; padding-left:56px; margin:-10px auto 14px;}
+
+
+
+.memberNotice i.noticeArrow{ background:url(lis/themes/NewInns/img/notice_icon.png) no-repeat; width:11px; height:11px; position:absolute; left:-1px; top:-1px;}
+
+
+
+.memberNotice span.noticeIcon{background:url(lis/themes/NewInns/img/notice_icon.png) no-repeat 0 -18px; width:19px; height:19px; position:absolute; left:25px; top:6px;}
+
+
+
+.memberNotice span.noticetitle{ font-weight:bold; color:#d24339;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*特价房样式*/
+
+
+
+.special-card{ background:url(lis/themes/NewInns/images/special_card.jpg) no-repeat; width:728px; height:91px; position:relative; margin:28px 0 0 22px;}
+
+
+
+.special-infomation{ width:240px; color:#ffffff; padding:20px 0 0 336px;}
+
+
+
+.special-card-btn{ position:absolute; left:600px; top:30px;}
+
+
+
+.special-card-btn a{ background:url(lis/themes/NewInns/images/special_btn.jpg) no-repeat; width:118px; height:37px; display:block; text-indent:-99999px;}

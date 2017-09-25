@@ -1,0 +1,15 @@
+<ul id="hotHotelul">
+{loop $tags $k $t}
+{var_dump($tags)}
+<li class="clearfix">
+			                                <a href="{$t[linkurl]}" >
+			                                <img src="{imgurl($t[thumb])}" height="100"  width="134">
+			                        
+			                                <h6>{$t[company]}</h6>
+			                                <p>¥<span>{$t[lowprice]}</span>起</p>
+			                                </a>
+			                            </li>
+
+{/loop}
+</ul>
+{if $showpage && $pages}<div class="pages">{$pages}</div>{/if}

@@ -1,0 +1,672 @@
+﻿@charset "utf-8";
+
+/* CSS Document */
+
+body{ background:#f3f3f3;}
+
+.p30{ padding:20px 30px;}
+
+
+
+.sm{ overflow-x:auto; width:1200px;}
+
+
+
+.cbody{ background:url(lis/themes/NewInns/img/company/bg.jpg) no-repeat center top; height:840px; position:relative; /*overflow:hidden;*/}
+
+.bnone{ background:none; height:auto;}
+
+.leftmain{ width:270px; margin-right:25px; padding-top:30px; float:left;}
+
+.rightmain{ background:#fcfcfc; width:903px; float:left; margin-top:30px;border:1px solid #d9e8ff;}
+
+.rm2{ background:none; border:0;}
+
+
+
+.leftmain .searchmain{ width:268px; background:url(lis/themes/NewInns/img/company/bg.png) repeat; border:1px solid #d9e8ff; color:#888; margin-bottom:24px;}
+
+
+
+.searchmain .tabs{ overflow:hidden;}
+
+.searchmain .tabs span{ width:134px; height:42px; line-height:42px; background:#f8f8f8; border-bottom:1px solid #e9e8e8; display:inline-block; float:left; text-align:center; font-size:14px; color:#999;font-family:microsoft yahei; cursor:pointer;  color:#555;}
+
+.searchmain .tabs span.on{ background:#65c7c0;color:#fff; border-color:#65c7c0;}
+
+.searchmain .tabMain{ padding:12px 20px;}
+
+
+
+.searchmain .input_txt{ width:226px; border:1px solid #e0e0e0; height:30px; line-height:30px; background:#fff;border-radius:3px; text-indent:8px; color:#888; margin-left:0; *float:left;padding:0;}
+
+.searchmain .date .input_txt{ background:#fff url(lis/themes/NewInns/img/icon_32.png) no-repeat 200px 5px;}
+
+.searchmain .city_box{ width:228px; float:none; *margin-left:0px; }
+
+.searchmain .name{ margin-bottom:5px;}
+
+.searchmain .label{margin-bottom:8px; *float:left; *margin-bottom:0;}
+
+.searchmain .kw{ position:relative;}
+
+.searchmain .kw .tipTxt{ font-size:12px; text-indent:8px; height:30px; line-height:30px; *top:1px;}
+
+.searchmain .label .btn{ width:228px; height:30px; line-height:30px; background:#d24339; display:block;border-radius:3px; margin-top:10px; text-align:center; font-size:14px; color:#fff;font-family:microsoft yahei; margin-top:25px; margin-bottom:20px;}
+
+.searchmain .label .btn:hover{ background:#aa2b22;}
+
+.searchmain .tabMain{ display:none;}
+
+
+
+
+
+.searchmain .abroad .select{ width:235px; background-position:205px 10px; margin-bottom:8px; height:30px; line-height:30px;}
+
+.searchmain .select .valTxt{width:225px;}
+
+.searchmain .select .selBox{ width:400px; left:-1px;}
+
+
+
+.adbox{ background:url(lis/themes/NewInns/img/company/bg.png) repeat; width:270px; height:145px; line-height:145px; text-align:center;font-family:microsoft yahei; color:#999;}
+
+
+
+.qMenu{ position:absolute; right:0; top:140px; }
+
+.qMenu li{ width:110px;margin-left:28px; display:block; /*overflow:hidden;*/ background:#007362;text-indent:25px; color:#e7e8e9; margin-bottom:10px; height:32px; line-height:32px;border-radius: 3px 0 0 3px;font-family:microsoft yahei; font-size:14px; position:relative; /*right:-28px;*/ cursor:pointer;}
+
+.qMenu li:hover{ background:#3e8f8b;}
+
+.qMenu li.on{ right:0; background:#bd332a;margin-left:0;width:138px;}
+
+
+
+.qMain{ width:540px; margin:80px 0 0 120px; background:url(lis/themes/NewInns/img/company/t1.png) no-repeat left top; padding-top:110px; line-height:26px; color:#676564;display:none;}
+
+
+
+.qm3 .line{ border-top:1px solid #ccc; padding-top:30px; margin-top:30px; color:#777;}
+
+.qMain a{ color:#d24339; text-decoration:underline;}
+
+.qMain a:hover{ color:#333; text-decoration:none;}
+
+
+
+.titbox{ height:42px; line-height:42px; border-bottom:1px solid #d9e8ff;}
+
+.titbox h2{ font-size:14px; font-weight:normal;font-family:microsoft yahei; text-indent:30px;}
+
+
+
+.tishi{ background:#f8f8f8 url(lis/themes/NewInns/img/company/icon_4.png) no-repeat 25px center; padding:23px 20px 23px 65px;border-radius:5px; display:block; color:#999; margin-bottom:30px;}
+
+
+
+.info_edit{ padding:30px 0 30px 90px; color:#8c8c8c; margin-bottom:30px;}
+
+.info_edit p{ height:35px; line-height:35px; margin-bottom:18px; display:block; padding-left:130px;}
+
+.info_edit p .name{ width:120px; float:left; margin-left:-130px; text-align:right;}
+
+.info_edit .w230{width:260px; height:32px; line-height:32px; background:#f1f1f1; border:0;border-radius:5px; text-indent:12px;}
+
+.info_edit .tip{ color:#b3b3b3; font-size:12px; padding-left:12px;}
+
+.info_edit .sure{ background:#d6554c; height:32px; line-height:32px; text-align:center; font-size:14px; color:#fff; display:inline-block; padding:0 40px; margin-right:8px;border-radius:5px; margin-top:40px;font-family:microsoft yahei;}
+
+.info_edit .sure:hover{ background:#474e5d;}
+
+
+
+.formBox h2{ height:36px; line-height:36px;border-bottom:1px solid #e8e7e7; color:#7dcec9; font-weight:normal;font-family:microsoft yahei; font-size:13px;}
+
+
+
+.checkBox .cb,.checkBox .cb_on{padding-left:20px; display: inline-block;background:url(lis/themes/NewInns/img/company/icon_5.png) no-repeat left center;height: 14px; line-height:14px; cursor:pointer;vertical-align:middle; margin-right:12px;
+
+*margin-top:9px;}
+
+.checkBox .cb_on{background:url(lis/themes/NewInns/img/company/icon_6.png) no-repeat left center;}
+
+
+
+.file a{ background:#cacaca; width:108px; height:28px; line-height:28px; text-align:center; color:#fff; display:inline-block; margin-left:8px; border-radius: 5px;}
+
+
+
+.numBar {height:42px; line-height:42px; border-bottom:1px solid #e8e7e7;text-indent:30px;}
+
+.numBar b{ color:#d6a200; font-family:Arial, Helvetica, sans-serif; padding:0 3px;}
+
+.numBar .tags{ float:right; padding-right:30px; padding-bottom:10px;}
+
+.numBar .tags a{ display:inline-block; height:22px; line-height:22px; padding:0 15px;border-radius: 3px; text-indent:0; margin-left:8px;}
+
+.numBar .tags a.on,.numBar .tags a:hover{ background:#d6a200; color:#fff;}
+
+
+
+.preInfo{ margin-bottom:20px; border:1px dashed #a7a7a7; border-radius:5px; display:block; overflow:hidden; height:120px; position:relative; /*cursor:pointer;*/}
+
+.preInfo .pic{ float:left; width:160px;}
+
+.preInfo .info{ padding:0 190px 0 185px;}
+
+.preInfo .info h2{ font-size:16px; font-weight:normal;font-family:microsoft yahei; margin-top:20px; margin-bottom:12px; height:24px; width:465px;white-space: nowrap;
+
+text-overflow: ellipsis;
+
+-o-text-overflow: ellipsis;
+
+display: block;
+
+overflow: hidden;}
+
+.preInfo .info p{ color:#999;}
+
+.preInfo .date{ position:absolute; right:0px; top:0px; padding:25px 0 0 16px; width:144px; background:url(lis/themes/NewInns/img/company/icon_7.png) repeat-y; height:95px;}
+
+.preInfo .date p{ margin-bottom:4px; line-height:20px; color:#999; width:135px; height:20px;white-space: nowrap;text-overflow: ellipsis;
+
+-o-text-overflow: ellipsis;
+
+display: block;
+
+overflow: hidden;}
+
+.preInfo .date b.icon{ background:url(lis/themes/NewInns/img/company/go_icon.gif) no-repeat; width:42px; height:26px; position:absolute; right:0; top:0; display:none;}
+
+
+
+.preHover{ border-color:#d24339;}
+
+.preHover .date b.icon{ display:block;}
+
+
+
+/*分页*/
+
+.fenye{ text-align:right;margin:24px 0; display:block;}
+
+.fenye a,.fenye .current{ padding:4px 10px;  color:#999; display:inline-block; background:#ececec;border-radius:5px; margin-right:3px;cursor: pointer;}
+
+.fenye a:hover{ background:#65C7C0;  color:#fff;}
+
+.fenye a:active{ background:#65C7C0;}
+
+.fenye a.on,.fenye .current{ font-weight:bold; background:#65C7C0; color:#fff;}
+
+.fenye .current{ margin-right:3px; margin-left:3px;}
+
+
+
+.brandMain .tabs{ background:#f5f5f5; height:42px; line-height:42px;}
+
+.brandMain .tabs span{ width:146px; float:left; height:42px; line-height:42px; cursor:pointer; float:left; display:block; text-align:center; }
+
+.brandMain .tabs span.on{ background:#fff;border-radius:5px 5px 0 0;}
+
+.brandMain .tabs span a{ display:inline-block; padding-left:28px; width:117px; font-family:microsoft yahei; font-size:14px; color:#888;height:42px; line-height:42px;}
+
+.brandMain .tabs span a:hover{ color:#888;}
+
+.brandMain .tabs span a.jjdc{ background:url(lis/themes/NewInns/img/company/logo1.png) no-repeat 28px center;}
+
+.brandMain .tabs span.on a.jjdc{ background:url(lis/themes/NewInns/img/company/logo1_on.png) no-repeat 28px center;}
+
+.brandMain .tabs span a.jjzx{ background:url(lis/themes/NewInns/img/company/logo2.png) no-repeat 28px center;}
+
+.brandMain .tabs span.on a.jjzx{ background:url(lis/themes/NewInns/img/company/logo2_on.png) no-repeat 28px center;}
+
+.brandMain .tabs span a.jgkj{ background:url(lis/themes/NewInns/img/company/logo3.png) no-repeat 28px center;}
+
+.brandMain .tabs span.on a.jgkj{ background:url(lis/themes/NewInns/img/company/logo3_on.png) no-repeat 28px center;}
+
+.brandMain .tabs span a.bskj{ background:url(lis/themes/NewInns/img/company/logo4.png) no-repeat 28px center;}
+
+.brandMain .tabs span.on a.bskj{ background:url(lis/themes/NewInns/img/company/logo4_on.png) no-repeat 28px center;}
+
+
+
+.brandMain .tabMain{ display:none; color:#999; line-height:24px;}
+
+.brandMain .tabMain p{ margin-bottom:18px;}
+
+.brandMain .tabMain p b{ display:block; font-size:15px; font-weight: normal;font-family:microsoft yahei;}
+
+.brandMain .tabMain img{ margin:15px 0;}
+
+.brandMain .tabMain h3{ font-size:18px;font-family:microsoft yahei; font-weight:normal; margin-bottom:12px;}
+
+.brandMain .tm1 .col{color:#d1ae76;}
+
+.brandMain .tm2 .col{color:#189f9f;}
+
+.brandMain .tm3 .col{color:#b28a1b;}
+
+.brandMain .tm4 .col{color:#013d85;}
+
+
+
+.prePage .titbar{ text-align:center; border-bottom:1px solid #e8e7e7; padding-bottom:20px;}
+
+.prePage .titbar h2{ font-size:20px; font-weight:normal; margin-bottom:10px;font-family:microsoft yahei; width:840px; height:30px;white-space: nowrap;
+
+text-overflow: ellipsis;
+
+-o-text-overflow: ellipsis;
+
+display: block;
+
+overflow: hidden;}
+
+.prePage .info{ padding:30px 0; line-height:30px; color:#999;}
+
+
+
+.newpage{ padding:0 10px; min-height:500px;}
+
+.newpage li{ line-height:48px; height:48px;background:url(lis/themes/NewInns/img/icon_7.gif) no-repeat 3px center; border-bottom:1px dashed #e1e1e1;}
+
+.newpage li:hover{ background-color:#f8f7f7;}
+
+.newpage li .date{ float:right; color:#c8c8c8; font-size:12px; font-family:Arial, Helvetica, sans-serif;}
+
+.newpage li a{display:block; height:48px; line-height:48px; overflow:hidden;white-space: nowrap;text-overflow: ellipsis;-o-text-overflow: ellipsis; color:#666; text-indent:18px; padding-right:30px; }
+
+.newpage li a:hover{color:#d6a200;}
+
+
+
+
+
+.newpage li a{   
+
+  -webkit-transform: translateX(0);
+
+     -moz-transform: translateX(0);
+
+          transform: translateX(0);
+
+	-webkit-transition: -webkit-transform 0.5s ease;
+
+     -moz-transition:    -moz-transform 0.5s ease;
+
+          transition:         transform 0.5s ease;}
+
+.newpage li a:hover{   
+
+  -webkit-transform: translateX(10px);
+
+     -moz-transform: translateX(10px);
+
+          transform: translateX(10px);
+
+  -webkit-transition: -webkit-transform 0.5s ease;
+
+     -moz-transition:    -moz-transform 0.5s ease;
+
+          transition:         transform 0.5s ease;}
+
+		  
+
+.tit2{ padding:20px 30px 30px 30px;border-bottom:1px solid #e3e3e3;}
+
+.newspage h1{ font-size:20px; display:block; margin:-5px 0 8px 0; color:#333;}
+
+.newspage .share{ float:right;opacity:0.75;}
+
+.newspage .tip{ color:#999; float: right;}
+
+.newspage .tip a{ color:#999;}
+
+.newspage .tip a:hover{color:#d6a200;}
+
+.newspage .tip i{ font-size:10px; margin:0 12px; font-style:normal; font-family:Arial, Helvetica, sans-serif; vertical-align: text-top;}
+
+.newMain{ padding:30px 25px; line-height:30px;}
+
+
+
+.submenu{background:#fcfcfc;border:1px solid #ebeaea; margin:0 0 20px 0;}
+
+.submenu h2{height:36px; line-height:36px; background:#f7f7f7;border-bottom:1px solid #ebeaea; padding:0 20px;font-family:microsoft yahei;font-size:15px; font-weight:normal;}
+
+.submenu ul{ padding:10px 20px;}
+
+.submenu li{ background:url(/themes/NewInns/img/member/icon_04.png) no-repeat left center;border-bottom:1px dashed #ebeaea; height:40px; line-height:40px; text-indent:20px; font-size:14px;font-family:microsoft yahei;}
+
+.submenu li.none{ border-bottom:none;}
+
+.submenu li a{ color:#888; display:block; height:40px; line-height:40px;}
+
+.submenu li a:hover,.leftmain .submenu li.on a{ color:#d6a200;}
+
+
+
+.notesTable{ margin:10px 0 5px 0;}
+
+.notesTable td{ line-height:18px; border-bottom:1px dashed #e3e3e3; padding:12px 0; color:#666;}
+
+.notesTable .tt td{ background:#f0f0f1; border-bottom:0;}
+
+.notesTable .ntInfo{ width:388px;}
+
+.notesTable .w118{ width:160px; }
+
+.notesTable td a{ margin-left:10px;}
+
+.notesTable td .btn{ height:24px; line-height:24px; background:#999; padding:0 12px; display:inline-block; color:#fff;border-radius:3px;}
+
+.notesTable td .btn:hover{ background:#888;}
+
+.notesTable td .change{height:24px; line-height:24px; background:#d6a200; padding:0 12px; display:inline-block; color:#fff;border-radius:3px;}
+
+.notesTable td .change:hover{ background:#B68B05;}
+
+.notesTable td .col{ color:#d24339;}
+
+
+
+.info_mg{ padding-left:40px;}
+
+.info_mg .again{ background:#d6a200; height:32px; line-height:32px; text-align:center; font-size:14px; color:#fff; display:inline-block; padding:0 40px; margin-right:8px;border-radius:5px; margin-top:20px;font-family:microsoft yahei;}
+
+.info_mg .again:hover{ background:#B68B05;}
+
+.info_mg .sure{ margin-right:18px; margin-top:20px;}
+
+.info_mg .sure:hover{ background:#bc3128;}
+
+.info_mg .zj{ height:35px; line-height:35px; margin-bottom:18px; display:block; padding-left:130px;}
+
+.info_mg .zj .name{ width:120px; float:left; margin-left:-130px; text-align:right;}
+
+.info_mg .select{width:260px; height:32px; line-height:32px; background-color:#f1f1f1; border:0;border-radius:5px; text-indent:12px; background-position:238px 12px;}
+
+.info_mg .select .valTxt{ width:235px; padding-right:25px;height:32px; line-height:32px;}
+
+.info_mg .select .selBox{ width:260px;}
+
+
+
+.mgbtn{ position:absolute; right:-28px; top:350px;width:138px; display:block; overflow:hidden; background:#007362;text-indent:25px; color:#e7e8e9; margin-bottom:10px; height:32px; line-height:32px;border-radius: 3px 0 0 3px;font-family:microsoft yahei; font-size:14px; cursor:pointer;}
+
+.mgbtn:hover{ color:#fff; background:#3e8f8b;}
+
+
+
+.lBox{ background:url(/themes/NewInns/img/member/left_bg.png) repeat; width:268px; border:1px solid #ebeaea; margin-bottom:18px;}
+
+.lBox .tit{ height:45px; line-height:45px; background:#f5f5f4;border-bottom:1px solid #ebeaea; padding:0 20px;font-family:microsoft yahei;}
+
+.lBox h2{ font-size:15px; font-weight:normal;}
+
+.lBox h2.col{ color:#d6a200;}
+
+.lBox .tit a{height:45px; line-height:45px;}
+
+
+
+.lBox .form{ padding:20px;}
+
+.lBox .form .lable{ margin-bottom:15px; position:relative;}
+
+.lBox .form .w228{ width:226px; height:30px; line-height:30px; border:1px solid #e0e0e0; background:#fff;border-radius: 3px; text-indent:8px; *margin-left:-10px;}
+
+
+
+.lBox .form .lable .tipTxt{ font-size:12px; left:5px;}
+
+.lBox .form .findWord{ text-align:right;}
+
+.lBox .form .findWord a{ color:#999;}
+
+.lBox .form .findWord a:hover{ color:#009c9c;}
+
+.lBox .form .btn a{ background:#d24339; height:32px; line-height:32px;border-radius: 3px; text-align:center; color:#fff; display:block; font-size:14px;font-family:microsoft yahei;}
+
+.lBox .form .btn a:hover{ background:#bd332a;}
+
+.lBox .form .reg{ text-align:center; padding-top:20px; color:#999;}
+
+.lBox .form .reg a{ color:#d6a200;}
+
+.lBox .form .reg a:hover{ color:#333;}
+
+.lBox .form .error2{ color:#f00; width:160px; float:left; overflow:hidden; text-align:left;}
+
+.submenu .exit{ float:right; height:37px; line-height:37px; color:#65C7C0; margin-right:-5px;}
+
+.submenu .exit:hover{ color:#333;}
+
+
+
+.yhmain{background:#fcfcfc;border:1px solid #ebeaea;}
+
+
+
+.yhmain .tabs{ height:40px; line-height:40px;border-bottom:1px solid #ebeaea; padding-left:25px; background:#f6f6f6;}
+
+.yhmain .tabs span{ float:left; display:inline-block;font-family:microsoft yahei;height:40px; line-height:48px; position:relative; width:131px; height:46px;top:-5px; text-align:center; font-size:15px; cursor:pointer; }
+
+.yhmain .tabs span.on{ background:url(lis/themes/NewInns/img/member/icon_12.png) no-repeat;}
+
+
+
+.youhui .tabMain{ padding:20px; display:none;}
+
+/*20150510新增*/
+
+.notesTable{ margin:10px 0 5px 0;}
+
+.notesTable td{ line-height:18px; border-bottom:1px dashed #e3e3e3; padding:12px 0; color:#666; font-family:Arial, Helvetica, sans-serif;}
+
+.notesTable .tt td{ background:#f0f0f1; border-bottom:0;}
+
+.notesTable .ntInfo{ width:388px;}
+
+.notesTable .w118{ width:160px; }
+
+.notesTable td a{ color:#65C7C0;}
+
+.notesTable td a:hover{ color:#333;}
+
+.notesTable td a.quxiao{ color:#666;}
+
+.notesTable td .btn{ height:24px; line-height:24px; background:#999; padding:0 12px; display:inline-block; color:#fff;border-radius:3px;}
+
+.notesTable td .btn:hover{ background:#888;}
+
+.notesTable td .change{height:24px; line-height:24px; background:#d6a200; padding:0 12px; display:inline-block; color:#fff;border-radius:3px; margin-right:5px;}
+
+.notesTable td .change:hover{ background:#85670C; color:#fff;}
+
+.notesTable td .col{ color:#d24339;}
+
+.searchBox{ border-bottom:1px solid #d8d8d8; padding-bottom:30px; margin-bottom:30px; height:30px; margin-top:18px;}
+
+.searchBox .label{ float:left; margin-right:20px;}
+
+.searchBox .label .name{ float:left; margin-right:8px; height:32px; line-height:32px;}
+
+.searchBox .w235{border-radius:5px; width:218px; height:32px; line-height:32px;  border:0; text-indent:12px; color:#888; font-family:Arial, Helvetica, sans-serif; background:#f1f1f1;}
+
+.searchBox .btn{border-radius:3px; background:#d24339; padding:0 40px; text-align:center; height:28px; line-height:28px; color:#fff; display:block; float:right; font-size:14px; font-family:microsoft yahei;}
+
+.searchBox .btn:hover{background:#aa2b22;}
+
+.searchBox .btn:active{ background:#C0271D;}
+
+.searchBox .tags{ float:right; padding-left:12px;}
+
+.searchBox .tags a{ height:28px; line-height:28px; padding:0 12px; background:#f8f8f8; margin-left:12px; display:inline-block; border-radius:5px;}
+
+.searchBox .tags a.on,.searchBox .tags a:hover{ background:#ea544a; color:#fff;}
+
+.sb1 .select{ border:0; background-color:#f1f1f1; height:32px; line-height:32px;border-radius: 5px; width:172px; background-position:150px 11px;}
+
+.sb1 .select .valTxt{height:32px; line-height:32px;}
+
+.sb1 .select .selBox{ width:170px;}
+
+
+
+/*再次预订弹出酒店框*/
+
+.pop-hotel{position:absolute;left:100px;top:200px;z-index:100;display:none;}
+
+.pop-hotel-inner{background:#FFF;padding:10px 8px;width:405px;_width:360px;height:auto;text-align:left;position:relative;border:1px solid #e2e2e2;-webkit-box-shadow: 0 0 10px 3px rgba(14,5,10,0.1);box-shadow: 0 0 10px 3px rgba(14,5,10,0.1);}
+
+.pop-hotel-close{background: url(lis/themes/NewInns/img/member/close.png) no-repeat;width:14px;height:14px;position:absolute;right:8px;top:12px;cursor:pointer;}
+
+.pop-hotel-title{color:#59626a;font-size:14px;border-bottom:1px solid #dedcdc;padding-bottom:4px;}
+
+.pop-hotel-title span{padding-right:30px;}
+
+.pop-hotel-botton{margin-top:14px;}
+
+.pop-hotel-botton input{background:#d64c4c;color:#FFF;width:80px;height:28px;margin:0 auto;display:block;border:none;font-size:16px;line-height:26px;cursor:pointer;}
+
+.pop-hotel-botton input:hover{background:#BB2828;color:#FFF;}
+
+.add-table-title{font-size:14px;color:#59626a;padding-left:10px;margin-top:20px;}
+
+.volume-table{padding:6px 10px 0 10px;}
+
+.volume-table td{border:1px solid #d1d5d8;height:30px;line-height:30px;}
+
+.volume-table tr td:first-child{padding-left:16px;}
+
+.add-table-bottom{margin-top:12px;padding-left:10px;color:#59626a;}
+
+.add-bottom-close{color:#0075c2;display:inline;margin-left:178px;}
+
+.page-cover{background:#000000;height: 100%;left: 0;filter:alpha(opacity=30);-moz-opacity:0.3;opacity: 0.3;position: absolute;top: 0;width: 100%;z-index: 99;display:none;}
+
+
+
+.searchHotel{margin:12px 0 10px;position:relative;}
+
+.searchHotel .frombox{float:left;display:inline-block;margin:0 9px;}
+
+.searchHotel .name{line-height:20px;color:#96a0a7;}
+
+.searchHotel .date{width:142px;_width:138px;background:#dcdedf;border:0;height:22px;text-indent:8px;color:#333;} 
+
+.homeHead .searchHotel input::-ms-clear{display:none;}
+
+.searchHotel .city:focus,.homeHead .searchHotel .date:focus{outline: 0;}
+
+.searchHotel .date{background:url(lis/themes/club/images/icon_19.png) no-repeat 96% center;border:1px solid #bebebe;width:98px; *width:96px;height:22px;display:inline-block; text-indent:8px;}
+
+/*房间人数*/
+
+.room-people{padding:0 10px;}
+
+.room-people .price{float:left;text-align:left;}
+
+.room-people .price-ie7{*width:173px;}
+
+.room-people .price em{font-style:normal;float:left;line-height:22px;color:#96a0a7;}
+
+.room-people .price em.em2{padding-right:30px;display:inline;}
+
+.room-people .price .jian,.room-people .price .jia{background:#eff0f1;border:1px solid #ccc;width:20px;height:22px;font-family:Arial;font-size:14px;display:inline-block;text-align:center;line-height:22px;cursor:pointer;float:left;}
+
+.room-people .price .gay{color:#999;cursor:default;}
+
+.room-people .price .w40{border:1px solid #bebebe;background:#fff;height:22px;line-height:22px;width:54px;text-align:center;float:left;}
+
+
+
+.yhmain .tabMain{ display:none; padding:20px;}
+
+.lnone{ background:none; border:0;}
+
+
+
+
+
+.select {width:234px;background:#fff url(lis/themes/NewInns/img/icon_33.png) no-repeat 210px 9px;}
+
+.searchmain .select .selBox {width:400px;}
+
+
+
+.add-volume{position:absolute;left:100px;top:200px;z-index:100;display:none}
+
+.add-volume-inner{background:#FFF;padding:20px 20px 22px 20px;width:434px;height:auto;text-align:left;position:relative;border:1px solid #b8b9bb}
+
+.add-volume-close{background:url(lis/themes/NewInns/img/member/close.png) no-repeat;width:20px;height:20px;position:absolute;right:23px;top:20px;cursor:pointer}
+
+.add-volume-title{color:#96a0a7;font-size:14px;border-bottom:1px solid #dedcdc;text-indent:7px;padding-bottom:7px}
+
+.add-volume-input{margin-top:20px;padding-left:12px;color:#59626a;font-size:14px}
+
+.add-volume-input input{margin-left:20px;width:210px;padding-left:4px;height:26px;border:1px solid #bebebe}
+
+.wrong-tip{margin-top:8px;height:20px;line-height:20px}
+
+.wrong-tip-mian{color:#b90202;font-size:12px;padding-left:144px}
+
+.wrong-tip-mian span{font-weight:bold;font-size:12px;margin-right:2px}
+
+.add-volume-botton{margin-top:11px}
+
+.add-volume-botton input{background:#d64c4c;color:#FFF;width:108px;height:34px;margin:0 auto;display:block;border:0;font-size:16px;line-height:34px}
+
+.add-table-title{font-size:14px;color:#59626a;padding-left:10px;margin-top:20px}
+
+.volume-table{padding:6px 10px 0 10px}
+
+.volume-table td{border:1px solid #d1d5d8;height:30px;line-height:30px}
+
+.volume-table tr td:first-child{padding-left:16px}
+
+.add-table-bottom{margin-top:12px;padding-left:10px;color:#59626a}
+
+.add-bottom-close{color:#0075c2;display:inline;margin-left:178px}
+
+.page-cover{background:#000;height:100%;left:0;filter:alpha(opacity=30);-moz-opacity:.3;opacity:.3;position:absolute;top:0;width:100%;z-index:99;display:none}
+
+
+
+.searchmain .abroad .select{border:1px solid #e0e0e0;border-radius:3px;height:30px;line-height:30px;width:226px;}
+
+.select .abroadCity{height:30px; line-height:30px;width:226px;}
+
+.searchmain .tabMain input {padding:0;}
+
+
+
+
+
+.en .qMenu li.on{ right:0; background:#bd332a;margin-left:0;width:199px;}
+
+.en .qMenu li{ width:171px;margin-left:28px; display:block; /*overflow:hidden;*/ background:#007362;text-indent:25px; color:#e7e8e9; margin-bottom:10px; height:32px; line-height:32px;border-radius: 3px 0 0 3px;font-family:microsoft yahei; font-size:14px; position:relative; /*right:-28px;*/ cursor:pointer;}
+
+.en .brandMain .tabs span.on a.jjzx{ background:url(lis/themes/NewInns/img/company/logo2_on.png) no-repeat 13px center;}
+
+.en .brandMain .tabs span a{ display:inline-block; padding-left:32px; width:117px; font-family:microsoft yahei; font-size:14px; color:#888;height:42px; line-height:42px;}
+
+.en .brandMain .tabs span a.jjdc{ background:url(lis/themes/NewInns/img/company/logo1.png) no-repeat 19px center;}
+
+.en .brandMain .tabs span a.jgkj{ background:url(lis/themes/NewInns/img/company/logo3.png) no-repeat 14px center;}
+
+.en .brandMain .tabs span a.jjzx{ background:url(lis/themes/NewInns/img/company/logo2.png) no-repeat 12px center;}
+
+
+
+.en .add-volume-botton input{background:#d64c4c;color:#FFF;width:142px;height:34px;margin:0 auto;display:block;border:0;font-size:16px;line-height:34px}
+
+.en .select .abroadCity{height:30px; line-height:30px;width:206px;}
+
+
+
+
+

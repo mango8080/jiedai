@@ -1,0 +1,26 @@
+<?php defined('IN_DESTOON') or exit('Access Denied');?>
+    <!-- <a href="http://jiudian.idc580.cn/mobile/search.php">
+    <input value="继续预定" type="button" style="    
+    border-radius: 23px;
+    box-sizing: border-box;
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    line-height: 2.55556;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    padding-left: 14px;
+    padding-right: 14px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgba(255, 99, 76, 1);
+    width:98%;
+    border: 1px solid transparent;">
+    </a> -->
+    <div style="width: 100%;background: #FF8E7E;position: fixed;bottom: 0;text-align: center;line-height: 36px;">
+    <a onclick="history.go(-1)"><span style="width: 30%;display: inline-block;color: #fff;">返回</span></a>
+    <a href="my.php"><span style="width: 32%;display: inline-block;color: #fff;">我的</span></a>
+    
+    </div>

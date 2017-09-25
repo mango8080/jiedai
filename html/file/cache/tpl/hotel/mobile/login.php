@@ -1,0 +1,81 @@
+<?php defined('IN_DESTOON') or exit('Access Denied');?><!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>用户登陆</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+<link rel="stylesheet" href="static/style/weui.min.css">
+<link rel="stylesheet" href="static/style/index.min.css">
+    <script type="text/javascript" src="static/script/jquery-2.1.1.min.js"></script>
+    <!-- <script type="text/javascript" src="static/script/jquery.mobile.custom.min.js"></script> -->
+    <!-- <script type="text/javascript" src="static/script/zepto.plug-in.js"></script> -->
+    <script type="text/javascript" src="static/script/TouchSlide.1.1.js"></script>  
+    <script type="text/javascript" src="static/script/common.js"></script>
+    <!-- <script type="text/javascript" src="static/script/fix.js"></script> -->
+</head>
+<body>
+<div class="head">
+<a onclick="history.go(-1)"><img src="static/style/back.png" width="22" height="14"  alt=""/></a>
+  <div>用户登陆</div>
+    <a href="../mobile"><img src="static/style/home.png" width="22" height="21"  alt=""/></a>
+</div>
+    <form action="login.php" method="post" id="form-login">
+        <input type="hidden" name="forward" value="<?php echo $forward;?>"/>
+        <input type="hidden" name="auth" value="<?php echo $auth;?>"/>
+        <input type="hidden" name="ok" value="1"/>
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell name">
+                <div class="weui-cell__hd"><label class="weui-label">账号</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text"  placeholder="输入用户名/手机号" name="username" id="login-username" value="<?php echo $mobile;?>">
+                </div>
+            </div>
+            <div class="weui-cell password">
+                <div class="weui-cell__hd"><label class="weui-label">密码</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="password" name="password" id="login-password" placeholder="输入密码">
+                </div>
+            </div>
+            <!-- <div class="weui-cell weui-cell_vcode bd-b">
+                <?php include template('captcha', 'chip');?>
+            </div> -->
+            <div class="weui-btn-area">
+                <input type="submit" value="登录" class="weui-btn weui-btn_primary" id="showTooltips">
+            </div>
+        </form>
+ </div>
+<div class="foget">
+<a href="forgot.php">忘记密码</a>
+</div>
+<div class="register_btn">
+    <a href="register.php" class="weui-btn weui-btn_default">免费注册</a>
+</div>
+</body>
+<script type="text/javascript">
+function Dlogin() {
+    if(Dd('login-username').value.length < 3) {
+        Dtoast('请填写用户名/Email/已认证手机');
+        return false;
+    }
+    if(Dd('login-password').value.length < 5) {
+        Dtoast('请填写密码');
+        return false;
+    }
+    <?php if($MOD['captcha_login']) { ?>
+    if(!is_captcha(Dd('captcha').value)) {
+        Dtoast('请填写验证码');
+        return false;
+    }
+    <?php } ?>
+    Dd('form-login').submit();
+}
+$(document).on('pageinit', function(event) {
+    <?php if($MOD['captcha_login']) { ?>
+    $('#captcha').css({'width':'100px','border':'none','padding':'0','font-size':'16px'});
+    showcaptcha();
+    <?php } ?>
+    $('#login-username').bind('keyup blur', function() {
+        $(this).val(DTrim($(this).val()));
+    });
+});
+</script>
+</html>

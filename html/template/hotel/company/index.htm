@@ -1,0 +1,198 @@
+{template 'header'}
+<link href="{DT_SKIN}indexx.css" rel="stylesheet" type="text/css">
+<div class="wrapper jinjiang_zhixing ">
+	<div class="path_bar">
+          <a href="{$MODULE[1][linkurl]}">首页</a> &raquo; <a href="{$MOD[linkurl]}">{$MOD[name]}</a>&raquo;
+    </div>
+    <div class="search_bar yahei">
+        <input name="" value="重新搜索" class="btn_search" type="button">
+        <div class="city"><span class="fl">城市</span>
+        <div class="city_box"><input name="" class="input_txt city_input" id="cityInfo" autocomplete="off" value="上海" type="text"></div>
+        </div> 
+        <div class="terminal">
+        	<span class="fl">目的地</span>
+            <div class="selecct_box" id="terminal_select">
+                <div class="select_val_box" initvalue="请选择">请选择</div>
+                <ul class="select_list" style="display: none;">
+                    <li class="ellipsis" title="目的地1">目的地1</li>
+
+                </ul>
+            </div>
+        </div>
+        <span class="start_time"><span class="fl">入住日期</span>
+        <input name="" class="input_txt dateCheckIn hasDatepicker" id="dateCheckIn" value="2016-10-17" readonly="" type="text">
+        </span> <span class="end_time"><span class="fl">离店日期</span>
+        <input name="" class="input_txt dateCheckOut hasDatepicker" id="dateCheckOut" value="2016-10-18" readonly="" type="text">
+        </span>
+        <div class="keyword"><span class="name">关键字</span>
+          <div class="kw">
+            <input name="" autocomplete="off" value="" class="input_txt kw_input" id="kw_input" data-type="" title="酒店名称/地标" type="text"><label class="tipTxt">酒店名称/地标</label>
+          </div>
+        </div>
+        <span class="code">优惠代码 <span class="pos">
+        <input name="" class="input_txt inputText" id="inputPromotionCode" title="输入优惠代码" value="" type="text"><label class="tipTxt">输入优惠代码</label>
+        </span> </span> 
+    </div>
+    <div class="filter_box clearfix">
+        	
+            <div id="filter_price" class="filter_unit dis">
+            	<div class="filter_label">价格</div>
+                <div class="unlimited_btn">全部</div>
+                <ul class="chklist">
+                <li><input  value="1" type="checkbox"><label class="ellipsis checkbox" style="font-family:arial;" title="¥200以下">¥200以下</label></li>
+                <li><input class="hide" value="2" type="checkbox"><label class="ellipsis checkbox" style="font-family:arial;" title="¥200-400">¥200-400</label></li>
+                <li><input class="hide" value="3" type="checkbox"><label class="ellipsis checkbox" style="font-family:arial;" title="¥400-600">¥400-600</label></li>
+                <li><input class="hide" value="4" type="checkbox"><label class="ellipsis checkbox" style="font-family:arial;" title="¥600以上">¥600以上</label></li>
+                </ul>
+                
+                 
+            </div>
+            
+            <div id="filter_star_level" class="filter_unit dis" style="">
+            	<div class="filter_label">星级</div>
+                <div class="unlimited_btn">全部</div>
+                <ul class="chklist"><li><input class="hide" value="0" type="checkbox"><label class="ellipsis checkbox" rating="0" title="经济型">经济型<span>(127)</span></label></li></ul>
+            </div>
+            <div id="filter_brand" class="filter_unit dis" style="">
+            	<div class="filter_label">品牌</div>
+                <div class="unlimited_btn">全部</div>
+                <ul class="chklist">
+				  <li>
+				    <input value="JJDC" class="hide" type="checkbox">
+				    <label class="ellipsis checkbox" style="font-family:arial;" title="JJDC">锦江都城
+				      <span>(8)</span></label>
+				  </li>
+				  <li>
+				    <input value="JJINN" class="hide" type="checkbox">
+				    <label class="ellipsis checkbox" style="font-family:arial;" title="JJINN">锦江之星
+				      <span>(109)</span></label>
+				  </li>
+				</ul>
+            </div>
+            <div id="filter_facilities" class="filter_unit dis" style="">
+            	<div class="filter_label">设备</div>
+                <div class="unlimited_btn">全部</div>
+                <ul class="chklist">
+                    
+                            <li class="">
+                    	       <input class="hide" type="checkbox">
+                    	       <label class="ellipsis checkbox" data-type="WIFI" title="免费无线">免费无线
+                    	       </label>
+                            </li>
+                        
+                            <li class="">
+                    	       <input class="hide" type="checkbox">
+                    	       <label class="ellipsis checkbox" data-type="PARKING" title="停车场">停车场
+                    	       </label>
+                            </li>
+                        
+                </ul>
+            </div>
+            <div class="filter_confirm_btn">确定</div>
+            
+        </div>
+        <div class="base_wrap base_wrap_dev">
+        	<div class="base_side">
+			        <div class="float_side fs_box" style="position: relative; top: 0px;">
+			            <div class="hotselect">
+			                <p class="tit"><span> 热门酒店</span></p>
+			                <ul id="hotHotelul">
+			                    
+			                            <li class="clearfix">
+			                                <a href="javascript:;" data-hotelurl="http://www.jinjianginns.com/zh-CN/HotelDetail?hotelid=12261&amp;checkInDate=2016-10-17&amp;checkOutDate=2016-10-18&amp;pomoCode=&amp;bd_mid=&amp;bd_type=hotle_web_search&amp;bd_source=2_4&amp;bd_ptid=12261" data-index="1">
+			                                <img src="http://static.jinjiang.com/opt/static///hotel/60386/images/3917f67f6526109f_360_270.jpg" height="100"  width="134">
+			                        
+			                                <h6>锦江之星上海世博园区历城路酒店</h6>
+			                                <p>¥<span>195</span>起</p>
+			                                </a>
+			                            </li>
+			                        
+			                </ul>
+			                
+			            </div>
+			        </div>        
+			</div>
+        	<div class="base_main">
+        		<div id="hotel_list_data" class="hotel_list">
+        			<div id="HotelIndex12154" class="hotel_item clearfix HotelIndex12154" data-jjcode="100566035">
+  <ul class="hotel_info">
+    <li class="pic">
+      <a href="/HotelDetail?hotelId=12154&amp;checkInDate=2016-10-17&amp;checkOutDate=2016-10-18&amp;jjCode=100566035&amp;pomoCode=" target="_blank" title="金广快捷">
+        <img src="http://static.jinjiang.com/opt/static//hotel/66035/images/3808b9dcf5959387_140_105.jpg"  alt="金广快捷" width="140" height="105"></a>
+    </li>
+    <li class="info">
+      <div class="info-tit">
+        <h2>
+          <a id="hotelDetailHeader1" class="yahei" href="/HotelDetail?hotelId=12154&amp;checkInDate=2016-10-17&amp;checkOutDate=2016-10-18&amp;jjCode=100566035&amp;pomoCode=&amp;ratecode=" target="_blank" title="金广快捷上海新国际博览中心罗山路酒店">
+            金广快捷上海新国际博览中心罗山路酒店</a>
+          
+        </h2>
+      </div>
+      <div>
+        <div class="address ellipsis horizantal" title="上海市浦东新区罗山路1505号">地址：上海市浦东新区罗山路1505号</div>
+        <div class="distance horizantal" style="display:none">距离的直线距离为
+          <span class="col"></span>公里</div></div>
+      
+      <p class="introduction ellipsis" title="">简介：金广快捷上海新国际博览中心罗山路店座落于上海浦东新区罗山路1505号（锦绣东路路口）。 1、距上海新国际博览中心直线1.5公里，并配备免费班车送宾客至新国际博览中心7号门花木路入口处。 2、酒店有偿提供上海迪士尼直通车至上海迪士尼乐园。 上海迪士尼乐园路线：地铁：2号线上海科技馆站至龙阳路站换乘16号线至罗山路站，乘坐11号线至迪士尼站。离浦东知名商圈&mdash;&mdash;大拇指休闲广场，步行十五分钟左右即可到达，另外也可乘坐公交，东周线、987路、983路直达。酒店配套设施有茶餐厅、免费停车场。酒店涉外。</p>
+      
+    </li>
+    
+    
+    
+    <li class="price">
+      <span>¥</span>
+      <b>280</b>起</li>
+  </ul>
+  <div class="room_list">
+    <ul class="room_tab">
+      <li class="on">全部房型</li></ul>
+    <div class="room_info" style="display:block;">
+      <table class="room_info_table" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <thead>
+          <tr>
+            <th class="room_type_head" width="235">借款类型</th>
+           
+            <th width="109">预订政策</th>
+            <th width="90">价格</th>
+            
+        </thead>
+        <tbody>
+         
+          
+          <tr class="info  planid_73749 ">
+            <td class="promotion">
+              <span>银卡用户网站价</span>
+            </td>
+            <td class="cancel">
+              <span class="ptips ">超时预付
+                <span class="cancel_tip">预订保留至入住日18:00。
+                  <i></i>
+                </span>
+              </span>
+            </td>
+            <td class="price">
+              <span>¥<b>389</b></span>
+              </td>
+          </tr> 
+          <tr class="linebox ">
+            <td colspan="8">
+              <div class="line"></div>
+            </td>
+          </tr>        
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+        		</div>
+        		<div class="pagination">
+		        	<span class="page"><a href="javascript:void(0);" data-pagenum="-1" class="unprev">&lt;&nbsp;上一页</a><span class="list"><a href="javascript:void(0);" data-pagenum="1" class="on">1</a> <a href="javascript:void(0);" data-pagenum="2" class="" rel="nofollow">2</a> <a href="javascript:void(0);" data-pagenum="3" class="" rel="nofollow">3</a> <a href="javascript:void(0);" data-pagenum="4" class="" rel="nofollow">4</a> <a href="javascript:void(0);" data-pagenum="5" class="" rel="nofollow">5</a> <a href="javascript:void(0);" data-pagenum="6" class="" rel="nofollow">6</a> <a href="javascript:void(0);" data-pagenum="7" class="" rel="nofollow">7</a> <a href="javascript:void(0);" data-pagenum="8" class="" rel="nofollow">8</a> <a href="javascript:void(0);" data-pagenum="9" class="" rel="nofollow">9</a> <a href="javascript:void(0);" data-pagenum="10" class="" rel="nofollow">10</a> <a href="javascript:void(0);" data-pagenum="11" class="" rel="nofollow">11</a> <a href="javascript:void(0);" data-pagenum="12" class="" rel="nofollow">12</a> <a href="javascript:void(0);" data-pagenum="13" class="" rel="nofollow">13</a> </span><a href="javascript:void(0);" data-pagenum="+1" class="next">下一页&nbsp;&gt;</a></span> <span class="num">共13页&nbsp;|</span>
+	        	</div>
+        	</div>
+        	
+        	<div class="clearfix"></div>
+
+        </div>
+</div>     
+{template 'footer'}

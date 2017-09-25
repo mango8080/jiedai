@@ -1,0 +1,1 @@
+<?php defined('IN_DESTOON') or exit('Access Denied'); return array (4 => array ('index' => '',),2 => array ('index' => '',),1 => array ('database' => '',),); ?>

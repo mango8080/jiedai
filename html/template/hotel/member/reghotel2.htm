@@ -1,0 +1,249 @@
+{template 'hotel_header1', 'member'}
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}reg.css">
+<style type="text/css">
+    .reg_inp{vertical-align:middle;}
+    .btn_1{margin-top: 20px;}
+    tr{height: 38px;}
+    .tl{width: 120px;}
+    html{background-color: #ececec;}
+    #Dtop{background-color: #fff;}
+    #Dtop .dhead{margin-top: 30px;margin-left: 40px;}
+    #Dtop .dbox{margin-left: 40px;}
+    #Dsubmit{margin-bottom: 30px;margin-top: 10px;}
+        .book_process {
+            padding: 14px 0 23px;
+            width: 1180px;
+            background-color: #FFF;
+            margin:0 auto;
+        }
+
+        .book_process .done {
+            background-position: right 0;
+            color: #799d08;
+        }
+        .book_process li {
+            background-position: right -25px;
+            color: #999;
+            display: inline-block;
+            height: 15px;
+            line-height: 15px;
+            margin-left: 14px;
+            padding-left: 172px;
+            position: relative;
+        }
+
+        .book_process .done .arr {
+            background-position: 0 -5px;
+        }
+        .book_process .arr {
+            background-position: 0 -30px;
+            display: inline-block;
+            height: 5px;
+            left: 0;
+            position: absolute;
+            top: 5px;
+            width: 5px;
+        }
+
+        .book_process li{
+        background-image: url("../skin/hotel/image/un_hotel_join_bg.png");
+        background-repeat: no-repeat;
+        display: inline-block;
+        vertical-align: middle;
+    }
+</style>
+<div id="reg">
+<!--content-->
+<div class="subCnt">
+
+    <div class="book_process process_step1" style="margin-top: 30px;width: 1000px;"><ol><li><i class="arr"></i>基本信息</li><li  class="done"><i class="arr"></i>酒店信息</li><li><i class="arr"></i>房型提交</li><li><i class="arr"></i>提交完成</li></ol></div>
+
+    <div class="mod_cnt">
+        <div class="login" style="width:100%">
+            <!--menus-->
+            <div class="m">
+                <a href="" class="active">加盟酒店注册--酒店信息</a>
+                
+            </div>
+            <!--user reg content-->
+            <!--用户注册-->
+            <div class="b ht2 show">
+                
+                <!--用户注册详细 内容-->
+                <dl class="dl_tbe_1" style="padding-top:30px;">
+                   
+                    <dl id="mobile_cnt" style="display:block">
+                       <iframe src="" name="send" id="send" style="display:none;"></iframe>
+            <form action="" method="post"  onsubmit="return check();">
+            
+            <input type="hidden" name="post[step]" value="2"/>
+            <input name="post[catid]" value="3"  type="hidden">
+            <input type="hidden"  name="post[business]"  value="酒店宾馆" />
+            <input name="post[username]" value="{$_username}"  type="hidden">
+            <input name="post[company]" value="{$user['company']}"  type="hidden">
+            <table cellpadding="6" cellspacing="1" class="tb">
+                <tbody id="Tabs2" >
+
+<tr>
+
+<td class="tl">酒店名</td>
+
+<td class="tr f_b">{$user['company']}</td>
+
+</tr>
+
+<tr>
+
+<td class="tl">酒店类型</td>
+
+<td class="tr">{dselect($COM_TYPE, 'post[type]', '请选择', $type, 'id="type"', 0)}{if in_array('type', $_E)}&nbsp;{if isset($_U[type])}<span class="f_red">审核中</span>{else}<span class="f_gray">需审核</span>{/if}{/if}&nbsp;<span id="dtype" class="f_red"></span></td>
+
+</tr>
+
+<tr>
+
+<td class="tl">形象图片</td>
+
+<td class="tr"><input name="post[thumb]" type="text" size="60" id="thumb" value="{$thumb}" readonly/>&nbsp;&nbsp;<span style="cursor:pointer"; onclick="Dthumb({$moduleid},640,480, Dd('thumb').value, true);" class="jt">[上传]</span>&nbsp;&nbsp;<span  style="cursor:pointer"; onclick="Dd('thumb').value='';" class="jt">[删除]</span>
+
+{if in_array('thumb', $_E)}&nbsp;{if isset($_U[thumb])}<span class="f_red">审核中</span>{else}<span class="f_gray">需审核</span>{/if}{/if}
+
+<br/><span class="f_gray">最大不超过2M</span></td>
+
+</tr>
+
+
+<tr>
+
+<td class="tl">酒店成立年份</td>
+
+<td class="tr"><input type="text" size="15" name="post[regyear]" id="regyear" value="{$regyear}" maxlength="4"/>{if in_array('regyear', $_E)}&nbsp;{if isset($_U[regyear])}<span class="f_red">审核中</span>{else}<span class="f_gray">需审核</span>{/if}{/if}&nbsp;<span id="dregyear" class="f_red"></span> <span class="f_gray">(年份，如：2004)</span></td>
+
+</tr>
+<tr>
+
+<td class="tl">酒店传真</td>
+
+<td class="tr"><input type="text" size="20" name="post[fax]" id="fax" value="{$fax}"/></td>
+
+</tr>
+<tr>
+
+<td class="tl">酒店网址</td>
+
+<td class="tr"><input type="text" size="30" name="post[homepage]" id="homepage" value="{$homepage}"/></td>
+
+</tr>
+<tr>
+<td class="tl">地图标注</td>
+<td class="tr"><input id="map" name="post[map]" value="," size="50" type="text">
+<a class="t" href="http://lbs.amap.com/console/show/picker" target="_blank" style="color: #288fe7;">拾取坐标</a></td>
+</tr>
+<tr>
+
+<td class="tl">酒店规模</td>
+
+<td class="tr">{dselect($COM_SIZE, 'post[size]', '请选择规模', $size, '', 0)}</td>
+
+</tr>
+
+<tr>
+
+<td class="tl">注册资本</td>
+
+<td class="tr">{dselect($MONEY_UNIT, 'post[regunit]', '', $regunit, '', 0)} <input type="text" size="6" name="post[capital]" id="capital" value="{$capital}"/> 万{if in_array('capital', $_E)}&nbsp;{if isset($_U[capital])}<span class="f_red">审核中</span>{else}<span class="f_gray">需审核</span>{/if}{/if}</td>
+
+</tr>
+<tr>
+
+<td class="tl">酒店介绍</td>
+
+<td class="tr"><textarea name="post[content]" id="content" style="width: 411px; height: 122px;">{$content}</textarea>
+</td>
+
+</tr>
+<tr>
+
+<td class="tl">对民警优惠政策</td>
+
+<td class="tr">
+<textarea name="post[policies]" id="policies" style="width: 411px; height: 102px;">{$policies}</textarea>
+</td>
+
+</tr>
+
+{if $CFD}{fields_html('<td class="tl">', '<td class="tr">', $user, $CFD)}{/if}
+
+</tbody>
+            </table>
+<table cellpadding="6" cellspacing="1" class="tb">
+    <tr>
+<td class="tl">营业执照</td>
+<td class="tr"><input name="thumb1" id="thumb1" type="text" size="60" readonly/>&nbsp;&nbsp;<a href="javascript:void(0);" onclick="Dthumb({$moduleid},640,480, Dd('thumb1').value, true, 'thumb1');" class="t">[上传]</a>&nbsp;&nbsp;<a href="javascript:void(0);" onclick="Dd('thumb1').value='';" class="t">[删除]</a></td>
+</tr>
+<tr>
+<td class="tl">消防安全许可证</td>
+<td class="tr"><input name="thumb2" id="thumb2" type="text" size="60" readonly/>&nbsp;&nbsp;<a href="javascript:void(0);" onclick="Dthumb({$moduleid},640,480, Dd('thumb2').value, true, 'thumb2');" class="t">[上传]</a>&nbsp;&nbsp;<a href="javascript:void(0);" onclick="Dd('thumb2').value='';" class="t">[删除]</a></td>
+</tr>
+<tr>
+<td class="tl">卫生许可证</td>
+<td class="tr"><input name="thumb3" id="thumb3" type="text" size="60" readonly/>&nbsp;&nbsp;<a href="javascript:void(0);" onclick="Dthumb({$moduleid},640,480, Dd('thumb3').value, true, 'thumb3');" class="t">[上传]</a>&nbsp;&nbsp;<a href="javascript:void(0);" onclick="Dd('thumb3').value='';" class="t">[删除]</a></td>
+</tr>
+<tr>
+<td class="tl">特种行业许可证</td>
+<td class="tr"><input name="thumb4" id="thumb4" type="text" size="60" readonly/>&nbsp;&nbsp;<a href="javascript:void(0);" onclick="Dthumb({$moduleid},640,480, Dd('thumb4').value, true, 'thumb4');" class="t">[上传]</a>&nbsp;&nbsp;<a href="javascript:void(0);" onclick="Dd('thumb4').value='';" class="t">[删除]</a></td>
+</tr>
+<tr>
+
+<td class="tl">&nbsp;</td>
+
+<td class="tr" height="30"><input type="submit" name="submit" value=" 下一步 " class="btn_1 enable"/></td>
+
+</tr>
+</table>
+            </form>
+                    </dl>
+                    
+                </dl>
+            </div>
+        </div>
+
+        
+        
+        <div class="clear"></div>
+    </div>
+</div>
+<!-- footer -->
+</div>
+<script type="text/javascript" src="{DT_STATIC}file/script/guest.js"></script>
+<script type="text/javascript">
+
+var vid = '';
+function dtrim(id) {
+    var str = Dd(id).value.trim();
+    if(Dd(id).value != str) Dd(id).value = str;
+}
+
+function Df(ID) {
+    Dd(ID).focus();
+}
+function check() {
+    var f,p;
+    // f = 'username';
+    // if(Dd(f).value == '') {
+    //     err_msg('请填写用户登录名', f);
+    //     Df(f);
+    //     return false;
+    // }
+    // if(Dd('d'+f).innerHTML.indexOf('error') != -1) {
+    //     Df(f);
+    //     return false;
+    // }
+    
+    
+    return true;
+}
+
+
+</script>
+{template 'hotel_footer1',$module}

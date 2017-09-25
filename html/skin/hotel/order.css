@@ -1,0 +1,423 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.clear{clear:both;}
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+* html .clearfix{zoom:1;}
+*:first-child+html .clearfix {zoom:1;}
+.order_head .login_box, .order_head .logined_box{top:54px;}
+.head .w1200 .tel{top:20px;}
+body{background:#f3f3f3;}
+.orderPage{margin:30px 0;*overflow:hidden;}
+.orderPage .leftBox{width:888px;background:#fff;border:1px solid #e9e8e8; color:#777;}
+.orderPage .leftmain{width:890px;float:left;}
+.header .w1200 .tel{top:20px;}
+.orderPage .p30{padding:20px 40px 30px 40px;}
+.orderPage .rightmain{width:280px;float:right;}
+.titbox{height:40px;line-height:40px;border-bottom:1px solid #ddd;color:#666;font-size:16px;font-family:microsoft yahei;margin-bottom:24px;*overflow:hidden;*width:808px;}
+.titbox .col{color:#2577E3;font-family:Arial, Helvetica, sans-serif;font-size:18px;line-height:42px;margin-right:4px;float:left;font-weight:normal;}
+
+.yudingbox .input_txt,.w168{width:160px;border:1px solid #e0e0e0;height:28px;line-height:28px;background:#fff url(lis/themes/NewInns/img/icon_32.png) no-repeat 136px 5px;border-radius: 3px;text-indent:6px;}
+.w168{background:#fff;}
+.pricebox{margin:7px 0 20px 0;}
+.pricebox table{border:1px solid #e1e1e1;}
+.pricebox td{height:38px;line-height:38px;}
+.pricebox .tt td{background:#f8f8f8;}
+
+/*select3*/
+.select{float:left;position:relative;width:168px;border:1px solid #e0e0e0;height:28px;line-height:28px;background:#fff ;border-radius: 3px;text-indent:6px;}
+.select .selBox{position:absolute;left:0px;top:29px;background:#fff;border-radius:3px;display:none;max-height:118px;width:168px;border:1px solid #e0e0e0;overflow:scroll;overflow-x:hidden;}
+.select .selBox li{height:28px;line-height:28px;text-indent:12px;cursor:pointer;overflow:hidden;width:150px;}
+.select .selBox li:hover{background:#67c8c2;color:#fff;}
+.select .selBox li:active{background:#67c8c2;}
+.select .valTxt{width:168px;height:28px;line-height:28px;text-indent:12px;cursor:pointer;display:block;color:#888;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+
+.label{margin-right:30px;display:inline-block;margin-bottom:18px;float:left;}
+.label .name{float:left;height:30px;line-height:30px;width:68px;text-align:right;margin-right:18px;}
+.roombox .tip{color:#80caca;height:28px;line-height:28px;padding-left:12px;}
+.yudingbox{margin-bottom:30px;}
+.tipbox{background:#ffffee url(lis/themes/NewInns/img/icon_34.png) no-repeat 10px center;border:1px solid #efefef;padding:8px 32px;line-height:16px;margin-top:-10px;margin-bottom:20px;color:#b3b3ae;}
+.payway{width:800px;margin-top:8px;}
+.payway .name{margin-bottom:40px;line-height:18px;height:18px;}
+.payway ul{float:left;}
+.payway li,.payway li.radio{background:url(lis/themes/NewInns/img/icon_36_hui.png) no-repeat left center;padding-left:18px;margin-bottom:12px;color:#b3b3b3;cursor:pointer;cursor:auto;}
+.payway li .tis{color:#76c5c5;padding-left:12px;}
+.payway li.radio{cursor:pointer;background:url(lis/themes/NewInns/img/icon_36.png) no-repeat left center;color:#666;}
+.payway li.on{color:#666;background:url(lis/themes/NewInns/img/icon_35.png) no-repeat left center;}
+
+
+
+.remark{width:800px;}
+.remark .h90{padding:12px;height:75px;width:680px;border:1px solid #e0e0e0;border-radius: 3px;}
+.remark .name{line-height:18px;height:18px;}
+.btn .unsure{height:36px;line-height:36px;width:120px;background:#999;border-radius:5px;font-size:14px;text-align:center;display:inline-block;color:#fff;font-family:microsoft yahei;margin-right:25px;}
+.btn .sure{background:#d4443a;}
+.btn .sure:hover{background:#a92219;}
+.btn .tk,.btn .tk_on{background:url(lis/themes/NewInns/img/icon_14.png) no-repeat left 3px;padding-left:18px;display:inline-block;color:#b3b3b3;cursor:pointer;}
+.btn .tk_on{background:url(lis/themes/NewInns/img/icon_15.png) no-repeat left 3px;}
+.order_principle_box{width:828px;background:#fff;border:1px solid #e9e8e8; color:#777;margin-top:20px;padding:15px 30px 30px 30px;}
+.order_principle_box .order_principle_head{color:#999;font-size:14px;padding-bottom:14px;}
+.order_principle_box .order_principle_textarea{width:770px;height:117px;border:1px solid #ECECEC;resize:none;text-align:left;}
+
+.orderinfo,.tipInfo{background:#fff;border:1px solid #e9e8e8; color:#888;padding:20px;margin-bottom:20px;}
+.orderinfo h2{font-size:18px;/*height:18px;line-height:18px;padding-bottom:12px;*/border-bottom:1px solid #ddd;color:#3c3c3c;font-weight:normal;
+/*white-space: nowrap;
+text-overflow: ellipsis;
+overflow: hidden;-o-text-overflow: ellipsis;*/
+display: block;
+width:238px;
+}
+.orderinfo .box1{padding:12px 0 18px 0;border-bottom:1px solid #ccc;}
+.orderinfo .box1 td{height:28px;line-height:28px;}
+/*.orderinfo .box2 p{height:28px;line-height:28px;}*/
+.orderinfo .box2{padding:12px 0 15px 0;}/*border-bottom:1px solid #ddd;*/
+.orderinfo .box2 b.col,.orderinfo .allPrice b.col{font-family:Arial, Helvetica, sans-serif;color:#f00;padding-left:3px;font-size:14px;font-weight:normal;}
+.orderinfo .allPrice{text-align:right;padding-top:12px;}
+.orderinfo .allPrice b.col{font-size:21px;font-weight:bold;}
+
+.tipInfo{position:relative;}
+.tipInfo .icon{background:url(lis/themes/NewInns/img/icon_37.png) no-repeat;width:27px;height:27px;position:absolute;right:-1px;bottom:-1px;}
+.tipInfo h3{font-size:14px;height:18px;line-height:18px;padding-bottom:8px;border-bottom:1px solid #ddd;color:#3c3c3c;font-weight:normal;margin-bottom:12px;}
+.tipInfo p{line-height:24px;color:#999;font-size:12px;}
+.orderPage .color{color:#000;}
+.color .w168,.yudingbox .color .input_txt{border:1px solid #888;color:#333;}
+.pricebox .tt td{color:#333;}
+.s2{width:90px;background-position:70px 9px;}
+.s2 .selBox{width:90px;}
+
+.orderinfo{position:relative;}
+.fixedside{position:relative;width:278px;}/*width:240px;*/
+.selectNone{float:left;position:relative;width:168px;border:1px solid #e0e0e0;background:#f3f3f3;height:28px;line-height:28px;border-radius: 3px;text-indent:6px;display:none;}
+.roomNum{margin-right:0;}
+.s2{width:148px;background-position:128px 9px;}
+.s2 .valTxt{width:148px;}
+.s2 .selBox{width:148px;overflow:hidden;}
+
+.lianluobox{}
+.lianluobox .label{margin-right:20px;position:relative;}
+.lianluobox .mr0{margin-right:0;}
+/*.msg-box{position: absolute;right:5px;top:0px;line-height:30px;height:30px;width:84px\9;}
+.n-default .n-left, .n-default .n-right{margin:0;padding:0;color:#F0BBBB;ine-height:30px;display:block;float:left;width:90px\9;text-align:right;}
+.n-msg{line-height:30px;display:block;}
+.n-error{display:none;}*/
+
+.ruzhuBox{padding-left:18px;margin-bottom:20px;}
+.ruzhuBox .tip,.ruzhuBox .tip_on{background:url(lis/themes/NewInns/img/icon_15.png) no-repeat left 3px;background:url(lis/themes/NewInns/img/icon_15.png) no-repeat left 1px\9;padding-left:21px;cursor:pointer;height:18px;line-height:18px;width:140px;}
+.ruzhuBox .tip_on{background:url(lis/themes/NewInns/img/icon_14.png) no-repeat left 3px;}
+.ruzhuName{background:#f8f8f8;padding:15px 0 15px 25px;margin-top:10px;display:none;float:left;width:765px;}
+
+.ruzhuName .nameList{margin-right:35px;float:left;display:block;display:none;position:relative;}
+.ruzhuName .w168{margin-left:8px;}
+.lianluobox u{text-decoration:none;color:#f00;padding-right:3px;}
+
+.smoke{float:left;margin:3px 0 0 0;}
+.smoke b{background:url(lis/themes/NewInns/img/icon_14.png) no-repeat left 3px;background:url(lis/themes/NewInns/img/icon_14.png) no-repeat left 1px\9;padding-left:19px;cursor:pointer;font-weight:normal;display:inline-block;}
+.smoke b.on{background:url(lis/themes/NewInns/img/icon_15.png) no-repeat left 3px;}
+.smoke .col{color:#67c8c2;}
+
+.tp2{background:#ffffee url(lis/themes/NewInns/img/member/tip.png)  no-repeat 12px center;overflow:hidden;width:740px;margin-top:15px;}
+.tp3{background:#ffffee url(lis/themes/NewInns/img/member/tip.png)  no-repeat 12px center;overflow:hidden;width:740px;line-height:21px;padding-left:35px;margin-top:10px;}
+.tp3 b{color:#999;}
+.orderinfo .box2 p .red{font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#f00;font-weight:normal;padding:0 2px;}
+.orderinfo .box2 b.f18{font-size:18px;}
+
+.btnBox{padding-top:10px;position:relative;}
+
+.btnBox .unsure{height:36px;line-height:36px;width:120px;background:#d4443a;border-radius:5px;font-size:14px;text-align:center;display:inline-block;color:#fff;font-family:microsoft yahei;margin: 5px 0 10px 60px;cursor: pointer;}
+.btnBox .sure{background:#d4443a;cursor:pointer;}
+.btnBox .sure:hover{background:#a92219;}
+.btnBox .notice_tip{/*position:absolute; top:30px;*/ display:block; color:#d26969; text-align:center; width:100%; height:18px; line-height:14px; display:none;}
+.btnBox .notice_tip i{ background:url(lis/themes/NewInns/img/icon_34.png) no-repeat left bottom; display:inline-block;  width:18px; height:18px;vertical-align:-2px;*vertical-align:0;}
+.btnBox .tk,.btn .tk_on{background:url(lis/themes/NewInns/img/icon_14.png) no-repeat left 3px;background:url(lis/themes/NewInns/img/icon_14.png) no-repeat left 1px\9;padding-left:18px;display:inline-block;cursor:pointer;}
+.btnBox .tk_on{background:url(lis/themes/NewInns/img/icon_15.png) no-repeat left 3px;}
+
+
+.tipInfo .btn{text-align:right;margin-bottom:12px;margin-top:-5px;}
+.tipInfo .btn a{display:none;color:#59c6c0;}
+.tipInfo .btn a:hover{text-decoration:underline;}
+
+.tipInfo .hidde{overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;overflow:hidden;}
+.tipInfo .txt{display:block;}
+
+.phoneBox .select{width:175px;margin-right:10px;background-position:107px 10px;}
+.phoneBox .select .valTxt,.phoneBox .select .selBox{width:120px;text-indent:8px;}
+.phoneBox .select .selBox li{text-indent:8px;}
+.phoneBox .select .selBox{overflow:hidden;}
+
+.lianluobox .label{}
+.lianluobox .label .name{width:50px;margin-right:12px;}
+
+.nameBox .w168{width:120px;}
+.nameBox{position:relative;}
+.nameBox .changyong{position:absolute;left:61px;top:30px;width:498px;border:1px solid #e0e0e0;background:#fff;display:none;}
+.nameBox .changyong h2{background:#f8f8f8;color:#666;height:24px;line-height:24px;text-indent:12px;font-weight:normal;}
+.nameBox .changyong p{padding:12px;overflow:hidden;}
+.nameBox .changyong p a{float:left;padding:0 10px;height:21px;line-height:21px;margin:0 8px;border-radius:3px;}
+.nameBox .changyong p a:hover{background:#59c6c0;color:#fff;}
+.nameBox .changyong h2 b{float:right;margin-right:10px;font-family:Arial, Helvetica, sans-serif;font-weight:normal;cursor:pointer;}
+
+.yh .w168{margin-right:10px;}
+.yh .wrong{color:#ec5b5b;}
+.yh .right{background: url(lis/themes/NewInns/img/right.png) no-repeat center center;
+width: 15px;
+height: 25px;
+display: inline-block;}
+.yh .sel{float:left;width:168px;}
+
+/*.orderinfo .box2 .libao p{height:auto;line-height:21px;}
+.libao{position:relative;padding-bottom:20px;}
+.libao .txt{overflow:hidden;line-height:21px;}
+.libao .icon{position:absolute;right:0;bottom:0;background:#fff;padding-left:16px;}
+.libao .icon a{display:none;color:#67c8c2;}*/
+.yhjBox{width:820px;*margin-bottom:18px;}
+
+.orderinfo .box1 td{height:16px;line-height:16px;padding:6px 0;}
+.orderinfo .box1 td .txt{width:120px;overflow:hidden;height:16px;white-space: nowrap;
+text-overflow: ellipsis;
+-o-text-overflow: ellipsis;
+display: block;
+overflow: hidden;}
+/*.orderinfo .box2 p{width:240px;white-space: nowrap;
+text-overflow: ellipsis;
+-o-text-overflow: ellipsis;
+display: block;
+overflow: hidden;}*/
+/*scroll bar css*/
+#mainBox{width:775px;height:117px;border:1px solid #ECECEC;overflow:hidden;position:relative;} 
+#content{height:auto;position:absolute;left:0;top:0;padding:0 0 40px 10px;text-align:left;} 
+.scrollDiv{width:9px;position:absolute;top:0;background:#AAA;border-radius:10px;left:-4px;} 
+/* 章节类别 */ 
+.m-catr{padding:15px 0 10px 12px;*padding:15px 0 10px 14px;} 
+.m-catr .tte{float:left;line-height:35px;text-align:left;font-size:14px;font-weight:bold;color:#5b98db;} 
+#content dl{width:225px;float:left;margin-top:10px;} 
+#content dl dt, .m-catr dl dd{float:left;width:100%;line-height:25px;text-align:left;color:#AAA;} 
+#content dl dt{font-weight:bold;} 
+#content dl dd{margin-left:12px;} 
+
+#scrollBox{top:0;}
+.orderinfo .box2 .col2{font-family: Tahoma,Simsun,sans-serif;
+color: #390;font-size:16px;}
+
+
+
+.roomTable{border:1px solid #e1e1e1;overflow:hidden;}
+.roomTable .item{float:left;width:115px;text-align:center;}
+.roomTable .item p{height:39px;line-height:39px;}
+.roomTable .item p.bg{background:#f8f8f8;}
+
+.ruzhuName .changyong{position:absolute;left:46px;top:29px;width:498px;border:1px solid #e0e0e0;background:#fff;display:none;}
+.ruzhuName .changyong h2{background:#f8f8f8;color:#666;height:24px;line-height:24px;text-indent:12px;font-weight:normal;}
+.ruzhuName .changyong p{padding:12px;overflow:hidden;}
+.ruzhuName .changyong p a{float:left;padding:0 10px;height:21px;line-height:21px;margin:0 8px;border-radius:3px;}
+.ruzhuName .changyong p a:hover{background:#59c6c0;color:#fff;}
+.ruzhuName .changyong h2 b{float:right;margin-right:10px;font-family:Arial, Helvetica, sans-serif;font-weight:normal;cursor:pointer;}
+
+.invoice{float:left;margin:3px 0 0 30px;}
+.invoice b{background:url(lis/themes/NewInns/img/icon_14.png) no-repeat left 3px;background:url(lis/themes/NewInns/img/icon_14.png) no-repeat left 1px\9;padding-left:19px;cursor:pointer;font-weight:normal;display:inline-block;}
+.invoice b.on{background:url(lis/themes/NewInns/img/icon_15.png) no-repeat left 3px;}
+.invoiceBox{padding: 15px 25px;margin-bottom:20px;display:none; position:relative; z-index:2;}/*20151202*/
+
+.fromlist{padding-left:100px;height:30px;line-height:30px;margin-bottom:18px;display:block;}
+.fromlist .name{float:left;margin-left:-100px;text-align:right;width:90px;}
+.invoiceBox p{height:32px;line-height:32px;margin-bottom:10px;display:block;padding-left:102px;}
+.invoiceBox p .name{width:90px;float:left;margin-left:-102px;text-align:right;}
+.invoiceBox p u{color:#f00;text-decoration:none;font-family:Arial, Helvetica, sans-serif;font-size:9px;}
+.invoiceBox .w235{width:250px;1px solid #e0e0e0;height:28px;line-height:28px;border-radius: 3px;text-indent:12px;}
+.dizhi .w125{width:120px;margin-right:9px;border-radius: 3px;}
+.dizhi .select{background-position:100px 11px;border-radius: 3px;}
+.dizhi .select .selBox{width:120px;}
+.neirong .select{background-position:230px 11px;width:250px;}
+.neirong .select .valTxt{width:250px;}
+.neirong .select .selBox{width:250px;}
+.invoiceBox p .name u,.fromlist .name u{text-decoration:none;padding-right:3px;color:#f00;}
+
+.invoiceBox .red{padding-left:7px;color:#ec5b5b;}
+.yh .wrong{height:30px;line-height:30px;}
+
+/*20150530*/
+.n-invalid{border:1px solid #d26969;}
+.lianluobox .label{width:330px;float:left;}
+.lianluobox .phoneBox{width:470px;}
+.lianluobox .nameBox{margin-right:0;z-index:9;}
+.lianluobox .tabLabel{width:500px;} 
+.nameBox .w168,.tabLabel .w168{width:188px;}
+.ruzhuName .w168{width:140px;}
+.ruzhuBox{position:relative;}
+.ruzhuName{margin:0 0 10px -20px;width:785px;padding: 15px 0 0px 20px;}
+.ruzhuName .nameList u{text-decoration:none;color:#f00;}
+.ruzhuName .nameList{width:328px;margin-bottom:12px;margin-right:0;}
+.ruzhuBox{margin-bottom:0;}
+.n-error,.n-default .n-left, .n-default .n-right{color: #d26969;}
+.n-error .n-icon,.yh .wrong,.yh .right{background:url(lis/themes/NewInns/img/icon_wrong.png) no-repeat left center;color:#d26969;}
+.n-ok .n-icon,.yh .right{background:url(lis/themes/NewInns/img/icon_right.png) no-repeat left center;}
+.n-default .n-left, .n-default .n-right{margin-top:8px;}
+.ibTab{height:20px;padding-left:100px;overflow:hidden;padding:10px 0 10px 100px;}
+.ibTab span{cursor: pointer;background: url(lis/themes/NewInns/img/icon_38.png) no-repeat left center;padding-left: 18px;margin-bottom: 12px;color:#666;float:left;margin-right:20px;}
+.ibTab span.on{background: url(lis/themes/NewInns/img/icon_39.png) no-repeat left center;}
+.invoiceBox .title{display:none;}
+.yh .wrong,.yh .right{padding-left:18px;display:none;margin-left:0px;}
+/*.libao .txt{line-height:19px;}
+.libao{padding-bottom:15px;}*/
+.orderinfo .box2{padding:12px 0 10px 0;}
+/*.orderinfo .box2 p{height:26px;line-height:26px;}*/
+
+.yzm .txt{border: 1px solid #e0e0e0;height: 28px;line-height: 28px;border-radius: 3px;text-indent: 6px;margin-right:5px;}
+.yzm .img{vertical-align:middle;position:relative;top:-2px;margin-right:5px;}
+.yzm a{color:#67c8c2;}
+.yzm a:hover{color:#333;}
+.yzm .wrong,.yzm .right{padding-left:18px;display:none;margin-left:0px;}
+.yh_right .right{display:inline-block;}
+.yh_wrong .wrong{display:inline-block;}
+
+.en .label{margin-right:30px;display:inline-block;margin-bottom:18px;float:left;}
+.en .roomNum {margin-right: 0;}
+.en .roomNum .name{width:100px;}
+.en .lianluobox .label {margin-right:0;}
+.en .lianluobox .label .name {width:66px;}
+.en .ruzhuBox .tip {width:300px;}
+.en .label_120px .name{width:120px;}
+.en .payway .name,.en .yh .name {width:94px;}
+.en .invoiceBox p .name,.en .fromlist .name{ width:103px;}
+
+
+/*取消险2015-7-30*/
+.tipText,.tipText2{background:url(lis/themes/NewInns/img/icon_34.png) no-repeat 10px center;padding:8px 32px;line-height:16px;margin-top:-10px;margin-bottom:20px;color:#999999;}
+.safeBox{padding-left:10px;margin-bottom:20px;}
+.safeBox .safeTip{height:18px;line-height:18px;}
+.safeTip .tipCheck{background:url(lis/themes/NewInns/img/icon_14.png) no-repeat left 3px; vertical-align:bottom;padding-left:21px;cursor:pointer; height:18px; line-height:18px; display:inline-block;}
+.safeTip .tipChecked{background:url(lis/themes/NewInns/img/icon_15.png) no-repeat left 3px;}
+.safeBox .safeTip a{ color:#1d7ad9;}
+.safeBox .safeTip a:hover{ text-decoration:underline;}
+.safeMoney{ font-family:Arial, Helvetica, sans-serif; color:#888888; margin-left:4px;}
+.safeMoney b{ font-size:16px; color:#f00; font-weight:normal; margin-left:4px;}
+
+
+/*scroll bar css*/
+#mainBox{width:775px;height:117px;border:1px solid #ECECEC;overflow:hidden;position:relative;} 
+#content{height:auto;position:absolute;left:0;top:0;padding:0 0 40px 10px;text-align:left;} 
+/*预订取消弹框*/
+.xubox_layer{top:100px;}
+.insurance_popup_box{border:4px solid #000;filter:alpha(opacity=60);-moz-opacity:0.6;opacity:0.6;}
+#insuranceBox{width:690px;height:360px;overflow:hidden;position:relative;}
+#insuranceContent{height:auto;position:absolute;left:0;top:0;;text-align:left;}
+.insurance_content_box{ width:654px; padding:0 0 0 25px;}
+.insurance_content_box p{ text-indent:20px; margin-bottom:6px;}
+.insurance_content_box p b{ margin-right:12px;}
+.insurance_content_box p.center_text{ text-align:center; text-indent:0; font-weight:bold; color:#333; margin:12px 0;}
+.insurance_content_box p.indent_text{ text-indent:30px;}
+
+/*手机邮箱二选一20150826*/
+.lianluobox .nameBox{ width:100%; float:none;}
+.lianluobox .tabLabel{ width:320px;}
+.lianluobox .phoneBox{ width:460px;}
+.ruzhuBox .tip, .ruzhuBox .tip_on{ margin-bottom:10px;}/*把原来的这个css样式注释掉*/
+.tipText_green{padding:8px 15px;line-height:16px;margin-bottom:6px;color:#999999;}
+.tipText_green i{width:16px; height:16px; display:inline-block; margin-right:8px; float:left;}
+.lianluobox .phoneBox .name{ width:44px;}
+.ruzhuError{background:#ffffee url(lis/themes/NewInns/img/icon_34.png) no-repeat 10px center; border:1px solid #e0e0e0;padding:8px 32px;line-height:16px; margin-bottom:14px;color:#999999; display:none;}
+
+
+
+
+.special_room{
+    display: none;
+}
+
+/*订单页优化20151201*/
+.roomTable{ margin-bottom:10px;}
+.safeTable{ margin-bottom:20px; padding:0 0 0 14px;}
+.safeTableMain{ height:118px;float:left;  border:1px solid #c9c9c9;  position:relative; cursor:pointer;}
+.safeTable .safeTableMain:hover{border:1px solid #ff6f22;}
+.safeTable .safeChecked{border:1px solid #ff6f22;}
+.safeTableBoder{border:8px solid #f8f8f8;float:left;padding:0 10px 10px 14px;}
+.safeCheck{ position:absolute; right:-1px; top:-1px; display:none;}
+.safeTable .safeChecked .safeCheck{ display:block;background:url(/themes/NewInns/images/safeIcon.png) no-repeat; width:28px; height:28px;}
+.safePrice{ float:left; color:#ff7300;font-size:30px;font-family:Arial, Helvetica, sans-serif;padding:28px 22px 0 0;}
+.safePrice span{font-size:12px;}
+.safeMain{ margin-left:66px; color:#333333;}
+.safeMain .safeTopTxt{padding:8px 0 0 0;}
+.safeMain .safeTitleTxt{font-size:18px;font-family:"Hiragino Sans GB",microsoft yahei;}
+.safeMain .safeInfoTxt{ color:#999999; padding:2px 0 0 0;width:250px;}
+
+
+
+/*水印css*/
+.water_box input{ color:#777; padding:4px 0 4px 6px; border:1px solid #ccc; height:14px; line-height:14px;}
+textarea{color:#777; padding:4px 0 4px 6px; border:1px solid #ccc;line-height:14px;}
+.password_box{ position:relative;margin: 10px 0;}
+.password_box label{ color:#dedede;position:absolute; top:0;line-height: 16px;}
+
+
+
+/*发票优化20151201*/
+.invoiceCase{ background:#f8f8f8; padding:10px 20px 12px; margin-bottom:20px; margin-left:60px;display:none;}
+.invoiceCase .invoice{ margin:0; color:#999999; float:none;}
+.invoiceCase input{ height:30px; padding:0 0 0 9px;}
+.invoice_singel .invoice_title{ width:362px;}
+.invoiceCase .s2 .selBox{ overflow-y:scroll;width:146px;}
+
+
+
+
+/*订单右侧优化*/
+.orderinfo,.tipInfo{background:#fff;border:1px solid #e9e8e8; color:#888; padding:0;margin-bottom:20px;}
+
+
+.orderinfo h2{ background:url(image/grid_bg.png)repeat left center;font-size:18px;/*height:18px;line-height:18px;padding-bottom:12px;*/border-bottom:1px solid #ddd;color:#3c3c3c;font-weight:normal; padding:14px 20px;}/*width:238px;delete*/
+.orderinfo .box2{ padding:10px 16px 8px;}
+.orderinfo .box2 p{ font-size:14px; color:#333333; font-family:"Hiragino Sans GB",microsoft yahei; margin-bottom:4px;}
+.orderinfo .box2 p em{font-size:12px; color:#999999; padding:0 2px;}
+.orderinfo .box2 p .box2_title{ color:#999999; font-size:12px; display:block; font-family:"Hiragino Sans GB",Tahoma, Arial,\5b8b\4f53, sans-serif;}
+.orderinfo .box2 p .box2_fr{ float:right; color:#999999;font-size:12px;font-family:"Hiragino Sans GB",Tahoma, Arial,\5b8b\4f53, sans-serif;}
+.orderinfo .box2 p .box2_fr b{ font-weight:normal;}
+
+.libao{ background:#f7f7f7; border:1px solid #f7f7f7; padding:5px 2px; color:#999999; border:1px solid #eeeeee;}
+.libao .gift{width:16px; height:16px; cursor:pointer; float:left; margin:0 6px 0 4px;}
+.libao .gift_title{ float:left;}
+.libao .libao_content{ width:178px; height:16px; display:block; float:left; line-height:16px;}
+.orderinfo .box2 p .room_price_title{ color:#999999; font-size:12px;}
+.orderinfo .box2 p span.en{ float:right;}
+.orderinfo .box2 b.col{ color:#333333; }
+.orderinfo .box2 p.totalPrice{ padding:4px 0 0 0; margin-top:8px; border-top:1px solid #efeded;}
+.orderinfo .box2 p.totalPrice span.en,.orderinfo .box2 p.totalPrice b.col{ color:#ff7300;}
+.btnBox{padding:20px;position:relative; border:1px solid #efeded;}
+
+.btnBox .notice_tip{ background:#ffffee; border:1px solid #efefef;color:#d26969; text-align:center; width:100%; height:18px; line-height:14px; display:block; padding:0 0 6px; margin-top:6px; display:none; }
+
+.btnBox .notice_tip i{ background:url(../images/icon_34.png) no-repeat left bottom; display:inline-block;  width:18px; height:18px;vertical-align:-2px;*vertical-align:0;}
+
+.verification_code_box{ margin:5px 0; color:#333333; /*height:30px;*/ line-height:30px;width:266px;}
+.verification_code_box label{ float:left}
+.verification_code_box input{ height:28px; width:70px; padding-left:10px; border:1px solid #e0e0e0; float:left; margin-right:6px;}
+.verification_code_box img{ float:left; cursor:pointer;}
+.verification_code_box  img.num_validate_pic{ border:1px solid #e0e0e0;}
+
+/*入住提示*/
+.ruzhuBox .tipText{ margin-top:10px;}
+
+.en .yzm .txt{border: 1px solid #e0e0e0;height: 28px;line-height: 28px;border-radius: 3px;text-indent: 4px;margin-right:5px;}
+.en .verification_code_box input{ height:28px; width:35px; padding-left:4px; border:1px solid #e0e0e0; float:left; margin-right:6px;}
+
+
+.ruzhuBox .tip_noClick{background:url(lis/themes/NewInns/img/icon_40.png) no-repeat left 3px;}
+
+.firstNight{background:#ffffee;border: 1px solid #efefef;line-height:24px;width:246px;left:-1px;bottom:-44px;color:#666; padding:8px 16px;}
+.firstNight p{ height:24px;}
+.firstNight .pay_money{ font-family:Arial, Helvetica, sans-serif; float:right;}
+.firstNight .col{color:#f00;padding-left:3px;}
+
+.insurance_inner{ display:none;}
+
+
+.hotel-order-qrcode{border:1px dashed #ff6445;position:absolute;left:-1px;width:278px;margin:10px auto;background:#FFF;}
+.hotel-order-qrcode ul li{text-align:center;}
+.order-qrcode-img{padding-bottom:5px;}
+.order-qrcode-text{position:relative;border-top:1px solid #eaeaea;padding:5px 0 10px;height:20px;line-height:20px;font-size:14px;}
+.order-qrcode-text i{font-style:normal;}
+.order-qrcode-text i.line-under{color:#5ab5e3;text-decoration:underline;}
+.qrcode-jian{font-size:18px;color:#fb6132;}
+.order-qrcode-text span.scan-code-tip{display:none;position:absolute;left:45px;top:-45px;width:180px;padding:5px 10px;border:1px solid #dbdbdb;font-size:12px;background:#FFF;line-height:20px;text-align:left;box-shadow:2px 2px 2px #e7e7e7;}
+.arrow-down-wrap{position:absolute;left:20px;bottom:-8px;width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:8px solid #dbdbdb;}
+.arrow-down-inner{position:absolute;z-index:2;left:20px;bottom:-7px;width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:8px solid #FFF;}
+.horder-act-rule{display:block;text-align:center;font-size:14px;color:#999;text-decoration:underline;}

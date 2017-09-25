@@ -1,0 +1,720 @@
+﻿@charset "utf-8";
+.wrapper{background-color:#F3F3F3;}
+.navigation_bar{border-bottom:1px solid #c7c7c7;padding:21px 0 11px;margin-bottom:10px;}
+.navigation_bar a{cursor:pointer;}
+.current_level{ font-weight:normal;}
+.navigation_bar a:hover{color:#1c7adc;text-decoration:underline;}
+.hotel_info_head_box{width:100%;padding:10px 0 19px;height:100px;}
+.hotel_info_head_box .hotel_base_info_box{float:left;width:950px;}
+.hotel_base_info_box .hotel_logo{width:100px;height:100px;background:url(lis/themes/NewInns/sprite/icon_hotel_detail.png) no-repeat;float:left;display:block;}  
+.hotel_info_head_box .hotel_base_info{width:690px;float:left;padding:0 10px 12px 23px;}
+.hotel_base_info .hotel_title_box{width:100%;height:29px;line-height:29px;color:#333;float:left;padding-top:7px;font-size:18px;}
+.hotel_title_box span{float:left;font-size:20px;}
+.hotel_title_box .star_level{width:69px;height:12px;margin:8px 19px 9px 8px;background:url(lis/themes/NewInns/sprite/icon_hotel_detail.png) no-repeat; float:left;display:block;}
+.hotel_title_box .five_star{background-position:-99px -199px;}
+.hotel_title_box .four_star{background-position:-99px -230px;}
+.hotel_title_box .three_star{background-position:-99px -257px;}
+.hotel_title_box .member_icon{width:88px;height:29px;float:left;background:url(lis/themes/NewInns/sprite/icon_hotel_detail.png) no-repeat -26px -148px; display:block;margin-right:19px;}
+.hotel_title_box .panorama{padding-left:20px;cursor:pointer;}
+.hotel_title_box .panorama:hover{color:#1d7ad9;text-decoration:underline;}
+.hotel_base_info_box .base_info_unit{width:340px;height:14px;line-height:14px;padding-top:12px;float:left;color:#333;}
+.base_info_unit .first_col_label{width:36px;float:left;}
+.base_info_unit .second_col_label{width:84px;float:left;text-align:right;}
+.base_info_unit span{height:14px;line-height:14px;float:left; width:256px;}
+.hotel_base_info_box .book_box{float:right;padding:14px 0 0;width:121px;}
+.book_box .price{font-family:Arial;float:right;color:#777;}
+.book_box .price b{font-weight:normal;color:#ff7300;font-size:30px;}
+.book_box .book_btn{width:121px;height:40px;line-height:40px;color:#FFF;cursor:pointer;float:right;text-align:center;font-size:18px;}
+.book_box .book_btn:hover{color:#fff;}
+.hotel_info_head_box .exploring_num{width:137px;height:41px;float:right;background-color:#fff;display:none;z-index:100;}
+.exploring_num .user_icon{width:47px;height:41px;display:block;background:url(lis/themes/NewInns/sprite/icon_hotel_detail.png) no-repeat;float:left;}
+.base_main {width:950px;}
+.base_main .hotel_icons_box{height:408px;}
+.big_pic_board_box{float:left;}
+.base_main .checkIn_show_box,.base_main .checkIn_edit_box{width:100%;height:25px;line-height:25px;padding-bottom:3px;margin:20px 0 20px;border-bottom:1px solid #dedede;}
+.base_main .checkIn_edit_box{display:none;padding-bottom:7px;}
+.checkIn_edit_box input{width:120px;height:23px;}
+.checkIn_edit_box .check_priice_btn{width:85px;height:25px;line-height:25px;color:#fff;background:#1d7ad9;float:left;text-align:center;cursor:pointer;margin:0 31px 0 10px;}
+.checkIn_edit_box .check_priice_btn:hover{background:#ff7300;}
+.checkIn_edit_box .cancel_btn{color:#1d7ad9;cursor:pointer;}
+.base_main .checkIn_info_unit{width:222px;float:left;}
+.base_main .checkIn_info_label{float:left;}
+.base_main .date_text{color:#333;float:left;font-weight:bold; max-width:125px;}
+.base_main .edit_btn{width:14px;height:14px;float:left;display:block;background:url(lis/themes/NewInns/sprite/icon_hotel_detail.png) no-repeat;margin:6px 0 5px 10px;cursor:pointer;}
+.hotel_room_info_box .room_tab{width:100%;color:#777;}
+.room_tab li{/*width:85px;*/height:14px;line-height:14px;float:left;cursor:pointer;padding:11px 10px 11px 15px;}
+.room_tab li a{width:13px;height:13px;background:url(lis/themes/NewInns/sprite/icon_hotel_detail.png) no-repeat;float:left;}
+.room_tab .selected{color:#FFF;}
+.room_tab .room_style{background-position:-244px -169px;margin:1px 5px 0 0;}
+.room_tab .room_style_selected{background-position:-244px -143px;}
+.room_tab .limited_offer{background-position:-358px -169px;margin:1px 5px 0 0;}
+.room_tab .limited_offer_selected{background-position:-358px -143px;}
+.room_tab .cash{background-position:-476px -168px;margin:1px 5px 0 0;}
+.room_tab .cash_selected{background-position:-476px -143px;}
+.room_tab .gold_card{background-position:-595px -168px;margin:1px 5px 0 0;}
+.room_tab .gold_card_selected{background-position:-595px -143px;}
+.hotel_room_info_box{display:inline-block;background-color:#fff;}
+.hotel_room_info_box .room_info{float:left;background-color:#FFF;padding-bottom:20px;display:none;}
+.room_info .info td{line-height:14px;padding:10px 0;}
+.room_info th{line-height:16px;color:#fff;font-weight:normal;text-align:left;text-indent:1px; padding:7px 0;}
+.room_info .tit td{color:#333;padding-top:10px;}
+.room_info .tit .room_style_text{height:30px;line-height:30px;font-size:14px;float:left;}
+.room_info .tit .toggle{color:#777;cursor:pointer;margin-top:12px;float:right;vertical-align:top;}
+.room_info .info .promotion .name{color:#1d7ad9;font-size: 12px;}
+.room_info .info .promotion .gift{width:16px;height:16px;display:inline-block;vertical-align:-3px;cursor:pointer;}
+.room_info .info .price,.room_info .info .total_price{font-family:Arial;}
+.price .everyday_price{width:200px;height:75px;border:1px solid #000;background-color:#fff;position:relative;}
+.room_info .info .total_price{color:#333;}
+.room_info .info .cancel{cursor:pointer;}
+.room_info .info .total_price b{padding:0 3px;font-weight:normal;font-size:14px; font-family:"Hiragino Sans GB",Tahoma,Simsun,sans-serif;}
+.room_info .info .price b{color:#ff7300;font-weight:normal;padding:0 3px;}
+.room_info .info .price b.en,.room_info .info .price b.col{font-size:18px;}
+.room_info .info .login_before{font-size:14px; font-family:microsoft yahei;color:#390;cursor:pointer;position:relative;border-bottom:1px dashed #390;}
+.room_info .info .bottom_dashed_line{border-bottom:1px dashed #aaa;cursor:pointer;}
+.room_info .info .login_tip,.all_main, .room_info .info .cancel_tip{width:180px;line-height:21px;padding:10px;text-indent:0;font-family:\5b8b\4f53;border:1px solid #e7e7e7;box-shadow:#e7e7e7 0px 0px 5px;position:absolute;top:-66px;left:-15px;font-size:12px;background:#fff;color:#777;display:none;z-index: 163;}
+.room_info .info .login_tip i,.all_main i, .room_info .info .cancel_tip i{background:url(lis/themes/NewInns/images/cornu.png) no-repeat left 1px;left:26px;height:8px;line-height:8px; width:15px;z-index:1;position:absolute;bottom:-7px;}
+.room_info .info .price .col{font-family:Tahoma,Simsun,sans-serif;color:#390;}
+.room_info .tit .rate-brief-info{ margin-right:5px;font-size: 14px;}
+.room_info .tit .rate-checkin-date{ margin-left:5px; font-size:12px;}
+.room_info .policy .ptips{color:#339900;padding-right:15px;cursor:pointer;}
+.room_info .policy .ptips i{ width:15px; height:16px; vertical-align:top; display:inline-block;}
+.room_info .btn_buy:hover{background:#e96c04;}
+.room_info .info td.btn{padding:0;text-align:center;text-indent:0;}
+.room_info .info td.btn .login-btn-container{margin-left:14px;}
+.room_info .btn_buy,.all_main .btn_book{padding:0 10px;height:25px;line-height:25px;background:#ff7300;color:#fff;text-align:center;font-size:14px;display:block;text-indent:0;float:right;}
+.room_info .btn_buy{min-width:50px;}
+.room_info .btn2{background:#390;}
+.room_info .btn2:hover{background:#2e8a01;}
+.room_info .btn_all{ background:#fff; color:#1d7ad9; border-bottom:1px dashed #1d7ad9; font-size:12px; padding:0; margin-right:9px;}
+.room_info .btn_all:hover{ background-color:#fff;}
+.room_info .btn .login_check{margin-left:24px;}
+.room_info .linebox td{height:1px;*height:10px;line-height:1px;text-indent:0;font-size:1px;padding:5px 0 0 0;*border-bottom:1px solid #ebebeb;}
+.room_info .linebox .line{border-bottom:1px solid #e5e5e5;*margin-top:10px;}
+.room_info .room_detail_box{width:895px;padding:8px 0 16px 10px;background-color:#f3f3f3;margin-bottom:10px;}
+.room_info .room_detail{display:none;}
+.room_detail_box .room_icon{width:140px;height:105px;float:left;}
+.room_detail_box .room_prop_info_box{width:650px;margin-left:20px;float:left;}
+.room_prop_info_box li{list-style:square inside none;}
+/*房型弹窗*/
+.tit .tit_box{border:1px solid #d6d6d6;background-color:#fff;position:absolute;padding:7px;display:none;z-index:99;font-size:12px; line-height:14px;color:#777;z-index: 163;}
+.tit .tit_box img{width:140px;height:105px;float:left;}
+.tit .tit_box .room_type_info{margin-left:5px;float:left;}
+.tit .tit_box .room_type_info .room_type_name{font-size:14px;color:#000;font-weight:bold;padding-bottom:6px;}
+.tit .tit_box .room_type_info ul li{list-style: disc inside none;padding: 0 10px 6px 0;}
+.tit_box .board_arrow_icon{width:8px;height:6px;background:url(lis/themes/NewInns/sprite/icon_hotel_detail.png) no-repeat -556px -324px;position:absolute; left:53px;}
+.tit .tit_box .board_arrow_icon{float:left;}
+/* all_main */
+.all_day{position:relative;}
+.all_main{width:260px;height:110px;left:-120px;top:-150px;padding:15px;text-align:left;z-index: 161;}
+.all_main i{left:140px;}
+.all_main .close{position:absolute;background:url(lis/themes/NewInns/images/close.gif) no-repeat;width:15px;height:14px;right:10px;top:10px;cursor:pointer;}
+.all_main .close:hover{background-position:0 -14px;}
+.all_main b.col{color:#1d7ad9;}
+.all_main .txt{color:#aaa;margin-bottom:15px;}
+.en .all_main .txt{ line-height:16px;}
+.all_main .date{margin-bottom:8px;}
+.all_main .input_date{width:118px;height:18px;border:1px solid #d8d8d8;}
+.en .all_main .input_date{ width:90px;}
+.en .all_main .book_date_checkIn{ /*margin-left:6px;*/}
+.ja .all_main .input_date{ width:105px;}
+.ja .all_main .book_date_checkIn{ /*margin-left:11px;*/}
+.all_main .btn_book{position:absolute;right:20px;bottom:30px;}
+/* hotel_other_info*/
+.hotel_other_info_box{margin-top:16px;width:950px;}
+#tabmenu{width:950px;height:40px;border-bottom:1px solid #d4d4d4;background-color:#f3f3f3;}
+#tabmenu .book_btn{width:121px;height:36px;line-height:36px;color:#fff;text-align:center;cursor:pointer;font-size:18px;float:right;}
+#tabmenu .book_btn:hover{color:#fff;}
+#tabmenu ul{float:left;}
+#tabmenu li{float:left;}
+#tabmenu li a{padding:0 15px;height:39px;line-height:39px;color:#766f6f;text-align:center;float:left;cursor:pointer;}
+#tabmenu .selected_teb{width:auto;height:40px;border-top:1px solid #d6d6d6;border-left:1px solid #d6d6d6; border-right:1px solid #d6d6d6;background-color:#fff;}
+#tabmenu li.selected_teb a{color:#000;}
+.tab_fill_box{width:100%;height:41px;display:none;}
+.hotel_other_info_box .tab_content_box{width:906px;padding:4px 22px 0 20px;border-left:1px solid #d4d4d4;border-right:1px solid #d4d4d4; border-bottom:1px solid #d4d4d4;background-color:#fff;}
+.tab_content_box .infobox{padding:45px 0 0}
+.infobox .info_title{height:14px;line-height:14px;padding-bottom:6px;}
+.info_main{padding:5px 0 30px; border-bottom: 1px solid #d2d2d2;}
+.info_main div span{line-height:2em;}
+.info_main .label_text{font-weight:bold;color:#646464;}
+.info_main .pay_way_text{float:left;}
+.info_main .pay_way_icons_box{float:left;margin-top:3px;}
+.base_side{width:230px;float:right;}
+.base_side .right_map{border:1px solid #c7c7c7;margin-bottom:21px; height:248px;}
+.right_map .map_see{width:68px;height:28px;line-height:28px;color:#fff;cursor:pointer;text-align:center;float:right;position:relative;top:-253px;*top:-256px;}
+.base_side .circumference_box{width:100%;padding:11px 0 9px;border-bottom:1px dashed #aaa;}
+.circumference_box .head_box{width:100%;height:19px;line-height:19px;font-weight:bold;color:#000;}
+.head_box .trainsport_icon,.head_box .business_circle_icon,.head_box .trainsport_station_icon{width:15px;height:19px;margin-right:7px;background:url(lis/themes/NewInns/sprite/icon_hotel_detail.png) no-repeat;display:block;float:left;}
+.circumference_box .each_unit{/*height:34px;*/ padding:12px 0 0 22px;}
+.each_unit .name{/*height:14px;*/line-height:14px;color:#000;padding-bottom:6px;cursor:pointer;}
+.each_unit .distance{height:14px;line-height:14px;color:#aaa;}
+/*改版*/
+.hotel_Info{ background:#f9f9f9; border:1px solid #e9e9e9; padding:20px; overflow:hidden; margin-bottom:20px; }
+.hotel_Info .slideimg{ width:370px; height:350px; float:left; display:block; margin-right:40px;}
+.smallimg{ position:relative; width:380px;}
+.slideimg .bigimg{ width:371px; height:287px; overflow:hidden; display:none; margin-bottom:5px;}
+.slideimg .smallimg li{ width:89px; margin-right:5px; float:left; cursor:pointer; opacity:0.5;}
+.slideimg .smallimg li.on{ opacity:1;}
+.slideimg .smallimg li.mr0{ margin-right:0;}
+.hotel_Info .hotel_Txt{ float:left; width:730px;}
+.hotel_Info .hotel_Txt h2{ font-size:24px; font-weight:normal; display:block; overflow:hidden; margin-bottom:10px;}
+.hotel_Info .hotel_Txt h2 b{ float:left; font-weight:normal; margin-right:20px; max-width:460px; line-height:36px;}
+.hotel_Info .hotel_Txt .star_3,.hotel_Info .hotel_Txt h2 .star_4,.hotel_Info .hotel_Txt h2 .star_5{display:block; width:72px; height:30px; float:left;margin-top:3px;}
+.hotel_Info .hotel_Txt h2 .star_4{ background-position:-66px -72px;}
+.hotel_Info .hotel_Txt h2 .star_5{ background-position:-66px -104px;}
+.hotel_Txt .promotion,.hotel_Txt .update_promotion{width:88px;height:30px;float:right;}
+.hotel_Txt .update_promotion {
+background-position: -152px -314px;
+right: 185px;
+position: relative;
+}
+.hotel_Info .hotel_Txt>p{ padding:16px 0; line-height:24px; border-bottom:1px dashed #e9e9e9;}
+.hotel_Info .hotel_Txt>p.btn{ text-align:right; border-bottom:0;}
+/*.hotel_Info .hotel_Txt p.btn a{ background:#bf9032; height:36px; line-height:36px;border-radius:3px; display: inline-block; color:#fff; text-align:center; width:110px; margin-left:20px;}*/
+.hotel-go-bookbtn{ background:#bf9032; height:36px; line-height:36px;border-radius:3px; display: inline-block; color:#fff; text-align:center; width:110px; margin-left:20px;}
+.hotel-go-bookbtn:hover { background:#a87e2a;}
+/*.hotel_Info .hotel_Txt p.btn a:hover{ background:#a87e2a;}*/
+.hotel_Info .hotel_Txt>p.btn .price{ font-size:18px; font-family:Arial, Helvetica, sans-serif; color:#e10000; display:inline-block; line-height:36px;}
+.hotel_Info .hotel_Txt>p span{ margin-right:30px;}
+.hotel_Info .hotel_Txt>p span.money_notation { font-size:10px; margin-right:0;}
+.hotelInfo .tabs{ border-bottom:1px solid #e3e3e3; overflow:hidden;}
+.hotelInfo .tabs span{ float:left; height:40px; line-height:40px; padding:0 30px; margin-right:12px; background:#f8f8f8; font-size:14px; font-family:microsoft yahei; cursor:pointer;}
+.hotelInfo .tabs span:hover{ background:#e7e7e7;}
+.hotelInfo .tabs span.on{ background:#bf9032; color:#fff;}
+.hotelInfo .tabMain{ padding:30px 0 20px 0; display:none; color:#666; line-height:24px;}
+.panorama .wifi,.panorama .restaurant,.panorama .park,.panorama .meeting{ width:20px; height:20px; display:inline-block; vertical-align:top; padding:0; margin:3px 5px 0 0;}
+.panorama .wifi{ margin-left:15px;}
+.panorama .restaurant{ background-position:-145px -382px;}
+.panorama .park{ background-position:-170px -382px;}
+.panorama .meeting{ background-position:-195px -382px;}
+.room_info .unbtn,.room_info .unbtn:hover{ background:#fff; color:#777; font-size:12px;}
+
+
+.hotel_other_info_box .tab_title_box li{ font-size:12px; padding:13px 30px; width:auto; height:14px; line-height:14px; background-color:#f8f8f8;}
+.hotel_other_info_box .tab_title_box li.selected,.hotel_other_info_box .tab_title_box li:hover{ background-color:#1d7ad9;}
+.tab_express_box{ border:none; border: 1px solid #dedede; background-color: #fff;padding-top: 30px;}
+
+
+/*20150516新增*/
+
+.hotel_Info .slideimg{ position:relative; height:290px;}
+.hotel_Info .btnLeft,.hotel_Info .btnRight{ background:url(lis/themes/NewInns/images/icon.png) no-repeat left center; width:13px; height:60px; position:absolute; left:0; bottom:0; cursor:pointer;}
+.hotel_Info .btnRight{ background-position:-13px center; left:auto; right:0;}
+.smallimg{ width:335px; height:60px; overflow:hidden; position:relative; left:17px;}
+.slideimg .smallimg li{ margin-right:0; padding:0 2px; width:80px;}
+.smallimg .list{ position: absolute; left:0; top:0;}
+/*scroll bar css*/
+#mainBox{width:405px;height:408px;overflow:hidden;position:relative;float:left;margin-left:1px;} 
+#content{height:auto;position:absolute;left:0;top:0;text-align:left;} 
+#content td{padding:0 0 8px 7px;}
+#content .small_pic_box{width:128px;height:96px;background-color:#e1e1e1;}
+.small_pic_box img{width:128px;height:96px;cursor:pointer;}
+.small_pic_box .pic_title{width:64px;height:23px;line-height:23px;text-align:center;color:#dedede;background-color:#000;position:relative;filter:alpha(opacity=60);-moz-opacity:0.6;opacity:0.6;top:-99px; padding:0 2px;}
+#content .amplified_pic{width:124px;height:92px;border:2px solid #ff7300;}
+/*layer*/
+.mybg{background:#000;width:100%;height:100%;top:0;left:0;position:absolute;z-index:10000;opacity:0.3;filter:Alpha(opacity=30);}
+.big_map_box{width:798px;height:498px;background:#fff;border:1px solid #d6d6d6;z-index:10001;position:absolute;top:100px;left:100px;}
+/*.big_map_box img{width:798px;height:470px;}*/
+.big_map_box .head_box{width:100%;height:28px;}
+.head_box .close_btn{width:13px;height:13px;margin:8px 8px 7px 0;cursor:pointer;float:right;background:url(lis/themes/NewInns/sprite/icon_hotel_detail.png) no-repeat -487px -321px;}
+/*tit_box*/
+.tit_box{border:1px solid #d6d6d6;background-color:#fff;position:absolute;padding:7px;display:none;z-index:99;}
+.tit_box tr.date td{height:20px;line-height:20px;text-align:center;background-color:#f3f3f3;color:#777;padding:0;}
+.tit_box tr.price td{line-height:18px;text-align:center;padding:0;}
+.tit_box tr.price b{font-weight:normal;}
+.tit_box tr.price .cash_text{color:#ff7300;}
+.tit_box tr.price .credit_text{color:#339900;}
+.tit_box .board_arrow_icon{width:8px;height:6px;background:url(lis/themes/NewInns/sprite/icon_hotel_detail.png) no-repeat -556px -324px;position:absolute; left:53px;}
+/* brand css*/
+/* jinjiang hotel brand*/
+.jinjiang_hotel .hotel_logo{background-position:-15px -13px;}
+.jinjiang_hotel .user_icon{background-position:-156px -139px;}
+.jinjiang_hotel .edit_btn{background-position:-102px -282px;}
+.jinjiang_hotel .selected{background-color:#1d7ad9;}
+.jinjiang_hotel .room_info th{background-color:#5cb8e6;}
+.jinjiang_hotel .room_info{border:2px solid #5cb9e5;}
+.jinjiang_hotel .info_title{border-bottom:1px solid #5cb8e6;color:#5cb8e6;}
+.jinjiang_hotel .book_btn,.jinjiang_hotel .map_see{background-color:#1d7ad9;}
+.jinjiang_hotel .book_btn:hover,.jinjiang_hotel .map_see:hover,.jinjiang_hotel .checkIn_edit_box .check_priice_btn:hover{background-color:#ff7300;}
+.jinjiang_hotel .exploring_num b{color:#1d7ad9;}
+.jinjiang_hotel .exploring_num{border:1px solid #5cb8e6;}
+.jinjiang_hotel .trainsport_icon{background-position:-31px -199px}
+.jinjiang_hotel .business_circle_icon{background-position:-31px -281px;}
+.jinjiang_hotel .trainsport_station_icon{background-position:-30px -239px;}
+.jinjiang_hotel .room_style_hover{background-position:-244px -192px;}
+.jinjiang_hotel .limited_offer_hover{background-position:-358px -193px;}
+.jinjiang_hotel .cash_hover{background-position:-476px -192px;}
+.jinjiang_hotel .gold_card_hover{background-position:-595px -192px;}
+.jinjiang_hotel .checkIn_edit_box .check_priice_btn{ background-color:#1d7ad9;}
+.jinjiang_hotel .checkIn_edit_box .cancel_btn{ color:#1d7ad9;}
+.jinjiang_hotel .floor-tit{color: #1d7ad9;}
+/* jinjiang ducheng brand*/
+.jinjiang_ducheng .hotel_logo{background-position:-148px -11px;}
+.jinjiang_ducheng .user_icon{background-position:-196px -373px;}
+.jinjiang_ducheng .edit_btn{background-position:-177px -282px;}
+.jinjiang_ducheng .selected{background-color:#57451f;}
+.jinjiang_ducheng .room_info th{background-color:#bb9f6f;}
+.jinjiang_ducheng .room_info{border:2px solid #bb9f6f;}
+.jinjiang_ducheng .info_title{border-bottom:1px solid #907d5d; color:#907d5d;}
+.jinjiang_ducheng .book_btn,.jinjiang_ducheng .map_see,.jinjiang_ducheng .hotel_Info .hotel_Txt p.btn a{background-color:#56451e;}
+.jinjiang_ducheng .book_btn:hover,.jinjiang_ducheng .map_see:hover,.jinjiang_ducheng .hotel_Info .hotel_Txt p.btn a:hover,.jinjiang_ducheng .checkIn_edit_box .check_priice_btn:hover{background-color:#907d5d;}
+.jinjiang_ducheng .exploring_num b{color:#bb9f6f;}
+.jinjiang_ducheng .exploring_num{border:1px solid #bb9f6f;}
+.jinjiang_ducheng .trainsport_icon{background-position:-7px -199px}
+.jinjiang_ducheng .business_circle_icon{background-position:-7px -281px;}
+.jinjiang_ducheng .trainsport_station_icon{background-position:-6px -239px;}
+.jinjiang_ducheng .room_style_hover{background-position:-382px -239px;}
+.jinjiang_ducheng .limited_offer_hover{background-position:-410px -238px;}
+.jinjiang_ducheng .cash_hover{background-position:-438px -236px;}
+.jinjiang_ducheng .gold_card_hover{background-position:-468px -236px;}
+.jinjiang_ducheng .checkIn_edit_box .check_priice_btn{ background-color:#56451e;}
+.jinjiang_ducheng .checkIn_edit_box .cancel_btn,.jinjiang_ducheng .hotel_other_info_box .tab_title_box li{ color:#56451e;}
+.jinjiang_ducheng .hotel_other_info_box .tab_title_box li.selected,.jinjiang_ducheng .hotel_other_info_box .tab_title_box li:hover{ background-color:#56451e; color:#fff;}
+.jinjiang_ducheng .floor-tit{color: #56451e;}
+/* jinjiang zhixing brand*/
+.jinjiang_zhixing .hotel_logo{background-position:-283px -10px;}
+.jinjiang_zhixing .user_icon{background-position:-275px -373px;}
+.jinjiang_zhixing .edit_btn{background-position:-202px -282px;}
+.jinjiang_zhixing .selected{background-color:#2577E3;}
+.jinjiang_zhixing .room_info th{background-color:#2577E3;}
+.jinjiang_zhixing .room_info{border:2px solid #2577E3;}
+.jinjiang_zhixing .info_title{border-bottom:1px solid #009d96;color:#009d96;}
+.jinjiang_zhixing .book_btn,.jinjiang_zhixing .map_see,.jinjiang_zhixing .hotel_Info .hotel_Txt p.btn a{background-color:#db1921;}
+.jinjiang_zhixing .book_btn:hover,.jinjiang_zhixing .map_see:hover,.jinjiang_zhixing .hotel_Info .hotel_Txt p.btn a:hover,.jinjiang_zhixing .checkIn_edit_box .check_priice_btn:hover{background-color:#009d96;}
+.jinjiang_zhixing .exploring_num b{color:#db1921;}
+.jinjiang_zhixing .exploring_num{border:1px solid #009d96;}
+.jinjiang_zhixing .trainsport_icon{background-position:-744px -143px}
+.jinjiang_zhixing .business_circle_icon{background-position:-744px -225px;}
+.jinjiang_zhixing .trainsport_station_icon{background-position:-743px -184px;}
+.jinjiang_zhixing .room_style_hover{background-position:-244px -256px;}
+.jinjiang_zhixing .limited_offer_hover{background-position:-270px -256px;}
+.jinjiang_zhixing .cash_hover{background-position:-303px -256px;}
+.jinjiang_zhixing .gold_card_hover{background-position:-341px -255px;}
+.jinjiang_zhixing .checkIn_edit_box .check_priice_btn{ background-color:#db1921;}
+.jinjiang_zhixing .checkIn_edit_box .cancel_btn,.jinjiang_zhixing .hotel_other_info_box .tab_title_box li{ color:#2577E3;}
+.jinjiang_zhixing .hotel_other_info_box .tab_title_box li.selected,.jinjiang_zhixing .hotel_other_info_box .tab_title_box li:hover{ background-color:#2577E3; color:#fff;}
+.jinjiang_zhixing .panorama .wifi{ background-position: -122px -412px;}
+.jinjiang_zhixing .panorama .restaurant{ background-position:-145px -412px;}
+.jinjiang_zhixing .panorama .park{ background-position:-170px -412px;}
+.jinjiang_zhixing .panorama .meeting{ background-position:-195px -412px;}
+.jinjiang_zhixing .floor-tit{color: :#67c8c2;}
+.jinjiang_zhixing .guessulike .tit span{color: #128c8a; border-bottom: 1px solid #128c8a;}
+/* baishi brand*/
+.baishi .hotel_logo{background-position:-549px -10px;}
+.baishi .user_icon{background-position:-110px -373px;}
+.baishi .edit_btn{background-position:-154px -282px;}
+.baishi .selected{background-color:#0094da;}
+.baishi .room_info th{background-color:#5cb8e6;}
+.baishi .room_info{border:2px solid #5cb8e6;}
+.baishi .info_title{border-bottom:1px solid #0094da;color:#0094da;}
+.baishi .book_btn,.baishi .map_see,.baishi .hotel_Info .hotel_Txt p.btn a{background-color:#0094da;}
+.baishi .book_btn:hover,.baishi .map_see:hover,.baishi .hotel_Info .hotel_Txt p.btn a:hover,.baishi .checkIn_edit_box .check_priice_btn:hover{background-color:#003372;}
+.baishi .exploring_num b{color:#bb9f6f;}
+.baishi .exploring_num{border:1px solid #7ac4e9;}
+.baishi .trainsport_icon{background-position:-77px -198px}
+.baishi .business_circle_icon{background-position:-77px -280px;}
+.baishi .trainsport_station_icon{background-position:-76px -239px;}
+.baishi .room_style_hover{background-position:-244px -237px;}
+.baishi .limited_offer_hover{background-position:-271px -237px;}
+.baishi .cash_hover{background-position:-303px -237px;}
+.baishi .gold_card_hover{background-position:-340px -237px;}
+.baishi .checkIn_edit_box .check_priice_btn{ background-color:#0094da;}
+.baishi .checkIn_edit_box .cancel_btn,.baishi .hotel_other_info_box .tab_title_box li{ color:#0094da;}
+.baishi .hotel_other_info_box .tab_title_box li.selected,.baishi .hotel_other_info_box .tab_title_box li:hover{ background-color:#0094da; color:#fff;}
+.baishi .floor-tit{color: #0094da;}
+/* jinguang brand*/
+.jinguang .hotel_logo{background-position:-413px -10px;}
+.jinguang .user_icon{background-position:-357px -373px;}
+.jinguang .edit_btn{background-position:-226px -282px;}
+.jinguang .selected{background-color:#dbad50;}
+.jinguang .room_info th{background-color:#f1d08b;}
+.jinguang .room_info{border:2px solid #f1d08b;}
+.jinguang .info_title{border-bottom:1px solid #d8ad4d;color:#d8ad4d;}
+.jinguang .book_btn,.jinguang .map_see,.jinguang .hotel_Info .hotel_Txt p.btn a{background-color:#0d7e36;}
+.jinguang .book_btn:hover,.jinguang .map_see:hover,.jinguang .hotel_Info .hotel_Txt p.btn a:hover,.jinguang .checkIn_edit_box .check_priice_btn:hover{background-color:#a76400;}
+.jinguang .exploring_num b{color:#0d7e36;}
+.jinguang .exploring_num{border:1px solid #f1d08b;}
+.jinguang .trainsport_icon{background-position:-770px -143px}
+.jinguang .business_circle_icon{background-position:-770px -225px;}
+.jinguang .trainsport_station_icon{background-position:-769px -184px;}
+.jinguang .room_style_hover{background-position:-382px -256px;}
+.jinguang .limited_offer_hover{background-position:-410px -257px;}
+.jinguang .cash_hover{background-position:-438px -255px;}
+.jinguang .gold_card_hover{background-position:-468px -255px;}
+.jinguang .checkIn_edit_box .check_priice_btn{ background-color:#0d7e36;}
+.jinguang .checkIn_edit_box .cancel_btn,.jinguang .hotel_other_info_box .tab_title_box li{ color:#0d7e36;}
+.jinguang .hotel_other_info_box .tab_title_box li.selected,.jinguang .hotel_other_info_box .tab_title_box li:hover{ background-color:#0d7e36; color:#fff;}
+.jinguang  .floor-tit{color: #0d7e36}
+/* baiyulan brand*/
+.baiyulan .hotel_logo{background-position:-685px -6px;}
+.baiyulan .user_icon{background-position:-27px -373px;}
+.baiyulan .edit_btn{background-position:-129px -282px;}
+.baiyulan .selected{background-color:#a06ca6;}
+.baiyulan .room_info th{background-color:#c7a2cb;}
+.baiyulan .room_info{border:2px solid #c7a2cb;}
+.baiyulan .info_title{border-bottom:1px solid #a06ca6;color:#a06ca6;}
+.baiyulan .book_btn,.baiyulan .map_see,.baiyulan .hotel_Info .hotel_Txt p.btn a{background-color:#a06ca6;}
+.baiyulan .book_btn:hover,.baiyulan .map_see:hover,.baiyulan .hotel_Info .hotel_Txt p.btn a:hover,.baiyulan .checkIn_edit_box .check_priice_btn:hover{background-color:#69004a;}
+.baiyulan .exploring_num b{color:#69004a;}
+.baiyulan .exploring_num{border:1px solid #d0b2d3;}
+.baiyulan .trainsport_icon{background-position:-55px -198px}
+.baiyulan .business_circle_icon{background-position:-55px -280px;}
+.baiyulan .trainsport_station_icon{background-position:-54px -239px;}
+.baiyulan .room_style_hover{background-position:-244px -218px;}
+.baiyulan .limited_offer_hover{background-position:-358px -219px;}
+.baiyulan .cash_hover{background-position:-476px -217px;}
+.baiyulan .gold_card_hover{background-position:-595px -216px;}
+.baiyulan .checkIn_edit_box .check_priice_btn{ background-color:#a06ca6;}
+.baiyulan .checkIn_edit_box .cancel_btn,.baiyulan .hotel_other_info_box .tab_title_box li{ color:#a06ca6;}
+.baiyulan .hotel_other_info_box .tab_title_box li.selected,.baiyulan .hotel_other_info_box .tab_title_box li:hover{ background-color:#a06ca6; color:#fff;}
+.baiyulan .floor-tit{color: #a06ca6}
+/* jinjiang_star_hotel */
+.jinjiang_star_hotel .hotel_logo{background-position:-15px -13px;}
+.jinjiang_star_hotel .user_icon{background-position:-437px -372px;}
+.jinjiang_star_hotel .edit_btn{background-position:-226px -282px;}
+.jinjiang_star_hotel .selected{background-color:#000;}
+.jinjiang_star_hotel .room_info th{background-color:#c0a354;}
+.jinjiang_star_hotel .room_info{border:2px solid #c0a354;}
+.jinjiang_star_hotel .info_title{border-bottom:1px solid #c0a354;color:#c0a354;}
+.jinjiang_star_hotel .book_btn,.jinjiang_star_hotel .hotel_Info .hotel_Txt p.btn a{background-color:#c0a354;}
+.jinjiang_star_hotel .map_see{background-color:#000;}
+.jinjiang_star_hotel .book_btn:hover,.jinjiang_star_hotel .map_see:hover,.jinjiang_star_hotel .hotel_Info .hotel_Txt p.btn a:hover,.jinjiang_star_hotel .checkIn_edit_box .check_priice_btn:hover{background-color:#a88c40;}
+.jinjiang_star_hotel .exploring_num b{color:#ff7300;}
+.jinjiang_star_hotel .exploring_num{border:1px solid #ff7300;}
+.jinjiang_star_hotel .trainsport_icon{background-position:-770px -267px}
+.jinjiang_star_hotel .business_circle_icon{background-position:-771px -349px;}
+.jinjiang_star_hotel .trainsport_station_icon{background-position:-769px -308px;}
+.jinjiang_star_hotel .room_style_hover{background-position:-509px -237px;}
+.jinjiang_star_hotel .limited_offer_hover{background-position:-537px -238px;}
+.jinjiang_star_hotel .cash_hover{background-position:-565px -236px;}
+.jinjiang_star_hotel .gold_card_hover{background-position:-597px -236px;}
+.jinjiang_star_hotel .checkIn_edit_box .check_priice_btn{ background-color:#c0a354;}
+.jinjiang_star_hotel .checkIn_edit_box .cancel_btn,.jinjiang_star_hotel .hotel_other_info_box .tab_title_box li{ color:#c0a354;}
+.jinjiang_star_hotel .hotel_other_info_box .tab_title_box li.selected,.jinjiang_star_hotel .hotel_other_info_box .tab_title_box li:hover{ background-color:#c0a354; color:#fff;}
+.jinjiang_star_hotel .floor-tit{color: #1d7ad9}
+/*international*/
+.international .base_info_unit .first_col_label{ width:70px;}
+.international .base_info_unit .second_col_label{ width:100px;}
+.international .base_info_unit span{ width:240px;}
+.international .hotel_title_box .member_icon{background-position:-588px -343px;}
+.ja .right_map .map_see{ width:84px;}
+.international .base_main .checkIn_info_unit{width:240px;}
+.international .book_details_box .pay_requirement{ height:auto;}
+.loading_icon{ width:80px; height:80px; margin:20px 0 0 400px; background:url(lis/themes/NewInns/images/loading.gif) no-repeat; display:block;}/*.room_list*/
+
+/*猫眼评论*/
+.tripadvisor{ position:relative; float:right;}
+.tripadvisor_icon{float:right; display:block;}
+.tripadvisor_text {display:block;  height:20px; line-height:20px;padding:1px 2px;position:absolute;top:17px; right:0;white-space:nowrap; color:#777;}
+.tripadvisor_text:hover{color:#1d7ad9;}
+
+
+
+
+/*2015-09-06*/
+.tejia span{ color:#cf3025; font-size:12px}
+.tejia span.gift1{ background:transparent url("/themes/NewInns/list/images/gift1.png") no-repeat; width:16px; height:16px; display:inline-block; vertical-align:-3px;}
+
+
+.room_info .cancel .ptips{border-bottom:1px dashed #390;padding-bottom:3px;cursor:pointer; color:#390;position:relative;}/*NewInns/list/css/list.css*/
+.room_info .store_price{ text-decoration:line-through;}
+.room_info .room_state_bad{color:#ff0000;}
+.room_info .no_store_price{text-decoration:none;}
+
+/*国际化*/
+.en .hotel_Txt .promotion {background-position:-44px -314px;}
+
+.info span.has-internet{ border-bottom:1px dashed #aaa; position:relative; padding-bottom: 4px;}
+.room_info .info .login_tip,.all_main,.pay-internet-text{width:180px;line-height:21px;padding:10px;text-indent:0;font-family:\5b8b\4f53;position:absolute;border:1px solid #e7e7e7;box-shadow:#e7e7e7 0px 0px 5px;top:-134px;left:8px;font-size:12px;background:#fff;color:#777;display:none;}
+.room_info .info .login_tip i,.all_main i,.pay-internet-text i{ background:url( lis/themes/NewInns/list/images/cornu.png ) no-repeat left 1px;left:26px;height:8px;line-height:8px;width:15px;z-index:1;position:absolute;bottom:-7px;}
+
+.w260{width:260px;}
+
+.shoufei {
+    width: 180px;
+    line-height: 21px;
+    padding: 10px;
+    text-indent: 0;
+    font-family: \5b8b\4f53;
+    position: absolute;
+    border: 1px solid #e7e7e7;
+    box-shadow: #e7e7e7 0px 0px 5px;
+    top: -50px;
+    left: -22px;
+    font-size: 12px;
+    background: #fff;
+    color: #777;
+    display: none;
+}
+
+.room_info .info .special_price{
+	width: 180px;
+    line-height: 21px;
+    padding: 10px;
+    text-indent: 0;
+    font-family: \5b8b\4f53;
+    position: absolute;
+    border: 1px solid #e7e7e7;
+    box-shadow: #e7e7e7 0px 0px 5px;
+    top: -45px;
+    left: -22px;
+    font-size: 12px;
+    background: #fff;
+    color: #777;
+    display: none;
+}
+
+.hotel-qrcode{position:relative;float:left;width:380px;padding:12px;font-family:"microsoft yahei";border:1px dashed #ff6445;background:#FFF;text-align:left; }
+.hotel-qrcode img{vertical-align:middle;}
+.hotel-qrcode b{font-weight:normal;font-size:14px;padding-left:20px;}
+.hotel-qrcode i{font-style:normal;}
+.hotel-qrcode i.line-under{text-decoration:underline;color:#5ab5e3;}
+.qrcode-jian{font-size:20px;color:#fb6132;}
+.hotel-qrcode b.scan-code-tip{display:none;position:absolute;left:180px;top:-5px;width:180px;padding:5px 10px;border:1px solid #dbdbdb;font-size:12px;background:#FFF;line-height:20px;box-shadow:2px 2px 2px #e7e7e7;}
+.arrow-down-wrap{position:absolute;left:20px;bottom:-8px;width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:8px solid #dbdbdb;}
+.arrow-down-inner{position:absolute;z-index:2;left:20px;bottom:-7px;width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:8px solid #FFF;}
+.hotel-act-rule{position:absolute;left:156px;bottom:20px;font-size:14px;color:#999;text-decoration:underline;}
+
+/*20160520酒店logo展示*/
+.hotel-list{position:relative;}
+.hotel-level-icon{height:80px;position:absolute;right:0;top:0;}
+.hotel-level-icon span{display:block;text-align:right;}
+.hotel-level-icon span img{margin-left:5px;width:38px;height:48px;}
+.hotel-level-tip {
+    display: none;
+    width: 172px;
+    overflow: hidden;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    height: 30px;
+    margin-top: 2px;
+    line-height: 30px;
+    background: rgba(0,0,0,0.5);
+    filter: alpha(opacity=50);
+    color: #fff;
+    background: #000;
+    opacity: 0.5;
+    font-size: 14px;
+    text-align: center;
+}
+/*20160613添加即时专票tag*/
+ /*20160613添加即时专票tag*/
+.hotel-level-tip{
+       position: relative;
+       z-index: 2;
+    background: rgba(0,0,0,0.9);
+    filter: alpha(opacity=90);
+    opacity: 0.9;
+}  
+
+.tag{
+         position: relative;
+         display: inline-block;
+         *display: inline;
+         *zoom: 1;
+         width: 100px;
+         height: 17px;
+         color: #fff;
+         vertical-align: middle;
+        
+}
+.tag-nav{
+         position: absolute;
+         top: 35px;
+    left: 0;
+         display: none;
+         padding: 5px;
+    border: 1px solid #dbdbdb;
+    background: #FFF;
+    cursor: pointer;
+    font-size: 10px;
+}
+.tag-nav p{    
+         white-space: nowrap; 
+         font-weight: normal;
+         font-size: 12px;
+         color: #999;
+}
+.hotel_Info .hotel_Txt h2{display: inline-block;*display: inline;*zoom: 1; vertical-align: middle;}
+.tag:hover .tag-nav{display: block;}
+.tag-nav  .before{
+         position: absolute;
+         top: -14px;
+    left: 35px;
+    margin-left: -11px;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-top-width: 0;
+    border-bottom-color: #999;
+    border-bottom-color: rgba(0,0,0,.25);
+        border-width: 7px;
+}
+.tag-nav .after {
+         position: absolute;
+    top: -12px;
+    left: 35px;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    margin-left: -10px;
+    border-top-width: 0;
+    border-bottom-color: #fff;
+        border-width: 6px;
+}
+
+
+
+.hotel_Info{overflow: visible;}
+
+.hotel_Txt .update_promotion{right: 0}
+
+
+/*浏览此酒店的顾客同时浏览 板块*/
+.guessulike{
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	height: 316px;
+    border: 1px solid #d6d6d6;
+    margin : 15px 0;
+    padding:0 15px;
+}
+.col-5-1{
+	float:left;
+	width: 20%
+}
+.guessulike-container{
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	padding: 20px 35px 0;
+}
+.guessulike-container .row{
+	margin-left: -35px;
+	margin-right: -35px;
+}
+
+.guessulike-container .section{
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	position: relative;
+	height: 227px;
+	margin:0 auto;
+	font-size: 0;
+	width: 204px;	
+	padding: 6px;
+	display: block;
+}
+.guessulike-container .section:hover{
+	box-shadow:   0px 1px 3px #888;
+	-moz-box-shadow:0px 1px 3px #888;
+	-webkit-box-shadow:0px 1px 3px #888;
+}
+.guessulike-container .section:hover .border{
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #ddd;
+
+}
+.guessulike-container h6{
+	text-align: left;
+	font-size: 14px;
+	color: #333;
+	font-weight: normal;
+	padding: 10px 0;
+	
+}
+.guessulike-container p{
+   text-align: right;
+    color: #333;
+    position: absolute;
+    font-size: 14px;
+    right: 5px;
+    bottom: 0px;
+}
+.guessulike-container span{
+	font-size: 24px;
+	color: #fd5c09
+}
+.guessulike .tit{
+	height: 44px;
+	line-height: 44px;
+    border-bottom: 1px solid #d6d6d6;
+    margin-left: -5px;
+    margin-right: -5px;
+
+}
+.guessulike .tit span{
+	float: left;
+	font-size: 18px;
+	color: #1d7ad9;
+    border-bottom: 1px solid #1d7ad9;
+    padding: 0 15px;
+}
+.guessulike .tit a{
+	font-size: 14px;
+	color: #666;
+	float: right;
+	line-height: 45px;
+}
+/*刷新动画*/
+.roll-cartoon{-webkit-animation:circle 1.5s infinite linear;/*匀速 循环*/}
+@-webkit-keyframes circle{
+0%{ transform:rotate(0deg); }
+100%{ transform:rotate(360deg); }
+}
+
+.refresh{
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+
+/*20160822 即时专票添加图片*/
+.tag-icon3{ 
+	background-position: -150px -502px;
+}
+.tag-icon6{ 
+	background-position: -150px -449px;
+}
+
+
+
+/*20160825 tab改成锚点*/
+
+/*191&193删除*/
+.line_info .info_floor {
+    width: 950px;
+    height: 40px;
+    background-color: #f3f3f3;
+    border-bottom: 1px solid #2577E3;
+    border-left: 1px solid #c9c9c9;
+    z-index: 99999;
+}
+.line_info .floor_fill_box {
+    height: 43px;
+}
+.tab_title_box li {cursor: pointer;}
+.tab_title_box li.selected{color: #fff;}
+.tab_title_box li:hover{
+	color: #fff;
+}
+.maxline3{
+	height:74px;
+	overflow: hidden;
+}
+.unit_content { padding:0 30px 30px;}
+.line_info .info_floor .info_floor_unit {float: left; width: 114px; height: 43px; text-align: center; line-height: 43px;font-size: 16px;cursor: pointer;}
+
+.bbn{border-bottom: none;}
+.floor-tit{font-size: 18px; font-weight: normal;font-family: "Microsoft YaHei";}

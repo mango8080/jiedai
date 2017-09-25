@@ -1,0 +1,1 @@
+<?php defined('IN_DESTOON') or exit('Access Denied'); return array (28 => array ('index' => '',),26 => array ('index' => '',),24 => array ('index' => '',),23 => array ('index' => '',),16 => array ('order' => '','index' => '',),4 => array ('index' => '',),2 => array ('sendsms' => '','index' => '',),1 => array ('database' => '',),); ?>

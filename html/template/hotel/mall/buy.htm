@@ -1,0 +1,39 @@
+{template 'header'}
+<link type="text/css" rel="stylesheet" href="{DT_SKIN}payment.css">
+<link type="text/css" rel="stylesheet" href="{DT_SKIN}order.css">
+<div class="wrapper">
+       
+<div class="w1200">
+    <div class="base_box">
+        <div class="base_main">
+            <div class="head_box clearfix">
+                <div class="success_icon"></div>
+                <div class="head_text">
+                    <div class="order_num_text clearfix">
+                        <div class="order_statue_text">
+                            <p style="float:left">恭喜你，提交成功！等待商家处理订单。</p>
+                           
+                        </div>
+                        
+                   </div>
+                    <!-- <div style="color:rgb(255, 115, 0);">注意：非到店付的订单，请在10分钟内支付完成，否则订单将被取消！</div> -->
+                </div>
+            </div>
+            
+
+            <div class="order_tool_bar order_btns_box clearfix" style="">
+                <a class="order_btn yahei" title="查看订单" href="/member/trade.php?action=order">查看订单</a>
+                <a class="order_btn yahei continue_book" title="继续预订" href="{$MOD[linkurl]}">继续预订</a>
+                {if $myorder['status']==1}
+                <a class="order_btn yahei continue_book" style="background: rgb(255, 115, 0) none ;border:none;" href="{$forward}" style="bgcolor:#ff7300">去支付</a>
+                {/if}
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+
+
+    </div>
+{template 'footer'}

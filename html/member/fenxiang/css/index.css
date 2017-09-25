@@ -1,0 +1,275 @@
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table
+}
+
+.clearfix:after {
+    clear: both
+}
+
+body {
+    background-color: #f2f2f2;
+    /*padding-bottom: 2.4rem*/
+}
+
+#header {
+    width: 100%;
+    height: 1.75rem;
+    line-height: 1.75rem;
+    overflow: hidden;
+    background: #fff;
+    position: relative
+}
+
+
+
+#slides {
+    width: 16rem;
+    height: 8rem;
+    overflow: hidden;
+    position: relative
+}
+#slides .swiper-wrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    -ms-transition-property: -ms-transform;
+    transition-property: transform;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+#slides .swiper-slide{
+    -webkit-flex-shrink: 0;
+    -ms-flex: 0 0 auto;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+}
+
+#slides .swiper-wrapper .swiper-slide img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#slides .swiper-wrapper .swiper-slide .btn{
+    width: 6rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    padding: 0 1rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1.2rem;
+    margin: 0 auto;
+    background: #f03c3a;
+    color: #fff;
+    font-size: 0.8rem;
+    text-align: center;
+    box-shadow: 0 0 20px #fff inset;
+    border-radius: 24px;
+    transition: background 0.6s;
+}
+#slides .swiper-wrapper .swiper-slide .btn:hover{
+    background: #e1a147;
+
+}
+#blocks {
+    width: 100%;
+    background: #331b6b;
+    position: relative;
+}
+#blocks .item {
+  position: relative;
+  padding-top: 1rem;
+}
+#blocks .item h1 {
+    width: 4rem;
+    height: 1rem;
+    line-height: 1rem;
+    position: absolute;
+    z-index: 3;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 0.5rem;
+    overflow: hidden;
+    text-align: center;
+    font-size: 0.5rem;
+    border-radius: 3px;
+    background: #4720a2;
+    box-shadow: 0 0 2px #4720a2;
+}
+#blocks .item h1 span.name {
+    display: inline-block;
+    color: #fff;
+}
+
+#blocks .item .container{
+  width: 14rem;
+  background: #4d3192;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0 0 2px #422e2e;
+  padding-bottom: 1rem;
+}
+#blocks .item .container p{
+  padding: 1rem 0.5rem 0.2rem;
+  font-size: 0.12rem;
+  color: #fff;
+}
+#blocks .item .container p span{
+  display: block;
+  line-height: 1rem;
+  font-size: 0.7rem;
+}
+#blocks .item .container ul{
+  margin: 0;
+  display: flex;
+}
+#blocks .item .container li{
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  margin: 1rem 1.08rem;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+}
+#blocks .item .container li span{
+  font-size: 0.1rem;
+  display: block;
+}
+#blocks .item .container .method{
+  display: flex;
+}
+#blocks .method .method-container{
+  width: 4.67rem;
+  text-align: center;
+  font-size: 0.1rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+#blocks .item .container .btn{
+    display: flex;
+    justify-content: center;
+    width: 9rem;
+    margin: 0 auto;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    padding: 0 1rem;
+    background: #f03c3a;
+    color: #fff;
+    font-size: 0.8rem;
+    text-align: center;
+    box-shadow: 0 0 20px #fff inset;
+    border-radius: 24px;
+    transition: background 0.6s;
+}
+#blocks .item .container .btn:hover{
+    background: #e1a147;
+
+}
+#copyright {
+    padding: .75rem 0 .75rem 0;
+    font-size: .45rem;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    line-height: 1.6;
+    color: #bcbccb;
+    background: #4d3192;
+}
+#copyright a{
+  color: #eece4d;
+  padding: 0 0.5rem;
+  display: flex;
+  margin-left: auto;
+  width: 6rem;
+  line-height: 0.5rem;
+  justify-content: flex-end;
+}
+#copyright a span{
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 0.4rem;
+  border: 1px solid #eece4d;
+}
+#tip-download {
+    width: 16rem;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 980;
+    background-color: rgba(0,0,0,0.6);
+    display: none;
+}
+#tip-download .tip-download-container{
+    width: 12rem;
+    height: 16rem;
+    overflow: hidden;
+    margin: auto;
+    z-index: 980;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+}
+#tip-download .top-tip-downoad{
+  height: 1.5rem;
+  line-height: 1.5rem;
+
+}
+#tip-download .top-tip-downoad a{
+    margin-right: 0.3rem;
+    float: right;
+    color: #000;
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 900;
+}
+#tip-download img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#tip-download  .text-tip-downoad {
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+}
+#tip-download  .text-tip-downoad span{
+  font-size: .5rem;
+}
+#tip-download  .text-tip-downoad p{
+  font-size: .5rem;
+}
+#tip-download .arrows{
+  float: right;
+  width: 4rem;
+}

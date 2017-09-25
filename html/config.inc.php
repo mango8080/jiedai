@@ -6,12 +6,12 @@ $CFG['pconnect'] = '0';
 $CFG['db_host'] = 'localhost';
 $CFG['db_name'] = 'jiedai';
 $CFG['db_user'] = 'root';
-$CFG['db_pass'] = 'root';
+$CFG['db_pass'] = 'xia4152118';
 $CFG['db_charset'] = 'utf8';
 $CFG['db_expires'] = '0';
 $CFG['tb_pre'] = 'destoon_';
 $CFG['charset'] = 'utf-8';
-$CFG['url'] = 'http://www.anluze.com/';
+$CFG['url'] = 'http://xiaofua.com/';
 $CFG['com_domain'] = '';
 $CFG['com_dir'] = '1';
 
